@@ -298,6 +298,24 @@
 		}
 	}; 
 
+	var menuTranslate = function(){
+		var mapping = {
+			'menu-home': ['Home', '首頁'],
+			'menu-products': ['Products', '產品介紹'],
+			'menu-aboutus': ['About Us', '關於我們'],
+			'menu-contact': ['Contact', '聯絡我們']
+		}
+		$('.menu-item').mouseenter(function(){
+			var $this = $(this);
+			var $ele = $this.find('a:first');
+			$ele.text(mapping[$ele[0].id][1]);
+		}).mouseout(function(){
+			var $this = $(this);
+			var $ele = $this.find('a:first');
+			$ele.text(mapping[$ele[0].id][0]);
+		});
+	}
+
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -311,6 +329,7 @@
 		counterWayPoint();
 		parallax();
 		stickyBanner();
+		menuTranslate();
 	});
 
 
