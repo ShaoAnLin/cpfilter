@@ -379,53 +379,53 @@ jQuery(document).ready(function($) {
 		if($googleMap.length > 0) {
 			$googleMap.each(function(){
 				var mapHeight = $(this).data('height'),
-						address = $(this).data('address'),
+						lat = $(this).data('lat'),
+						lon = $(this).data('lon'),
 						zoom = $(this).data('zoom'),
 						controls = $(this).data('disable-controls'),
 						scrollwheel = $(this).data('scrollwheel'),
 						marker = $(this).data('marker'),
-						markerTitle = $(this).data('marker-title'),
-						styles = $(this).data('styles');
+						markerTitle = $(this).data('marker-title');
 				$(this).height(mapHeight);
 				$(this).gmap3({
-	          marker:{
-	            address: address,
-	            data: markerTitle,
-	            options: {
-	            	icon: marker
-	            },
-	            events: {
-	              mouseover: function(marker, event, context){
-	                var map = $(this).gmap3("get"),
-	                  	infowindow = $(this).gmap3({get:{name:"infowindow"}});
-	                if (infowindow){
-	                  infowindow.open(map, marker);
-	                  infowindow.setContent(context.data);
-	                } else {
-	                  $(this).gmap3({
-	                    infowindow:{
-	                      anchor:marker,
-	                      options:{content: context.data}
-	                    }
-	                  });
-	                }
-	              },
-	              mouseout: function(){
-	                var infowindow = $(this).gmap3({get:{name:"infowindow"}});
-	                if (infowindow){
-	                  infowindow.close();
-	                }
-	              }
-	            }
-	          },
-	          map:{
-	            options:{
-	              zoom: zoom,
-	              disableDefaultUI: controls,
-	              scrollwheel: scrollwheel,
-	              styles: styles
-	            }
-	          }
+					marker:{
+						position: {lat: lat, lng: lon},
+						data: markerTitle,
+						options: {
+							icon: marker
+						},
+						events: {
+						  mouseover: function(marker, event, context){
+						    var map = $(this).gmap3("get"),
+						      	infowindow = $(this).gmap3({get:{name:"infowindow"}});
+						    if (infowindow){
+						      infowindow.open(map, marker);
+						      infowindow.setContent(context.data);
+						    } else {
+						      $(this).gmap3({
+						        infowindow:{
+						          anchor:marker,
+						          options:{content: context.data}
+						        }
+						      });
+						    }
+						  },
+						  mouseout: function(){
+						    var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+						    if (infowindow){
+						      infowindow.close();
+						    }
+						  }
+						}
+					},
+					map:{
+						options:{
+							center: {lat: lat, lng: lon},
+							zoom: zoom,
+							disableDefaultUI: controls,
+							scrollwheel: scrollwheel
+						}
+					}
 				});
 			});
 		}

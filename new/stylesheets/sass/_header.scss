@@ -7,6 +7,10 @@
 .header-common {
 	margin-top: $grid-vertical-step / 2;
 	margin-bottom: $grid-vertical-step / 2;
+	@media #{$tablet-land} {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
 }
 
 // Top Bar
