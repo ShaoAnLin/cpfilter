@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>B-Shop | Hero Slider</title>
+  <title>B-Shop | About</title>
 
   <!--SEO Meta Tags-->
   <meta name="description" content="" />
@@ -32,11 +32,6 @@
 
   <!-- Offcanvas Plugin -->
   <link href="stylesheets/vendor/slidebars.min.css" rel="stylesheet" media="screen">
-
-  <!-- Revolution Slider Plugin -->
-  <link href="stylesheets/vendor/layers.css" rel="stylesheet" media="screen">
-  <link href="stylesheets/vendor/settings.css" rel="stylesheet" media="screen">
-  <link href="stylesheets/vendor/navigation.css" rel="stylesheet" media="screen">
 
   <!-- All Theme Styles -->
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
@@ -144,19 +139,34 @@
 
     <div off-canvas="id-1 left push" class="off-canvas-cont">
       <div class="side-nav-tools">
+        <a href="#">
+          <i class="material-icons language"></i>
+        </a>
+        <a href="account-login.html">
+          <i class="material-icons person"></i>
+        </a>
+        <a href="#">
+          <i class="material-icons attach_money"></i>
+        </a>
+
         <a href="#" class="offcanvas-toggle inner-toggle">
           <i class="material-icons close"></i>
         </a>
       </div>
 
+      <div class="widget search margin-bottom-none">
+        <i class="icon material-icons search"></i>
+        <input type="text" class="form-control input-sm" placeholder="Search Shop">
+      </div>
+
       <nav class="offcanvas-navigation" role="navigation" data-back-btn-text="Back">
         <div class="menu-site-menu-container">
           <ul class="menu">
-            <li class="menu-item menu-item-has-children current">
+            <li class="menu-item menu-item-has-children">
               <a href="#">Home</a>
 
               <ul class="sub-menu">
-                <li class="menu-item current">
+                <li class="menu-item">
                   <a href="index.html">Hero Slider</a>
                 </li>
                 <li class="menu-item">
@@ -329,11 +339,11 @@
               </ul>
             </li>
 
-            <li class="menu-item-has-children">
+            <li class="menu-item-has-children current">
               <a href="#">Pages</a>
 
               <ul class="sub-menu">
-                <li>
+                <li class="current">
                   <a href="page-about.html">About Us</a>
                 </li>
                 <li>
@@ -476,193 +486,182 @@
       <header class="header-common"></header>
 
       <main>
-        <section class="fw-setion" style="margin-top: -1px;">
-          <div class="rev_slider_wrapper">
-           <div id="slider1" class="rev_slider"  data-version="5.0">
-            <ul>
-              <li data-transition="fade">
+        <!-- Page Title -->
+        <div class="page-title">
+          <div class="container">
+            <div class="breadcrumbs">
+              <a href="index.html">Home</a>
+              <span class="delimiter"><i class="material-icons keyboard_arrow_right"></i></span>
+              <a href="#">About Us</a>
+            </div>
 
-                <img src="img/slider/01.jpg"  alt="">
-
-                <div class="tp-caption"
-                   data-x="right" data-hoffset="['0','50','-160','-300']"
-                   data-y="center" data-voffset="['0','-200','0','-100']"
-                   data-width=“auto”
-                   data-height=“auto”
-                   data-transform_idle="o:1;"
-                   data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                   data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                   data-responsive_offset="on"
-                   data-start="1000">
-
-                   <div class="tp-caption"
-                      data-x="right" data-hoffset="['0','0','0','0']"
-                      data-y="center" data-voffset="['0','0','0','0']"
-                      >
-
-                      <img src="img/slider/01-1.png" alt=""
-                      data-ww="1070"
-                      data-hh="559"
-                      data-no-retina>
-                  </div>
-                 </div>
-
-                 <div class="tp-caption"
-                    data-x="center" data-hoffset="['-608','0','0','0']"
-                    data-y="center" data-voffset="['-130','80','25','-150']"
-                    data-fontsize="['48','48','48','48']"
-                    data-transform_idle="o:1;"
-                    data-transform_in="opacity:0;s:500;e:Power2.easeInOut;"
-                    data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                    data-responsive_offset="on"
-                    data-start="900">Phantom 4
-                 </div>
-
-                 <div class="tp-caption"
-                    data-x="center" data-hoffset="['-637','0','0','0']"
-                    data-y="center" data-voffset="['-70','120','70','130']"
-                    data-fontsize="['24','24','24','24']"
-                    data-transform_idle="o:1;"
-                    data-transform_in="x:10px;skX:10px;opacity:0;s:300;e:Power2.easeInOut;"
-                    data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                    data-responsive_offset="on"
-                    data-start="1500">Summer Special
-                  </div>
-
-                 <div class="tp-caption"
-                    data-x="center" data-hoffset="['-595','0','0','0']"
-                    data-y="center" data-voffset="['-30','150','100','160']"
-                    data-fontsize="['24','24','24','24']"
-                    data-transform_idle="o:1;"
-                    data-transform_in="x:10px;skX:10px;opacity:0;s:500;e:Power2.easeInOut;"
-                    data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                    data-start="1500">Enjoy ip to $200 off
-                  </div>
-
-                 <div class="tp-caption btn btn-primary rev-btn"
-                    data-x="center" data-hoffset="['-655','0','0','0']"
-                    data-y="center" data-voffset="['60','220','270','230']"
-                    data-transform_idle="o:1;"
-                    data-transform_in="x:10px;skX:10px;opacity:0;s:700;e:Power2.easeInOut;"
-                    data-actions='{"event":"click", "action":"simplelink", "target":"_self", "url":"http:\/\/www.8guild.com"}'
-                    data-link="http://www.google.com"
-                    data-start="1900"
-
-                    style="font-weight: 400; padding: 7px 19px;">Discover Now
-                 </div>
-              </li>
-
-            <li data-transition="fade">
-
-               <img src="img/slider/02.jpg"  data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Power3.easeInOut" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-bgparallax="2" class="rev-slidebg" data-no-retina>
-
-               <div class="tp-caption"
-                  data-x="center" data-hoffset="['-608','0','0','0']"
-                  data-y="center" data-voffset="['-130','80','25','0']"
-                  data-fontsize="['48','48','48','48']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="opacity:0;s:500;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-start="900"
-
-                  style="color: #fff;">Apple Watch
-               </div>
-
-               <div class="tp-caption"
-                  data-x="center" data-hoffset="['-667','0','0','0']"
-                  data-y="center" data-voffset="['-60','120','80','50']"
-                  data-fontsize="['24','24','24','24']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="x:10px;skX:10px;opacity:0;s:300;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-start="1500"
-
-                  style="color: #fff;">Summer Special
-                </div>
-
-               <div class="tp-caption"
-                  data-x="center" data-hoffset="['-625','0','0','0']"
-                  data-y="center" data-voffset="['-20','150','120','75']"
-                  data-fontsize="['24','24','24','24']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="x:10px;skX:10px;opacity:0;s:500;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-start="1500"
-
-                  style="color: #fff;">Enjoy ip to $200 off
-                </div>
-
-               <div class="tp-caption btn btn-primary rev-btn"
-                  data-x="center" data-hoffset="['-685','0','0','0']"
-                  data-y="center" data-voffset="['60','220','200','130']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="x:10px;skX:10px;opacity:0;s:700;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-actions='{"event":"click", "action":"simplelink", "target":"_self", "url":"http:\/\/www.8guild.com"}'
-                  data-link="http://www.google.com"
-                  data-start="1900"
-
-                  style="font-weight: 400; padding: 7px 19px;">Discover Now
-               </div>
-             </li>
-
-             <li data-transition="fade">
-
-               <img src="img/slider/03.jpg" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Power3.easeInOut" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-bgparallax="2" class="rev-slidebg" data-no-retina>
-
-               <div class="tp-caption"
-                  data-x="center" data-hoffset="['608','0','0','0']"
-                  data-y="center" data-voffset="['100','80','25','0']"
-                  data-fontsize="['48','48','48','48']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="opacity:0;s:500;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-start="900"
-
-                  style="color: #fff;">Braun Watch
-               </div>
-
-               <div class="tp-caption"
-                  data-x="center" data-hoffset="['552','0','0','0']"
-                  data-y="center" data-voffset="['170','120','70','50']"
-                  data-fontsize="['24','24','24','24']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="x:10px;skX:10px;opacity:0;s:300;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-start="1500"
-
-                  style="color: #fff;">Summer Special
-                </div>
-
-               <div class="tp-caption"
-                  data-x="center" data-hoffset="['589','0','0','0']"
-                  data-y="center" data-voffset="['210','150','100','75']"
-                  data-fontsize="['24','24','24','24']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="x:10px;skX:10px;opacity:0;s:500;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-start="1500"
-
-                  style="color: #fff;">Enjoy ip to $20 off
-                </div>
-
-               <div class="tp-caption btn btn-primary rev-btn"
-                  data-x="center" data-hoffset="['537','0','0','0']"
-                  data-y="center" data-voffset="['290','220','180','130']"
-                  data-transform_idle="o:1;"
-                  data-transform_in="x:10px;skX:10px;opacity:0;s:700;e:Power2.easeInOut;"
-                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
-                  data-actions='{"event":"click", "action":"simplelink", "target":"_self", "url":"http:\/\/www.8guild.com"}'
-                  data-link="http://www.google.com"
-                  data-start="1900"
-
-                  style="font-weight: 400; padding: 7px 19px;">Discover Now
-               </div>
-             </li>
-            </ul>
-           </div>
+            <div class="title pull-right">About Us</div>
           </div>
-        </section>
+        </div><!-- Page Title END -->
+
+        <!-- Content -->
+        <div class="container">
+          <!-- Block Title -->
+          <h2 class="text-left margin-bottom-2x">
+            B-Shop Oulet Store has seen some remarkable accomplishments over the past 30 years.
+          </h2><!-- Block Title END -->
+
+          <img src="img/about.jpg" alt="">
+
+          <!-- Block Title -->
+          <h2 class="block-title text-left margin-top-3x margin-bottom-2x">
+            History
+
+          </h2><!-- Block Title END -->
+
+          <div class="row margin-bottom-3x">
+            <div class="col-md-6">
+              <h6>1997</h6>
+              <p>Earrings add beauty to a face. Different types of earrings suit different faces. Women have a fascination for earrings of all metals. While gold earrings are more traditional, silver earrings are smart. Earrings are essentially worn in the ear lobe, but in recent times, the trend is to wear them</p>
+
+              <h6>1999</h6>
+              <p>Probably bigger than her car, what do you think is the biggest outlay of every modern woman? Yes – you’ve guessed it. Health and Beauty products. Not that men don’t have fingernails and toenails, hair all over their head (mostly), diet weight control issues, confidence issues, because they do – it’s </p>
+
+              <h6>2002</h6>
+              <p>Laser hair removal is getting more popular everyday. Most of us have our own conceptions about this treatment. it is important to know the science and the art of laser hair removal before you decide to get treated with lasers for hair removal.</p>
+
+              <p>What is laser- laser is the concentrated beam of light that is made of a single wavelength. This beam does not scatter light around but focuses it on one point. Therefore the energy emission is very high. In hair removal this laser energy is used to heat and burn the hair follicles. The full name of laser is Light Amplification by Stimulated Emission of Radiation.</p>
+            </div>
+
+            <div class="col-md-6">
+              <h6>2005</h6>
+              <p>There is an anti-aging revolution occurring in healthcare today and that you are the main beneficiary.</p>
+              <ul class="list-featured">
+                <li>“what’s not on the menu?”</li>
+                <li>“why am I being given these options and not others?”</li>
+                <li>remove “do I know the menu provider’s goals?”</li>
+                <li>“is this menu empowering for my original need, or are the choices</li>
+              </ul>
+
+              <h6>2010</h6>
+              <p>Traditional methods of smile enhancement, like veneers, often have required painful hours in the dentist’s chair. </p>
+
+              <img src="img/about1.jpg" alt="" />
+            </div>
+          </div>
+
+          <section class="fw-section padding-top-1x padding-bottom-10x" style="background-image: url(img/about3.jpg)">
+            <div class="row">
+              <div class="col-md-7 col-md-offset-1">
+                <blockquote class="text-light">
+                  <p>One of the great benefits of sauna and steam baths are the toning effects on the skin. They leave the skin soft, supple and glowing – in short, beautiful.</p>
+                  <cite>Bedismo, CEO Bedismo Global INC</cite>
+                </blockquote>
+              </div>
+            </div>
+          </section>
+
+          <!-- Elements block -->
+          <div class="row margin-top-4x margin-bottom-3x">
+            <div class="col-sm-4">
+              <div class="box-with-icon text-center">
+                <div class="bwi-inner">
+                  <div class="bwi-icon">
+                    <img src="img/bwi-img/03.png" alt="">
+                  </div>
+                  <h3 class="bwi-title">Return &amp; Exchange</h3>
+                  <p class="bwi-text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                  <a href="#" class="bwi-link">Learn more <i class="fe-icon-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="box-with-icon text-center">
+                <div class="bwi-inner">
+                  <div class="bwi-icon">
+                    <img src="img/bwi-img/02.png" alt="">
+                  </div>
+                  <h3 class="bwi-title">Live Support</h3>
+                  <p class="bwi-text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                  <a href="#" class="bwi-link">Learn more <i class="fe-icon-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="box-with-icon text-center">
+                <div class="bwi-inner">
+                  <div class="bwi-icon">
+                    <img src="img/bwi-img/01.png" alt="">
+                  </div>
+                  <h3 class="bwi-title">Gift Card Up To 50%</h3>
+                  <p class="bwi-text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                  <a href="#" class="bwi-link">Learn more <i class="fe-icon-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- Elements block -->
+
+          <!-- Block Title -->
+          <h2 class="block-title text-left margin-bottom-2x">
+            Contact us
+
+          </h2><!-- Block Title END -->
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Comment Form -->
+              <div class="comment-respond padding-bottom-2x">
+                <form method="post" id="comment-form" class="comment-form">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control input-alt" name="author" id="cf_name" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="email" class="form-control input-alt" name="email" placeholder="Email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cf_comment" class="sr-only">Comment</label>
+                    <textarea name="comment" id="cf_comment" class="form-control input-alt" rows="7" placeholder="Enter your comment"></textarea>
+                  </div>
+                  <p class="form-submit text-center">
+                    <button name="submit" type="submit" id="submit" class="btn btn-default">Send Message</button>
+                  </p>
+                </form>
+              </div><!-- .comment-respond -->
+            </div>
+
+            <div class="col-md-6 padding-bottom-3x">
+              <div class="panel-group" id="accordion_04">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <a class="panel-title collapsed" data-toggle="collapse" data-parent="#accordion_04" href="#collapseOne11">
+                      Anti Aging Skin Care The Electronics?
+                    </a>
+                  </div>
+                  <div id="collapseOne11" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                    </div>
+                  </div>
+                </div><!-- .panel -->
+                <div class="panel">
+                  <div class="panel-heading">
+                    <a class="panel-title collapsed" data-toggle="collapse" data-parent="#accordion_04" href="#collapseTwo22">
+                      Overview Of Plastic Surgery?
+                    </a>
+                  </div>
+                  <div id="collapseTwo22" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                    </div>
+                  </div>
+                </div><!-- .panel -->
+              </div><!-- .panel-group -->
+            </div>
+          </div>
+
+        </div><!-- Content END -->
       </main>
 
       <footer class="footer">
@@ -684,6 +683,18 @@
                       <div>(800) 8001-8588</div>
                     </div>
                   </div><!-- Callback Widget END -->
+
+                  <!-- Social Icons -->
+                  <div class="widget margin-top-1x">
+                    <div class="widget-title">
+                      Stay in touch
+                    </div>
+
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-instagram"></i></a>
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-facebook"></i></a>
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-pinterest"></i></a>
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-youtube"></i></a>
+                  </div><!-- Social Icons END -->
                 </div>
 
                 <div class="col-sm-6">
@@ -766,7 +777,13 @@
           <div class="container">
             <div class="column">
               <p>&copy; B-Shop 2015 - 2017. Made by <a href="http://8guild.com/" target="_blank">8Guild</a> with <i class="material-icons favorite text-danger"></i> love.</p>
-            </div>
+            </div><!-- .column -->
+
+            <div class="column">
+              <div class="cards">
+                <img src="img/cards.png" alt="Credit Cards">
+              </div>
+            </div><!-- .column -->
           </div>
         </div><!-- .copyright -->
       </footer>
@@ -779,20 +796,12 @@
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="js/vendor/nouislider.min.js"></script>
   <script src="js/vendor/jquery.magnific-popup.min.js"></script>
-  <script src="js/vendor/wNumb.js"></script>
   <script src="js/vendor/slick.min.js"></script>
   <script src="js/vendor/isotope.pkgd.min.js"></script>
+  <script src="js/vendor/wNumb.js"></script>
   <script src="js/vendor/velocity.min.js"></script>
   <script src="js/vendor/slidebars.min.js"></script>
-  <script src="js/vendor/jquery.themepunch.tools.min.js"></script>
   <script src="js/vendor/jquery.themepunch.revolution.min.js"></script>
-
-  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.slideanims.min.js"></script>
-  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.actions.min.js"></script>
-  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.layeranimation.min.js"></script>
-  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.kenburn.min.js"></script>
-  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.navigation.min.js"></script>
-  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.parallax.min.js"></script>
 
   <script src="js/scripts.js"></script>
 

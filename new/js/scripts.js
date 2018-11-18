@@ -164,7 +164,6 @@ jQuery(document).ready(function($) {
 					return element.find('img');
 				}
 			}
-
 		});
 	}
 
@@ -178,11 +177,29 @@ jQuery(document).ready(function($) {
     preloader: false,
 
     fixedContentPos: false
-  });
+	});
 
 	// All Scripts For On Load Init
 	// ----------------------------
 	$(window).on('load', function() {
+		// Common Elements Loading
+		// (Such as header and footer)
+		// ----------------------------------------
+		$('.header-common').load("_header.html", function(){
+			var pathname = window.location.pathname;
+			if (pathname.includes('index')){
+				$('#nav-home').addClass('current');
+			} else if (pathname.includes('aboutus')){
+				$('#nav-aboutus').addClass('current');
+			} else if (pathname.includes('products')){
+				$('#nav-products').addClass('current');
+			} else if (pathname.includes('news')){
+				$('#nav-news').addClass('current');
+			} else if (pathname.includes('contact')){
+				$('#nav-contact').addClass('current');
+			}
+		});
+
 		// Tiles Carousel
 		// (Settings are Customized Thru Data Attr)
 		// ----------------------------------------
@@ -408,7 +425,6 @@ jQuery(document).ready(function($) {
 				});
 			});
 		}
-
 	});
 
 });/* Document Ready End */
