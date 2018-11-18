@@ -175,9 +175,9 @@ $social-bar-zindex: 					$zindex-modal - 50;
 // Media queries (responsive breackpoints)
 // Desktop, Tablet, Mobile
 // ---------------------------------------
-$desktop:   		   'screen and (max-width: 1200px)';
-$tablet-land:      'screen and (max-width: 991px)';
-$tablet-port:    	 'screen and (max-width: 768px)';
-$mobile-land:		 	 'screen and (max-width: 480px)';
-$mobile-port:		 	 'screen and (max-width: 360px)';
-$nav-collapse: 		 $tablet-land;
+$desktop:       'screen and (max-width: 1200px)';
+$tablet-land:   'screen and (max-width: 991px)';
+$tablet-port:   'screen and (max-width: 768px)';
+$mobile-land:   'screen and (max-width: 480px)';
+$mobile-port:   'screen and (max-width: 360px)';
+$nav-collapse:  $tablet-land;

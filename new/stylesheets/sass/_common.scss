@@ -1,0 +1,15 @@
+// ***************************************
+// Common
+// ***************************************
+
+.mobile-top-buffer {
+	@media #{$nav-collapse} {
+        margin-top: 20px;
+	}
+}
+
+.mobile-hide {
+	@media #{$nav-collapse} {
+		display: none;
+	}
+}
