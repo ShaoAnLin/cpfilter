@@ -34,6 +34,13 @@
 	margin: 12px auto;
 }
 
+// brandname
+// ----
+.brandname {
+	font-size: 20px;
+	width: 150px
+}
+
 
 // Tools
 // -----
@@ -160,7 +167,6 @@
 // ----------
 .middle-bar {
 	width: 100%;
-	display: table;
 	> * {
 		display: table-cell;
 		&:first-child {
