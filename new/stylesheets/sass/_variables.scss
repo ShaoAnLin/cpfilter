@@ -6,19 +6,19 @@
 // Gray and brand colors for use across Theme
 // ------------------------------------------
 $gray-darker:             #000;
-$gray-dark:             	lighten($gray-darker, 30%);
+$gray-dark:               lighten($gray-darker, 30%);
 $gray:                    lighten($gray-darker, 50%);
 $gray-light:              lighten($gray-darker, 90%);
 $gray-lighter:            lighten($gray-darker, 96%);
 
 $brand-default:           #000;
 $brand-primary:           #007eff;
-$brand-info:		          #6a9fff;
+$brand-info:		      #6a9fff;
 $brand-success:           #2ece5f;
 $brand-warning:           #efbb1d;
 $brand-danger:            #ee4721;
 
-$body-bg: 						  	#f7f7f7;
+$body-bg:                 #f7f7f7;
 
 
 // Global Values

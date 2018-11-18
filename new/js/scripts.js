@@ -197,9 +197,12 @@ jQuery(document).ready(function($) {
 				$('#nav-contact').addClass('current');
 			}
 		});
+
 		$('.off-canvas-cont').load('_side_nav.html', function(){
 			bindEventOffCanvas();
 		});
+
+		$('.footer').load('_footer.html');
 
 		// Tiles Carousel
 		// (Settings are Customized Thru Data Attr)
