@@ -26,68 +26,66 @@ jQuery(document).ready(function($) {
   var controller = new slidebars();
   controller.init();
 
-	$( '.offcanvas-toggle' ).on( 'click', function ( event ) {
+	var bindEventOffCanvas = function(){
+		$( '.offcanvas-toggle' ).on( 'click', function ( event ) {
+			// Set initial menu height value
+			menuInitHeight = $( '.offcanvas-navigation .menu' ).height()
+			// Stop default action and bubbling
+			event.stopPropagation();
+			event.preventDefault();
 
-		// Set initial menu height value
-		menuInitHeight = $( '.offcanvas-navigation .menu' ).height()
-	  // Stop default action and bubbling
-	  event.stopPropagation();
-	  event.preventDefault();
+			// Toggle the Slidebar with id 'id-2'
+			controller.toggle( 'id-1' );
+		});
 
-	  // Toggle the Slidebar with id 'id-2'
-	  controller.toggle( 'id-1' );
-	} );
+		// Offcanvas Navigation
+		// --------------------
 
-	// Offcanvas Navigation
-	// --------------------
-
-	// Back Button
-	// -----------
-	var menuInitHeight,
+		// Back Button
+		// -----------
+		var menuInitHeight,
 		backBtnText = $( '.offcanvas-navigation' ).data( 'back-btn-text' ),
 		subMenu = $( '.offcanvas-navigation .sub-menu' );
 
+		$('.offcanvas-toggle').on('click', function() {
+			menuInitHeight = $( '.offcanvas-navigation .menu' ).height()
+		});
+		subMenu.each( function () {
+			$( this ).prepend( '<li class="back-btn"><a href="#">' + backBtnText + '</a></li>' );
+		} );
 
-	$('.offcanvas-toggle').on('click', function() {
-		menuInitHeight = $( '.offcanvas-navigation .menu' ).height()
-	});
-	subMenu.each( function () {
-		$( this ).prepend( '<li class="back-btn"><a href="#">' + backBtnText + '</a></li>' );
-	} );
+		var hasChildLink = $( '.menu-item-has-children > a' ),
+				backBtn = $( '.offcanvas-navigation .sub-menu .back-btn' );
 
-	var hasChildLink = $( '.menu-item-has-children > a' ),
-		backBtn = $( '.offcanvas-navigation .sub-menu .back-btn' );
+		backBtn.on( 'click', function ( e ) {
+			var self = this,
+				parent = $( self ).parent(),
+				siblingParent = $( self ).parent().parent().siblings().parent(),
+				menu = $( self ).parents( '.menu' );
 
-	backBtn.on( 'click', function ( e ) {
-		var self = this,
-			parent = $( self ).parent(),
-			siblingParent = $( self ).parent().parent().siblings().parent(),
-			menu = $( self ).parents( '.menu' );
+			parent.removeClass( 'in-view' );
+			siblingParent.removeClass( 'off-view' );
+			if ( siblingParent.attr( "class" ) === "menu" ) {
+				menu.velocity( { height: menuInitHeight }, 100 );
+			} else {
+				menu.velocity( { height: siblingParent.height() }, 100 );
+			}
+			e.stopPropagation();
+		} );
 
-		parent.removeClass( 'in-view' );
-		siblingParent.removeClass( 'off-view' );
-		if ( siblingParent.attr( "class" ) === "menu" ) {
+		hasChildLink.on( 'click', function ( e ) {
+			var self = this,
+				parent = $( self ).parent().parent(),
+				menu = $( self ).parents( '.menu' );
 
-			menu.velocity( { height: menuInitHeight }, 100 );
-		} else {
-			menu.velocity( { height: siblingParent.height() }, 100 );
-		}
+			parent.addClass( 'off-view' );
+			$( self ).parent().find( '> .sub-menu' ).addClass( 'in-view' );
+			menu.velocity( { height: $( self ).parent().find( '> .sub-menu' ).height() }, 100 );
 
-		e.stopPropagation();
-	} );
-
-	hasChildLink.on( 'click', function ( e ) {
-		var self = this,
-			parent = $( self ).parent().parent(),
-			menu = $( self ).parents( '.menu' );
-
-		parent.addClass( 'off-view' );
-		$( self ).parent().find( '> .sub-menu' ).addClass( 'in-view' );
-		menu.velocity( { height: $( self ).parent().find( '> .sub-menu' ).height() }, 100 );
-
-		e.preventDefault();
-		return false;
-	} );
+			e.preventDefault();
+			return false;
+		} );
+	}
 
 	// Coundown init
 	// -------------
@@ -198,6 +196,9 @@ jQuery(document).ready(function($) {
 			} else if (pathname.includes('contact')){
 				$('#nav-contact').addClass('current');
 			}
+		});
+		$('.off-canvas-cont').load('_side_nav.html', function(){
+			bindEventOffCanvas();
 		});
 
 		// Tiles Carousel
