@@ -2,6 +2,13 @@
 // Header Styles
 // ***************************************
 
+// Header Common
+// -------
+.header-common {
+	margin-top: $grid-vertical-step / 2;
+	margin-bottom: $grid-vertical-step / 2;
+}
+
 // Top Bar
 // -------
 .top-bar {
