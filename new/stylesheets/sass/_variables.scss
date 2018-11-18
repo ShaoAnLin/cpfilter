@@ -33,15 +33,15 @@ $link-color-hover: 				$brand-primary;
 
 // Typography
 // ----------
-$font-family-base: 			  'Roboto', sans-serif;
-$font-family-accent: 		  'Roboto Mono', monospace;
-$text-color: 						  $gray;
+$font-family-base: 		  'Roboto', sans-serif;
+$font-family-accent: 	  'Roboto Mono', monospace;
+$text-color: 			  $gray;
 
-$font-size-base:          14px;
+$font-size-base:          20px;
 $font-size-lead:          floor(($font-size-base * 1.77));
-$font-size-large: 				floor(($font-size-base * 1.148));
-$font-size-small: 				floor(($font-size-base * 0.88));
-$font-size-xs:         		floor(($font-size-base * 0.77));
+$font-size-large: 		  floor(($font-size-base * 1.148));
+$font-size-small: 		  floor(($font-size-base * 0.88));
+$font-size-xs:            floor(($font-size-base * 0.77));
 
 $font-size-h1:            floor(($font-size-base * 3.45));
 $font-size-h2:            floor(($font-size-base * 2.59));
