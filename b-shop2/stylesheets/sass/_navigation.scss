@@ -1,0 +1,348 @@
+// ***************************************
+// Navigation Styles
+// ***************************************
+
+// Main Nav
+// --------
+.main-nav {
+	padding: 0;
+	margin: 0;
+	a { text-decoration: none !important; }
+	.current > a, .current::after {
+		color: $main-menu-lvl-1-hover-color !important;
+	}
+	.lvl-1 {
+		margin-right: 18px;
+		margin-bottom: 0;
+		display: inline-block;
+		color: $dropdown-color;
+		&::after {
+			color: $main-menu-lvl-1-color;
+		}
+		a {
+			color: $main-menu-lvl-1-color;
+			display: block;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		// Main level hover effect
+		&:hover {
+			&::after { color: $main-menu-lvl-1-hover-color; }
+			> a { color: $main-menu-lvl-1-hover-color; }
+		}
+
+		.sub-menu {
+			margin-left: -$grid-vertical-step;
+			width: $sub-menu-lvl-1-width;
+
+			.dropdown {
+				position: relative;
+				&::after {
+					content: "\e5cc";
+					color: $main-menu-lvl-2-color;
+					@include backface-visibility(hidden);
+				}
+				&:hover {
+					&::after {
+						color: $main-menu-lvl-2-hover-color;
+					}
+				}
+			}
+
+			.lvl-2 {
+				display: block;
+				.sub-menu {
+					top: -25px;
+					left: calc(100% + #{$submenu-right-padding});
+					margin-left: 0;
+				}
+
+				&.dropdown {
+					// Buffer box, to engage hover
+					&::before {
+						position: absolute;
+						content: "";
+						width: 30%;
+						height: 100%;
+						top: 0;
+						right: 0;
+						@include transform(translateX(100%));
+					}
+				}
+
+				&::after {
+					right: -22px;
+				}
+			}
+		}
+	}
+}
+
+// Mega Menu
+// ---------
+.mega-menu {
+	margin-right: 40px;
+	.mega-menu-main {
+		> a {
+			padding: 12px 23px;
+			color: #fff;
+			background-color: $brand-default;
+			display: inline-block;
+			i {
+				font-size: 24px;
+				margin-right: 10px;
+			}
+		}
+		&:hover {
+			> a {
+				background-color: lighten($brand-default, 15%);
+			}
+		}
+		.mega-menu-base {
+			position: absolute;
+			top: 100%;
+			left: 15px;
+			opacity: 0;
+			visibility: hidden;
+			width: 100%;
+			z-index: 10;
+			margin: 0;
+			border-top: 1px solid $gray-light;
+			@include transition(.25s);
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 23px 20px 20px 23px;
+				width: $mega-menu-base-width;
+				background-color: $mega-menu-bg-color;
+			}
+			li {
+				&.has-children {
+					> a {
+						position: relative;
+						&::after {
+							font-family: 'material icons';
+							position: absolute;
+							right: 0;
+							content: "\e5cc";
+							@include backface-visibility(hidden);
+							@include transition(.25s);
+						}
+					}
+				}
+				a {
+					position: relative;
+					display: block;
+					// Link hover marker
+					&::before {
+						font-family: 'Material Icons';
+						content: "\e15b";
+						position: absolute;
+						top: -1px;
+						left: -14px;
+						margin-right: 3px;
+						visibility: hidden;
+						opacity: 0;
+						@include transition(opacity .35s);
+					}
+				}
+				&:hover {
+					>a {
+						@include transform(translateX(10px));
+						color: $submenu-hover-color;
+						text-decoration: none;
+						&::before {
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+					&.has-children {
+						a {
+							&::after {
+								@include transform(translateX(-10px));
+							}
+						}
+					}
+				}
+			}
+		}
+		&:hover {
+			.mega-menu-base {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		.mega-menu-base {
+			ul {
+				li {
+					.mega-menu-box {
+						width: calc(100% - #{$mega-menu-base-width});
+						position: absolute;
+						top: 0;
+						left: $mega-menu-base-width;
+						height: 100%;
+						background-color: $mega-menu-bg-color;
+						border-left: 1px solid $gray-light;
+						visibility: hidden;
+						opacity: 0;
+						@include transition(.25s);
+						vertical-align: top;
+						ul {
+							list-style: none;
+							width: $mega-menu-base-width;
+							border-right: 1px solid $gray-light;
+							display: inline-block;
+							height: 100%;
+							vertical-align: top;
+						}
+						@media #{$desktop} {
+							width: $mega-menu-base-width;
+						}
+					}
+					&:hover {
+						.mega-menu-box {
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.mega-menu-featured {
+	display: inline-block;
+	width: 618px;
+	text-align: center;
+	@media #{$desktop} {
+		display: none;
+	}
+	.mega-menu-fearured-item {
+		width: 30%;
+		display: inline-block;
+		padding: 10px;
+	}
+}
+// Offcanvas
+// Backdrop Styles
+// ---------------
+div[canvas=container][style*="transition"] {
+	.backdrop {
+		position: absolute;
+		content: "";
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		background-color: $gray-darker;
+		@include transition(.25s);
+		z-index: 40;
+	}
+	&[style] {
+		.backdrop {
+			visibility: visible;
+			opacity: .5;
+			@include transition(.35s);
+		}
+	}
+}
+
+// OffCanvas navigation styles & behaviour
+// ---------------------------------------
+.offcanvas-navigation {
+	position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: floor($grid-vertical-step / 2);
+  ul {
+  	list-style: none;
+  	padding: 0;
+
+    &.menu {
+      @include transform(translate3d(0,0,0));
+      @include transition(all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000));
+      &.off-view {
+        @include transform(translate3d(-100%,0,0));
+      }
+      &.in-view {
+        @include transform(translate3d(0,0,0));
+      }
+    }
+
+  	li {
+  		a {
+  			border: none;
+  			line-height: 2.15;
+				display: block;
+  		}
+  		&.current > a {
+  			color: $link-color-hover;
+  		}
+  		&.menu-item-has-children {
+  			> a:after {
+					display: inline-block;
+					vertical-align: middle;
+					font-family: "material icons";
+					content: "\e315";
+					line-height: 1;
+					margin-top: 3px;
+					float: right;
+					line-height: 1.5;
+  			}
+
+        // Submenu
+        > .sub-menu {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          top: 0;
+          right: -100%;
+          @include transform(translate3d(100%,0,0));
+          @include transition(all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000));
+          &.in-view {
+            @include transform(translate3d(0,0,0));
+          }
+          &.off-view {
+            @include transform(translate3d(-100%,0,0));
+          }
+          .current_page_item > a {
+            color: $link-color-hover;
+          }
+        }
+  		}
+      &.back-btn > a {
+				font-size: 16px;
+				color: $gray;
+				&::before {
+	        display: inline-block;
+	        vertical-align: middle;
+					font-family: "material icons";
+					content: "\e315";
+	        font-size: $font-size-xs;
+	        line-height: 1;
+	        margin: -2px 6px 0 0;
+	        @include transform(rotate(180deg));
+	      }
+			}
+			&.divider {
+				height: 1px;
+				background-color: $gray-light;
+				margin: 10px 0;
+			}
+			&.title {
+				font-size: 16px;
+				color: $gray;
+			}
+  	}
+  }
+}
+
+// Current page highlight
+// ----------------------
+.current-menu-item > a {
+  color: $link-color-hover;
+}

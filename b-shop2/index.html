@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>B-Shop | Hero Slider</title>
+
+  <!--SEO Meta Tags-->
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="8Guild" />
+
+  <!--Mobile Specific Meta Tag-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+
+  <!-- Material & Socicon Icons Fonts -->
+  <link rel="stylesheet" href="stylesheets/vendor/socicon.min.css">
+  <link rel="stylesheet" href="stylesheets/vendor/material-icons.min.css">
+
+  <!-- Bootstrap Core -->
+  <link href="stylesheets/vendor/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <!-- Slick Carousel Default Styles -->
+  <link href="stylesheets/vendor/slick.css" rel="stylesheet" media="screen">
+
+  <!-- Modal Default Styles -->
+  <link href="stylesheets/vendor/magnific-popup.css" rel="stylesheet" media="screen">
+
+  <!-- Offcanvas Plugin -->
+  <link href="stylesheets/vendor/slidebars.min.css" rel="stylesheet" media="screen">
+
+  <!-- Revolution Slider Plugin -->
+  <link href="stylesheets/vendor/layers.css" rel="stylesheet" media="screen">
+  <link href="stylesheets/vendor/settings.css" rel="stylesheet" media="screen">
+  <link href="stylesheets/vendor/navigation.css" rel="stylesheet" media="screen">
+
+  <!-- All Theme Styles -->
+  <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
+
+  <!--Modernizr / Detectizr-->
+  <script src="js/vendor/modernizr.custom.js"></script>
+  <script src="js/vendor/detectizr.min.js"></script>
+
+</head>
+
+<!-- Body -->
+<!-- "is-preloader preloading" is a helper classes if preloader is enabled. -->
+<body class="is-preloader preloading">
+
+  <!-- Preloader -->
+  <!--
+      Data API:
+      data-spinner - Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+      data-screenbg - Screen background color. Hex, RGB or RGBA colors
+   -->
+  <div id="preloader" data-spinner="spinner1" data-screenbg="#fff"></div>
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- Modal -->
+    <div class="modal fade" id="quickPreview" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <button type="button" class="close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-content">
+          <div class="row">
+            <div class="col-sm-7">
+              <a href="#img01"><img src="img/product-gallery/01.jpg" alt="Thumb"></a>
+            </div>
+            <div class="col-sm-5">
+              <div class="single-item-info">
+                <div class="item-logo">
+                  <img src="img/single-item-logo.png" alt="">
+                </div>
+                <div class="item-title">
+                  Controller
+                </div>
+                <div class="item-sku">
+                  Product Sku: 5110336
+                </div>
+                <div class="item-rating">
+                  <img src="img/rating.png" alt="">
+                  <span> (12 reviews)</span>
+                </div>
+                <div class="bages">
+                  <span class="bage">Sale 50%</span>
+                  <span class="bage bage-primary">New</span>
+                </div>
+                <div class="item-info">
+                  Eternity bands are a classy and stylish innovation to storm the market. These are often gifted for a marriage anniversary or at the time of giving birth to a child.
+                </div>
+                <div class="radio-group color">
+                  <div class="title">Choose Color</div>
+                  <span class="selected" style="background-color: #cabeae;"></span>
+                  <span style="background-color: #90b1db;"></span>
+                  <span style="background-color: #000;"></span>
+                </div>
+
+                <div class="cost">
+                  $250 <span>$280</span>
+                </div>
+                <div class="action-tools">
+                  <div class="select inline margin-bottom-none">
+                    <select name="select">
+                      <option>Qty 11</option>
+                      <option>Qty 12</option>
+                      <option>Qty 13</option>
+                    </select>
+                  </div>
+
+                  <a href="#" class="btn btn-gray right-icon margin-bottom-none">Add To Cart <i class="material-icons shopping_cart"></i></a>
+
+                  <a href="#" class="btn btn-gray btn-iconed margin-bottom-none"><i class="material-icons favorite_border"></i></a>
+                </div>
+                <div class="category">Gadgets / Electronics</div>
+
+                <!-- Popular Tags -->
+                <div class="widget tags-list-widget">
+                  <div class="tags-list">
+                    <a href="#">Clothes</a>
+                    <a href="#">Boots</a>
+                    <a href="#">Phones</a>
+                  </div>
+                </div><!-- Popular Tags END -->
+
+                <div class="social">
+                  <div class="title">Share product</div>
+
+                  <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-instagram"></i></a>
+                  <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-facebook"></i></a>
+                  <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-pinterest"></i></a>
+                  <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- .modal-content -->
+      </div><!-- .modal-dialog -->
+    </div><!-- Modal END -->
+
+    <div off-canvas="id-1 left push" class="off-canvas-cont">
+      <div class="side-nav-tools">
+        <a href="#">
+          <i class="material-icons language"></i>
+        </a>
+        <a href="account-login.html">
+          <i class="material-icons person"></i>
+        </a>
+        <a href="#">
+          <i class="material-icons attach_money"></i>
+        </a>
+
+        <a href="#" class="offcanvas-toggle inner-toggle">
+          <i class="material-icons close"></i>
+        </a>
+      </div>
+
+      <div class="widget search margin-bottom-none">
+        <i class="icon material-icons search"></i>
+        <input type="text" class="form-control input-sm" placeholder="Search Shop">
+      </div>
+
+      <nav class="offcanvas-navigation" role="navigation" data-back-btn-text="Back">
+        <div class="menu-site-menu-container">
+          <ul class="menu">
+            <li class="menu-item menu-item-has-children current">
+              <a href="#">Home</a>
+
+              <ul class="sub-menu">
+                <li class="menu-item current">
+                  <a href="index.html">Hero Slider</a>
+                </li>
+                <li class="menu-item">
+                  <a href="home-category-tiles.html">Category</a>
+                </li>
+                <li class="menu-item">
+                  <a href="home-featured-products.html">Feature</a>
+                </li>
+                <li class="menu-item">
+                  <a href="home-week-deals.html">Deals of the Week</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item menu-item-has-children">
+              <a href="#">Shop</a>
+
+              <ul class="sub-menu">
+                <li class="menu-item-has-children">
+                  <a href="#">Shop Pages</a>
+
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="shop-grid-3cols-sl.html">Grid 3 Cols Sidebar Left</a>
+                    </li>
+                    <li>
+                      <a href="shop-grid-2cols-sl.html">Grid 2 Cols Sidebar Left</a>
+                    </li>
+                    <li>
+                      <a href="shop-grid-3cols-sr.html">Grid 3 Cols Sidebar Right</a>
+                    </li>
+                    <li>
+                      <a href="shop-grid-2cols-sr.html">Grid 2 Cols Sidebar Right</a>
+                    </li>
+                    <li>
+                      <a href="shop-grid-4cols-ns.html">Grid 4 Cols No Sidebar</a>
+                    </li>
+                    <li>
+                      <a href="shop-grid-3cols-ns.html">Grid 3 Cols No Sidebar</a>
+                    </li>
+                    <li>
+                      <a href="shop-grid-2cols-ns.html">Grid 2 Cols No Sidebar</a>
+                    </li>
+                    <li>
+                      <a href="shop-list-sl.html">List Sidebar Left</a>
+                    </li>
+                    <li>
+                      <a href="shop-list-sr.html">List Sidebar Right</a>
+                    </li>
+                    <li>
+                      <a href="shop-list-ns.html">List No Sidebar</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="menu-item-has-children">
+                  <a href="#">Categories</a>
+
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="shop-cat-4cols.html">Grid 4 Columns</a>
+                    </li>
+                    <li>
+                      <a href="shop-cat-3cols.html">Grid 3 Columns</a>
+                    </li>
+                    <li>
+                      <a href="shop-cat-2cols.html">Grid 2 Columns</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="menu-item-has-children">
+                  <a href="#">Product Pages</a>
+
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="product-gallery-left.html">Product Gallery Left</a>
+                    </li>
+                    <li>
+                      <a href="product-gallery-right.html">Product Gallery Right</a>
+                    </li>
+                    <li>
+                      <a href="product-grouped.html">Product Grouped</a>
+                    </li>
+                    <li>
+                      <a href="product-affiliate.html">Product Affiliate</a>
+                    </li>
+                    <li>
+                      <a href="product-out-stock.html">Product Out of Stock</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="menu-item-has-children">
+                  <a href="#">Orders</a>
+
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="shopping-cart.html">Shopping Cart</a>
+                    </li>
+                    <li>
+                      <a href="checkout-simple.html">Checkout Simple</a>
+                    </li>
+                    <li>
+                      <a href="checkout-wizard.html">Checkout Steps Wizard</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="products-compare.html">Products Comparison</a>
+                </li>
+
+                <li class="menu-item-has-children">
+                  <a href="#">Account</a>
+
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="account-login.html">Log In / Sign Up</a>
+                    </li>
+                    <li>
+                      <a href="account-wishlist.html">Wishlist</a>
+                    </li>
+                    <li>
+                      <a href="account-order-track.html">Track your Order</a>
+                    </li>
+                    <li>
+                      <a href="account-orders-list.html">Orders List</a>
+                    </li>
+                    <li>
+                      <a href="account-order-info.html">Order Information</a>
+                    </li>
+                    <li>
+                      <a href="account-user-info.html">User Information</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item-has-children">
+              <a href="#">Blog</a>
+
+              <ul class="sub-menu">
+                <li>
+                  <a href="blog-grid.html">Grid View</a>
+                </li>
+                <li>
+                  <a href="blog-single.html">Single Post</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item-has-children">
+              <a href="#">Gallery</a>
+
+              <ul class="sub-menu">
+                <li>
+                  <a href="gallery-masonry.html">Masonry Grid</a>
+                </li>
+                <li>
+                  <a href="gallery-4cols.html">Grid 4 Columns</a>
+                </li>
+                <li>
+                  <a href="gallery-3cols.html">Grid 3 Columns</a>
+                </li>
+                <li>
+                  <a href="gallery-2cols.html">Grid 2 Columns</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item-has-children">
+              <a href="#">Pages</a>
+
+              <ul class="sub-menu">
+                <li>
+                  <a href="page-about.html">About Us</a>
+                </li>
+                <li>
+                  <a href="page-faq.html">FAQ</a>
+                </li>
+                <li>
+                  <a href="page-store-locator.html">Store Locator</a>
+                </li>
+                <li>
+                  <a href="page-404.html">404</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="elements.html">Elements</a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="menu-item-has-children">
+                <a href="#">Men</a>
+
+              <ul class="sub-menu">
+                <li class="title">Outerwear</li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Walking</a></li>
+                <li><a href="#">Baseball</a></li>
+                <li><a href="#">Hiking &amp; Trail</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Tennis</a></li>
+
+                <li class="divider"></li>
+
+                <li class="title">Clothing</li>
+                <li><a href="#">Short Sleeve &amp; Sleeveless Shirts</a></li>
+                <li><a href="#">Long Sleeve Shirts</a></li>
+                <li><a href="#">Jackets &amp; Hoodies</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Socks</a></li>
+                <li><a href="#">Accessories and Gear</a></li>
+                <li><a href="#">Recently Reduced Clothing</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-item-has-children">
+
+              <a href="#">Women</a>
+
+              <ul class="sub-menu">
+                <li class="title">Outerwear</li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Walking</a></li>
+                <li><a href="#">Baseball</a></li>
+                <li><a href="#">Hiking &amp; Trail</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Tennis</a></li>
+
+                <li class="divider"></li>
+
+                <li class="title">Clothing</li>
+                <li><a href="#">Short Sleeve &amp; Sleeveless Shirts</a></li>
+                <li><a href="#">Long Sleeve Shirts</a></li>
+                <li><a href="#">Jackets &amp; Hoodies</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Socks</a></li>
+                <li><a href="#">Accessories and Gear</a></li>
+                <li><a href="#">Recently Reduced Clothing</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-item-has-children">
+
+              <a href="#">Sales</a>
+
+              <ul class="sub-menu">
+                <li class="title">Outerwear</li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Walking</a></li>
+                <li><a href="#">Baseball</a></li>
+                <li><a href="#">Hiking &amp; Trail</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Tennis</a></li>
+
+                <li class="divider"></li>
+
+                <li class="title">Clothing</li>
+                <li><a href="#">Short Sleeve &amp; Sleeveless Shirts</a></li>
+                <li><a href="#">Long Sleeve Shirts</a></li>
+                <li><a href="#">Jackets &amp; Hoodies</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Socks</a></li>
+                <li><a href="#">Accessories and Gear</a></li>
+                <li><a href="#">Recently Reduced Clothing</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-item-has-children">
+
+              <a href="#">Shoes</a>
+
+              <ul class="sub-menu">
+                <li class="title">Outerwear</li>
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Walking</a></li>
+                <li><a href="#">Baseball</a></li>
+                <li><a href="#">Hiking &amp; Trail</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Tennis</a></li>
+
+                <li class="divider"></li>
+
+                <li class="title">Clothing</li>
+                <li><a href="#">Short Sleeve &amp; Sleeveless Shirts</a></li>
+                <li><a href="#">Long Sleeve Shirts</a></li>
+                <li><a href="#">Jackets &amp; Hoodies</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Socks</a></li>
+                <li><a href="#">Accessories and Gear</a></li>
+                <li><a href="#">Recently Reduced Clothing</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div canvas="container">
+      <!-- Backdrop for Canvas -->
+      <div class="backdrop offcanvas-toggle"></div>
+
+      <header class="header">
+        <!-- Top Bar Section -->
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <span class="text-primary">Welcome to B-Shop! Here is a free text! <i class="material-icons info_outline"></i></span>
+              </div>
+              <div class="col-sm-4 text-center">
+                <a href="#" class="social socicon-instagram"></a>
+                <a href="#" class="social socicon-facebook"></a>
+                <a href="#" class="social socicon-pinterest"></a>
+                <a href="#" class="social socicon-instagram"></a>
+                <a href="#" class="social socicon-youtube"></a>
+                <a href="#" class="social socicon-dribbble"></a>
+              </div>
+              <div class="col-sm-4 text-right">
+                <ul class="tools">
+                  <li class="dropdown">
+                    <a href="#">
+                      <i class="material-icons language"></i>
+                      <span class="hidden-md">Language</span>
+                    </a>
+
+                    <ul class="sub-menu">
+                      <li><a href="#">Russian</a></li>
+                      <li><a href="#">French</a></li>
+                      <li><a href="#">Mandarin</a></li>
+                      <li><a href="#">Italian</a></li>
+                      <li><a href="#">Gorgean</a></li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <i class="material-icons person"></i>
+                      <span class="hidden-md">My Account</span>
+                    </a>
+                  </li>
+
+                  <li class="dropdown">
+                    <a href="#">
+                      <span>$</span>
+                      <span class="hidden-md">Currency</span>
+                    </a>
+
+                    <ul class="sub-menu">
+                      <li><a href="#">USD</a></li>
+                      <li><a href="#">EUR</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div><!-- Top Bar Section END -->
+
+        <!-- Middle Bar Section -->
+        <div class="container">
+          <div class="middle-bar">
+            <div class="column left-side">
+              <!-- Main Logo -->
+              <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="">
+              </a><!-- Main Logo END -->
+
+              <div class="widget search">
+                <i class="icon material-icons search"></i>
+                <input type="text" class="form-control input-sm" placeholder="Search Shop">
+              </div>
+            </div>
+
+            <!-- Header Tools -->
+            <div class="column">
+              <div class="header-tools text-right">
+                <a href="products-compare.html" class="header-tools-link wishlist">
+                  <i class="material-icons swap_horiz"></i>
+                </a>
+
+                <a href="account-wishlist.html" class="header-tools-link wishlist">
+                  <i class="material-icons favorite"></i>
+                </a>
+
+                <!-- Cart dropdown element -->
+                <div class="cart-container dropdown">
+                  <a href="#" class="header-tools-link cart-link">
+                    <i class="material-icons shopping_cart"></i>
+                    <span class="counter">24</span>
+                  </a>
+
+                  <div class="sub-menu">
+                    <div class="widget cart-widget">
+                      <div class="widget-title">
+                        Latest Products
+                      </div>
+
+                      <ul class="cart-list">
+                        <!-- Cart List Item -->
+                        <li>
+                          <a href="product-gallery-left.html" class="cart-thumb">
+                            <img src="img/shop/cart-widget/01.jpg" alt="">
+                          </a>
+
+                          <div class="info-cont">
+                            <a href="product-gallery-left.html" class="item-title">Smart Drone</a>
+
+                            <div class="category">
+                              Phones
+                              <span class="cost">$ 140</span>
+                            </div>
+                          </div>
+                        </li><!-- Cart List Item END -->
+
+                        <!-- Cart List Item -->
+                        <li>
+                          <a href="product-gallery-left.html" class="cart-thumb">
+                            <img src="img/shop/cart-widget/02.jpg" alt="">
+                          </a>
+
+                          <div class="info-cont">
+                            <a href="product-gallery-left.html" class="item-title">Smart Drone</a>
+
+                            <div class="category">
+                              Phones
+
+                              <span class="cost">$140</span>
+                            </div>
+                          </div>
+                        </li><!-- Cart List Item END -->
+
+                        <!-- Cart Total -->
+                        <li>
+                          <div class="total">
+                            Total
+
+                            <div class="cost">$80 0000</div>
+                          </div>
+                        </li><!-- Cart Total END -->
+                      </ul>
+
+                      <a href="shopping-cart.html" class="btn btn-default btn-block margin-right-none">Go to cart</a>
+                      <a href="checkout-wizard.html" class="btn btn-primary btn-block margin-right-none margin-bottom-none">Poceed to checkout</a>
+                    </div>
+                  </div>
+                </div><!-- Cart dropdown element END -->
+              </div>
+            </div><!-- Header Tools END -->
+          </div>
+        </div><!-- Middle Bar Section -->
+
+        <!-- Navbar Section -->
+        <div class="navbar">
+          <div class="container">
+            <!-- Mega Menu -->
+            <div class="mega-menu">
+              <div class="mega-menu-main">
+                <a href="#"><i class="material-icons view_headline"></i>All Departments</a>
+
+                <div class="mega-menu-base">
+                  <ul>
+                    <li class="text-bold">
+                      <a href="#">Deal of the day</a>
+                    </li>
+                    <li class="text-bold">
+                      <a href="#">Bestsellers</a>
+                    </li>
+                    <li class="text-bold">
+                      <a href="#">Trending</a>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Smart gadgets</a>
+
+                      <div class="mega-menu-box">
+                        <ul>
+                          <li><a href="#">Phantom</a></li>
+                          <li><a href="#">Osmo</a></li>
+                          <li><a href="#">Inspire</a></li>
+                          <li><a href="#">Ronin</a></li>
+                          <li><a href="#">Industrial</a></li>
+                        </ul>
+
+                        <div class="mega-menu-featured">
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/01.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 3 4K</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/02.jpg" alt=""></a>
+                            <a href="#">HTC Vive</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/03.jpg" alt=""></a>
+                            <a href="#">PS Controller</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/04.jpg" alt=""></a>
+                            <a href="#">Portable Lens</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/05.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 2</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/06.jpg" alt=""></a>
+                            <a href="#">Smart Cube</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Drones</a>
+
+                      <div class="mega-menu-box">
+                        <ul>
+                          <li><a href="#">Phantom</a></li>
+                          <li><a href="#">Osmo</a></li>
+                          <li><a href="#">Inspire</a></li>
+                          <li><a href="#">Ronin</a></li>
+                          <li><a href="#">Industrial</a></li>
+                        </ul>
+
+                        <div class="mega-menu-featured">
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/01.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 3 4K</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/02.jpg" alt=""></a>
+                            <a href="#">HTC Vive</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/03.jpg" alt=""></a>
+                            <a href="#">PS Controller</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/04.jpg" alt=""></a>
+                            <a href="#">Portable Lens</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/05.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 2</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/06.jpg" alt=""></a>
+                            <a href="#">Smart Cube</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Phones</a>
+
+                      <div class="mega-menu-box">
+                        <ul>
+                          <li><a href="#">Phantom</a></li>
+                          <li><a href="#">Osmo</a></li>
+                          <li><a href="#">Inspire</a></li>
+                          <li><a href="#">Ronin</a></li>
+                          <li><a href="#">Industrial</a></li>
+                        </ul>
+
+                        <div class="mega-menu-featured">
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/01.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 3 4K</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/02.jpg" alt=""></a>
+                            <a href="#">HTC Vive</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/03.jpg" alt=""></a>
+                            <a href="#">PS Controller</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/04.jpg" alt=""></a>
+                            <a href="#">Portable Lens</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/05.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 2</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/06.jpg" alt=""></a>
+                            <a href="#">Smart Cube</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Tablets</a>
+
+                      <div class="mega-menu-box">
+                        <ul>
+                          <li><a href="#">Phantom</a></li>
+                          <li><a href="#">Osmo</a></li>
+                          <li><a href="#">Inspire</a></li>
+                          <li><a href="#">Ronin</a></li>
+                          <li><a href="#">Industrial</a></li>
+                        </ul>
+
+                        <div class="mega-menu-featured">
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/01.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 3 4K</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/02.jpg" alt=""></a>
+                            <a href="#">HTC Vive</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/03.jpg" alt=""></a>
+                            <a href="#">PS Controller</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/04.jpg" alt=""></a>
+                            <a href="#">Portable Lens</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/05.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 2</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/06.jpg" alt=""></a>
+                            <a href="#">Smart Cube</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Notebooks</a>
+
+                      <div class="mega-menu-box">
+                        <ul>
+                          <li><a href="#">Phantom</a></li>
+                          <li><a href="#">Osmo</a></li>
+                          <li><a href="#">Inspire</a></li>
+                          <li><a href="#">Ronin</a></li>
+                          <li><a href="#">Industrial</a></li>
+                        </ul>
+
+                        <div class="mega-menu-featured">
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/01.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 3 4K</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/02.jpg" alt=""></a>
+                            <a href="#">HTC Vive</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/03.jpg" alt=""></a>
+                            <a href="#">PS Controller</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/04.jpg" alt=""></a>
+                            <a href="#">Portable Lens</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/05.jpg" alt=""></a>
+                            <a href="#">DJI - Phantom 2</a>
+                          </div>
+
+                          <div class="mega-menu-fearured-item">
+                            <a href="#"><img src="img/mega-menu/06.jpg" alt=""></a>
+                            <a href="#">Smart Cube</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div><!-- Mega Menu END -->
+
+            <!-- Main Navigation -->
+            <ul class="main-nav">
+              <!-- Main Navigation Level -->
+              <li class="nav-item dropdown lvl-1 current">
+                <a href="#">Home</a>
+
+                <ul class="sub-menu">
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item lvl-2 current">
+                    <a href="index.html">Hero Slider</a>
+                  </li><!-- 2nd Navigation Level END -->
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item lvl-2">
+                    <a href="home-category-tiles.html">Category Tiles</a>
+                  </li><!-- 2nd Navigation Level END -->
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item lvl-2">
+                    <a href="home-featured-products.html">Featured Products</a>
+                  </li><!-- 2nd Navigation Level END -->
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item lvl-2">
+                    <a href="home-week-deals.html">Deals of the Week</a>
+                  </li><!-- 2nd Navigation Level END -->
+                </ul>
+              </li><!-- Main Navigation Level END -->
+              <!-- Main Navigation Level -->
+              <li class="nav-item dropdown lvl-1">
+                <a href="#">Shop</a>
+
+                <ul class="sub-menu">
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item dropdown lvl-2">
+                    <a href="#">Shop Pages</a>
+
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="shop-grid-3cols-sl.html">Grid 3 Cols Sidebar Left</a>
+                      </li>
+                      <li>
+                        <a href="shop-grid-2cols-sl.html">Grid 2 Cols Sidebar Left</a>
+                      </li>
+                      <li>
+                        <a href="shop-grid-3cols-sr.html">Grid 3 Cols Sidebar Right</a>
+                      </li>
+                      <li>
+                        <a href="shop-grid-2cols-sr.html">Grid 2 Cols Sidebar Right</a>
+                      </li>
+                      <li>
+                        <a href="shop-grid-4cols-ns.html">Grid 4 Cols No Sidebar</a>
+                      </li>
+                      <li>
+                        <a href="shop-grid-3cols-ns.html">Grid 3 Cols No Sidebar</a>
+                      </li>
+                      <li>
+                        <a href="shop-grid-2cols-ns.html">Grid 2 Cols No Sidebar</a>
+                      </li>
+                      <li>
+                        <a href="shop-list-sl.html">List Sidebar Left</a>
+                      </li>
+                      <li>
+                        <a href="shop-list-sr.html">List Sidebar Right</a>
+                      </li>
+                      <li>
+                        <a href="shop-list-ns.html">List No Sidebar</a>
+                      </li>
+                    </ul>
+                  </li><!-- 2nd Navigation Level END -->
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item dropdown lvl-2">
+                    <a href="#">Categories</a>
+
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="shop-cat-4cols.html">Grid 4 Columns</a>
+                      </li>
+                      <li>
+                        <a href="shop-cat-3cols.html">Grid 3 Columns</a>
+                      </li>
+                      <li>
+                        <a href="shop-cat-2cols.html">Grid 2 Columns</a>
+                      </li>
+                    </ul>
+                  </li><!-- 2nd Navigation Level END -->
+                  <li class="nav-item dropdown lvl-2">
+                    <a href="#">Product Pages</a>
+
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="product-gallery-left.html">Product Gallery Left</a>
+                      </li>
+                      <li>
+                        <a href="product-gallery-right.html">Product Gallery Right</a>
+                      </li>
+                      <li>
+                        <a href="product-grouped.html">Product Grouped</a>
+                      </li>
+                      <li>
+                        <a href="product-affiliate.html">Product Affiliate</a>
+                      </li>
+                      <li>
+                        <a href="product-out-stock.html">Product Out of Stock</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item dropdown lvl-2">
+                    <a href="#">Orders</a>
+
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="shopping-cart.html">Shopping Cart</a>
+                      </li>
+                      <li>
+                        <a href="checkout-simple.html">Checkout Simple</a>
+                      </li>
+                      <li>
+                        <a href="checkout-wizard.html">Checkout Steps Wizard</a>
+                      </li>
+                    </ul>
+
+                  </li><!-- 2nd Navigation Level END -->
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item lvl-2">
+                    <a href="products-compare.html">Products Comparison</a>
+                  </li><!-- 2nd Navigation Level END -->
+                  <!-- 2nd Navigation Level -->
+                  <li class="nav-item dropdown lvl-2">
+                    <a href="#">Account</a>
+
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="account-login.html">Log In / Sign Up</a>
+                      </li>
+                      <li>
+                        <a href="account-wishlist.html">Wishlist</a>
+                      </li>
+                      <li>
+                        <a href="account-order-track.html">Track your Order</a>
+                      </li>
+                      <li>
+                        <a href="account-orders-list.html">Orders List</a>
+                      </li>
+                      <li>
+                        <a href="account-order-info.html">Order Information</a>
+                      </li>
+                      <li>
+                        <a href="account-user-info.html">User Information</a>
+                      </li>
+                    </ul>
+                  </li><!-- 2nd Navigation Level END -->
+                </ul>
+              </li><!-- Main Navigation Level END -->
+              <!-- Main Navigation Level -->
+              <li class="nav-item dropdown lvl-1">
+                <a href="#">Blog</a>
+
+                <ul class="sub-menu">
+                  <li class="nav-item lvl-2">
+                    <a href="blog-grid.html">Grid View</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="blog-single.html">Single Post</a>
+                  </li>
+                </ul>
+              </li><!-- Main Navigation Level END-->
+              <li class="nav-item dropdown lvl-1">
+                <a href="#">Gallery</a>
+
+                <ul class="sub-menu">
+                  <li class="nav-item lvl-2">
+                    <a href="gallery-masonry.html">Masonry Grid</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="gallery-4cols.html">Grid 4 Columns</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="gallery-3cols.html">Grid 3 Columns</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="gallery-2cols.html">Grid 2 Columns</a>
+                  </li>
+                </ul>
+              </li><!-- Main Navigation Level END-->
+              <li class="nav-item dropdown lvl-1">
+                <a href="#">Pages</a>
+
+                <ul class="sub-menu">
+                  <li class="nav-item lvl-2">
+                    <a href="page-about.html">About Us</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="page-faq.html">FAQ</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="page-store-locator.html">Store Locator</a>
+                  </li>
+                  <li class="nav-item lvl-2">
+                    <a href="page-404.html">404</a>
+                  </li>
+                </ul>
+              </li><!-- Main Navigation Level END-->
+              <li class="nav-item lvl-1">
+                <a href="elements.html">Elements</a>
+              </li><!-- Main Navigation Level END-->
+            </ul><!-- Main Navigation END -->
+          </div>
+        </div><!-- Navbar Section END -->
+
+        <!-- Mobile Tools -->
+        <div class="mobile-view">
+          <div class="container">
+            <!-- OffCanvas Toggle -->
+            <a href="#" class="offcanvas-toggle">
+              <i class="material-icons menu"></i>
+            </a>
+
+            <!-- Mobile View Logo -->
+            <a href="index.html" class="logo">
+              <img src="img/logo.png" alt="">
+            </a>
+
+            <div class="mobile-tools">
+              <!-- Wishlist Link -->
+              <a href="account-wishlist.html" class="wishlist">
+                <i class="material-icons favorite"></i>
+              </a>
+
+              <!-- Cart dropdown element -->
+              <div class="cart-container">
+                <a href="shopping-cart.html" class="cart-link">
+                  <i class="material-icons shopping_cart"></i>
+                  <span class="counter">24</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="fw-setion" style="margin-top: -1px;">
+          <div class="rev_slider_wrapper">
+           <div id="slider1" class="rev_slider"  data-version="5.0">
+            <ul>
+              <li data-transition="fade">
+
+                <img src="img/slider/01.jpg"  alt="">
+
+                <div class="tp-caption"
+                   data-x="right" data-hoffset="['0','50','-160','-300']"
+                   data-y="center" data-voffset="['0','-200','0','-100']"
+                   data-width=“auto”
+                   data-height=“auto”
+                   data-transform_idle="o:1;"
+                   data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
+                   data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                   data-responsive_offset="on"
+                   data-start="1000"
+
+                   style="color: #;">
+
+                   <div class="tp-caption"
+                      data-x="right" data-hoffset="['0','0','0','0']"
+                      data-y="center" data-voffset="['0','0','0','0']"
+                      >
+
+                      <img src="img/slider/01-1.png" alt=""
+                      data-ww="1070"
+                      data-hh="559"
+                      data-no-retina>
+                  </div>
+                 </div>
+
+                 <div class="tp-caption"
+                    data-x="center" data-hoffset="['-608','0','0','0']"
+                    data-y="center" data-voffset="['-130','80','25','-150']"
+                    data-fontsize="['48','48','48','48']"
+                    data-transform_idle="o:1;"
+                    data-transform_in="opacity:0;s:500;e:Power2.easeInOut;"
+                    data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                    data-responsive_offset="on"
+                    data-start="900">Phantom 4
+                 </div>
+
+                 <div class="tp-caption"
+                    data-x="center" data-hoffset="['-637','0','0','0']"
+                    data-y="center" data-voffset="['-70','120','70','130']"
+                    data-fontsize="['24','24','24','24']"
+                    data-transform_idle="o:1;"
+                    data-transform_in="x:10px;skX:10px;opacity:0;s:300;e:Power2.easeInOut;"
+                    data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                    data-responsive_offset="on"
+                    data-start="1500"
+
+                    style="color: #;">Summer Special
+                  </div>
+
+                 <div class="tp-caption"
+                    data-x="center" data-hoffset="['-595','0','0','0']"
+                    data-y="center" data-voffset="['-30','150','100','160']"
+                    data-fontsize="['24','24','24','24']"
+                    data-transform_idle="o:1;"
+                    data-transform_in="x:10px;skX:10px;opacity:0;s:500;e:Power2.easeInOut;"
+                    data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                    data-start="1500"
+
+                    style="color: #;">Enjoy ip to $200 off
+                  </div>
+
+                 <div class="tp-caption btn btn-primary rev-btn"
+                    data-x="center" data-hoffset="['-655','0','0','0']"
+                    data-y="center" data-voffset="['60','220','270','230']"
+                    data-transform_idle="o:1;"
+                    data-transform_in="x:10px;skX:10px;opacity:0;s:700;e:Power2.easeInOut;"
+                    data-actions='{"event":"click", "action":"simplelink", "target":"_self", "url":"http:\/\/www.8guild.com"}'
+                    data-link="http://www.google.com"
+                    data-start="1900"
+
+                    style="font-weight: 400; padding: 7px 19px;">Discover Now
+                 </div>
+              </li>
+
+            <li data-transition="fade">
+
+               <img src="img/slider/02.jpg"  data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Power3.easeInOut" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-bgparallax="2" class="rev-slidebg" data-no-retina>
+
+               <div class="tp-caption"
+                  data-x="center" data-hoffset="['-608','0','0','0']"
+                  data-y="center" data-voffset="['-130','80','25','0']"
+                  data-fontsize="['48','48','48','48']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="opacity:0;s:500;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-start="900"
+
+                  style="color: #fff;">Apple Watch
+               </div>
+
+               <div class="tp-caption"
+                  data-x="center" data-hoffset="['-667','0','0','0']"
+                  data-y="center" data-voffset="['-60','120','80','50']"
+                  data-fontsize="['24','24','24','24']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="x:10px;skX:10px;opacity:0;s:300;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-start="1500"
+
+                  style="color: #fff;">Summer Special
+                </div>
+
+               <div class="tp-caption"
+                  data-x="center" data-hoffset="['-625','0','0','0']"
+                  data-y="center" data-voffset="['-20','150','120','75']"
+                  data-fontsize="['24','24','24','24']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="x:10px;skX:10px;opacity:0;s:500;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-start="1500"
+
+                  style="color: #fff;">Enjoy ip to $200 off
+                </div>
+
+               <div class="tp-caption btn btn-primary rev-btn"
+                  data-x="center" data-hoffset="['-685','0','0','0']"
+                  data-y="center" data-voffset="['60','220','200','130']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="x:10px;skX:10px;opacity:0;s:700;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-actions='{"event":"click", "action":"simplelink", "target":"_self", "url":"http:\/\/www.8guild.com"}'
+                  data-link="http://www.google.com"
+                  data-start="1900"
+
+                  style="font-weight: 400; padding: 7px 19px;">Discover Now
+               </div>
+             </li>
+
+             <li data-transition="fade">
+
+               <img src="img/slider/03.jpg" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Power3.easeInOut" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-bgparallax="2" class="rev-slidebg" data-no-retina>
+
+               <div class="tp-caption"
+                  data-x="center" data-hoffset="['608','0','0','0']"
+                  data-y="center" data-voffset="['100','80','25','0']"
+                  data-fontsize="['48','48','48','48']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="opacity:0;s:500;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-start="900"
+
+                  style="color: #fff;">Braun Watch
+               </div>
+
+               <div class="tp-caption"
+                  data-x="center" data-hoffset="['552','0','0','0']"
+                  data-y="center" data-voffset="['170','120','70','50']"
+                  data-fontsize="['24','24','24','24']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="x:10px;skX:10px;opacity:0;s:300;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-start="1500"
+
+                  style="color: #fff;">Summer Special
+                </div>
+
+               <div class="tp-caption"
+                  data-x="center" data-hoffset="['589','0','0','0']"
+                  data-y="center" data-voffset="['210','150','100','75']"
+                  data-fontsize="['24','24','24','24']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="x:10px;skX:10px;opacity:0;s:500;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-start="1500"
+
+                  style="color: #fff;">Enjoy ip to $20 off
+                </div>
+
+               <div class="tp-caption btn btn-primary rev-btn"
+                  data-x="center" data-hoffset="['537','0','0','0']"
+                  data-y="center" data-voffset="['290','220','180','130']"
+                  data-transform_idle="o:1;"
+                  data-transform_in="x:10px;skX:10px;opacity:0;s:700;e:Power2.easeInOut;"
+                  data-transform_out="opacity:0;s:300;s:300;e:Power3.easeInOut"
+                  data-actions='{"event":"click", "action":"simplelink", "target":"_self", "url":"http:\/\/www.8guild.com"}'
+                  data-link="http://www.google.com"
+                  data-start="1900"
+
+                  style="font-weight: 400; padding: 7px 19px;">Discover Now
+               </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+        </section>
+
+        <section class="fw-section">
+          <div class="container">
+            <!-- Block Title -->
+            <h2 class="block-title text-left margin-top-3x margin-bottom-2x">
+              Categories
+            </h2><!-- Block Title END -->
+          </div>
+
+          <!-- Item Carousel -->
+          <div class="items-carousel" data-slick='{"arrows": true, "dots": false, }'>
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/01.jpg" alt="">
+              </a>
+              <div class="tile-title">Gaming Accessories</div>
+            </div><!-- Category Tile END -->
+
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/02.jpg" alt="">
+              </a>
+              <div class="tile-title">Smartwatches</div>
+            </div><!-- Category Tile END -->
+
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/03.jpg" alt="">
+              </a>
+              <div class="tile-title">Home Accessories</div>
+            </div><!-- Category Tile END -->
+
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/04.jpg" alt="">
+              </a>
+              <div class="tile-title">Drones</div>
+            </div><!-- Category Tile END -->
+
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/05.jpg" alt="">
+              </a>
+              <div class="tile-title">Cameras</div>
+            </div><!-- Category Tile END -->
+
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/06.jpg" alt="">
+              </a>
+              <div class="tile-title">Home Accessories</div>
+            </div><!-- Category Tile END -->
+
+            <!-- Category Tile -->
+            <div class="tile tile-category">
+              <a href="#" class="preview-box">
+                <img src="img/tiles/category/04.jpg" alt="">
+              </a>
+              <div class="tile-title">Drones</div>
+            </div><!-- Category Tile END -->
+          </div><!-- Item Carousel END -->
+        </section>
+
+        <section class="container margin-top-3x margin-bottom-3x">
+          <!-- Block Title -->
+          <h2 class="block-title text-left margin-bottom-2x">
+            New Arrivals
+          </h2><!-- Block Title END -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- Shop Grid Tile -->
+                  <div class="tile">
+                    <div class="preview-box">
+                      <div class="preview-carousel" data-slick='{"arrows": false, "dots": true}'>
+                        <img src="img/tiles/slider-color/01.jpg" data-color="#8a7b50" alt="">
+                        <img src="img/tiles/slider-color/02.jpg" data-color="#e9e4e0" alt="">
+                      </div>
+
+                      <div class="preview-meta">
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons favorite_border"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" data-toggle="modal" data-target="#quickPreview" class="btn btn-iconed btn-gray"><i class="material-icons zoom_out_map"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons swap_horiz"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons shopping_cart"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tile-title">
+                      <a href="product-gallery-left.html">Samsung - Gear VR for Select Samsung Cell Phones - Blue Black</a>
+                    </div>
+
+                    <div class="tile-meta">
+                      <div class="meta-top">
+                        <a href="#" class="category">Gadgets</a>
+                        <span class="cost">$ 799</span>
+                      </div>
+                      <div class="meta-bottom">
+                        <img src="img/rating.png" class="raty" alt="">
+                      </div>
+                    </div>
+                  </div><!-- Shop Grid Tile END -->
+                </div>
+                <div class="col-sm-6">
+                  <!-- Shop Grid Tile -->
+                  <div class="tile">
+                    <div class="preview-box">
+                      <div class="preview-carousel" data-slick='{arrows": true, "dots": false}'>
+                        <img src="img/tiles/slider-carousel/01.jpg" alt="">
+                        <img src="img/tiles/slider-carousel/02.jpg" alt="">
+                        <img src="img/tiles/slider-carousel/03.jpg" alt="">
+                      </div>
+
+                      <div class="preview-meta">
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons favorite_border"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" data-toggle="modal" data-target="#quickPreview" class="btn btn-iconed btn-gray"><i class="material-icons zoom_out_map"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons swap_horiz"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons shopping_cart"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tile-title">
+                      <a href="product-gallery-left.html">Samsung - Gear S2 Smartwatch 42mm Stainless Steel - Black Elastomer</a>
+                    </div>
+
+                    <div class="tile-meta">
+                      <div class="meta-top">
+                        <a href="#" class="category">Gadgets</a>
+                        <span class="cost">$ 399</span>
+                      </div>
+                      <div class="meta-bottom">
+                        <img src="img/rating.png" class="raty" alt="">
+                      </div>
+                    </div>
+                  </div><!-- Shop Grid Tile END -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- Shop Grid Tile -->
+                  <div class="tile">
+                    <div class="preview-box">
+                      <img src="img/tiles/01.jpg" alt="">
+
+                      <div class="preview-meta">
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons favorite_border"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" data-toggle="modal" data-target="#quickPreview" class="btn btn-iconed btn-gray"><i class="material-icons zoom_out_map"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons swap_horiz"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons shopping_cart"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tile-title">
+                      <a href="product-gallery-left.html">Garmin - Vivosmart HR Activity Tracker</a>
+                    </div>
+
+                    <div class="tile-meta">
+                      <div class="meta-top">
+                        <a href="#" class="category">Petcube</a>
+                        <span class="cost">$ 60</span>
+                      </div>
+                    </div>
+                  </div><!-- Shop Grid Tile END -->
+                </div>
+                <div class="col-sm-6">
+                  <!-- Shop Grid Tile -->
+                  <div class="tile">
+                    <div class="preview-box">
+                      <img src="img/tiles/02.jpg" alt="">
+
+                      <span class="bage">Sale 50%</span>
+
+                      <div class="preview-meta">
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons favorite_border"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" data-toggle="modal" data-target="#quickPreview" class="btn btn-iconed btn-gray"><i class="material-icons zoom_out_map"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons swap_horiz"></i></a>
+                        </div>
+                        <div>
+                          <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons shopping_cart"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tile-title">
+                      <a href="product-gallery-left.html">DJI - Phantom 3 4K Quadcopter - White</a>
+                    </div>
+
+                    <div class="tile-meta">
+                      <div class="meta-top">
+                        <a href="#" class="category">Drones</a>
+                        <span class="cost">$ 199</span>
+                      </div>
+                      <div class="meta-bottom">
+                        <img src="img/rating.png" class="raty" alt="">
+                      </div>
+                    </div>
+                  </div><!-- Shop Grid Tile END -->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Shop Grid Tile -->
+              <div class="tile">
+                <div class="preview-box">
+                  <img src="img/tiles/10.jpg" alt="">
+
+                  <div class="preview-meta">
+                    <div>
+                      <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons favorite_border"></i></a>
+                    </div>
+                    <div>
+                      <a href="#" data-toggle="modal" data-target="#quickPreview" class="btn btn-iconed btn-gray"><i class="material-icons zoom_out_map"></i></a>
+                    </div>
+                    <div>
+                      <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons swap_horiz"></i></a>
+                    </div>
+                    <div>
+                      <a href="#" class="btn btn-iconed btn-gray"><i class="material-icons shopping_cart"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tile-title">
+                  <a href="product-gallery-left.html">Nikon - D5500 DSLR Camera with AF-S DX NIKKOR 18-55mm f/3.5-5.6G VR II Lens - Black</a>
+                </div>
+
+                <div class="tile-meta">
+                  <div class="meta-top">
+                    <a href="#" class="category">Petcube</a>
+                    <span class="cost">$ 60</span>
+                  </div>
+                </div>
+              </div><!-- Shop Grid Tile END -->
+            </div>
+          </div>
+        </section>
+
+        <section class="fw-section" style="background-image: url(img/homes/01.jpg)">
+          <div class="container">
+            <div class="video-popup text-center padding-top-10x padding-bottom-10x">
+              <a href="https://www.youtube.com/watch?v=hNQFjqDvPhA" class="btn btn-gray btn-iconed btn-lg margin-bottom-none popup-youtube"><i class="material-icons play_arrow"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="fw-section margin-bottom-2x margin-top-2x">
+          <div class="container">
+            <!-- Block Title -->
+            <h2 class="block-title text-left margin-bottom-2x">
+              Latest News
+            </h2><!-- Block Title END -->
+
+            <div>
+              <section class="fw-section">
+                <!-- Grid -->
+                <div class="grid masonry-grid col-3">
+                  <div class="grid-sizer"></div>
+                  <div class="gutter-sizer"></div>
+
+                  <!-- Grid Item -->
+                  <div class="grid-item">
+                    <!-- Blog Tile -->
+                    <div class="tile tile-blog">
+                      <div class="preview-box">
+                        <img src="img/blog/01.jpg" alt="">
+                      </div>
+
+                      <div class="tile-title">
+                        <a href="blog-single.html">Stu Unger Rise And Fall Of A Poker Genius</a>
+                      </div>
+
+                      <div class="tile-meta">
+                        <div class="meta-top">
+                          <span class="date">July 21, 2016</span>
+                          <span class="place">New York City</span>
+                          <a href="#" class="name">by Bedismo</a>
+                        </div>
+
+                        <p class="tile-text">Dressing for work on the best of days is a struggle. You’re never quite sure what is appropriate at your office. Plus, you never seem to have anything.</p>
+
+                        <div class="meta-bottom">
+                          <a href="#" class="comments-qty">36 Comments </a>
+                          <span class="likes-qty"><i class="material-icons favorite"></i>345</span>
+                        </div>
+                      </div>
+                    </div><!-- Blog Tile END -->
+                  </div><!-- Grid Item END -->
+
+                  <!-- Grid Item -->
+                  <div class="grid-item">
+                    <!-- Blog Tile -->
+                    <div class="tile tile-blog">
+                      <div class="tile-title">
+                        <a href="blog-single.html">Mg Shadow Computer Monitoring Software A Watchdog Protecting</a>
+                      </div>
+
+                      <div class="tile-meta">
+                        <div class="meta-top">
+                          <span class="date">July 21, 2016</span>
+                          <span class="place">New York City</span>
+                          <a href="#" class="name">by Bedismo</a>
+                        </div>
+
+                        <p class="tile-text">We didn’t invent one-shoulder dressing simply because we’re desperate for an alternative to the now supersaturated off-the-shoulder trend.</p>
+
+                        <div class="meta-bottom">
+                          <a href="#" class="comments-qty">36 Comments </a>
+                          <span class="likes-qty"><i class="material-icons favorite"></i>345</span>
+                        </div>
+                      </div>
+                    </div><!-- Blog Tile END -->
+                  </div><!-- Grid Item END -->
+
+                  <!-- Grid Item -->
+                  <div class="grid-item">
+                    <!-- Blog Tile -->
+                    <div class="tile tile-blog">
+                      <div class="preview-box">
+                        <img src="img/blog/03.jpg" alt="">
+                      </div>
+
+                      <div class="tile-title">
+                        <a href="blog-single.html">7 Simple Reasons Why You Need A Network</a>
+                      </div>
+
+                      <div class="tile-meta">
+                        <div class="meta-top">
+                          <span class="date">July 21, 2016</span>
+                          <span class="place">New York City</span>
+                          <a href="#" class="name">by Bedismo</a>
+                        </div>
+
+                        <p class="tile-text">Dressing for work on the best of days is a struggle. You’re never quite sure what is appropriate at your office. Plus, you never seem to have anything.</p>
+
+                        <div class="meta-bottom">
+                          <a href="#" class="comments-qty">36 Comments </a>
+                          <span class="likes-qty"><i class="material-icons favorite"></i>345</span>
+                        </div>
+                      </div>
+                    </div><!-- Blog Tile END -->
+                  </div><!-- Grid Item END -->
+
+                  <!-- Grid Item -->
+                  <div class="grid-item">
+                    <!-- Blog Tile -->
+                    <div class="tile tile-blog">
+                      <div class="tile-title">
+                        <a href="blog-single.html">Not All Blank Cassettes Are Created</a>
+                      </div>
+
+                      <div class="tile-meta">
+                        <div class="meta-top">
+                          <span class="date">July 21, 2016</span>
+                          <span class="place">New York City</span>
+                          <a href="#" class="name">by Bedismo</a>
+                        </div>
+
+                        <p class="tile-text">Dressing for work on the best of days is a struggle. You’re never quite sure what is appropriate at your office. Plus, you never seem to have anything.</p>
+
+                        <div class="meta-bottom">
+                          <a href="#" class="comments-qty">36 Comments </a>
+                          <span class="likes-qty"><i class="material-icons favorite"></i>345</span>
+                        </div>
+                      </div>
+                    </div><!-- Blog Tile END -->
+                  </div><!-- Grid Item END -->
+                </div><!-- Grid END -->
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="container">
+          <!-- Elements block -->
+          <div class="row margin-bottom-3x">
+            <div class="margin-top-1x hidden-sm hidden-xs"></div>
+            <div class="col-sm-4">
+              <div class="box-with-icon text-center">
+                <div class="bwi-inner">
+                  <div class="bwi-icon">
+                    <img src="img/bwi-img/03.png" alt="">
+                  </div>
+                  <h3 class="bwi-title">Return &amp; Exchange</h3>
+                  <p class="bwi-text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="box-with-icon text-center">
+                <div class="bwi-inner">
+                  <div class="bwi-icon">
+                    <img src="img/bwi-img/02.png" alt="">
+                  </div>
+                  <h3 class="bwi-title">Live Support</h3>
+                  <p class="bwi-text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="box-with-icon text-center">
+                <div class="bwi-inner">
+                  <div class="bwi-icon">
+                    <img src="img/bwi-img/01.png" alt="">
+                  </div>
+                  <h3 class="bwi-title">Gift Card Up To 50%</h3>
+                  <p class="bwi-text">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person.</p>
+                </div>
+              </div>
+            </div>
+          </div><!-- Elements block -->
+        </section>
+
+        <section class="fw-section bg-default margin-bottom-4x">
+          <!-- Item Carousel -->
+          <div class="items-carousel" data-slick='{"arrows": false, "dots": false, "slidesToShow": 6, "autoplay": true, "autoplaySpeed": 2000}'>
+            <img src="img/logos/01.png" alt="">
+            <img src="img/logos/02.png" alt="">
+            <img src="img/logos/03.png" alt="">
+            <img src="img/logos/04.png" alt="">
+            <img src="img/logos/05.png" alt="">
+            <img src="img/logos/06.png" alt="">
+            <img src="img/logos/07.png" alt="">
+            <img src="img/logos/08.png" alt="">
+            <img src="img/logos/09.png" alt="">
+          </div><!-- Item Carousel END -->
+        </section>
+
+        <section class="fw-section margin-bottom-2x">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="tile tile-banner">
+                  <a href="#" class="preview-box">
+                    <img src="img/tiles/banner/01.jpg" alt="">
+
+                    <div class="banner-meta text-light text-center">
+                      <h4 class="title">Professional Drones</h4>
+                      <span>Explore bestsellers</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="tile tile-banner">
+                  <a href="#" class="preview-box">
+                    <img src="img/tiles/banner/02.jpg" alt="">
+
+                    <div class="banner-meta text-light text-center">
+                      <h4 class="title">New Lifestyle</h4>
+                      <span>Explore Must Have Products</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="tile tile-banner">
+                  <a href="#" class="preview-box">
+                    <img src="img/tiles/banner/03.jpg" alt="">
+
+                    <div class="banner-meta text-light text-center">
+                      <h4 class="title">Superb Cameras</h4>
+                      <span>Explore Future Video</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="fw-section bg-primary padding-top-1x">
+          <div class="container">
+            <div class="subscribe-tiny">
+              <h4>Newsletter Sign Up</h4>
+              <span class="text-sm">...and receive $20 coupon for first shopping</span>
+              <input type="text" class="form-control text-center" style="max-width: 440px" placeholder="Enter your email">
+              <a href="#" class="btn margin-right-none">Subscribe Now</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- Logo -->
+                  <a href="#" class="logo">
+                    <img src="img/logo.png" alt="">
+                  </a><!-- Logo END -->
+
+                  <!-- Callback Widget -->
+                  <div class="widget widget-callback">
+                    <i class="icon material-icons headset_mic"></i>
+                    <div class="info-text">
+                      <span>Got Questions? Call us 24/7</span>
+                      <div>(800) 8001-8588</div>
+                    </div>
+                  </div><!-- Callback Widget END -->
+
+                  <!-- Social Icons -->
+                  <div class="widget margin-top-1x">
+                    <div class="widget-title">
+                      Stay in touch
+                    </div>
+
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-instagram"></i></a>
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-facebook"></i></a>
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-pinterest"></i></a>
+                    <a href="#" class="btn btn-gray btn-iconed"><i class="socicon-youtube"></i></a>
+                  </div><!-- Social Icons END -->
+                </div>
+
+                <div class="col-sm-6">
+                  <!-- Latest Product List -->
+                  <div class="widget service-list">
+                    <div class="widget-title">
+                      Customer Service
+                    </div>
+
+                    <ul>
+                      <li>
+                        <div style="margin-bottom: 7px;">Find Store</div>
+                        <a href="#" class="btn btn-gray btn-iconed btn-lg"><i class="material-icons place"></i></a>
+                      </li>
+                      <li>
+                        <div style="margin-bottom: 7px;">Gift Cards</div>
+                        <a href="#" class="btn btn-gray btn-iconed btn-lg margin-right-none"><i class="material-icons local_activity"></i></a>
+                      </li>
+                    </ul>
+                  </div><!-- Latest Product List END -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- Widget Categories -->
+                  <div class="widget categories-widget">
+                    <div class="widget-title">
+                      Customer Care
+                    </div>
+
+                    <ul class="cat-list">
+                      <li>
+                        <a href="#" title="">My Account</a>
+                  </li>
+                      <li>
+                        <a href="#" title="">Track your Order</a>
+                      </li>
+                      <li>
+                        <a href="#" title="">Wishlist</a>
+                      </li>
+                      <li>
+                        <a href="#" title="">FAQs</a>
+                      </li>
+                    </ul>
+                  </div><!-- Widget Categories END -->
+                </div>
+
+                <div class="col-sm-6">
+                  <!-- Widget Categories -->
+                  <div class="widget categories-widget">
+                    <div class="widget-title">
+                      Help
+                    </div>
+
+                    <ul class="cat-list">
+                      <li>
+                        <a href="#" title="">Payment</a>
+                      </li>
+                      <li>
+                        <a href="#" title="">Delivery</a>
+                      </li>
+                      <li>
+                        <a href="#" title="">Returns &amp; Refund</a>
+                      </li>
+                      <li>
+                        <a href="#" title="">Customer Support</a>
+                      </li>
+                    </ul>
+                  </div><!-- Widget Categories END -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <div class="container">
+            <div class="column">
+              <p>&copy; B-Shop 2015 - 2017. Made by <a href="http://8guild.com/" target="_blank">8Guild</a> with <i class="material-icons favorite text-danger"></i> love.</p>
+            </div><!-- .column -->
+
+            <div class="column">
+              <div class="cards">
+                <img src="img/cards.png" alt="Credit Cards">
+              </div>
+            </div><!-- .column -->
+          </div>
+        </div><!-- .copyright -->
+      </footer>
+    </div>
+  </div><!-- Page Wrapper END -->
+
+  <!-- JavaScript (jQuery) libraries, plugins and custom scripts -->
+  <script src="js/vendor/jquery-2.1.4.min.js"></script>
+  <script src="js/vendor/preloader.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/vendor/nouislider.min.js"></script>
+  <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+  <script src="js/vendor/wNumb.js"></script>
+  <script src="js/vendor/slick.min.js"></script>
+  <script src="js/vendor/isotope.pkgd.min.js"></script>
+  <script src="js/vendor/velocity.min.js"></script>
+  <script src="js/vendor/slidebars.min.js"></script>
+  <script src="js/vendor/jquery.themepunch.tools.min.js"></script>
+  <script src="js/vendor/jquery.themepunch.revolution.min.js"></script>
+
+  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.slideanims.min.js"></script>
+  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.actions.min.js"></script>
+  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.layeranimation.min.js"></script>
+  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.kenburn.min.js"></script>
+  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.navigation.min.js"></script>
+  <script type="text/javascript" src="js/vendor/extensions/revolution.extension.parallax.min.js"></script>
+
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
