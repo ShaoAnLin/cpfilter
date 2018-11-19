@@ -21,6 +21,21 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 	});
 
+	var setActiveNav = function(){
+		var pathname = window.location.pathname;
+		if (pathname.includes('index')){
+				$('#nav-home').addClass('current');
+		} else if (pathname.includes('aboutus')){
+				$('#nav-aboutus').addClass('current');
+		} else if (pathname.includes('products')){
+				$('#nav-products').addClass('current');
+		} else if (pathname.includes('news')){
+				$('#nav-news').addClass('current');
+		} else if (pathname.includes('contact')){
+				$('#nav-contact').addClass('current');
+		}
+	}
+
 	// Initialize Slidebars
 	// var menuInitHeight
   var controller = new slidebars();
@@ -183,26 +198,13 @@ jQuery(document).ready(function($) {
 		// Common Elements Loading
 		// (Such as header and footer)
 		// ----------------------------------------
-		$('.header-common').load("_header.html", function(){
-			var pathname = window.location.pathname;
-			if (pathname.includes('index')){
-				$('#nav-home').addClass('current');
-			} else if (pathname.includes('aboutus')){
-				$('#nav-aboutus').addClass('current');
-			} else if (pathname.includes('products')){
-				$('#nav-products').addClass('current');
-			} else if (pathname.includes('news')){
-				$('#nav-news').addClass('current');
-			} else if (pathname.includes('contact')){
-				$('#nav-contact').addClass('current');
-			}
-		});
+		$('.header-common').html(getHeader());
+		setActiveNav();
 
-		$('.off-canvas-cont').load('_side_nav.html', function(){
-			bindEventOffCanvas();
-		});
+		$('.off-canvas-cont').html(getSideNav());
+		bindEventOffCanvas();
 
-		$('.footer').load('_footer.html');
+		$('.footer').html(getFooter());
 
 		// Tiles Carousel
 		// (Settings are Customized Thru Data Attr)
