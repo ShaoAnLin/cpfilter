@@ -381,8 +381,7 @@ jQuery(document).ready(function($) {
 		if($googleMap.length > 0) {
 			$googleMap.each(function(){
 				var mapHeight = $(this).data('height'),
-						lat = $(this).data('lat'),
-						lon = $(this).data('lon'),
+						address = $(this).data('address'),
 						zoom = $(this).data('zoom'),
 						controls = $(this).data('disable-controls'),
 						scrollwheel = $(this).data('scrollwheel'),
@@ -391,7 +390,7 @@ jQuery(document).ready(function($) {
 				$(this).height(mapHeight);
 				$(this).gmap3({
 					marker:{
-						position: {lat: lat, lng: lon},
+						address: address,
 						data: markerTitle,
 						options: {
 							icon: marker
@@ -422,7 +421,7 @@ jQuery(document).ready(function($) {
 					},
 					map:{
 						options:{
-							center: {lat: lat, lng: lon},
+							address: address,
 							zoom: zoom,
 							disableDefaultUI: controls,
 							scrollwheel: scrollwheel
