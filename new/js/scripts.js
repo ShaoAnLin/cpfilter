@@ -13,6 +13,13 @@
 
 jQuery(document).ready(function($) {
 	'use strict';
+	
+	// Common Elements Loading
+	// (Such as header and footer)
+	// ----------------------------------------
+	$('.header-common').html(getHeader());
+	$('.off-canvas-cont').html(getSideNav());
+	$('.footer').html(getFooter());
 
 	//Disable default link behavior for dummy links that have href='#'
 	// ---------------------------------------------------------------
@@ -20,21 +27,6 @@ jQuery(document).ready(function($) {
 	$emptyLink.on('click', function(e){
 		e.preventDefault();
 	});
-
-	var setActiveNav = function(){
-		var pathname = window.location.pathname;
-		if (pathname.includes('index')){
-				$('#nav-home').addClass('current');
-		} else if (pathname.includes('aboutus')){
-				$('#nav-aboutus').addClass('current');
-		} else if (pathname.includes('products')){
-				$('#nav-products').addClass('current');
-		} else if (pathname.includes('news')){
-				$('#nav-news').addClass('current');
-		} else if (pathname.includes('contact')){
-				$('#nav-contact').addClass('current');
-		}
-	}
 
 	// Initialize Slidebars
 	// var menuInitHeight
@@ -195,16 +187,8 @@ jQuery(document).ready(function($) {
 	// All Scripts For On Load Init
 	// ----------------------------
 	$(window).on('load', function() {
-		// Common Elements Loading
-		// (Such as header and footer)
-		// ----------------------------------------
-		$('.header-common').html(getHeader());
 		setActiveNav();
-
-		$('.off-canvas-cont').html(getSideNav());
 		bindEventOffCanvas();
-
-		$('.footer').html(getFooter());
 
 		// Tiles Carousel
 		// (Settings are Customized Thru Data Attr)

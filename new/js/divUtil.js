@@ -1,3 +1,18 @@
+var setActiveNav = function(){
+    var pathname = window.location.pathname;
+    if (pathname.includes('index')){
+            $('#nav-home').addClass('current');
+    } else if (pathname.includes('aboutus')){
+            $('#nav-aboutus').addClass('current');
+    } else if (pathname.includes('products')){
+            $('#nav-products').addClass('current');
+    } else if (pathname.includes('news')){
+            $('#nav-news').addClass('current');
+    } else if (pathname.includes('contact')){
+            $('#nav-contact').addClass('current');
+    }
+}
+
 var getHeader = function(){
     return '<div class="container">\
         <div class="middle-bar">\
