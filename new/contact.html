@@ -33,9 +33,6 @@
   <!-- Offcanvas Plugin -->
   <link href="stylesheets/vendor/slidebars.min.css" rel="stylesheet" media="screen">
 
-  <!--Google Maps API-->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4BOUHAJHQLFcg4OPRvvF3SeTsGThYZZs&libraries=geometry,places" type="text/javascript"></script>
-
   <!-- All Theme Styles -->
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
 
@@ -83,7 +80,7 @@
             <div class="col-md-8">
               <div class="store-item">
                 <div class="img-cont">
-                  <img src="img/store/01.jpg" alt="">
+                  <img src="img/store/01.jpg">
                 </div>
                 <div class="store-info">
                   <div class="title text-default margin-bottom-1x">新凱濾材工業有限公司</div>
@@ -94,18 +91,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="google-map-container margin-bottom-1x">
-                  <div class="google-map"
-                    data-address="新北市淡水區中正東路二段69-4號3樓之一"
-                    data-height="400"
-                    data-zoom="18"
-                    data-disable-controls="false"
-                    data-scrollwheel="false"
-                    data-marker="img/map-marker.png"
-                    data-marker-title="新凱濾材">
-                  </div><!-- .google-map -->
-              </div>
+            <div class="col-md-4 gmap_canvas">
+              <iframe height="360" id="gmap" src="https://maps.google.com/maps?q=淡水區中正東路二段69-4號3F-1&z=18&ie=UTF8&iwloc=&output=embed" frameborder="0">
+              </iframe>
             </div>
         </div><!-- Content END -->
       </main>
