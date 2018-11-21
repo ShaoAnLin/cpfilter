@@ -374,62 +374,6 @@ jQuery(document).ready(function($) {
 			infinite: false,
 			asNavFor: '.thumbnail-carousel'
 		});
-
-		// Google Maps API
-		// ---------------
-		var $googleMap = $('.google-map');
-		if($googleMap.length > 0) {
-			$googleMap.each(function(){
-				var mapHeight = $(this).data('height'),
-						address = $(this).data('address'),
-						zoom = $(this).data('zoom'),
-						controls = $(this).data('disable-controls'),
-						scrollwheel = $(this).data('scrollwheel'),
-						marker = $(this).data('marker'),
-						markerTitle = $(this).data('marker-title');
-				$(this).height(mapHeight);
-				$(this).gmap3({
-					marker:{
-						address: address,
-						data: markerTitle,
-						options: {
-							icon: marker
-						},
-						events: {
-						  mouseover: function(marker, event, context){
-						    var map = $(this).gmap3("get"),
-						      	infowindow = $(this).gmap3({get:{name:"infowindow"}});
-						    if (infowindow){
-						      infowindow.open(map, marker);
-						      infowindow.setContent(context.data);
-						    } else {
-						      $(this).gmap3({
-						        infowindow:{
-						          anchor:marker,
-						          options:{content: context.data}
-						        }
-						      });
-						    }
-						  },
-						  mouseout: function(){
-						    var infowindow = $(this).gmap3({get:{name:"infowindow"}});
-						    if (infowindow){
-						      infowindow.close();
-						    }
-						  }
-						}
-					},
-					map:{
-						options:{
-							address: address,
-							zoom: zoom,
-							disableDefaultUI: controls,
-							scrollwheel: scrollwheel
-						}
-					}
-				});
-			});
-		}
 	});
 
 });/* Document Ready End */
