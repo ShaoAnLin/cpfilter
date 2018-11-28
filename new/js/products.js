@@ -1,7 +1,10 @@
 var HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備", "空調濾網"];
 var CATEGORIES = {
     "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機"],
-    "濾材": ["陽極帶"]
+    "濾材": ["陽極帶"],
+    "機械設備": [],
+    "磁力設備": [],
+    "空調濾網": []
 }
 var SERIES = {
     // ========== 過濾器 ========== //
@@ -60,6 +63,34 @@ var getCategories = function(housing){
 }
 var getSeries = function(category){
     return category ? SERIES[category] : SERIES;
+}
+
+var getSideBarCatList = function(){
+    var html = '';
+    HOUSING.forEach(function(housing){
+        html += '<li>\
+            <a href="?cat={0}" title="">{0}</a>\
+            <span>{1}</span>\
+            </li>'.format(housing, getGroupNumOfItems(housing));
+    });
+    return html;
+}
+
+var getGroupNumOfItems = function(housing){
+    var num = 0;
+    $.each(CATEGORIES[housing], function(key, category) {
+        if (category){
+            var series = SERIES[category];
+            if (series != null){
+                num += SERIES[category].length;
+            } else {
+                // The category does not have any series. Only a single item
+                num += 1;
+            }
+        }
+    });
+    console.log(housing + num);
+    return num;
 }
 
 var getProduct = function(){
@@ -132,5 +163,6 @@ var getImages = function(item){
 }
 
 $(function() {
+    $('#sidebar-cat-list').html(getSideBarCatList());
     $('#product-grid-items').html(getProduct());
 });
