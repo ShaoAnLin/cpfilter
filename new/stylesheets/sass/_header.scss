@@ -11,6 +11,12 @@
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
+	.brandname {
+		color: $brand-highlight;
+	}
+	.logo-img {
+		width: 15%;
+	}
 }
 
 // Top Bar
@@ -47,8 +53,7 @@
 // brandname
 // ----
 .brandname {
-	font-size: 20px;
-	width: 150px
+	font-size: 28px;
 }
 
 
@@ -139,8 +144,15 @@
 	}
 	.logo {
 		position: absolute;
+		width: 280px;
 		@include center(xy);
 		margin: 0;
+		.brandname {
+			font-size: 20px;
+		}
+		.logo-img {
+			width: 8%;
+		}
 	}
 	.mobile-tools {
 		> * {

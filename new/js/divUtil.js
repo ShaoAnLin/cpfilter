@@ -4,6 +4,7 @@ var getHeader = function(){
         <div class="column left-side">\
             <!-- Main Logo -->\
             <div class="logo">\
+                <img class="logo-img" src="img/logo.png">\
                 <span class="brandname">新凱濾材工業股份有限公司</span>\
             </div>\
         </div>\
@@ -77,6 +78,7 @@ var getHeader = function(){
     \
         <!-- Mobile View Logo -->\
         <div class="logo">\
+            <img class="logo-img" src="img/logo_pure.png">\
             <span class="brandname">新凱濾材工業股份有限公司</span>\
         </div>\
         </div>\
