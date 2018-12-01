@@ -209,6 +209,7 @@ jQuery(document).ready(function($) {
 		// (Such as header and footer)
 		// ----------------------------------------
 		$('.header').html(getHeader());
+		$('#nav-products-sub').html(getProductsSubMenu());
 		setActiveNav();
 
 		$('.off-canvas-cont').html(getSideNav());
