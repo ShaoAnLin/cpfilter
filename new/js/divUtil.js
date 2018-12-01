@@ -22,7 +22,7 @@ var getHeader = function(){
                 </li>\
                 <li id="nav-products" class="nav-item dropdown lvl-1">\
                     <a href="products.html">產品資訊</a>\
-                    <ul id="nav-products-sub" class="sub-menu"></ul>\
+                    <ul class="sub-menu">{0}</ul>\
                 </li>\
                 <li id="nav-news" class="nav-item lvl-1">\
                     <a href="news.html">最新消息</a>\
@@ -49,7 +49,7 @@ var getHeader = function(){
             <span class="brandname">新凱濾材工業股份有限公司</span>\
         </div>\
         </div>\
-    </div>';
+    </div>'.format(getProductsSubMenu());
 }
 
 var getProductsSubMenu = function(){
@@ -87,19 +87,21 @@ var getSideNav = function(){
             <li><a href="aboutus.html">關於新凱</a></li>\
             <li class="menu-item-has-children">\
                 <a href="products.html">產品資訊</a>\
-                <ul class="sub-menu">\
-                    <li><a href="products.html?cat=filter">過濾器</a></li>\
-                    <li><a href="products.html?cat=filter-mat">濾材</a></li>\
-                    <li><a href="products.html?cat=equipment">機械設備</a></li>\
-                    <li><a href="products.html?cat=magnetic">磁力棒</a></li>\
-                    <li><a href="products.html?cat=air-filter">空調濾網</a></li>\
-                </ul>\
+                <ul class="sub-menu">{0}</ul>\
             </li>\
             <li><a href="news.html">最新消息</a></li>\
             <li><a href="contact.html">聯絡我們</a></li>\
         </ul>\
         </div>\
-    </nav>';
+    </nav>'.format(getSideNavProductsSubMenu());
+}
+
+var getSideNavProductsSubMenu = function(){
+    var html = '';
+    HOUSING.forEach(function(housing){
+        html += '<li><a href="products.html?housing={0}">{0}</a></li>'.format(housing);
+    });
+    return html;
 }
 
 var getFooter = function(){
