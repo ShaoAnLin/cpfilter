@@ -71,3 +71,4 @@ var ITEMS = {
         "sub-title": ""
     }
 }
+var LATEST_PRODUCTS = ["AH", "陽極袋"];

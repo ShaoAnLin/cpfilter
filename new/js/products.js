@@ -22,7 +22,7 @@ var getGroupNumOfItems = function(housing){
     return num;
 }
 
-var getProduct = function(){
+var getProducts = function(){
     var html = "",
         imageDivs = "",
         num = 0,
@@ -74,15 +74,15 @@ var getProductGridItemDiv = function(item){
     </div>'.format(getImages(item), item["title"], item["sub-title"], series);
 }
 
-var getImages = function(item){
+var getImages = function(item, single = false){
     var housing = item["housing"],
         category = item["category"],
         series = item["series"],
         numImages = item["images"],
-        html = '';
-    if (numImages == 0){
         html = '<img src="img/products/{0}/{1}{2}/{3}.jpg">'
             .format(housing, category ? category + "/" : "", series, series);
+    if (single){
+        return html;
     }
     for (var i = 0; i < numImages; ++i){
         html += '<img src="img/products/{0}/{1}{2}/{3}.jpg">'
@@ -91,7 +91,24 @@ var getImages = function(item){
     return html;
 }
 
+var getLatestProducts = function(){
+    var html = '';
+    LATEST_PRODUCTS.forEach(function(itemId){
+        var item = ITEMS[itemId];
+        console.log(item);
+        html += '<li>\
+          <a href="product-gallery-left.html" class="cart-thumb">{0}</a>\
+          <div class="info-cont">\
+            <a href="product-detail.html?item={1}" class="item-title">{2}</a>\
+            <div class="category">{3}</div>\
+          </div>\
+        </li>'.format(getImages(item, true), itemId, item.title, item.housing);
+    });
+    return html;
+}
+
 $(function() {
     $('#sidebar-cat-list').html(getSideBarCatList());
-    $('#product-grid-items').html(getProduct());
+    $('#product-grid-items').html(getProducts());
+    $('#latest-products').html(getLatestProducts());
 });
