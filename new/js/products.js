@@ -26,11 +26,13 @@ var getProducts = function(){
     var html = "",
         imageDivs = "",
         num = 0,
-        cols = 3;
+        cols = 3,
+        queryCategory = window.location.search.match('/category=\w/');
+    console.log(queryCategory);
 
     $.each(ITEMS, function(key, item) {
         ++num;
-        imageDivs += getProductGridItemDiv(item);
+        imageDivs += getProductGridItemDiv(key, item);
         if (num % cols == 0){
             html += '<div class="row">{0}</div>'.format(imageDivs);
             imageDivs = "";
@@ -42,7 +44,7 @@ var getProducts = function(){
     return html;
 }
 
-var getProductGridItemDiv = function(item){
+var getProductGridItemDiv = function(itemId, item){
     var series = item.category ? item["series"] + " Series" : "";
     return '<div class="col-md-4">\
       <!-- Shop Grid Tile -->\
@@ -59,19 +61,19 @@ var getProductGridItemDiv = function(item){
         </div>\
 \
         <div class="tile-title">\
-          <a href="product-detail.html">{1}</a>\
+          <a href="product-detail.html?item={1}">{2}</a>\
         </div>\
 \
         <div class="tile-meta">\
           <div class="meta-top">\
-            <span>{2}</span>\
+            <span>{3}</span>\
           </div>\
           <div class="meta-bottom">\
-            <span>{3}</span>\
+            <span>{4}</span>\
           </div>\
         </div>\
       </div><!-- Shop Grid Tile END -->\
-    </div>'.format(getImages(item), item["title"], item["sub-title"], series);
+    </div>'.format(getImages(item), itemId, item["title"], item["sub-title"], series);
 }
 
 var getImages = function(item, single = false){
@@ -79,14 +81,14 @@ var getImages = function(item, single = false){
         category = item["category"],
         series = item["series"],
         numImages = item["images"],
-        html = '<img src="img/products/{0}/{1}{2}/{3}.jpg">'
+        html = '<img class="preview-img" src="img/products/{0}/{1}{2}/{3}.jpg">'
             .format(housing, category ? category + "/" : "", series, series);
     if (single){
         return html;
     }
     for (var i = 0; i < numImages; ++i){
-        html += '<img src="img/products/{0}/{1}{2}/{3}.jpg">'
-        .format(housing, category ? category + "/" : "", series, i);
+        html += '<img class="preview-img" src="img/products/{0}/{1}{2}/{3}.jpg">'
+            .format(housing, category ? category + "/" : "", series, i);
     }
     return html;
 }
