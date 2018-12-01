@@ -122,7 +122,7 @@ var getFooter = function(){
             <div class="col-sm-12">\
                 <!-- Logo -->\
                 <div class="logo">\
-                    <span class="brandname">新凱濾材工業股份有限公司</span>\
+                    <span>新凱濾材工業股份有限公司</span>\
                     <span class="brandname-en">CP Filter Industrial Co.Ltd.</span>\
                 </div><!-- Logo END -->\
     \
@@ -163,7 +163,7 @@ var getFooter = function(){
                         <div>peter@cpfilter.com.tw</div>\
                     </li>\
                     <li>\
-                        <i class="icon material-icons location_city"></i>\
+                        <i class="icon material-icons location_city address"></i>\
                         <div>新北市淡水區中正東路二段69-4號3樓之一</div>\
                     </li>\
                 </ul>\
@@ -174,5 +174,9 @@ var getFooter = function(){
         </div>\
     </div>\
     \
-    <div class="copyright">&copy; 2018 CP Filter. All Rights Reserved.</div>';
+    <div class="copyright">\
+        <span>&copy; 2018. 新凱濾材工業股份有限公司 </span>\
+        <span class="brandname-en">CP Filter Industrial Co.Ltd.</span>\
+        <span>All Rights Reserved.</span>\
+    </div>';
 }

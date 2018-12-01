@@ -31,8 +31,20 @@
 	}
 
 	.copyright {
-    margin-top: $grid-vertical-step;
+		margin-top: $grid-vertical-step;
 		padding: ($grid-vertical-step / 2);
 		text-align: center;
+		font-size: 16px;
+		background-color: $brand-tender-blue;
+		
+		.brandname-en {
+			@media #{$tablet-port} {
+				display: none;
+			}
+		}
+	}
+
+	.address {
+		height: 60px;
 	}
 }
