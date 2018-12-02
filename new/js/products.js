@@ -118,7 +118,7 @@ var getLatestProducts = function(){
         var item = ITEMS[itemId];
         console.log(item);
         html += '<li>\
-          <a href="product-gallery-left.html" class="cart-thumb">{0}</a>\
+          <a href="product-detail.html?item={1}" class="cart-thumb">{0}</a>\
           <div class="info-cont">\
             <a href="product-detail.html?item={1}" class="item-title">{2}</a>\
             <div class="category">{3}</div>\
