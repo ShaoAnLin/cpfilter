@@ -2,7 +2,7 @@ var getSideBarCatList = function(){
     var html = '';
     HOUSING.forEach(function(housing){
         html += '<li>\
-            <a href="?cat={0}" title="">{0}</a>\
+            <a href="?housing={0}" title="">{0}</a>\
             <span>{1}</span>\
             </li>'.format(housing, getGroupNumOfItems(housing));
     });
@@ -26,16 +26,35 @@ var getProducts = function(){
     var html = "",
         imageDivs = "",
         num = 0,
-        cols = 3,
-        queryCategory = window.location.search.match('/category=\w/');
-    console.log(queryCategory);
+        cols = 3;
+        queryHousing = decodeURI(window.location.search).match('housing=.*'),
+        queryCategory = decodeURI(window.location.search).match('category=.*'),
+        targetHousing = null,
+        targetCategory = null;
+
+    if (queryHousing){
+        targetHousing = queryHousing[0].split('=')[1];
+    }
+    if (queryCategory){
+        targetCategory = queryCategory[0].split('=')[1];
+    }
 
     $.each(ITEMS, function(key, item) {
-        ++num;
-        imageDivs += getProductGridItemDiv(key, item);
-        if (num % cols == 0){
-            html += '<div class="row">{0}</div>'.format(imageDivs);
-            imageDivs = "";
+        var select = true;
+        if (targetHousing && item.housing != targetHousing){
+            select = false;
+        }
+        if (targetCategory && item.category != targetCategory){
+            select = false;
+        }
+
+        if (select){
+            ++num;
+            imageDivs += getProductGridItemDiv(key, item);
+            if (num % cols == 0){
+                html += '<div class="row">{0}</div>'.format(imageDivs);
+                imageDivs = "";
+            }
         }
     });
     if (imageDivs != ""){
