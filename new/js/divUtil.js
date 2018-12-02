@@ -135,9 +135,9 @@ var getFooter = function(){
                 <div class="widget-title">產品資訊</div>\
     \
                 <ul class="cat-list">\
-                    <li><a href="products.html?cat=過濾器">過濾器</a></li>\
-                    <li><a href="products.html?cat=濾材">濾材</a></li>\
-                    <li><a href="products.html?cat=機械設備">機械設備</a></li>\
+                    <li><a href="products.html?housing=過濾器">過濾器</a></li>\
+                    <li><a href="products.html?housing=濾材">濾材</a></li>\
+                    <li><a href="products.html?housing=機械設備">機械設備</a></li>\
                 </ul>\
                 </div><!-- Widget Categories END -->\
             </div>\
