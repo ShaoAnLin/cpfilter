@@ -37,6 +37,11 @@
 .cat-list {
 	@include list-unstyled;
 	margin-top: 0;
+	.current {
+		> a {
+			color: $brand-info;
+		}
+	}
 	li {
 		border-bottom: 1px solid $gray-light;
 		span {

@@ -1,7 +1,7 @@
 var getSideBarCatList = function(){
     var html = '';
     HOUSING.forEach(function(housing){
-        html += '<li>\
+        html += '<li id="housing-{0}">\
             <a href="?housing={0}" title="">{0}</a>\
             <span>{1}</span>\
             </li>'.format(housing, getGroupNumOfItems(housing));
@@ -34,9 +34,18 @@ var getProducts = function(){
 
     if (queryHousing){
         targetHousing = queryHousing[0].split('=')[1];
+        $('#housing-' + targetHousing).addClass('current');
     }
+
+    // TODO: add category list as sub menu in side bar
+    //       then highlight the category instead of the housing
     if (queryCategory){
         targetCategory = queryCategory[0].split('=')[1];
+        $.each(CATEGORIES, function(housing, categories){
+            if (categories.indexOf(targetCategory) != -1){
+                $('#housing-' + housing).addClass('current');
+            }
+        });
     }
 
     $.each(ITEMS, function(key, item) {
