@@ -2,6 +2,10 @@
 // Common
 // ***************************************
 
+html {
+	font-family: Microsoft JhengHei, sans-serif !important;
+}
+
 .mobile-top-buffer {
 	@media #{$nav-collapse} {
         margin-top: 20px;
