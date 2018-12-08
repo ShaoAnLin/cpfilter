@@ -8,8 +8,9 @@ var CATEGORIES = {
 }
 var SERIES = {
     "過濾器": {
-        "不鏽鋼濾心機": ["AH", "ALA"],
-        "不鏽鋼袋濾機": ["PL"],
+        "不鏽鋼濾心機": ["AF", "AGS", "AH", "AHP", "AHS", "AL", "ALA", "ALF", "ALS",
+            "ALSH", "AM"],
+        "不鏽鋼袋濾機": ["PHP", "PHT", "PL", "PH", "PM"],
         "純PP濾殼": [],
         "過濾器配件": []
     },
@@ -34,21 +35,61 @@ var SERIES = {
 var ITEMS = {
     // ========== 過濾器 ========== //
     // 不鏽鋼濾心機
-    "AH": {
-        "series": "AH",
+    "ALS": {
+        "series": "ALS",
         "housing": "過濾器",
         "category": "不鏽鋼濾心機",
-        "images": 3,
-        "title": "3~7支裝",
-        "sub-title": "濾心式過濾器 - 高壓款"
+        "images": 4,
+        "title": "單支裝",
+        "sub-title": "濾心式過濾器"
     },
     "ALA": {
         "series": "ALA",
         "housing": "過濾器",
         "category": "不鏽鋼濾心機",
-        "images": 3,
+        "images": 1,
         "title": "單支裝",
         "sub-title": "濾心式過濾器 - A款"
+    },
+    "AHS": {
+        "series": "AHS",
+        "housing": "過濾器",
+        "category": "不鏽鋼濾心機",
+        "images": 1,
+        "title": "單支裝",
+        "sub-title": "濾心式過濾器 - 高壓款"
+    },
+    "AF": {
+        "series": "AF",
+        "housing": "過濾器",
+        "category": "不鏽鋼濾心機",
+        "images": 1,
+        "title": "單支裝",
+        "sub-title": "濾心式水塔過濾器"
+    },
+    "AL": {
+        "series": "AL",
+        "housing": "過濾器",
+        "category": "不鏽鋼濾心機",
+        "images": 1,
+        "title": "3~7支裝",
+        "sub-title": "濾心式過濾器"
+    },
+    "AH": {
+        "series": "AH",
+        "housing": "過濾器",
+        "category": "不鏽鋼濾心機",
+        "images": 1,
+        "title": "3~7支裝",
+        "sub-title": "濾心式過濾器 - 高壓款"
+    },
+    "AM": {
+        "series": "AM",
+        "housing": "過濾器",
+        "category": "不鏽鋼濾心機",
+        "images": 3,
+        "title": "大流量多支裝",
+        "sub-title": "濾心式過濾器"
     },
 
     // 不鏽鋼袋濾機
