@@ -26,3 +26,10 @@
 	float: left;
     margin-right: 20px;
 }
+
+/* Product Detail */
+#single-item-info {
+	.series-name {
+		color: $brand-danger;
+	}
+}

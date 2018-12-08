@@ -44,16 +44,17 @@ var ITEMS = {
         "subtitle": "濾心式過濾器",
         "specification": {
             "本體材質": "SUS304, SUS316",
-            "進出口": "3/4” PT, 1”PT-F/NPT-F",
-            "排放口": "1/4” PT-F",
-            "排氣口": "1/4” PT-F",
+            "進出口": "3/4”PT, 1”PT-F/NPT-F",
+            "排放口": "1/4”PT-F",
+            "排氣口": "1/4”PT-F",
             "Oring材質": "EPDM (標準)",
             "Oring材質": "Viton, Teflon 包Viton (選購)",
             "設計壓力": "10kg/cm<sup>2</sup> (150psi)",
             "操作壓力": "7kg/cm<sup>2</sup> (100psi)",
             "表面處理": "外部拋光, 內部酸洗 (標準)",
             "表面處理": "X-Ray, EP電解 (選購)"
-        }
+        },
+        "range": "機台循環、PCW過濾、化學品製程"
     },
     "ALA": {
         "series": "ALA",
@@ -61,7 +62,20 @@ var ITEMS = {
         "category": "不鏽鋼濾心機",
         "images": 1,
         "title": "單支裝",
-        "subtitle": "濾心式過濾器 - A款"
+        "subtitle": "濾心式過濾器 - A款",
+        "specification": {
+            "本體材質": "SUS304, SUS316",
+            "進出口": "1/2”~1.5”牙口, 法蘭",
+            "排放口": "1/2”PT-M",
+            "排氣口": "1/4”PT-F",
+            "Oring材質": "EPDM(標準)",
+            "Oring材質": "Viton, Teflon 包Viton(選購)",
+            "2 設計壓力": "15kg/ccm<sup>2</sup> (225psi)",
+            "2 操作壓力": "10kg/ccm<sup>2</sup> (150psi)",
+            "表面處理": "外部電解, 內部酸洗(標準)",
+            "表面處理": "X-Ray, EP電解(選購)"
+        },
+        "range": "機台循環、PCW過濾、化學品製程"
     },
     "AHS": {
         "series": "AHS",
@@ -157,3 +171,11 @@ var ITEMS = {
     }
 }
 var LATEST_PRODUCTS = ["AH", "陽極袋"];
+
+var getItemId = function(item){
+    return item.series ? item.series : item.category;
+}
+
+var getItemIdStr = function(item){
+    return item.series ? item.series + ' Series' : item.category;
+}

@@ -8,24 +8,38 @@ var getItem = function(){
 }
 
 var getItemInfo = function(item){
-    return '<h4 class="item-title">{0}</h4>\
-      <div class="item-subtitle">{1}</div>\
-      <div class="row">\
-        <div class="col-sm-12"><h5 class="section-title specification-name">規格</h5></div>\
-      </div>\
-      <ul class="list-featured item-specification">{2}</ul>\
-      <div class="row">\
-          <div class="col-sm-12"><h5 class="section-title range-name">適用範圍</h5></div>\
-      </div>\
-      <div class="item-range">機台循環、PCW過濾、化學品製程</div>\
-    </div>'.format(item.title, item.subtitle, getItemSpecification(item));
+    return '<div class="series-name">{0}</div>\
+            <h4 class="item-title">{1}</h4>\
+            <div>{2}</div>\
+            {3}{4}\
+        </div>'.format(getItemIdStr(item), item.title, item.subtitle,
+            getItemSpecification(item),
+            getItemRange(item));
 }
 
 var getItemSpecification = function(item){
     var html = '';
-    $.each(item.specification, function(key, value){
-        html += '<li>{0}: {1}</li>'.format(key, value);
-    });
+    if (item.specification){
+        var listItem = '';
+        $.each(item.specification, function(key, value){
+            listItem += '<li>{0}: {1}</li>'.format(key, value);
+        });
+        html = '<div class="row">\
+          <div class="col-sm-12"><h5 class="section-title specification-name">規格</h5></div>\
+        </div>\
+        <ul class="list-featured item-specification">{0}</ul>'.format(listItem);
+    }
+    return html;
+}
+
+var getItemRange = function(item){
+    var html = '';
+    if (item.range){
+        html = '<div class="row">\
+            <div class="col-sm-12"><h5 class="section-title range-name">適用範圍</h5></div>\
+        </div>\
+        <div class="item-range">{0}</div>'.format(item.range);
+    }
     return html;
 }
 
