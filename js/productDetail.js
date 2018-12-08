@@ -7,6 +7,28 @@ var getItem = function(){
     return ITEMS[targetItem];
 }
 
+var getItemInfo = function(item){
+    return '<h4 class="item-title">{0}</h4>\
+      <div class="item-subtitle">{1}</div>\
+      <div class="row">\
+        <div class="col-sm-12"><h5 class="section-title specification-name">規格</h5></div>\
+      </div>\
+      <ul class="list-featured item-specification">{2}</ul>\
+      <div class="row">\
+          <div class="col-sm-12"><h5 class="section-title range-name">適用範圍</h5></div>\
+      </div>\
+      <div class="item-range">機台循環、PCW過濾、化學品製程</div>\
+    </div>'.format(item.title, item.subtitle, getItemSpecification(item));
+}
+
+var getItemSpecification = function(item){
+    var html = '';
+    $.each(item.specification, function(key, value){
+        html += '<li>{0}: {1}</li>'.format(key, value);
+    });
+    return html;
+}
+
 var getRelatedProducts = function(item){
     var html = '',
         num = 0;
@@ -79,7 +101,7 @@ var getProductGridItemDiv = function(itemId, item){
           </div>\
         </div>\
       </div>\
-    </div>'.format(getImages(item), itemId, item["title"], item["sub-title"], series);
+    </div>'.format(getImages(item), itemId, item["title"], item["subtitle"], series);
 }
 
 var getImages = function(item){
@@ -96,6 +118,8 @@ var getImages = function(item){
 $(function() {
     var item = getItem();
     console.log(item);
+
+    // Housing & Category
     $('#housing-name').html(item.housing)
         .attr("href", "products.html?housing=" + item.housing);
     if (item.category){
@@ -105,5 +129,6 @@ $(function() {
         $('#category-right-icon').hide();
     }
 
+    $('#single-item-info').html(getItemInfo(item));
     $('#related-products').html(getRelatedProducts(item));
 });

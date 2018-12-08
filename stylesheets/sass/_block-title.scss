@@ -20,7 +20,6 @@
     background-color: $block-title-line-color;
     height: 1px;
     content: "";
-    background-color: #ddd;
     display: block;
     position: absolute;
     width: 100%;
@@ -65,5 +64,27 @@
     &::before {
       @include center(x);
     }
+  }
+}
+
+.section-title{
+  padding-top: 10px;
+  &::before {
+    z-index: 6;
+    position: absolute;
+    bottom: 1px;
+    content: "";
+    width: 48px;
+    height: 1px;
+    background-color: $brand-primary;
+  }
+  &::after {
+    height: 1px;
+    content: "";
+    background-color: $block-title-line-color;
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 1px;
   }
 }

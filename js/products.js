@@ -101,7 +101,7 @@ var getProductGridItemDiv = function(itemId, item){
           </div>\
         </div>\
       </div><!-- Shop Grid Tile END -->\
-    </div>'.format(getImages(item), itemId, item["title"], item["sub-title"], series);
+    </div>'.format(getImages(item), itemId, item["title"], item["subtitle"], series);
 }
 
 var getImages = function(item, single = false){
