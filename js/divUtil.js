@@ -112,8 +112,8 @@ var getFooter = function(){
             <div class="col-sm-12">\
                 <!-- Logo -->\
                 <div class="logo">\
-                    <span>新凱濾材工業股份有限公司</span>\
-                    <span class="brandname-en">CP Filter Industrial Co.Ltd.</span>\
+                    <div class="brandname">新凱濾材工業股份有限公司</div>\
+                    <div class="brandname-en">CP Filter Industrial Co.,Ltd.</div>\
                 </div><!-- Logo END -->\
     \
                 <!-- Callback Widget -->\
@@ -166,7 +166,7 @@ var getFooter = function(){
     \
     <div class="copyright">\
         <span>&copy; 2018. 新凱濾材工業股份有限公司 </span>\
-        <span class="brandname-en">CP Filter Industrial Co.Ltd.</span>\
+        <span class="brandname-en">CP Filter Industrial Co.,Ltd.</span>\
         <span>All Rights Reserved.</span>\
     </div>';
 }
