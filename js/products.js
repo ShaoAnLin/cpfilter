@@ -104,21 +104,15 @@ var getProductGridItemDiv = function(itemId, item){
     </div>'.format(getImages(item), itemId, item["title"], item["subtitle"], series);
 }
 
-var getImages = function(item, single = false){
-    var housing = item["housing"],
-        category = item["category"],
-        series = item["series"],
-        numImages = item["images"],
-        html = '<img class="preview-img" src="img/products/{0}/{1}/{2}{3}.jpg">'
-            .format(housing, category,
-                series ? series + "/" : "",
-                series ? series : category);
-    if (single){
-        return html;
-    }
-    for (var i = 0; i < numImages; ++i){
-        html += '<img class="preview-img" src="img/products/{0}/{1}/{2}{3}.jpg">'
-            .format(housing, category, series ? series + "/" : "", i);
+var getMainImage = function(item){
+    return '<img class="preview-img" src="{0}.jpg">'.format(getImgPath(item, 'main'));
+}
+
+var getImages = function(item){
+    var html = getMainImage(item);
+    for (var i = 0; i < item.images; ++i){
+        html += '<img class="preview-img" src="{0}{1}.jpg">'
+            .format(getImgPath(item, 'detail'), i);
     }
     return html;
 }
@@ -134,7 +128,7 @@ var getLatestProducts = function(){
             <a href="product-detail.html?item={1}" class="item-title">{2}</a>\
             <div class="category">{3}</div>\
           </div>\
-        </li>'.format(getImages(item, true), itemId, item.title, item.housing);
+        </li>'.format(getMainImage(item), itemId, item.title, item.housing);
     });
     return html;
 }

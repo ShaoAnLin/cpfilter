@@ -54,7 +54,10 @@ var ITEMS = {
             "表面處理": "外部拋光, 內部酸洗 (標準)",
             "表面處理": "X-Ray, EP電解 (選購)"
         },
-        "range": "機台循環、PCW過濾、化學品製程"
+        "range": "機台循環、PCW過濾、化學品製程",
+        "modelImgs": 1,
+        "sizeImgs": 2,
+        'componentImgs': 2
     },
     "ALA": {
         "series": "ALA",
@@ -178,4 +181,21 @@ var getItemId = function(item){
 
 var getItemIdStr = function(item){
     return item.series ? item.series + ' Series' : item.category;
+}
+
+var getImgPath = function(item, type){
+    if (type == 'main'){
+        return 'img/products/{0}/{1}/{2}{3}'
+            .format(item.housing, item.category,
+                item.series ? item.series + "/" : "",
+                item.series ? item.series : item.category);
+    } else if (type == 'detail'){
+        return 'img/products/{0}/{1}/{2}'
+            .format(item.housing, item.category,
+                item.series ? item.series + "/" : "");
+    } else {
+        return 'img/products/{0}/{1}/{2}{3}'
+            .format(item.housing, item.category,
+                item.series ? item.series + "/" : "", type);
+    }
 }

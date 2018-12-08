@@ -115,18 +115,31 @@ var getProductGridItemDiv = function(itemId, item){
           </div>\
         </div>\
       </div>\
-    </div>'.format(getImages(item), itemId, item["title"], item["subtitle"], series);
+    </div>'.format(getImage(item), itemId, item["title"], item["subtitle"], series);
 }
 
-var getImages = function(item){
-    var housing = item["housing"],
-        category = item["category"],
-        series = item["series"],
-        html = '<img class="preview-img" src="img/products/{0}/{1}/{2}{3}.jpg">'
-            .format(housing, category,
-                series ? series + "/" : "",
-                series ? series : category);
-    return html;
+var getImage = function(item){
+    return '<img class="preview-img" src="{0}.jpg">'.format(getImgPath(item, 'main'));
+}
+
+var setTabDetail = function(item){
+    if (item.modelImgs){
+        $('#model-detail').html('<div class="col-sm-12">\
+                <img src="{0}">\
+            </div>'.format(getImgPath(item, 'model') + '.jpg'));
+    }
+    if (item.componentImgs){
+        $('#component0-img').attr("src", getImgPath(item, 'component') + '_0.jpg');
+        if (item.componentImgs > 1){
+            $('#component1-img').attr("src", getImgPath(item, 'component') + '_1.jpg');
+        }
+    }
+    if (item.sizeImgs){
+        $('#size0-img').attr("src", getImgPath(item, 'size') + '_0.jpg');
+        if (item.componentImgs > 1){
+            $('#size1-img').attr("src", getImgPath(item, 'size') + '_1.jpg');
+        }
+    }
 }
 
 $(function() {
@@ -144,5 +157,6 @@ $(function() {
     }
 
     $('#single-item-info').html(getItemInfo(item));
+    //setTabDetail(item);
     $('#related-products').html(getRelatedProducts(item));
 });
