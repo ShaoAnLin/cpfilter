@@ -11,9 +11,9 @@ var getSideBarCatList = function(){
 
 var getGroupNumOfItems = function(housing){
     var num = 0;
-    $.each(SERIES[housing], function(key, category) {
-        if (category != null){
-            num += category.length;
+    $.each(SERIES[housing], function(key, seriesList) {
+        if (seriesList != null){
+            num += seriesList.length;
         } else {
             // The category does not have any series. Only a single item
             num += 1;
@@ -73,7 +73,7 @@ var getProducts = function(){
 }
 
 var getProductGridItemDiv = function(itemId, item){
-    var series = item.category ? item["series"] + " Series" : "";
+    var series = item.series ? item["series"] + " Series" : "";
     return '<div class="col-md-4">\
       <!-- Shop Grid Tile -->\
       <div class="tile">\
@@ -109,14 +109,16 @@ var getImages = function(item, single = false){
         category = item["category"],
         series = item["series"],
         numImages = item["images"],
-        html = '<img class="preview-img" src="img/products/{0}/{1}{2}/{3}.jpg">'
-            .format(housing, category ? category + "/" : "", series, series);
+        html = '<img class="preview-img" src="img/products/{0}/{1}/{2}{3}.jpg">'
+            .format(housing, category,
+                series ? series + "/" : "",
+                series ? series : category);
     if (single){
         return html;
     }
     for (var i = 0; i < numImages; ++i){
-        html += '<img class="preview-img" src="img/products/{0}/{1}{2}/{3}.jpg">'
-            .format(housing, category ? category + "/" : "", series, i);
+        html += '<img class="preview-img" src="img/products/{0}/{1}/{2}{3}.jpg">'
+            .format(housing, category, series ? series + "/" : "", i);
     }
     return html;
 }
