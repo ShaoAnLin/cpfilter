@@ -121,15 +121,12 @@ var setTabDetail = function(item){
             </div>'.format(getImgPath(item, 'model') + '.jpg'));
     }
     if (item.componentImgs){
-        $('#component0-img').attr("src", getImgPath(item, 'component') + '_0.jpg');
-        if (item.componentImgs > 1){
-            $('#component1-img').attr("src", getImgPath(item, 'component') + '_1.jpg');
-        }
+        $('#component0-img').attr("src", getImgPath(item) + 'component.jpg');
     }
     if (item.sizeImgs){
-        $('#size0-img').attr("src", getImgPath(item, 'size') + '_0.jpg');
+        $('#size0-img').attr("src", getImgPath(item) + 'size0.jpg');
         if (item.componentImgs > 1){
-            $('#size1-img').attr("src", getImgPath(item, 'size') + '_1.jpg');
+            $('#size1-img').attr("src", getImgPath(item) + 'size1.jpg');
         }
     }
 }
