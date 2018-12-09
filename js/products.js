@@ -101,20 +101,7 @@ var getProductGridItemDiv = function(itemId, item){
           </div>\
         </div>\
       </div><!-- Shop Grid Tile END -->\
-    </div>'.format(getImages(item), itemId, item["title"], item["subtitle"], series);
-}
-
-var getMainImage = function(item){
-    return '<img class="preview-img" src="{0}.jpg">'.format(getImgPath(item, 'main'));
-}
-
-var getImages = function(item){
-    var html = getMainImage(item);
-    for (var i = 0; i < item.images; ++i){
-        html += '<img class="preview-img" src="{0}{1}.jpg">'
-            .format(getImgPath(item, 'detail'), i);
-    }
-    return html;
+    </div>'.format(getMainImage(item), itemId, item["title"], item["subtitle"], series);
 }
 
 var getLatestProducts = function(){

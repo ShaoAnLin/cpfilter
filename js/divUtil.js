@@ -170,3 +170,7 @@ var getFooter = function(){
         <span>All Rights Reserved.</span>\
     </div>';
 }
+
+var getMainImage = function(item){
+    return '<img class="preview-img" src="{0}.jpg">'.format(getImgPath(item, 'main'));
+}

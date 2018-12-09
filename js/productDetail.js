@@ -96,11 +96,7 @@ var getProductGridItemDiv = function(itemId, item){
     var series = item.series ? item["series"] + " Series" : "";
     return '<div class="col-md-3">\
       <div class="tile">\
-        <div class="preview-box">\
-          <div class="preview-carousel" data-slick=\'{arrows": true, "dots": false}\'>\
-            {0}\
-          </div>\
-        </div>\
+        <a href="product-detail.html?item={1}">{0}</a>\
 \
         <div class="tile-title">\
           <a href="product-detail.html?item={1}">{2}</a>\
@@ -115,11 +111,7 @@ var getProductGridItemDiv = function(itemId, item){
           </div>\
         </div>\
       </div>\
-    </div>'.format(getImage(item), itemId, item["title"], item["subtitle"], series);
-}
-
-var getImage = function(item){
-    return '<img class="preview-img" src="{0}.jpg">'.format(getImgPath(item, 'main'));
+    </div>'.format(getMainImage(item), itemId, item["title"], item["subtitle"], series);
 }
 
 var setTabDetail = function(item){
