@@ -11,9 +11,8 @@ var getItemInfo = function(item){
     return '<div class="series-name">{0}</div>\
             <h4 class="item-title">{1}</h4>\
             <div>{2}</div>\
-            {3}{4}\
+            {3}\
         </div>'.format(getItemIdStr(item), item.title, item.subtitle,
-            getItemSpecification(item),
             getItemRange(item));
 }
 
@@ -24,10 +23,8 @@ var getItemSpecification = function(item){
         $.each(item.specification, function(key, value){
             listItem += '<li>{0}: {1}</li>'.format(key, value);
         });
-        html = '<div class="row">\
-          <div class="col-sm-12"><h5 class="section-title specification-name">規格</h5></div>\
-        </div>\
-        <ul class="list-featured item-specification">{0}</ul>'.format(listItem);
+        html = '<ul class="list-featured item-specification">{0}</ul>'
+            .format(listItem);
     }
     return html;
 }
@@ -115,20 +112,42 @@ var getProductGridItemDiv = function(itemId, item){
 }
 
 var setTabDetail = function(item){
+    if (item.specification){
+        $('#spec-detail').html(getItemSpecification(item));
+    } else{
+        $('#nav-tab-spec').hide();
+    }
+
     if (item.modelImgs){
-        $('#model-detail').html('<div class="col-sm-12">\
-                <img src="{0}">\
-            </div>'.format(getImgPath(item, 'model') + '.jpg'));
+        $('#model-img').attr("src", getImgPath(item, 'model') + '.jpg');
+    } else{
+        $('#nav-tab-model').hide();
     }
+
     if (item.componentImgs){
-        $('#component0-img').attr("src", getImgPath(item) + 'component.jpg');
+        $('#component-img').attr("src", getImgPath(item, 'component') + '.jpg');
+    } else{
+        $('#nav-tab-component').hide();
     }
+
     if (item.sizeImgs){
-        $('#size0-img').attr("src", getImgPath(item) + 'size0.jpg');
-        if (item.componentImgs > 1){
-            $('#size1-img').attr("src", getImgPath(item) + 'size1.jpg');
+        $('#size0-img').attr("src", getImgPath(item, 'size') + '0.jpg');
+        if (item.sizeImgs > 1){
+            $('#size1-img').attr("src", getImgPath(item, 'size') + '1.jpg');
         }
+    } else{
+        $('#nav-tab-size').hide();
     }
+}
+
+var setImages = function(item){
+    var html = '<img src="{0}.jpg" alt="Thumb">'.format(getImgPath(item, 'main'));
+    for (var i = 0; i < item.images; ++i){
+        html += '<img src="{0}{1}.jpg" alt="Thumb">'
+            .format(getImgPath(item), i);
+    }
+    $('#product-img-thumbnail').html(html);
+    $('#product-img-preview').html(html);
 }
 
 $(function() {
@@ -145,7 +164,8 @@ $(function() {
         $('#category-right-icon').hide();
     }
 
+    setImages(item);
     $('#single-item-info').html(getItemInfo(item));
-    //setTabDetail(item);
+    setTabDetail(item);
     $('#related-products').html(getRelatedProducts(item));
 });

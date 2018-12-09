@@ -342,6 +342,7 @@ var getImgPath = function(item, type){
     } else {
         return 'img/products/{0}/{1}/{2}{3}'
             .format(item.housing, item.category,
-                item.series ? item.series + "/" : "", type);
+                item.series ? item.series + "/" : "",
+                type ? type : '');
     }
 }

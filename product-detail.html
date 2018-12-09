@@ -83,15 +83,8 @@
             <div class="row">
               <div class="col-sm-7">
                 <div class="single-slider">
-                  <div class="thumbnail-carousel" data-slick='{"dots": false,"vertical": true, "arrows": false}'>
-                    <a href="#img01"><img src="img/products/過濾器/不鏽鋼濾心機/ALA/ALA.jpg" alt="Thumb"></a>
-                    <a href="#img02"><img src="img/products/過濾器/不鏽鋼濾心機/ALA/0.jpg" alt="Thumb"></a>
-                  </div>
-
-                  <div class="image-preview1" data-slick='{"dots": true, "arrows": false, "swipe": true}'>
-                    <img src="img/products/過濾器/不鏽鋼濾心機/ALA/ALA.jpg" alt="Thumb">
-                    <img src="img/products/過濾器/不鏽鋼濾心機/ALA/0.jpg" alt="Thumb">
-                  </div>
+                  <div id="product-img-thumbnail" class="thumbnail-carousel" data-slick='{"dots": false,"vertical": true, "arrows": false}'></div>
+                  <div id="product-img-preview" class="image-preview1" data-slick='{"dots": true, "arrows": false, "swipe": true}'></div>
                 </div>
               </div>
               <div class="col-sm-5">
@@ -106,35 +99,41 @@
             <hr>
             <h5 class="text-center margin-bottom-2x">
               <ul class="nav-tabs" role="tablist">
-                <li class="active"><a href="#tab-model" role="tab" data-toggle="tab">型號選購</a></li>
-                <li><a href="#tab-component" role="tab" data-toggle="tab">各部零件</a></li>
-                <li><a href="#tab-size" role="tab" data-toggle="tab">尺寸規格 (mm)</a></li>
+                <li id="nav-tab-spec" class="active"><a href="#tab-spec" role="tab" data-toggle="tab">規格</a></li>
+                <li id="nav-tab-model"><a href="#tab-model" role="tab" data-toggle="tab">型號選購</a></li>
+                <li id="nav-tab-component"><a href="#tab-component" role="tab" data-toggle="tab">各部零件</a></li>
+                <li id="nav-tab-size"><a href="#tab-size" role="tab" data-toggle="tab">尺寸規格 (mm)</a></li>
               </ul>
             </h5>
 
             <!-- Tab Panes -->
             <div id="item-tab-container" class="tab-content">
-              <div role="tabpanel" class="tab-pane transition fade in active" id="tab-model">
-                <div class="model-detail row">
+              <div role="tabpanel" class="tab-pane transition fade in active" id="tab-spec">
+                <div class="row">
+                  <div id="spec-detail" class="col-sm-12"></div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane transition fade" id="tab-model">
+                <div class="row">
                   <div class="col-sm-12 text-center">
-                    <img class="detail-img" src="img/products/過濾器/不鏽鋼濾心機/ALA/model.jpg">
+                    <img id="model-img" class="detail-img">
                   </div>
                 </div>
               </div>
               <div role="tabpanel" class="tab-pane transition fade" id="tab-component">
-                <div class="size-detail row">
+                <div class="row">
                   <div class="col-sm-12 text-center">
-                    <img class="detail-img" id="component0-img" src="img/products/過濾器/不鏽鋼濾心機/ALA/component.jpg">
+                    <img id="component-img" class="detail-img">
                   </div>
                 </div>
               </div>
               <div role="tabpanel" class="tab-pane transition fade" id="tab-size">
-                <div class="size-detail row">
-                  <div class="col-sm-6 text-center">
-                    <img class="detail-img" id="size0-img" src="img/products/過濾器/不鏽鋼濾心機/ALA/size0.jpg">
+                <div class="row">
+                  <div class="col-sm-4 text-center">
+                    <img id="size0-img" class="detail-img">
                   </div>
-                  <div class="col-sm-6 text-center">
-                    <img class="detail-img" id="size1-img" src="img/products/過濾器/不鏽鋼濾心機/ALA/size1.jpg">
+                  <div class="col-sm-8 text-center">
+                    <img id="size1-img" class="detail-img">
                   </div>
                 </div>
               </div>
