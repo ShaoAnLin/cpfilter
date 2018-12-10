@@ -21,100 +21,10 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 	});
 
-	var setActiveNav = function(){
-		var pathname = window.location.pathname;
-		if (pathname.indexOf('index') >= 0){
-				$('#nav-home').addClass('current');
-		} else if (pathname.indexOf('aboutus') >= 0){
-				$('#nav-aboutus').addClass('current');
-		} else if (pathname.indexOf('products') >= 0){
-				$('#nav-products').addClass('current');
-		} else if (pathname.indexOf('news') >= 0){
-				$('#nav-news').addClass('current');
-		} else if (pathname.indexOf('contact') >= 0){
-				$('#nav-contact').addClass('current');
-		}
-	}
-
 	// Initialize Slidebars
 	// var menuInitHeight
   var controller = new slidebars();
   controller.init();
-
-	var bindEventOffCanvas = function(){
-		$( '.offcanvas-toggle' ).on( 'click', function ( event ) {
-			// Set initial menu height value
-			menuInitHeight = $( '.offcanvas-navigation .menu' ).height()
-			// Stop default action and bubbling
-			event.stopPropagation();
-			event.preventDefault();
-
-			// Toggle the Slidebar with id 'id-2'
-			controller.toggle( 'id-1' );
-		});
-
-		// Offcanvas Navigation
-		// --------------------
-
-		// Back Button
-		// -----------
-		var menuInitHeight,
-		backBtnText = $( '.offcanvas-navigation' ).data( 'back-btn-text' ),
-		subMenu = $( '.offcanvas-navigation .sub-menu' );
-
-		$('.offcanvas-toggle').on('click', function() {
-			menuInitHeight = $( '.offcanvas-navigation .menu' ).height()
-		});
-		subMenu.each( function () {
-			$( this ).prepend( '<li class="back-btn"><a href="#">' + backBtnText + '</a></li>' );
-		} );
-
-		var hasChildLink = $( '.menu-item-has-children > a' ),
-				backBtn = $( '.offcanvas-navigation .sub-menu .back-btn' );
-
-		backBtn.on( 'click', function ( e ) {
-			var self = this,
-				parent = $( self ).parent(),
-				siblingParent = $( self ).parent().parent().siblings().parent(),
-				menu = $( self ).parents( '.menu' );
-
-			parent.removeClass( 'in-view' );
-			siblingParent.removeClass( 'off-view' );
-			if ( siblingParent.attr( "class" ) === "menu" ) {
-				menu.velocity( { height: menuInitHeight }, 100 );
-			} else {
-				menu.velocity( { height: siblingParent.height() }, 100 );
-			}
-			e.stopPropagation();
-		} );
-
-		hasChildLink.on( 'click', function ( e ) {
-			var self = this,
-				parent = $( self ).parent().parent(),
-				menu = $( self ).parents( '.menu' );
-
-			parent.addClass( 'off-view' );
-			$( self ).parent().find( '> .sub-menu' ).addClass( 'in-view' );
-			menu.velocity( { height: $( self ).parent().find( '> .sub-menu' ).height() }, 100 );
-
-			e.preventDefault();
-			return false;
-		} );
-	}
-
-	// Coundown init
-	// -------------
-	if($('.countdown').length > 0) {
-		$(".countdown")
-	  .countdown("2017/08/08", function(event) {
-			var $this = $(this).html(event.strftime(''
-		 + '<span>Deal ends in</span>'
-		 + '<div> <span>%D</span> days</div>'
-		 + '<div> <span>%H</span> hr</div>'
-		 + '<div> <span>%M</span> min</div>'
-		 + '<div> <span>%S</span> sec</div>'));
-	  });
-	}
 
 	// Range Slider
 	// ------------
@@ -180,51 +90,9 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	// PopUp Youtube
-	// -------------
-	$('.popup-youtube').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-
-    fixedContentPos: false
-	});
-
 	// All Scripts For On Load Init
 	// ----------------------------
 	$(window).on('load', function() {
-		// Common Elements Loading
-		// (Such as header and footer)
-		// ----------------------------------------
-		$('.header').html(getHeader());
-		setActiveNav();
-
-		$('.off-canvas-cont').html(getSideNav());
-		bindEventOffCanvas();
-
-		$('.footer').html(getFooter());
-
-		// Tiles Carousel
-		// (Settings are Customized Thru Data Attr)
-		// ----------------------------------------
-		if($('.preview-carousel').length > 0) {
-			$('.preview-carousel').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				draggable: false,
-				customPaging : function(slider, i) {
-			    var color = $(slider.$slides[i]).data('color');
-			    return '<a style="background-color: '+color+'"></a>';
-		    },
-				nextArrow:
-					'<i class="slick-next material-icons chevron_right"></i>',
-		  	prevArrow:
-					'<i class="slick-prev material-icons chevron_left"></i>'
-			});
-		}
-
 		// Tiles Carousel
 		// (Settings are Customized Thru Data Attr)
 		// ----------------------------------------

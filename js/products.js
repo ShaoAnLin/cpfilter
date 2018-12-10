@@ -125,6 +125,7 @@ define('products', ['constant', 'divUtil', 'common'],
     }
 
     products.init = function(){
+        common.renderCommonElements();
         $('#sidebar-cat-list').html(products.getSideBarCatList());
         $('#product-grid-items').html(products.getProducts());
         $('#latest-products').html(products.getLatestProducts());

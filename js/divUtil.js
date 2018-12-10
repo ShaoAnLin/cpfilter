@@ -52,14 +52,14 @@ define('divUtil', ['constant'], function(constant){
                 <span class="brandname">新凱濾材工業股份有限公司</span>\
             </div>\
             </div>\
-        </div>'.format(getProductsSubMenu());
+        </div>'.format(divUtil.getProductsSubMenu());
     }
 
     divUtil.getProductsSubMenu = function(){
         var html = '';
-        HOUSING.forEach(function(housing){
-            var hasSubMenu = CATEGORIES[housing].length > 0,
-                subMenu = hasSubMenu ? getCategoriesDiv(housing) : '';
+        constant.HOUSING.forEach(function(housing){
+            var hasSubMenu = constant.CATEGORIES[housing].length > 0,
+                subMenu = hasSubMenu ? divUtil.getCategoriesDiv(housing) : '';
             html += '<li class="nav-item {0} lvl-2">\
                     <a href="products.html?housing={1}">{1}</a>{2}\
                 </li>'.format(hasSubMenu ?  'dropdown' : '', housing, subMenu);
@@ -69,7 +69,7 @@ define('divUtil', ['constant'], function(constant){
 
     divUtil.getCategoriesDiv = function(housing){
         var categoryList = '';
-        CATEGORIES[housing].forEach(function(category){
+        constant.CATEGORIES[housing].forEach(function(category){
             categoryList += '<li><a href="products.html?category={0}">{0}</a></li>'
                 .format(category);
         });
@@ -96,12 +96,12 @@ define('divUtil', ['constant'], function(constant){
                 <li><a href="contact.html">聯絡我們</a></li>\
             </ul>\
             </div>\
-        </nav>'.format(getSideNavProductsSubMenu());
+        </nav>'.format(divUtil.getSideNavProductsSubMenu());
     }
 
     divUtil.getSideNavProductsSubMenu = function(){
         var html = '';
-        HOUSING.forEach(function(housing){
+        constant.HOUSING.forEach(function(housing){
             html += '<li><a href="products.html?housing={0}">{0}</a></li>'.format(housing);
         });
         return html;
