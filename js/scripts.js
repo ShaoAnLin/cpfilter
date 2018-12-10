@@ -33,15 +33,15 @@ jQuery(document).ready(function($) {
 
 	var setActiveNav = function(){
 		var pathname = window.location.pathname;
-		if (pathname.includes('index')){
+		if (pathname.indexOf('index') >= 0){
 				$('#nav-home').addClass('current');
-		} else if (pathname.includes('aboutus')){
+		} else if (pathname.indexOf('aboutus') >= 0){
 				$('#nav-aboutus').addClass('current');
-		} else if (pathname.includes('products')){
+		} else if (pathname.indexOf('products') >= 0){
 				$('#nav-products').addClass('current');
-		} else if (pathname.includes('news')){
+		} else if (pathname.indexOf('news') >= 0){
 				$('#nav-news').addClass('current');
-		} else if (pathname.includes('contact')){
+		} else if (pathname.indexOf('contact') >= 0){
 				$('#nav-contact').addClass('current');
 		}
 	}
