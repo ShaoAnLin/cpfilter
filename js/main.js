@@ -24,7 +24,3 @@ requirejs.config({
 			'vendor/gmap3.min']
 	}
 });
-
-define(['products'], function(products){
-	//products.init();
-})

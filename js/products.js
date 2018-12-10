@@ -130,10 +130,5 @@ define('products', ['constant', 'divUtil', 'common'],
         $('#latest-products').html(products.getLatestProducts());
     }
 
-    (function(){
-        console.log('!!!');
-        products.init();
-    });
-
     return products;
 });
