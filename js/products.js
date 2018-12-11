@@ -45,7 +45,7 @@ define('products', ['constant', 'divUtil', 'common'],
         //       then highlight the category instead of the housing
         if (queryCategory){
             targetCategory = queryCategory[0].split('=')[1];
-            $.each(CATEGORIES, function(housing, categories){
+            $.each(constant.CATEGORIES, function(housing, categories){
                 if (categories.indexOf(targetCategory) != -1){
                     $('#housing-' + housing).addClass('current');
                 }

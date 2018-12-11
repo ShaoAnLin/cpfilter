@@ -42,6 +42,7 @@
   <!-- All Theme Styles -->
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
 
+  <!--Modernizr / Detectizr-->
   <script data-main="js/main.js" src="js/requirejs.js"></script>
 </head>
 
@@ -260,8 +261,8 @@
   </div><!-- Page Wrapper END -->
 
   <script>
-    require(['common', 'home'], function(common) {
-      common.renderCommonElements();
+    require(['home'], function(home) {
+      home.init();
     });
   </script>
 </body>

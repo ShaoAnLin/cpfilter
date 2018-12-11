@@ -4,6 +4,7 @@ requirejs.config({
 		jquery: 'vendor/jquery-2.1.4.min'
 	},
 	shim: {
+		'scripts': 'jqeury',
 		'vendor/preloader.min': 'jquery',
 		'vendor/bootstrap.min': 'jquery',
 		'vendor/jquery.themepunch.revolution.min': 'jquery',
@@ -14,6 +15,16 @@ requirejs.config({
 		'vendor/extensions/revolution.extension.kenburn.min': 'jquery',
 		'vendor/extensions/revolution.extension.navigation.min': 'jquery',
 		'vendor/extensions/revolution.extension.parallax.min': 'jquery',
+		'home': [
+			'scripts',
+			'common',
+			'jquery',
+			'vendor/extensions/revolution.extension.slideanims.min',
+			'vendor/extensions/revolution.extension.actions.min',
+			'vendor/extensions/revolution.extension.layeranimation.min',
+			'vendor/extensions/revolution.extension.kenburn.min',
+			'vendor/extensions/revolution.extension.navigation.min',
+			'vendor/extensions/revolution.extension.parallax.min'],
 		'common': [
 			'JavascriptStrings',
 			'jquery',
