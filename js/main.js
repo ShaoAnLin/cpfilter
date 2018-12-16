@@ -1,4 +1,5 @@
 requirejs.config({
+    baseUrl: "js",
 	paths: {
 		app: 'js',
 		jquery: 'vendor/jquery-2.1.4.min',
@@ -40,6 +41,7 @@ requirejs.config({
 			'vendor/velocity.min',
 			'vendor/slidebars.min',
 			'vendor/jquery.themepunch.revolution.min',
-			'vendor/gmap3.min']
+			'vendor/gmap3.min'],
+		'products': ['constant', 'divUtil', 'react', 'reactDOM', 'productReact']
 	}
 });

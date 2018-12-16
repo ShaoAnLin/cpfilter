@@ -1,30 +1,6 @@
-define('products', ['constant', 'divUtil', 'common'],
-    function(constant, divUtil, common){
+define('products', ['constant', 'divUtil', 'react', 'reactDOM'],
+    function(constant, divUtil, React, ReactDOM){
     var products = {};
-
-    products.getSideBarCatList = function(){
-        var html = '';
-        constant.HOUSING.forEach(function(housing){
-            html += '<li id="housing-{0}">\
-                <a href="?housing={0}" title="">{0}</a>\
-                <span>{1}</span>\
-                </li>'.format(housing, products.getGroupNumOfItems(housing));
-        });
-        return html;
-    }
-
-    products.getGroupNumOfItems = function(housing){
-        var num = 0;
-        $.each(constant.SERIES[housing], function(key, seriesList) {
-            if (seriesList != null){
-                num += seriesList.length;
-            } else {
-                // The category does not have any series. Only a single item
-                num += 1;
-            }
-        });
-        return num;
-    }
 
     products.getProducts = function(){
         var html = "",
@@ -82,9 +58,7 @@ define('products', ['constant', 'divUtil', 'common'],
         <!-- Shop Grid Tile -->\
         <div class="tile">\
             <div class="preview-box">\
-            <div class="preview-carousel" data-slick=\'{arrows": true, "dots": false}\'>\
                 {0}\
-            </div>\
             </div>\
     \
             <div class="tile-title">\
@@ -120,8 +94,10 @@ define('products', ['constant', 'divUtil', 'common'],
     }
 
     products.init = function(){
-        common.renderCommonElements();
-        $('#sidebar-cat-list').html(products.getSideBarCatList());
+        console.log('products init');
+        //const sideBarListContainer = document.querySelector('#sidebar-cat-list');
+        //ReactDOM.render(React.createElement(productReact.SideBarList), sideBarListContainer);
+        //$('#sidebar-cat-list').html(products.getSideBarCatList());
         $('#product-grid-items').html(products.getProducts());
         $('#latest-products').html(products.getLatestProducts());
     }

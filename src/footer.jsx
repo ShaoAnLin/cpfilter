@@ -79,4 +79,4 @@ define('footer', [
   
   const domContainer = document.querySelector('.footer');
   ReactDOM.render(React.createElement(Footer), domContainer);
-  });
+});
