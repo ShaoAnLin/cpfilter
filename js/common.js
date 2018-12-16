@@ -1,6 +1,6 @@
 define('common', [
-    'header',
     'divUtil',
+    'header',
     'JavascriptStrings',
     'vendor/jquery-2.1.4.min',
     'vendor/preloader.min',

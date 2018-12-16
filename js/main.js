@@ -1,7 +1,9 @@
 requirejs.config({
 	paths: {
 		app: 'js',
-		jquery: 'vendor/jquery-2.1.4.min'
+		jquery: 'vendor/jquery-2.1.4.min',
+		react: 'react.min',
+		reactDOM: 'react-dom.min'
 	},
 	shim: {
 		'scripts': 'jqeury',

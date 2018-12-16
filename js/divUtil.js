@@ -1,60 +1,6 @@
 define('divUtil', ['constant'], function(constant){
     var divUtil = {};
-
-    divUtil.getHeader = function(){
-        return '<div class="container">\
-            <div class="middle-bar">\
-            <div class="column left-side">\
-                <!-- Main Logo -->\
-                <div class="logo">\
-                    <img class="logo-img" src="img/logo.png">\
-                    <span class="brandname">新凱濾材工業股份有限公司</span>\
-                </div>\
-            </div>\
-        \
-            <!-- Navbar Section -->\
-            <div class="navbar">\
-                <!-- Main Navigation -->\
-                <ul class="main-nav">\
-                    <!-- Main Navigation Level -->\
-                    <li id="nav-home" class="nav-item lvl-1">\
-                        <a href="index.html">首頁</a>\
-                    </li>\
-                    <li id="nav-aboutus" class="nav-item lvl-1">\
-                        <a href="aboutus.html">關於新凱</a>\
-                    </li>\
-                    <li id="nav-products" class="nav-item dropdown lvl-1">\
-                        <a href="products.html">產品資訊</a>\
-                        <ul class="sub-menu">{0}</ul>\
-                    </li>\
-                    <li id="nav-news" class="nav-item lvl-1">\
-                        <a href="news.html">最新消息</a>\
-                    </li>\
-                    <li id="nav-contact" class="nav-item lvl-1">\
-                        <a href="contact.html">聯絡我們</a>\
-                    </li>\
-                </ul><!-- Main Navigation END -->\
-            </div><!-- Navbar Section END -->\
-            </div>\
-        </div><!-- Middle Bar Section -->\
-        \
-        <!-- Mobile Tools -->\
-        <div class="mobile-view">\
-            <div class="container">\
-            <!-- OffCanvas Toggle -->\
-            <a href="#" class="offcanvas-toggle">\
-                <i class="material-icons menu"></i>\
-            </a>\
-        \
-            <!-- Mobile View Logo -->\
-            <div class="logo">\
-                <img class="logo-img" src="img/logo_pure.png">\
-                <span class="brandname">新凱濾材工業股份有限公司</span>\
-            </div>\
-            </div>\
-        </div>'.format(divUtil.getProductsSubMenu());
-    }
-
+    
     divUtil.getProductsSubMenu = function(){
         var html = '';
         constant.HOUSING.forEach(function(housing){
