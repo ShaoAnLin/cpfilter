@@ -1,7 +1,7 @@
 define('common', [
-    'divUtil',
     'header',
     'footer',
+    'sideNav',
     'JavascriptStrings',
     'vendor/jquery-2.1.4.min',
     'vendor/preloader.min',
@@ -14,13 +14,12 @@ define('common', [
     'vendor/velocity.min',
     'vendor/slidebars.min',
     'vendor/jquery.themepunch.revolution.min',
-    'vendor/gmap3.min'], function(divUtil){
+    'vendor/gmap3.min'], function(){
 
     var common = {};
 
     common.renderCommonElements = function(){
       common.setActiveNav();
-      $('.off-canvas-cont').html(divUtil.getSideNav());
     }
 
     common.setActiveNav = function(){
