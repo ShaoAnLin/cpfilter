@@ -1,10 +1,11 @@
 define('header', [
   'react',
-  'reactDOM'],
-  function(React, ReactDOM){
+  'reactDOM',
+  'constant'],
+  function(React, ReactDOM, constant){
 
   'use strict';
-
+  
   class Header extends React.Component {
     constructor(props) {
       super(props);
@@ -32,7 +33,7 @@ define('header', [
               </li>
               <li id="nav-products" className="nav-item dropdown lvl-1">
                 <a href="products.html">產品資訊</a>
-                <ul className="sub-menu"></ul>
+                <SubNav/>
               </li>
               <li id="nav-news" className="nav-item lvl-1">
                 <a href="news.html">最新消息</a>
@@ -58,6 +59,66 @@ define('header', [
         </div>
         </div>
       );
+    }
+  }
+
+  class SubNav extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    getMenu = function(){
+      var menu = [];
+      constant.HOUSING.forEach(function(housing){
+        menu.push(<DropDownItem housing={housing}></DropDownItem>);
+      });
+      return menu;
+    }
+    render (){
+      return (
+        <ul className="sub-menu">
+          {this.getMenu()}
+        </ul>
+      );
+    };
+  }
+
+  class DropDownItem extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render (){
+      var housing = this.props.housing,
+          hasSubMenu = constant.CATEGORIES[housing].length > 0,
+          menuClass = ["nav-item", "lvl-2"],
+          housingHref = "products.html?housing=" + housing;
+      if (hasSubMenu){
+        menuClass.push("dropdown");
+      }
+      return (
+        <li className={menuClass.join(' ')}>
+          <a href={housingHref}>{housing}</a>
+          {hasSubMenu && <SubMenuItem housing={housing}></SubMenuItem>}
+        </li>);
+    }
+  }
+
+  class SubMenuItem extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    getSubMenu = function(){
+      var subMenu = [];
+      constant.CATEGORIES[this.props.housing].forEach(function(category){
+        var categoryLink = "products.html?category=" + category;
+        subMenu.push(<li><a href={categoryLink}>{category}</a></li>);
+      });
+      return subMenu;
+    }
+    render (){
+      return (
+        <ul class="sub-menu">
+          {this.getSubMenu()}
+        </ul>);
     }
   }
 

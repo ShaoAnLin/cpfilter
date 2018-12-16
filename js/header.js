@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define('header', ['react', 'reactDOM'], function (React, ReactDOM) {
+define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, constant) {
 
   'use strict';
 
@@ -77,7 +77,7 @@ define('header', ['react', 'reactDOM'], function (React, ReactDOM) {
                       { href: 'products.html' },
                       '\u7522\u54C1\u8CC7\u8A0A'
                     ),
-                    React.createElement('ul', { className: 'sub-menu' })
+                    React.createElement(SubNav, null)
                   ),
                   React.createElement(
                     'li',
@@ -129,6 +129,116 @@ define('header', ['react', 'reactDOM'], function (React, ReactDOM) {
     }]);
 
     return Header;
+  }(React.Component);
+
+  var SubNav = function (_React$Component2) {
+    _inherits(SubNav, _React$Component2);
+
+    function SubNav(props) {
+      _classCallCheck(this, SubNav);
+
+      var _this2 = _possibleConstructorReturn(this, (SubNav.__proto__ || Object.getPrototypeOf(SubNav)).call(this, props));
+
+      _this2.getMenu = function () {
+        var menu = [];
+        constant.HOUSING.forEach(function (housing) {
+          menu.push(React.createElement(DropDownItem, { housing: housing }));
+        });
+        return menu;
+      };
+
+      return _this2;
+    }
+
+    _createClass(SubNav, [{
+      key: 'render',
+      value: function render() {
+        return React.createElement(
+          'ul',
+          { className: 'sub-menu' },
+          this.getMenu()
+        );
+      }
+    }]);
+
+    return SubNav;
+  }(React.Component);
+
+  var DropDownItem = function (_React$Component3) {
+    _inherits(DropDownItem, _React$Component3);
+
+    function DropDownItem(props) {
+      _classCallCheck(this, DropDownItem);
+
+      return _possibleConstructorReturn(this, (DropDownItem.__proto__ || Object.getPrototypeOf(DropDownItem)).call(this, props));
+    }
+
+    _createClass(DropDownItem, [{
+      key: 'render',
+      value: function render() {
+        var housing = this.props.housing,
+            hasSubMenu = constant.CATEGORIES[housing].length > 0,
+            menuClass = ["nav-item", "lvl-2"],
+            housingHref = "products.html?housing=" + housing;
+        if (hasSubMenu) {
+          menuClass.push("dropdown");
+        }
+        return React.createElement(
+          'li',
+          { className: menuClass.join(' ') },
+          React.createElement(
+            'a',
+            { href: housingHref },
+            housing
+          ),
+          hasSubMenu && React.createElement(SubMenuItem, { housing: housing })
+        );
+      }
+    }]);
+
+    return DropDownItem;
+  }(React.Component);
+
+  var SubMenuItem = function (_React$Component4) {
+    _inherits(SubMenuItem, _React$Component4);
+
+    function SubMenuItem(props) {
+      _classCallCheck(this, SubMenuItem);
+
+      var _this4 = _possibleConstructorReturn(this, (SubMenuItem.__proto__ || Object.getPrototypeOf(SubMenuItem)).call(this, props));
+
+      _this4.getSubMenu = function () {
+        var subMenu = [];
+        constant.CATEGORIES[this.props.housing].forEach(function (category) {
+          var categoryLink = "products.html?category=" + category;
+          subMenu.push(React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: categoryLink },
+              category
+            )
+          ));
+        });
+        return subMenu;
+      };
+
+      return _this4;
+    }
+
+    _createClass(SubMenuItem, [{
+      key: 'render',
+      value: function render() {
+        return React.createElement(
+          'ul',
+          { 'class': 'sub-menu' },
+          this.getSubMenu()
+        );
+      }
+    }]);
+
+    return SubMenuItem;
   }(React.Component);
 
   var domContainer = document.querySelector('.header');

@@ -23,8 +23,8 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
       key: 'render',
       value: function render() {
         return React.createElement(
-          'div',
-          { id: 'footer-container' },
+          React.Fragment,
+          null,
           React.createElement(
             'div',
             { 'class': 'container' },

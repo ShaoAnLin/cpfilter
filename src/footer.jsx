@@ -12,7 +12,7 @@ define('footer', [
   
     render() {
     return (
-      <div id="footer-container">
+      <React.Fragment>
       <div class="container">
         <div class="row">
         <div class="col-md-6">
@@ -73,7 +73,7 @@ define('footer', [
         <span class="brandname-en">CP Filter Industrial Co.,Ltd.</span>
         <span>All Rights Reserved.</span>
       </div>
-      </div>);
+      </React.Fragment>);
     }
   }
   

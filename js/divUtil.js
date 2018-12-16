@@ -1,27 +1,5 @@
 define('divUtil', ['constant'], function(constant){
     var divUtil = {};
-    
-    // TODO: should add to header
-    divUtil.getProductsSubMenu = function(){
-        var html = '';
-        constant.HOUSING.forEach(function(housing){
-            var hasSubMenu = constant.CATEGORIES[housing].length > 0,
-                subMenu = hasSubMenu ? divUtil.getCategoriesDiv(housing) : '';
-            html += '<li class="nav-item {0} lvl-2">\
-                    <a href="products.html?housing={1}">{1}</a>{2}\
-                </li>'.format(hasSubMenu ?  'dropdown' : '', housing, subMenu);
-        });
-        return html;
-    }
-
-    divUtil.getCategoriesDiv = function(housing){
-        var categoryList = '';
-        constant.CATEGORIES[housing].forEach(function(category){
-            categoryList += '<li><a href="products.html?category={0}">{0}</a></li>'
-                .format(category);
-        });
-        return '<ul class="sub-menu">{0}</ul>'.format(categoryList);
-    }
 
     divUtil.getSideNav = function(){
         return '<div class="side-nav-tools">\
