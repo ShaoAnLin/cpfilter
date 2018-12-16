@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
 		// Common Elements Loading
 		// (Such as header and footer)
 		// ----------------------------------------
-		$('.header').html(getHeader());
+		//$('.header').html(getHeader());
 		setActiveNav();
 
 		$('.off-canvas-cont').html(getSideNav());
