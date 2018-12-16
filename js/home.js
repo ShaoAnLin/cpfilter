@@ -11,7 +11,6 @@ define('home', ['scripts',
 
     var home = {};
     home.init = function(){
-        scripts.init();
         common.renderCommonElements();
     }
     return home;

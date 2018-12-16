@@ -1,4 +1,5 @@
 define('common', [
+    'scripts',
     'header',
     'footer',
     'sideNav',
@@ -14,11 +15,12 @@ define('common', [
     'vendor/velocity.min',
     'vendor/slidebars.min',
     'vendor/jquery.themepunch.revolution.min',
-    'vendor/gmap3.min'], function(){
+    'vendor/gmap3.min'], function(scripts){
 
     var common = {};
 
     common.renderCommonElements = function(){
+      scripts.init();
       common.setActiveNav();
     }
 
