@@ -85,11 +85,6 @@ define('products', ['constant', 'divUtil', 'common'],
             <div class="preview-carousel" data-slick=\'{arrows": true, "dots": false}\'>\
                 {0}\
             </div>\
-            <div class="preview-meta">\
-                <div>\
-                <a href="#" data-toggle="modal" data-target="#quickPreview" class="btn btn-iconed btn-gray"><i class="material-icons zoom_out_map"></i></a>\
-                </div>\
-            </div>\
             </div>\
     \
             <div class="tile-title">\
