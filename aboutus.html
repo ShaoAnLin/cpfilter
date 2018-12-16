@@ -36,10 +36,7 @@
   <!-- All Theme Styles -->
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
 
-  <!--Modernizr / Detectizr-->
-  <script src="js/vendor/modernizr.custom.js"></script>
-  <script src="js/vendor/detectizr.min.js"></script>
-
+  <script data-main="js/main.js" src="js/requirejs.js"></script>
 </head>
 
 <!-- Body -->
@@ -126,27 +123,10 @@
     </div>
   </div><!-- Page Wrapper END -->
 
-  <!-- JavaScript (jQuery) libraries, plugins and custom scripts -->
-  <script src="js/vendor/jquery-2.1.4.min.js"></script>
-  <script src="js/vendor/preloader.min.js"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/vendor/nouislider.min.js"></script>
-  <script src="js/vendor/jquery.magnific-popup.min.js"></script>
-  <script src="js/vendor/slick.min.js"></script>
-  <script src="js/vendor/isotope.pkgd.min.js"></script>
-  <script src="js/vendor/wNumb.js"></script>
-  <script src="js/vendor/velocity.min.js"></script>
-  <script src="js/vendor/slidebars.min.js"></script>
-  <script src="js/vendor/jquery.themepunch.revolution.min.js"></script>
-
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-
-  <script src="js/scripts.js"></script>
-  <script src="js/divUtil.js"></script>
-  <script src="js/constant.js"></script>
-  <script src="js/header.js"></script>
-
+  <script>
+    require(['common'], function(common) {
+      common.renderCommonElements();
+    });
+  </script>
 </body>
 </html>
