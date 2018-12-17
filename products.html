@@ -126,11 +126,10 @@
   </div><!-- Page Wrapper END -->
 
   <script>
-    require(['common', 'products'], function(common, products) {
+    require(['common', 'productReact'], function(common, productReact) {
       common.renderCommonElements();
       console.log('Ready to init products');
-      console.log(products);
-      products.init();
+      productReact.init();
     });
   </script>
 </body>

@@ -1,6 +1,6 @@
 define('productReact', [
-    'react.min',
-    'react-dom.min',
+    'react',
+    'reactDOM',
     'constant'],
     function(React, ReactDOM, constant){
     
@@ -8,19 +8,20 @@ define('productReact', [
     
     class SideBarList extends React.Component {
         constructor(props) {
-        super(props);
+            super(props);
         }
 
         getSideBarCatList = function(){
             var sideBar = [];
             constant.HOUSING.forEach(function(housing){
                 var housingName = "housing-" + housing,
-                    housingLink = "?housing=" + housing;
+                    housingLink = "?housing=" + housing,
+                    numOfItems = this.getGroupNumOfItems(housing);
                 sideBar.push(<li id={housingName}>
                         <a href={housingLink} title="">{housing}</a>
-                        <span>{this.getGroupNumOfItems(housing)}</span>
+                        <span>{numOfItems}</span>
                     </li>);
-            });
+            }, this);
             return sideBar;
         }
 
@@ -38,7 +39,18 @@ define('productReact', [
         }
         
         render() {
-            return this.getSideBarCatList();
+            return (
+                <React.Fragment>{this.getSideBarCatList()}</React.Fragment>
+            );
         };
     }
+
+    var instance = {};
+
+    instance.init = function(){
+        const sideBarListContainer = document.querySelector('#sidebar-cat-list');
+        ReactDOM.render(React.createElement(SideBarList), sideBarListContainer);
+    }
+
+    return instance;
 });
