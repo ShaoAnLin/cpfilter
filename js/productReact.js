@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define('productReact', ['react.min', 'react-dom.min', 'constant'], function (React, ReactDOM, constant) {
+define('productReact', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, constant) {
 
     'use strict';
 
@@ -22,7 +22,8 @@ define('productReact', ['react.min', 'react-dom.min', 'constant'], function (Rea
                 var sideBar = [];
                 constant.HOUSING.forEach(function (housing) {
                     var housingName = "housing-" + housing,
-                        housingLink = "?housing=" + housing;
+                        housingLink = "?housing=" + housing,
+                        numOfItems = this.getGroupNumOfItems(housing);
                     sideBar.push(React.createElement(
                         'li',
                         { id: housingName },
@@ -34,10 +35,10 @@ define('productReact', ['react.min', 'react-dom.min', 'constant'], function (Rea
                         React.createElement(
                             'span',
                             null,
-                            this.getGroupNumOfItems(housing)
+                            numOfItems
                         )
                     ));
-                });
+                }, this);
                 return sideBar;
             };
 
@@ -60,10 +61,23 @@ define('productReact', ['react.min', 'react-dom.min', 'constant'], function (Rea
         _createClass(SideBarList, [{
             key: 'render',
             value: function render() {
-                return this.getSideBarCatList();
+                return React.createElement(
+                    React.Fragment,
+                    null,
+                    this.getSideBarCatList()
+                );
             }
         }]);
 
         return SideBarList;
     }(React.Component);
+
+    var instance = {};
+
+    instance.init = function () {
+        var sideBarListContainer = document.querySelector('#sidebar-cat-list');
+        ReactDOM.render(React.createElement(SideBarList), sideBarListContainer);
+    };
+
+    return instance;
 });
