@@ -77,29 +77,9 @@ define('products', ['constant', 'divUtil', 'react', 'reactDOM'],
         </div>'.format(divUtil.getMainImage(item), itemId, item["title"], item["subtitle"], series);
     }
 
-    products.getLatestProducts = function(){
-        var html = '';
-        constant.LATEST_PRODUCTS.forEach(function(itemId){
-            var item = constant.ITEMS[itemId];
-            console.log(item);
-            html += '<li>\
-            <a href="product-detail.html?item={1}" class="cart-thumb">{0}</a>\
-            <div class="info-cont">\
-                <a href="product-detail.html?item={1}" class="item-title">{2}</a>\
-                <div class="category">{3}</div>\
-            </div>\
-            </li>'.format(divUtil.getMainImage(item), itemId, item.title, item.housing);
-        });
-        return html;
-    }
-
     products.init = function(){
         console.log('products init');
-        //const sideBarListContainer = document.querySelector('#sidebar-cat-list');
-        //ReactDOM.render(React.createElement(productReact.SideBarList), sideBarListContainer);
-        //$('#sidebar-cat-list').html(products.getSideBarCatList());
         $('#product-grid-items').html(products.getProducts());
-        $('#latest-products').html(products.getLatestProducts());
     }
 
     return products;

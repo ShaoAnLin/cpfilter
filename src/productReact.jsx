@@ -1,8 +1,9 @@
 define('productReact', [
     'react',
     'reactDOM',
-    'constant'],
-    function(React, ReactDOM, constant){
+    'constant',
+    'productImg'],
+    function(React, ReactDOM, constant, productImg){
     
     'use strict';
     
@@ -45,11 +46,45 @@ define('productReact', [
         };
     }
 
+    class LatestProducts extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        getLatestProducts = function(){
+            var latestProducts = [];
+            constant.LATEST_PRODUCTS.forEach(function(itemId){
+                var item = constant.ITEMS[itemId],
+                    detailUrl = "product-detail.html?item=" + itemId;
+                latestProducts.push(<li>
+                    <a href={detailUrl} class="cart-thumb">
+                        <productImg.MainImg item={item}></productImg.MainImg>
+                    </a>
+                    <div class="info-cont">
+                        <a href={detailUrl} class="item-title">{item.title}</a>
+                        <div class="category">{item.housing}</div>
+                    </div>
+                </li>);
+                //'.format(divUtil.getMainImage(item), itemId, item.title, item.housing);
+            });
+            return latestProducts;
+        }
+        
+        render() {
+            return (
+                <React.Fragment>{this.getLatestProducts()}</React.Fragment>
+            );
+        };
+    }
+
     var instance = {};
 
     instance.init = function(){
         const sideBarListContainer = document.querySelector('#sidebar-cat-list');
         ReactDOM.render(React.createElement(SideBarList), sideBarListContainer);
+
+        const latestProducts = document.querySelector('#latest-products');
+        ReactDOM.render(React.createElement(LatestProducts), latestProducts);
     }
 
     return instance;
