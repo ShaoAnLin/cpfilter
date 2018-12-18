@@ -154,19 +154,7 @@ define('Products', [
         };
     }
 
-    var instance = {};
-
-    instance.init = function(){
-        const sideBarListContainer = document.querySelector('#sidebar-cat-list');
-        ReactDOM.render(<SideBarList/>, sideBarListContainer);
-
-        const latestProducts = document.querySelector('#latest-products');
-        ReactDOM.render(<LatestProducts/>, latestProducts);
-
-        instance.setProducts();
-    }
-
-    instance.setProducts = function(){
+    var setProducts = function(){
         var queryHousing = decodeURI(window.location.search).match('housing=.*'),
             queryCategory = decodeURI(window.location.search).match('category=.*'),
             housing = null,
@@ -178,13 +166,13 @@ define('Products', [
         if (queryCategory){
             category = queryCategory[0].split('=')[1];
         }
-        instance.setCurrent(housing, category);
+        setCurrent(housing, category);
 
         ReactDOM.render(<ProductItems housing={housing} category={category}/>,
             document.querySelector('#product-grid-items'));
     }
 
-    instance.setCurrent = function(targetHousing, targetCategory){
+    var setCurrent = function(targetHousing, targetCategory){
         if (targetHousing){
             $('#housing-' + targetHousing).addClass('current');
         }
@@ -196,6 +184,18 @@ define('Products', [
                 }
             });
         }
+    }
+
+    var instance = {};
+
+    instance.init = function(){
+        ReactDOM.render(<SideBarList/>,
+            document.querySelector('#sidebar-cat-list'));
+
+        ReactDOM.render(<LatestProducts/>,
+            document.querySelector('#latest-products'));
+
+        setProducts();
     }
 
     return instance;

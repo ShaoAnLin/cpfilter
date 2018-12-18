@@ -258,19 +258,7 @@ define('Products', ['react', 'reactDOM', 'constant', 'ProductImg'], function (Re
         return ProductGridItem;
     }(React.Component);
 
-    var instance = {};
-
-    instance.init = function () {
-        var sideBarListContainer = document.querySelector('#sidebar-cat-list');
-        ReactDOM.render(React.createElement(SideBarList, null), sideBarListContainer);
-
-        var latestProducts = document.querySelector('#latest-products');
-        ReactDOM.render(React.createElement(LatestProducts, null), latestProducts);
-
-        instance.setProducts();
-    };
-
-    instance.setProducts = function () {
+    var setProducts = function setProducts() {
         var queryHousing = decodeURI(window.location.search).match('housing=.*'),
             queryCategory = decodeURI(window.location.search).match('category=.*'),
             housing = null,
@@ -282,12 +270,12 @@ define('Products', ['react', 'reactDOM', 'constant', 'ProductImg'], function (Re
         if (queryCategory) {
             category = queryCategory[0].split('=')[1];
         }
-        instance.setCurrent(housing, category);
+        setCurrent(housing, category);
 
         ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
     };
 
-    instance.setCurrent = function (targetHousing, targetCategory) {
+    var setCurrent = function setCurrent(targetHousing, targetCategory) {
         if (targetHousing) {
             $('#housing-' + targetHousing).addClass('current');
         }
@@ -299,6 +287,16 @@ define('Products', ['react', 'reactDOM', 'constant', 'ProductImg'], function (Re
                 }
             });
         }
+    };
+
+    var instance = {};
+
+    instance.init = function () {
+        ReactDOM.render(React.createElement(SideBarList, null), document.querySelector('#sidebar-cat-list'));
+
+        ReactDOM.render(React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
+
+        setProducts();
     };
 
     return instance;
