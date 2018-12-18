@@ -1,4 +1,4 @@
-define('ProductDetailReact', [
+define('ProductDetail', [
     'react',
     'reactDOM',
     'constant',
@@ -186,20 +186,18 @@ define('ProductDetailReact', [
                 series = this.props.item.series
                 ? this.props.item["series"] + " Series" : "";
             return(
-                <div class="col-md-3">
-                    <div class="tile">
-                        <a href={detailLink}>
-                            <ProductImg.MainImg item={this.props.item}/>
-                        </a>
-                        <div class="tile-title">
-                            <a href={detailLink}>{this.props.item.title}</a>
-                        </div>
-                        <div class="tile-meta">
+                <div class="col-md-3 tile">
+                    <a href={detailLink}>
+                        <ProductImg.MainImg item={this.props.item}/>
+                    </a>
+                    <div class="tile-title">
+                        <a href={detailLink}>{this.props.item.title}</a>
+                    </div>
+                    <div class="tile-meta">
                         <div class="meta-top">
                             <span>{this.props.item.subtitle}</span>
                         </div>
                         <div class="meta-bottom"><span>{series}</span></div>
-                        </div>
                     </div>
                 </div>
             );

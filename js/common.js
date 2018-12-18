@@ -17,26 +17,26 @@ define('common', [
     'vendor/jquery.themepunch.revolution.min',
     'vendor/gmap3.min'], function(scripts){
 
+    var setActiveNav = function(){
+        var pathname = window.location.pathname;
+        if (pathname.indexOf('index') >= 0){
+            $('#nav-home').addClass('current');
+        } else if (pathname.indexOf('aboutus') >= 0){
+            $('#nav-aboutus').addClass('current');
+        } else if (pathname.indexOf('products') >= 0){
+            $('#nav-products').addClass('current');
+        } else if (pathname.indexOf('news') >= 0){
+            $('#nav-news').addClass('current');
+        } else if (pathname.indexOf('contact') >= 0){
+            $('#nav-contact').addClass('current');
+        }
+        }
+
     var common = {};
 
     common.init = function(){
       scripts.init();
-      common.setActiveNav();
-    }
-
-    common.setActiveNav = function(){
-      var pathname = window.location.pathname;
-      if (pathname.indexOf('index') >= 0){
-          $('#nav-home').addClass('current');
-      } else if (pathname.indexOf('aboutus') >= 0){
-          $('#nav-aboutus').addClass('current');
-      } else if (pathname.indexOf('products') >= 0){
-          $('#nav-products').addClass('current');
-      } else if (pathname.indexOf('news') >= 0){
-          $('#nav-news').addClass('current');
-      } else if (pathname.indexOf('contact') >= 0){
-          $('#nav-contact').addClass('current');
-      }
+      setActiveNav();
     }
     
     return common;
