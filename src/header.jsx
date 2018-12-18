@@ -1,4 +1,4 @@
-define('header', [
+define('Header', [
   'react',
   'reactDOM',
   'constant'],
@@ -122,6 +122,5 @@ define('header', [
     }
   }
 
-  const domContainer = document.querySelector('.header');
-  ReactDOM.render(React.createElement(Header), domContainer);
+  ReactDOM.render(<Header/>, document.querySelector('.header'));
 });

@@ -41,6 +41,6 @@ requirejs.config({
 			'vendor/slidebars.min',
 			'vendor/jquery.themepunch.revolution.min',
 			'vendor/gmap3.min'],
-			'productReact': ['constant', 'reactDOM', 'productReact']
+		'ProductReact': ['react', 'reactDOM']
 	}
 });

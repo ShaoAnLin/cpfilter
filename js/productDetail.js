@@ -1,5 +1,5 @@
-define('productDetail', ['constant', 'common', 'divUtil'],
-    function(constant, common, divUtil){
+define('productDetail', ['constant', 'divUtil'],
+    function(constant, divUtil){
 
     var productDetail = {};
 
@@ -156,8 +156,6 @@ define('productDetail', ['constant', 'common', 'divUtil'],
     }
 
     productDetail.init = function(){
-        common.renderCommonElements();
-
         var item = productDetail.getItem();
         console.log(item);
 

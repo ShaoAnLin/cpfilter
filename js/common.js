@@ -1,8 +1,8 @@
 define('common', [
     'scripts',
-    'header',
-    'footer',
-    'sideNav',
+    'Header',
+    'Footer',
+    'SideNav',
     'JavascriptStrings',
     'vendor/jquery-2.1.4.min',
     'vendor/preloader.min',
@@ -19,7 +19,7 @@ define('common', [
 
     var common = {};
 
-    common.renderCommonElements = function(){
+    common.init = function(){
       scripts.init();
       common.setActiveNav();
     }

@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, constant) {
+define('Header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, constant) {
 
   'use strict';
 
@@ -241,6 +241,5 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
     return SubMenuItem;
   }(React.Component);
 
-  var domContainer = document.querySelector('.header');
-  ReactDOM.render(React.createElement(Header), domContainer);
+  ReactDOM.render(React.createElement(Header, null), document.querySelector('.header'));
 });

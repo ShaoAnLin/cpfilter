@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
+define('Footer', ['react', 'reactDOM'], function (React, ReactDOM) {
 
   'use strict';
 
@@ -188,6 +188,5 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
     return Footer;
   }(React.Component);
 
-  var domContainer = document.querySelector('.footer');
-  ReactDOM.render(React.createElement(Footer), domContainer);
+  ReactDOM.render(React.createElement(Footer, null), document.querySelector('.footer'));
 });

@@ -1,4 +1,4 @@
-define('productImg', [
+define('ProductImg', [
     'react',
     'reactDOM',
     'constant'],

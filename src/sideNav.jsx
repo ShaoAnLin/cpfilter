@@ -1,4 +1,4 @@
-define('sideNav', [
+define('SideNav', [
   'react',
   'reactDOM',
   'constant'],
@@ -44,6 +44,5 @@ define('sideNav', [
     }
   }
   
-  const domContainer = document.querySelector('.off-canvas-cont');
-  ReactDOM.render(React.createElement(SideNav), domContainer);
+  ReactDOM.render(<SideNav/>, document.querySelector('.off-canvas-cont'));
 });

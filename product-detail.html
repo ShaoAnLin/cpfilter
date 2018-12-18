@@ -153,7 +153,8 @@
   </div><!-- Page Wrapper END -->
 
   <script>
-    require(['productDetail'], function(productDetail) {
+    require(['common', 'productDetail'], function(common, productDetail) {
+      common.init();
       productDetail.init();
     });
   </script>
