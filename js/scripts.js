@@ -13,9 +13,6 @@ define('scripts', ['jquery'], function(){
 			controller.toggle( 'id-1' );
 		});
 
-		// Offcanvas Navigation
-		// --------------------
-
 		// Back Button
 		// -----------
 		var menuInitHeight,
