@@ -1,4 +1,4 @@
-define('Header', [
+define('header', [
   'react',
   'reactDOM',
   'constant'],

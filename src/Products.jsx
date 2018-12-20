@@ -1,9 +1,9 @@
-define('Products', [
+define('products', [
     'react',
     'reactDOM',
     'constant',
-    'ProductImg'],
-    function(React, ReactDOM, constant, ProductImg){
+    'productImg'],
+    function(React, ReactDOM, constant, productImg){
     
     'use strict';
     
@@ -58,7 +58,7 @@ define('Products', [
                     detailUrl = "product-detail.html?item=" + itemId;
                 latestProducts.push(<li>
                     <a href={detailUrl} class="cart-thumb">
-                        <ProductImg.MainImg item={item}/>
+                        <productImg.MainImg item={item}/>
                     </a>
                     <div class="info-cont">
                         <a href={detailUrl} class="item-title">{item.title}</a>
@@ -133,7 +133,7 @@ define('Products', [
                 <div class="col-md-4">
                     <div class="tile">
                         <div class="preview-box">
-                            <ProductImg.MainImg item={this.props.item}/>
+                            <productImg.MainImg item={this.props.item}/>
                         </div>
                 
                         <div class="tile-title">

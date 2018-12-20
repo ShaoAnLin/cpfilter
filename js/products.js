@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define('Products', ['react', 'reactDOM', 'constant', 'ProductImg'], function (React, ReactDOM, constant, ProductImg) {
+define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (React, ReactDOM, constant, productImg) {
 
     'use strict';
 
@@ -91,7 +91,7 @@ define('Products', ['react', 'reactDOM', 'constant', 'ProductImg'], function (Re
                         React.createElement(
                             'a',
                             { href: detailUrl, 'class': 'cart-thumb' },
-                            React.createElement(ProductImg.MainImg, { item: item })
+                            React.createElement(productImg.MainImg, { item: item })
                         ),
                         React.createElement(
                             'div',
@@ -217,7 +217,7 @@ define('Products', ['react', 'reactDOM', 'constant', 'ProductImg'], function (Re
                         React.createElement(
                             'div',
                             { 'class': 'preview-box' },
-                            React.createElement(ProductImg.MainImg, { item: this.props.item })
+                            React.createElement(productImg.MainImg, { item: this.props.item })
                         ),
                         React.createElement(
                             'div',

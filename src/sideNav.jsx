@@ -1,4 +1,4 @@
-define('SideNav', [
+define('sideNav', [
   'react',
   'reactDOM',
   'constant'],

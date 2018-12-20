@@ -38,7 +38,7 @@ requirejs.config({
 			'vendor/extensions/revolution.extension.parallax.min',
 			'vendor/jquery.themepunch.tools.min'],
 		'common': [
-			'JavascriptStrings',
+			'javascriptStrings',
 			'jquery',
 			'vendor/preloader.min',
 			'vendor/bootstrap.min',
@@ -50,7 +50,6 @@ requirejs.config({
 			'vendor/velocity.min',
 			'vendor/slidebars.min',
 			'vendor/jquery.themepunch.revolution.min',
-  			//'vendor/jquery.themepunch.tools.min',
 			'vendor/gmap3.min']
 	}
 });

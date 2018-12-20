@@ -1,4 +1,4 @@
-define('Footer', [
+define('footer', [
   'react',
   'reactDOM'],
   function(React, ReactDOM){

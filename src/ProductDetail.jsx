@@ -1,10 +1,10 @@
-define('ProductDetail', [
+define('productDetail', [
     'react',
     'reactDOM',
     'constant',
-    'ProductImg',
+    'productImg',
     'scripts'],
-    function(React, ReactDOM, constant, ProductImg, scripts){
+    function(React, ReactDOM, constant, productImg, scripts){
     
     'use strict';
 
@@ -197,7 +197,7 @@ define('ProductDetail', [
             return(
                 <div class="col-md-3 tile">
                     <a href={detailLink}>
-                        <ProductImg.MainImg item={this.props.item}/>
+                        <productImg.MainImg item={this.props.item}/>
                     </a>
                     <div class="tile-title">
                         <a href={detailLink}>{this.props.item.title}</a>

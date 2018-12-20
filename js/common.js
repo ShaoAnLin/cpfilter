@@ -1,9 +1,9 @@
 define('common', [
     'scripts',
-    'Header',
-    'Footer',
-    'SideNav',
-    'JavascriptStrings',
+    'header',
+    'footer',
+    'sideNav',
+    'javascriptStrings',
     'vendor/jquery-2.1.4.min',
     'vendor/preloader.min',
     'vendor/bootstrap.min',
@@ -15,7 +15,6 @@ define('common', [
     'vendor/velocity.min',
     'vendor/slidebars.min',
     'vendor/jquery.themepunch.revolution.min',
-    //'vendor/jquery.themepunch.tools.min',
     'vendor/gmap3.min'], function(scripts){
 
     var setActiveNav = function(){
