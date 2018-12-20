@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, constant) {
+define('SideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, constant) {
 
   'use strict';
 
@@ -116,6 +116,5 @@ define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, 
     return SideNav;
   }(React.Component);
 
-  var domContainer = document.querySelector('.off-canvas-cont');
-  ReactDOM.render(React.createElement(SideNav), domContainer);
+  ReactDOM.render(React.createElement(SideNav, null), document.querySelector('.off-canvas-cont'));
 });

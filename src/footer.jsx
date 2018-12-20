@@ -1,4 +1,4 @@
-define('footer', [
+define('Footer', [
   'react',
   'reactDOM'],
   function(React, ReactDOM){
@@ -76,7 +76,6 @@ define('footer', [
       </React.Fragment>);
     }
   }
-  
-  const domContainer = document.querySelector('.footer');
-  ReactDOM.render(React.createElement(Footer), domContainer);
-  });
+
+  ReactDOM.render(<Footer/>, document.querySelector('.footer'));
+});

@@ -37,7 +37,6 @@
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
 
   <script data-main="js/main.js" src="js/requirejs.js"></script>
-  <script src="js/productDetail.js"></script>
 </head>
 
 <!-- Body -->
@@ -153,8 +152,10 @@
   </div><!-- Page Wrapper END -->
 
   <script>
-    require(['productDetail'], function(productDetail) {
-      productDetail.init();
+    require(['common', 'ProductDetail'],
+      function(common, ProductDetail) {
+      common.init();
+      ProductDetail.init();
     });
   </script>
 

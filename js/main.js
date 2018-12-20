@@ -1,6 +1,6 @@
 requirejs.config({
+    baseUrl: "js",
 	paths: {
-		app: 'js',
 		jquery: 'vendor/jquery-2.1.4.min',
 		react: 'react.min',
 		reactDOM: 'react-dom.min'
@@ -9,24 +9,34 @@ requirejs.config({
 		'scripts': 'jqeury',
 		'vendor/preloader.min': 'jquery',
 		'vendor/bootstrap.min': 'jquery',
-		'vendor/jquery.themepunch.revolution.min': 'jquery',
 		'vendor/gmap3.min': 'jquery',
-		'vendor/extensions/revolution.extension.slideanims.min': 'jquery',
-		'vendor/extensions/revolution.extension.actions.min': 'jquery',
-		'vendor/extensions/revolution.extension.layeranimation.min': 'jquery',
-		'vendor/extensions/revolution.extension.kenburn.min': 'jquery',
-		'vendor/extensions/revolution.extension.navigation.min': 'jquery',
-		'vendor/extensions/revolution.extension.parallax.min': 'jquery',
+		'vendor/extensions/revolution.extension.slideanims.min': ['jquery'],
+		'vendor/extensions/revolution.extension.actions.min': [
+			'jquery',
+			'vendor/jquery.themepunch.revolution.min'],
+		'vendor/extensions/revolution.extension.layeranimation.min': [
+			'jquery',
+			'vendor/jquery.themepunch.revolution.min'],
+		'vendor/extensions/revolution.extension.kenburn.min': ['jquery'],
+		'vendor/extensions/revolution.extension.navigation.min': [
+			'jquery',
+			'vendor/jquery.themepunch.revolution.min'],
+		'vendor/extensions/revolution.extension.parallax.min': [
+			'jquery',
+			'vendor/jquery.themepunch.revolution.min'],
+		'vendor/jquery.themepunch.revolution.min': [
+			'jquery',
+			'vendor/extensions/revolution.extension.kenburn.min',
+			'vendor/extensions/revolution.extension.slideanims.min'],
 		'home': [
 			'scripts',
 			'common',
 			'jquery',
-			'vendor/extensions/revolution.extension.slideanims.min',
 			'vendor/extensions/revolution.extension.actions.min',
 			'vendor/extensions/revolution.extension.layeranimation.min',
-			'vendor/extensions/revolution.extension.kenburn.min',
 			'vendor/extensions/revolution.extension.navigation.min',
-			'vendor/extensions/revolution.extension.parallax.min'],
+			'vendor/extensions/revolution.extension.parallax.min',
+			'vendor/jquery.themepunch.tools.min'],
 		'common': [
 			'JavascriptStrings',
 			'jquery',
@@ -40,6 +50,7 @@ requirejs.config({
 			'vendor/velocity.min',
 			'vendor/slidebars.min',
 			'vendor/jquery.themepunch.revolution.min',
+  			//'vendor/jquery.themepunch.tools.min',
 			'vendor/gmap3.min']
 	}
 });
