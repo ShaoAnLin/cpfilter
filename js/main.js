@@ -32,13 +32,11 @@ requirejs.config({
 			'scripts',
 			'common',
 			'jquery',
-			'vendor/extensions/revolution.extension.slideanims.min',
 			'vendor/extensions/revolution.extension.actions.min',
 			'vendor/extensions/revolution.extension.layeranimation.min',
-			'vendor/extensions/revolution.extension.kenburn.min',
 			'vendor/extensions/revolution.extension.navigation.min',
 			'vendor/extensions/revolution.extension.parallax.min',
-			'vendor/jquery.themepunch.revolution.min'],
+			'vendor/jquery.themepunch.tools.min'],
 		'common': [
 			'JavascriptStrings',
 			'jquery',
@@ -52,7 +50,7 @@ requirejs.config({
 			'vendor/velocity.min',
 			'vendor/slidebars.min',
 			'vendor/jquery.themepunch.revolution.min',
-  			'vendor/jquery.themepunch.tools.min',
+  			//'vendor/jquery.themepunch.tools.min',
 			'vendor/gmap3.min']
 	}
 });

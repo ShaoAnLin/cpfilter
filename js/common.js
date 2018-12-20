@@ -15,6 +15,7 @@ define('common', [
     'vendor/velocity.min',
     'vendor/slidebars.min',
     'vendor/jquery.themepunch.revolution.min',
+    //'vendor/jquery.themepunch.tools.min',
     'vendor/gmap3.min'], function(scripts){
 
     var setActiveNav = function(){
