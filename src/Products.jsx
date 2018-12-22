@@ -57,12 +57,12 @@ define('products', [
                 var item = constant.ITEMS[itemId],
                     detailUrl = "product-detail.html?item=" + itemId;
                 latestProducts.push(<li>
-                    <a href={detailUrl} class="cart-thumb">
+                    <a href={detailUrl} className="cart-thumb">
                         <productImg.MainImg item={item}/>
                     </a>
-                    <div class="info-cont">
-                        <a href={detailUrl} class="item-title">{item.title}</a>
-                        <div class="category">{item.housing}</div>
+                    <div className="info-cont">
+                        <a href={detailUrl} className="item-title">{item.title}</a>
+                        <div className="category">{item.housing}</div>
                     </div>
                 </li>);
                 //'.format(divUtil.getMainImage(item), itemId, item.title, item.housing);
@@ -102,13 +102,13 @@ define('products', [
                     ++num;
                     images.push(<ProductGridItem id={key} item={item}/>);
                     if (num % cols == 0){
-                        products.push(<div class="row">{images}</div>);
+                        products.push(<div className="row">{images}</div>);
                         images = [];
                     }
                 }
             });
             if (images.length > 0){
-                products.push(<div class="row">{images}</div>);
+                products.push(<div className="row">{images}</div>);
             }
             return products;
         }
@@ -130,21 +130,21 @@ define('products', [
                 series = this.props.item.series
                     ? this.props.item.series + " Series" : "";
             return (
-                <div class="col-md-4">
-                    <div class="tile">
-                        <div class="preview-box">
+                <div className="col-md-4">
+                    <div className="tile">
+                        <div className="preview-box">
                             <productImg.MainImg item={this.props.item}/>
                         </div>
                 
-                        <div class="tile-title">
+                        <div className="tile-title">
                         <a href={detailLink}>{this.props.item.title}</a>
                         </div>
                 
-                        <div class="tile-meta">
-                        <div class="meta-top">
+                        <div className="tile-meta">
+                        <div className="meta-top">
                             <span>{this.props.item.subtitle}</span>
                         </div>
-                        <div class="meta-bottom">
+                        <div className="meta-bottom">
                             <span>{series}</span>
                         </div>
                         </div>

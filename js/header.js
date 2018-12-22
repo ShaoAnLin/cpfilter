@@ -16,7 +16,23 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
     function Header(props) {
       _classCallCheck(this, Header);
 
-      return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+      var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+
+      _this.componentDidMount = function () {
+        if (this.props.pathname.indexOf('index') >= 0) {
+          $('#nav-home').addClass('current');
+        } else if (this.props.pathname.indexOf('aboutus') >= 0) {
+          $('#nav-aboutus').addClass('current');
+        } else if (this.props.pathname.indexOf('products') >= 0) {
+          $('#nav-products').addClass('current');
+        } else if (this.props.pathname.indexOf('news') >= 0) {
+          $('#nav-news').addClass('current');
+        } else if (this.props.pathname.indexOf('contact') >= 0) {
+          $('#nav-contact').addClass('current');
+        }
+      };
+
+      return _this;
     }
 
     _createClass(Header, [{
@@ -241,5 +257,5 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
     return SubMenuItem;
   }(React.Component);
 
-  ReactDOM.render(React.createElement(Header, null), document.querySelector('.header'));
+  ReactDOM.render(React.createElement(Header, { pathname: window.location.pathname }), document.querySelector('.header'));
 });

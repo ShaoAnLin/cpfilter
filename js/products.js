@@ -90,20 +90,20 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                         null,
                         React.createElement(
                             'a',
-                            { href: detailUrl, 'class': 'cart-thumb' },
+                            { href: detailUrl, className: 'cart-thumb' },
                             React.createElement(productImg.MainImg, { item: item })
                         ),
                         React.createElement(
                             'div',
-                            { 'class': 'info-cont' },
+                            { className: 'info-cont' },
                             React.createElement(
                                 'a',
-                                { href: detailUrl, 'class': 'item-title' },
+                                { href: detailUrl, className: 'item-title' },
                                 item.title
                             ),
                             React.createElement(
                                 'div',
-                                { 'class': 'category' },
+                                { className: 'category' },
                                 item.housing
                             )
                         )
@@ -160,7 +160,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                         if (num % cols == 0) {
                             products.push(React.createElement(
                                 'div',
-                                { 'class': 'row' },
+                                { className: 'row' },
                                 images
                             ));
                             images = [];
@@ -170,7 +170,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 if (images.length > 0) {
                     products.push(React.createElement(
                         'div',
-                        { 'class': 'row' },
+                        { className: 'row' },
                         images
                     ));
                 }
@@ -210,18 +210,18 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                     series = this.props.item.series ? this.props.item.series + " Series" : "";
                 return React.createElement(
                     'div',
-                    { 'class': 'col-md-4' },
+                    { className: 'col-md-4' },
                     React.createElement(
                         'div',
-                        { 'class': 'tile' },
+                        { className: 'tile' },
                         React.createElement(
                             'div',
-                            { 'class': 'preview-box' },
+                            { className: 'preview-box' },
                             React.createElement(productImg.MainImg, { item: this.props.item })
                         ),
                         React.createElement(
                             'div',
-                            { 'class': 'tile-title' },
+                            { className: 'tile-title' },
                             React.createElement(
                                 'a',
                                 { href: detailLink },
@@ -230,10 +230,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                         ),
                         React.createElement(
                             'div',
-                            { 'class': 'tile-meta' },
+                            { className: 'tile-meta' },
                             React.createElement(
                                 'div',
-                                { 'class': 'meta-top' },
+                                { className: 'meta-top' },
                                 React.createElement(
                                     'span',
                                     null,
@@ -242,7 +242,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             ),
                             React.createElement(
                                 'div',
-                                { 'class': 'meta-bottom' },
+                                { className: 'meta-bottom' },
                                 React.createElement(
                                     'span',
                                     null,

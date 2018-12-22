@@ -79,12 +79,12 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                     null,
                     React.createElement(
                         'div',
-                        { 'class': 'series-name' },
+                        { className: 'series-name' },
                         constant.getItemIdStr(this.props.item)
                     ),
                     React.createElement(
                         'h4',
-                        { 'class': 'item-title' },
+                        { className: 'item-title' },
                         this.props.item.title
                     ),
                     React.createElement(
@@ -97,20 +97,20 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                         null,
                         React.createElement(
                             'div',
-                            { 'class': 'row' },
+                            { className: 'row' },
                             React.createElement(
                                 'div',
-                                { 'class': 'col-sm-12' },
+                                { className: 'col-sm-12' },
                                 React.createElement(
                                     'h5',
-                                    { 'class': 'section-title range-name' },
+                                    { className: 'section-title range-name' },
                                     '\u9069\u7528\u7BC4\u570D'
                                 )
                             )
                         ),
                         React.createElement(
                             'div',
-                            { 'class': 'item-range' },
+                            { className: 'item-range' },
                             this.props.item.range
                         )
                     )
@@ -147,7 +147,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                 }
                 return React.createElement(
                     'ul',
-                    { 'class': 'list-featured item-specification' },
+                    { className: 'list-featured item-specification' },
                     spec
                 );
             }
@@ -280,7 +280,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                     series = this.props.item.series ? this.props.item["series"] + " Series" : "";
                 return React.createElement(
                     'div',
-                    { 'class': 'col-md-3 tile' },
+                    { className: 'col-md-3 tile' },
                     React.createElement(
                         'a',
                         { href: detailLink },
@@ -288,7 +288,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                     ),
                     React.createElement(
                         'div',
-                        { 'class': 'tile-title' },
+                        { className: 'tile-title' },
                         React.createElement(
                             'a',
                             { href: detailLink },
@@ -297,10 +297,10 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                     ),
                     React.createElement(
                         'div',
-                        { 'class': 'tile-meta' },
+                        { className: 'tile-meta' },
                         React.createElement(
                             'div',
-                            { 'class': 'meta-top' },
+                            { className: 'meta-top' },
                             React.createElement(
                                 'span',
                                 null,
@@ -309,7 +309,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'scripts
                         ),
                         React.createElement(
                             'div',
-                            { 'class': 'meta-bottom' },
+                            { className: 'meta-bottom' },
                             React.createElement(
                                 'span',
                                 null,

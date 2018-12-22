@@ -16,7 +16,7 @@ define('productImg', [
         render() {
             var imgSrc = constant.getImgPath(this.props.item, 'main') + ".jpg";
             return (
-                <img class="preview-img" src={imgSrc}/>
+                <img className="preview-img" src={imgSrc}/>
             );
         };
     }

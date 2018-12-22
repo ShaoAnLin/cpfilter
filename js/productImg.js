@@ -25,7 +25,7 @@ define('productImg', ['react', 'reactDOM', 'constant'], function (React, ReactDO
             key: 'render',
             value: function render() {
                 var imgSrc = constant.getImgPath(this.props.item, 'main') + ".jpg";
-                return React.createElement('img', { 'class': 'preview-img', src: imgSrc });
+                return React.createElement('img', { className: 'preview-img', src: imgSrc });
             }
         }]);
 

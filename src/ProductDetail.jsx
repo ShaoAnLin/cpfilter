@@ -53,15 +53,15 @@ define('productDetail', [
         render() {
             return(
                 <React.Fragment>
-                    <div class="series-name">{constant.getItemIdStr(this.props.item)}</div>
-                    <h4 class="item-title">{this.props.item.title}</h4>
+                    <div className="series-name">{constant.getItemIdStr(this.props.item)}</div>
+                    <h4 className="item-title">{this.props.item.title}</h4>
                     <div>{this.props.item.subtitle}</div>
                     {this.props.item.range &&
                         <React.Fragment>
-                        <div class="row">
-                                <div class="col-sm-12"><h5 class="section-title range-name">適用範圍</h5></div>
+                        <div className="row">
+                                <div className="col-sm-12"><h5 className="section-title range-name">適用範圍</h5></div>
                         </div>
-                        <div class="item-range">{this.props.item.range}</div>
+                        <div className="item-range">{this.props.item.range}</div>
                         </React.Fragment>
                     }
                 </React.Fragment>
@@ -82,7 +82,7 @@ define('productDetail', [
                 });
             }
             return(
-                <ul class="list-featured item-specification">{spec}</ul>
+                <ul className="list-featured item-specification">{spec}</ul>
             );
         };
     }
@@ -195,18 +195,18 @@ define('productDetail', [
                 series = this.props.item.series
                 ? this.props.item["series"] + " Series" : "";
             return(
-                <div class="col-md-3 tile">
+                <div className="col-md-3 tile">
                     <a href={detailLink}>
                         <productImg.MainImg item={this.props.item}/>
                     </a>
-                    <div class="tile-title">
+                    <div className="tile-title">
                         <a href={detailLink}>{this.props.item.title}</a>
                     </div>
-                    <div class="tile-meta">
-                        <div class="meta-top">
+                    <div className="tile-meta">
+                        <div className="meta-top">
                             <span>{this.props.item.subtitle}</span>
                         </div>
-                        <div class="meta-bottom"><span>{series}</span></div>
+                        <div className="meta-bottom"><span>{series}</span></div>
                     </div>
                 </div>
             );

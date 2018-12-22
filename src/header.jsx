@@ -11,6 +11,20 @@ define('header', [
       super(props);
     }
 
+    componentDidMount = function(){
+      if (this.props.pathname.indexOf('index') >= 0){
+          $('#nav-home').addClass('current');
+      } else if (this.props.pathname.indexOf('aboutus') >= 0){
+          $('#nav-aboutus').addClass('current');
+      } else if (this.props.pathname.indexOf('products') >= 0){
+          $('#nav-products').addClass('current');
+      } else if (this.props.pathname.indexOf('news') >= 0){
+          $('#nav-news').addClass('current');
+      } else if (this.props.pathname.indexOf('contact') >= 0){
+          $('#nav-contact').addClass('current');
+      }
+    }
+
     render() {
       return (
         <div id="header-container">
@@ -122,5 +136,5 @@ define('header', [
     }
   }
 
-  ReactDOM.render(<Header/>, document.querySelector('.header'));
+  ReactDOM.render(<Header pathname={window.location.pathname}/>, document.querySelector('.header'));
 });

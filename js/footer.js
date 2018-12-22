@@ -27,40 +27,40 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
           null,
           React.createElement(
             'div',
-            { 'class': 'container' },
+            { className: 'container' },
             React.createElement(
               'div',
-              { 'class': 'row' },
+              { className: 'row' },
               React.createElement(
                 'div',
-                { 'class': 'col-md-6' },
+                { className: 'col-md-6' },
                 React.createElement(
                   'div',
-                  { 'class': 'row' },
+                  { className: 'row' },
                   React.createElement(
                     'div',
-                    { 'class': 'col-sm-12' },
+                    { className: 'col-sm-12' },
                     React.createElement(
                       'div',
-                      { 'class': 'logo' },
+                      { className: 'logo' },
                       React.createElement(
                         'div',
-                        { 'class': 'brandname' },
+                        { className: 'brandname' },
                         '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u80A1\u4EFD\u6709\u9650\u516C\u53F8'
                       ),
                       React.createElement(
                         'div',
-                        { 'class': 'brandname-en' },
+                        { className: 'brandname-en' },
                         'CP Filter Industrial Co.,Ltd.'
                       )
                     ),
                     React.createElement(
                       'div',
-                      { 'class': 'widget widget-callback' },
-                      React.createElement('i', { 'class': 'icon material-icons headset_mic' }),
+                      { className: 'widget widget-callback' },
+                      React.createElement('i', { className: 'icon material-icons headset_mic' }),
                       React.createElement(
                         'div',
-                        { 'class': 'info-text' },
+                        { className: 'info-text' },
                         React.createElement(
                           'div',
                           null,
@@ -73,24 +73,24 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
               ),
               React.createElement(
                 'div',
-                { 'class': 'mobile-hide col-md-6' },
+                { className: 'mobile-hide col-md-6' },
                 React.createElement(
                   'div',
-                  { 'class': 'row mobile-top-buffer' },
+                  { className: 'row mobile-top-buffer' },
                   React.createElement(
                     'div',
-                    { 'class': 'col-sm-4' },
+                    { className: 'col-sm-4' },
                     React.createElement(
                       'div',
-                      { 'class': 'widget categories-widget' },
+                      { className: 'widget categories-widget' },
                       React.createElement(
                         'div',
-                        { 'class': 'widget-title' },
+                        { className: 'widget-title' },
                         '\u7522\u54C1\u8CC7\u8A0A'
                       ),
                       React.createElement(
                         'ul',
-                        { 'class': 'cat-list' },
+                        { className: 'cat-list' },
                         React.createElement(
                           'li',
                           null,
@@ -123,22 +123,22 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                   ),
                   React.createElement(
                     'div',
-                    { 'class': 'col-sm-8' },
+                    { className: 'col-sm-8' },
                     React.createElement(
                       'div',
-                      { 'class': 'widget categories-widget' },
+                      { className: 'widget categories-widget' },
                       React.createElement(
                         'div',
-                        { 'class': 'widget-title' },
+                        { className: 'widget-title' },
                         '\u806F\u7D61\u6211\u5011'
                       ),
                       React.createElement(
                         'ul',
-                        { 'class': 'cat-list' },
+                        { className: 'cat-list' },
                         React.createElement(
                           'li',
                           null,
-                          React.createElement('i', { 'class': 'icon material-icons email' }),
+                          React.createElement('i', { className: 'icon material-icons email' }),
                           React.createElement(
                             'div',
                             null,
@@ -148,7 +148,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                         React.createElement(
                           'li',
                           null,
-                          React.createElement('i', { 'class': 'icon material-icons location_city address' }),
+                          React.createElement('i', { className: 'icon material-icons location_city address' }),
                           React.createElement(
                             'div',
                             null,
@@ -164,7 +164,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
           ),
           React.createElement(
             'div',
-            { 'class': 'copyright' },
+            { className: 'copyright' },
             React.createElement(
               'span',
               null,
@@ -172,7 +172,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
             ),
             React.createElement(
               'span',
-              { 'class': 'brandname-en' },
+              { className: 'brandname-en' },
               'CP Filter Industrial Co.,Ltd.'
             ),
             React.createElement(
