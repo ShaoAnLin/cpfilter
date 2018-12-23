@@ -16,6 +16,9 @@ define('common', [
   'vendor/jquery.themepunch.revolution.min',
   'vendor/gmap3.min'], function(){
 
+	var controller = new slidebars();
+	controller.init();
+
 	var bindEventOffCanvas = function(){
 		$( '.offcanvas-toggle' ).on( 'click', function ( event ) {
 			// Set initial menu height value
@@ -72,9 +75,9 @@ define('common', [
 			e.preventDefault();
 			return false;
 		} );
-  }
+  	}
   
-  var common = {};
+  	var common = {};
 
 	common.init = function(){
 		//Disable default link behavior for dummy links that have href='#'
@@ -83,11 +86,6 @@ define('common', [
 		$emptyLink.on('click', function(e){
 			e.preventDefault();
 		});
-
-		// Initialize Slidebars
-		// var menuInitHeight
-		var controller = new slidebars();
-		controller.init();
 		
 		bindEventOffCanvas();
 
