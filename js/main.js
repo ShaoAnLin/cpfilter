@@ -23,6 +23,7 @@ requirejs.config({
 		'productDetail': ['react', 'reactDOM', 'constant', 'productImg', 'common'],
 
 		// Mine
+		'home': ['jquery', 'vendor/TweenMax.min'],
 		'common': [
 			'header',
 			'footer',
