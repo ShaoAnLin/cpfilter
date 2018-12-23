@@ -102,8 +102,13 @@
 			opacity: 1;
 		}
 
+		.slide-content {
+			margin-left: 50px;
+			width: 40%;
+		}
+
 		.caption {
-			padding: 0 100px;
+			padding: 0 50px;
 		}
 
 		.image-container { 
@@ -152,7 +157,7 @@
 		.title { 
 			margin: 0 auto 15px;
 			max-width: 1000px;
-			font: 300 50px/1.2 "Oswald", sans-serif;
+			font: 300 42px "Oswald", sans-serif;
 			letter-spacing: 0.35em;
 			text-transform: uppercase;
 		}

@@ -57,8 +57,6 @@ define('home', [
                 var newSlideImageLeft = 'auto';
                 var newSlideImageToRight = 0;
                 var newSlideImageToLeft = 'auto';
-                var newSlideContentLeft = 'auto';
-                var newSlideContentRight = 0;
                 var activeSlideImageLeft = -slideshow.width()/4;
             } else {
                 var newSlideRight = '';
@@ -67,8 +65,6 @@ define('home', [
                 var newSlideImageLeft = -slideshow.width()/8;
                 var newSlideImageToRight = '';
                 var newSlideImageToLeft = 0;
-                var newSlideContentLeft = 0;
-                var newSlideContentRight = 'auto';
                 var activeSlideImageLeft = slideshow.width()/4;
             }
 
@@ -84,12 +80,6 @@ define('home', [
                 width: slideshow.width(),
                 right: newSlideImageRight,
                 left: newSlideImageLeft
-            });
-
-            newSlideContent.css({
-                width: slideshow.width(),
-                left: newSlideContentLeft,
-                right: newSlideContentRight
             });
 
             activeSlideImage.css({
@@ -128,11 +118,6 @@ define('home', [
                 width:'',
                 right:'',
                 left:''
-            });
-
-            newSlideContent.css({
-                width: '',
-                left: ''
             });
 
             newSlideElements.css({
