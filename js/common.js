@@ -45,7 +45,7 @@ define('common', [
 		} );
 
 		var hasChildLink = $( '.menu-item-has-children > a' ),
-				backBtn = $( '.offcanvas-navigation .sub-menu .back-btn' );
+			backBtn = $( '.offcanvas-navigation .sub-menu .back-btn' );
 
 		backBtn.on( 'click', function ( e ) {
 			var self = this,
