@@ -6,38 +6,27 @@ requirejs.config({
 		reactDOM: 'react-dom.min'
 	},
 	shim: {
-		'scripts': 'jqeury',
+		// Libraries
+		'react': 'jquery',
+		'reactDOM': ['jquery', 'react'],
 		'vendor/preloader.min': 'jquery',
 		'vendor/bootstrap.min': 'jquery',
 		'vendor/gmap3.min': 'jquery',
-		'vendor/extensions/revolution.extension.slideanims.min': ['jquery'],
-		'vendor/extensions/revolution.extension.actions.min': [
-			'jquery',
-			'vendor/jquery.themepunch.revolution.min'],
-		'vendor/extensions/revolution.extension.layeranimation.min': [
-			'jquery',
-			'vendor/jquery.themepunch.revolution.min'],
-		'vendor/extensions/revolution.extension.kenburn.min': ['jquery'],
-		'vendor/extensions/revolution.extension.navigation.min': [
-			'jquery',
-			'vendor/jquery.themepunch.revolution.min'],
-		'vendor/extensions/revolution.extension.parallax.min': [
-			'jquery',
-			'vendor/jquery.themepunch.revolution.min'],
-		'vendor/jquery.themepunch.revolution.min': [
-			'jquery',
-			'vendor/extensions/revolution.extension.kenburn.min',
-			'vendor/extensions/revolution.extension.slideanims.min'],
-		'home': [
-			'scripts',
-			'common',
-			'jquery',
-			'vendor/extensions/revolution.extension.actions.min',
-			'vendor/extensions/revolution.extension.layeranimation.min',
-			'vendor/extensions/revolution.extension.navigation.min',
-			'vendor/extensions/revolution.extension.parallax.min',
-			'vendor/jquery.themepunch.tools.min'],
+		'vendor/jquery.themepunch.revolution.min': ['jquery'],
+
+		// JSX
+		'header': ['react', 'reactDOM', 'constant'],
+		'footer': ['react', 'reactDOM'],
+		'sideNav': ['react', 'reactDOM', 'constant'],
+		'productImg': ['react', 'reactDOM', 'constant'],
+		'products': ['react', 'reactDOM', 'constant', 'productImg'],
+		'productDetail': ['react', 'reactDOM', 'constant', 'productImg', 'common'],
+
+		// Mine
 		'common': [
+			'header',
+			'footer',
+			'sideNav',
 			'javascriptStrings',
 			'jquery',
 			'vendor/preloader.min',

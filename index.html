@@ -261,11 +261,11 @@
   </div><!-- Page Wrapper END -->
 
   <script>
-    require(['common', 'home', 'scripts'], function(common, home, scripts) {
+    require(['common'], function(common) {
       common.init();
       $(document).ready(function() {
-            setTimeout(function(){ scripts.onLoadEvents(); }, 1000);
-        });
+        setTimeout(function(){ common.onLoadEvents(); }, 1000);
+      });
     });
   </script>
 </body>

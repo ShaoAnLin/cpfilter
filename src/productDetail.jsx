@@ -3,8 +3,8 @@ define('productDetail', [
     'reactDOM',
     'constant',
     'productImg',
-    'scripts'],
-    function(React, ReactDOM, constant, productImg, scripts){
+    'common'],
+    function(React, ReactDOM, constant, productImg, common){
     
     'use strict';
 
@@ -18,7 +18,7 @@ define('productDetail', [
     }
 
     var onLoad = function(){
-        setTimeout(function(){ scripts.onLoadEvents(); }, 500);
+        setTimeout(function(){ common.onLoadEvents(); }, 500);
     }
 
     class DetailImages extends React.Component {
