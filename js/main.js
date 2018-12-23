@@ -43,3 +43,7 @@ requirejs.config({
 			'vendor/gmap3.min']
 	}
 });
+
+define(['vendor/jquery-2.1.4.min'], function(){
+
+});
