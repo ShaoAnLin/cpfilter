@@ -19,14 +19,25 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             var _this = _possibleConstructorReturn(this, (SideBarList.__proto__ || Object.getPrototypeOf(SideBarList)).call(this, props));
 
             _this.getSideBarCatList = function () {
-                var sideBar = [];
+                var sideBar = [],
+                    currentHousing = this.props.housing,
+                    currentCategory = this.props.category;
+                if (currentCategory) {
+                    for (var key in constant.CATEGORIES) {
+                        if (constant.CATEGORIES[key].indexOf(currentCategory) != -1) {
+                            currentHousing = key;
+                        }
+                    }
+                }
+
                 constant.HOUSING.forEach(function (housing) {
                     var housingName = "housing-" + housing,
                         housingLink = "?housing=" + housing,
-                        numOfItems = this.getGroupNumOfItems(housing);
+                        numOfItems = this.getGroupNumOfItems(housing),
+                        isCurrent = housing == currentHousing;
                     sideBar.push(React.createElement(
                         'li',
-                        { id: housingName },
+                        { id: housingName, 'class': isCurrent && "current" },
                         React.createElement(
                             'a',
                             { href: housingLink, title: '' },
@@ -258,7 +269,9 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return ProductGridItem;
     }(React.Component);
 
-    var setProducts = function setProducts() {
+    var instance = {};
+
+    instance.init = function () {
         var queryHousing = decodeURI(window.location.search).match('housing=.*'),
             queryCategory = decodeURI(window.location.search).match('category=.*'),
             housing = null,
@@ -270,33 +283,12 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         if (queryCategory) {
             category = queryCategory[0].split('=')[1];
         }
-        setCurrent(housing, category);
 
-        ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
-    };
-
-    var setCurrent = function setCurrent(targetHousing, targetCategory) {
-        if (targetHousing) {
-            $('#housing-' + targetHousing).addClass('current');
-        }
-
-        if (targetCategory) {
-            $.each(constant.CATEGORIES, function (housing, categories) {
-                if (categories.indexOf(targetCategory) != -1) {
-                    $('#housing-' + housing).addClass('current');
-                }
-            });
-        }
-    };
-
-    var instance = {};
-
-    instance.init = function () {
-        ReactDOM.render(React.createElement(SideBarList, null), document.querySelector('#sidebar-cat-list'));
+        ReactDOM.render(React.createElement(SideBarList, { housing: housing, category: category }), document.querySelector('#sidebar-cat-list'));
 
         ReactDOM.render(React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
 
-        setProducts();
+        ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
     };
 
     return instance;
