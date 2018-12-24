@@ -25,14 +25,18 @@ define('products', [
             }
 
             constant.HOUSING.forEach(function(housing){
-                var housingName = "housing-" + housing,
-                    housingLink = "?housing=" + housing,
+                var housingLink = "?housing=" + housing,
                     numOfItems = this.getGroupNumOfItems(housing),
-                    isCurrent = housing == currentHousing;
-                sideBar.push(<li id={housingName} class={isCurrent && "current"}>
+                    isCurrent = housing == currentHousing && currentCategory == null;
+                sideBar.push(
+                    <li className={isCurrent && "current"}>
                         <a href={housingLink} title="">{housing}</a>
                         <span>{numOfItems}</span>
                     </li>);
+                if (housing == currentHousing){
+                    sideBar.push(<SideBarSubMenu housing={housing}
+                        category={currentCategory}/>);
+                }
             }, this);
             return sideBar;
         }
@@ -53,6 +57,38 @@ define('products', [
         render() {
             return (
                 <React.Fragment>{this.getSideBarCatList()}</React.Fragment>
+            );
+        };
+    }
+
+    class SideBarSubMenu extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        getSubMenuList = function(){
+            var subMenu = [],
+                categoryList = constant.CATEGORIES[this.props.housing];
+
+            categoryList.forEach(function(category){
+                var categoryLink = "?category=" + category,
+                    numOfItems = constant.SERIES[this.props.housing][category].length,
+                    classes = category == this.props.category ? "current submenu"
+                        : "submenu";
+                subMenu.push(
+                    <li className={classes}>
+                        <a href={categoryLink} title="">{category}</a>
+                        <span>{numOfItems}</span>
+                    </li>
+                );
+            }, this);
+
+            return subMenu;
+        }
+
+        render() {
+            return (
+                <React.Fragment>{this.getSubMenuList()}</React.Fragment>
             );
         };
     }

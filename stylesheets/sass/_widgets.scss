@@ -37,6 +37,9 @@
 .cat-list {
 	@include list-unstyled;
 	margin-top: 0;
+	.submenu {
+		padding-left: 20px;
+	}
 	.current {
 		> a {
 			color: $brand-info;

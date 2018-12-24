@@ -31,13 +31,12 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 }
 
                 constant.HOUSING.forEach(function (housing) {
-                    var housingName = "housing-" + housing,
-                        housingLink = "?housing=" + housing,
+                    var housingLink = "?housing=" + housing,
                         numOfItems = this.getGroupNumOfItems(housing),
-                        isCurrent = housing == currentHousing;
+                        isCurrent = housing == currentHousing && currentCategory == null;
                     sideBar.push(React.createElement(
                         'li',
-                        { id: housingName, 'class': isCurrent && "current" },
+                        { className: isCurrent && "current" },
                         React.createElement(
                             'a',
                             { href: housingLink, title: '' },
@@ -49,6 +48,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             numOfItems
                         )
                     ));
+                    if (housing == currentHousing) {
+                        sideBar.push(React.createElement(SideBarSubMenu, { housing: housing,
+                            category: currentCategory }));
+                    }
                 }, this);
                 return sideBar;
             };
@@ -83,15 +86,67 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return SideBarList;
     }(React.Component);
 
-    var LatestProducts = function (_React$Component2) {
-        _inherits(LatestProducts, _React$Component2);
+    var SideBarSubMenu = function (_React$Component2) {
+        _inherits(SideBarSubMenu, _React$Component2);
+
+        function SideBarSubMenu(props) {
+            _classCallCheck(this, SideBarSubMenu);
+
+            var _this2 = _possibleConstructorReturn(this, (SideBarSubMenu.__proto__ || Object.getPrototypeOf(SideBarSubMenu)).call(this, props));
+
+            _this2.getSubMenuList = function () {
+                var subMenu = [],
+                    categoryList = constant.CATEGORIES[this.props.housing];
+
+                categoryList.forEach(function (category) {
+                    var categoryLink = "?category=" + category,
+                        numOfItems = constant.SERIES[this.props.housing][category].length,
+                        classes = category == this.props.category ? "current submenu" : "submenu";
+                    subMenu.push(React.createElement(
+                        'li',
+                        { className: classes },
+                        React.createElement(
+                            'a',
+                            { href: categoryLink, title: '' },
+                            category
+                        ),
+                        React.createElement(
+                            'span',
+                            null,
+                            numOfItems
+                        )
+                    ));
+                }, this);
+
+                return subMenu;
+            };
+
+            return _this2;
+        }
+
+        _createClass(SideBarSubMenu, [{
+            key: 'render',
+            value: function render() {
+                return React.createElement(
+                    React.Fragment,
+                    null,
+                    this.getSubMenuList()
+                );
+            }
+        }]);
+
+        return SideBarSubMenu;
+    }(React.Component);
+
+    var LatestProducts = function (_React$Component3) {
+        _inherits(LatestProducts, _React$Component3);
 
         function LatestProducts(props) {
             _classCallCheck(this, LatestProducts);
 
-            var _this2 = _possibleConstructorReturn(this, (LatestProducts.__proto__ || Object.getPrototypeOf(LatestProducts)).call(this, props));
+            var _this3 = _possibleConstructorReturn(this, (LatestProducts.__proto__ || Object.getPrototypeOf(LatestProducts)).call(this, props));
 
-            _this2.getLatestProducts = function () {
+            _this3.getLatestProducts = function () {
                 var latestProducts = [];
                 constant.LATEST_PRODUCTS.forEach(function (itemId) {
                     var item = constant.ITEMS[itemId],
@@ -124,7 +179,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return latestProducts;
             };
 
-            return _this2;
+            return _this3;
         }
 
         _createClass(LatestProducts, [{
@@ -141,15 +196,15 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return LatestProducts;
     }(React.Component);
 
-    var ProductItems = function (_React$Component3) {
-        _inherits(ProductItems, _React$Component3);
+    var ProductItems = function (_React$Component4) {
+        _inherits(ProductItems, _React$Component4);
 
         function ProductItems(props) {
             _classCallCheck(this, ProductItems);
 
-            var _this3 = _possibleConstructorReturn(this, (ProductItems.__proto__ || Object.getPrototypeOf(ProductItems)).call(this, props));
+            var _this4 = _possibleConstructorReturn(this, (ProductItems.__proto__ || Object.getPrototypeOf(ProductItems)).call(this, props));
 
-            _this3.getProducts = function () {
+            _this4.getProducts = function () {
                 var self = this,
                     products = [],
                     images = [],
@@ -188,7 +243,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return products;
             };
 
-            return _this3;
+            return _this4;
         }
 
         _createClass(ProductItems, [{
@@ -205,8 +260,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return ProductItems;
     }(React.Component);
 
-    var ProductGridItem = function (_React$Component4) {
-        _inherits(ProductGridItem, _React$Component4);
+    var ProductGridItem = function (_React$Component5) {
+        _inherits(ProductGridItem, _React$Component5);
 
         function ProductGridItem(props) {
             _classCallCheck(this, ProductGridItem);
