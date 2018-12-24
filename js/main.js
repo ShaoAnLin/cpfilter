@@ -7,11 +7,10 @@ requirejs.config({
 	},
 	shim: {
 		// Libraries
-		'react': 'jquery',
-		'reactDOM': ['jquery', 'react'],
 		'vendor/preloader.min': 'jquery',
 		'vendor/bootstrap.min': 'jquery',
-		'vendor/gmap3.min': 'jquery',
+		'react': 'jquery',
+		'reactDOM': ['jquery', 'react'],
 		'vendor/jquery.themepunch.revolution.min': ['jquery'],
 
 		// JSX
@@ -22,7 +21,6 @@ requirejs.config({
 		'products': ['react', 'reactDOM', 'constant', 'productImg'],
 		'productDetail': ['react', 'reactDOM', 'constant', 'productImg', 'common'],
 
-		// Mine
 		'home': ['jquery', 'vendor/TweenMax.min'],
 		'common': [
 			'header',
@@ -32,15 +30,10 @@ requirejs.config({
 			'jquery',
 			'vendor/preloader.min',
 			'vendor/bootstrap.min',
-			'vendor/nouislider.min',
-			'vendor/jquery.magnific-popup.min',
 			'vendor/slick.min',
-			'vendor/isotope.pkgd.min',
-			'vendor/wNumb',
 			'vendor/velocity.min',
 			'vendor/slidebars.min',
-			'vendor/jquery.themepunch.revolution.min',
-			'vendor/gmap3.min']
+			'vendor/jquery.themepunch.revolution.min']
 	}
 });
 
