@@ -108,15 +108,6 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                             { href: 'products.html?housing=\u6FFE\u6750' },
                             '\u6FFE\u6750'
                           )
-                        ),
-                        React.createElement(
-                          'li',
-                          null,
-                          React.createElement(
-                            'a',
-                            { href: 'products.html?housing=\u6A5F\u68B0\u8A2D\u5099' },
-                            '\u6A5F\u68B0\u8A2D\u5099'
-                          )
                         )
                       )
                     )

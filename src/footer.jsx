@@ -42,7 +42,6 @@ define('footer', [
             <ul className="cat-list">
               <li><a href="products.html?housing=過濾器">過濾器</a></li>
               <li><a href="products.html?housing=濾材">濾材</a></li>
-              <li><a href="products.html?housing=機械設備">機械設備</a></li>
             </ul>
             </div>
           </div>
