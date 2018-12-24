@@ -1,5 +1,5 @@
 define('home', [
-    'vendor/jquery-2.1.4.min',
+    'jquery',
     'vendor/TweenMax.min'], function(){
     
     var slideshowDuration = 4000;

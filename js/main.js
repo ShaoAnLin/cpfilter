@@ -1,7 +1,6 @@
 requirejs.config({
     baseUrl: "js",
 	paths: {
-		jquery: 'vendor/jquery-2.1.4.min',
 		react: 'react.min',
 		reactDOM: 'react-dom.min'
 	},
@@ -37,6 +36,6 @@ requirejs.config({
 	}
 });
 
-define(['vendor/jquery-2.1.4.min'], function(){
+define(['jquery'], function(){
 
 });
