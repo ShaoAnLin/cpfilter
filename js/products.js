@@ -281,8 +281,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                         'div',
                         { className: 'tile' },
                         React.createElement(
-                            'div',
-                            { className: 'preview-box' },
+                            'a',
+                            { href: detailLink },
                             React.createElement(productImg.MainImg, { item: this.props.item })
                         ),
                         React.createElement(

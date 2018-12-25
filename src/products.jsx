@@ -179,14 +179,12 @@ define('products', [
             return (
                 <div className="col-md-4">
                     <div className="tile">
-                        <div className="preview-box">
-                            <productImg.MainImg item={this.props.item}/>
-                        </div>
-                
+                        <a href={detailLink}><productImg.MainImg item={this.props.item}/></a>
+
                         <div className="tile-title">
                         <a href={detailLink}>{this.props.item.title}</a>
                         </div>
-                
+
                         <div className="tile-meta">
                         <div className="meta-top">
                             <span>{this.props.item.subtitle}</span>
