@@ -72,7 +72,7 @@
         height: 24px;
         background-color: #fff;
         cursor: pointer;
-        line-height: 20px;
+        line-height: 16px;
         > * {
           border: none;
           background-color: $gray-light;
@@ -152,7 +152,7 @@
   .slick-slide {
     display: block;
     border: none;
-    margin: 0 0 11px 0;
+    margin: 0 0 9px 0;
   }
 }
 .thumbnail-carousel a:focus { outline: none; }
