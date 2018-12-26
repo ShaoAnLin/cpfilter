@@ -177,8 +177,7 @@ define('products', [
         
         render() {
             var detailLink = "product-detail.html?item=" + this.props.id,
-                series = this.props.item.series
-                    ? this.props.item.series + " Series" : "";
+                series = this.props.item.series ? this.props.item.series : "";
             return (
                 <div className="col-md-4">
                     <div className="tile">

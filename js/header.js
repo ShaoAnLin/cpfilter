@@ -23,7 +23,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
           $('#nav-home').addClass('current');
         } else if (this.props.pathname.indexOf('aboutus') >= 0) {
           $('#nav-aboutus').addClass('current');
-        } else if (this.props.pathname.indexOf('products') >= 0) {
+        } else if (this.props.pathname.indexOf('product') >= 0) {
           $('#nav-products').addClass('current');
         } else if (this.props.pathname.indexOf('news') >= 0) {
           $('#nav-news').addClass('current');

@@ -276,7 +276,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             key: 'render',
             value: function render() {
                 var detailLink = "product-detail.html?item=" + this.props.id,
-                    series = this.props.item.series ? this.props.item.series + " Series" : "";
+                    series = this.props.item.series ? this.props.item.series : "";
                 return React.createElement(
                     'div',
                     { className: 'col-md-4' },

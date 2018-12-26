@@ -421,10 +421,6 @@ define('constant', function(){
 
     constant.LATEST_PRODUCTS = ["AH", "陽極袋"];
 
-    constant.getItemId = function(item){
-        return item.series ? item.series : item.category;
-    }
-
     constant.getItemIdStr = function(item){
         return item.series ? item.series : item.category;
     }
