@@ -13,7 +13,7 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
-            "過濾器配件": [],
+            "過濾器配件": ["沖孔籃", "壓袋器", "撐開架"],
             "鈦過濾器": null
         },
         "濾材": {
@@ -295,6 +295,48 @@ define('constant', function(){
             'componentImgs': 1,
             "sizeImgs": 2
         },
+
+        // 過濾器配件
+        "沖孔籃": {
+            "series": "沖孔籃",
+            "housing": "過濾器",
+            "category": "過濾器配件",
+            "images": 0,
+            "title": "沖孔籃",
+            "subtitle": "Bag Basket",
+            "specification": {
+                "材質": "SUS304, SUS316, SUS316L",
+                "尺寸": "B#1-ø171.5mm*350mmL、B#2-ø171.5mm*730mmL、B#3-ø97.5mm*200mmL、B#4-ø97.5mm*310mmL"
+            },
+            "range": "適用機型：PL / PH / PHT / PM",
+        },
+        "壓袋器": {
+            "series": "壓袋器",
+            "housing": "過濾器",
+            "category": "過濾器配件",
+            "images": 0,
+            "title": "壓袋器",
+            "subtitle": "Bag Pressing",
+            "specification": {
+                "材質": "SUS304, SUS316, SUS316L",
+                "尺寸": "B#1、B#2- ø179mm、B#3、B#4- ø120mm"
+            },
+            "range": "適用機型：PL / PH",
+        },
+        "撐開架": {
+            "series": "撐開架",
+            "housing": "過濾器",
+            "category": "過濾器配件",
+            "images": 0,
+            "title": "撐開架",
+            "subtitle": "Bag Bracket",
+            "specification": {
+                "材質": "SUS304, SUS316, SUS316L",
+                "尺寸": "B#1-ø153mm*ø135mm*340mmL、B#2-ø153mm*ø135mm*720mmL"
+            },
+            "range": "適用機型：PL / PH / PHT / PM",
+        },
+
         "鈦過濾器": {
             "series": null,
             "housing": "過濾器",
@@ -384,7 +426,7 @@ define('constant', function(){
     }
 
     constant.getItemIdStr = function(item){
-        return item.series ? item.series + ' Series' : item.category;
+        return item.series ? item.series : item.category;
     }
 
     constant.getImgPath = function(item, type){
