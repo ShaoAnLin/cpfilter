@@ -51,25 +51,11 @@ define('productDetail', [
         }
         
         render() {
-            var features = [];
-            if (this.props.item.feature){
-                this.props.item.feature.forEach(function(str){
-                    features.push(<li>{str}</li>);
-                })
-            }
             return(
                 <React.Fragment>
                     <div className="series-name">{constant.getItemIdStr(this.props.item)}</div>
                     <h4 className="item-title">{this.props.item.title}</h4>
                     <div>{this.props.item.subtitle}</div>
-                    {this.props.item.feature &&
-                        <React.Fragment>
-                        <div className="row">
-                                <div className="col-sm-12"><h5 className="section-title range-name">特色</h5></div>
-                        </div>
-                        <div className="item-feature"><ul>{features}</ul></div>
-                        </React.Fragment>
-                    }
                     {this.props.item.range &&
                         <React.Fragment>
                         <div className="row">
@@ -101,33 +87,60 @@ define('productDetail', [
         };
     }
 
+    class ItemFeature extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+        
+        render() {
+            var features = [];
+            this.props.feature.forEach(function(str){
+                features.push(<li>{str}</li>);
+            })
+            return(
+                <ul className="list-featured">{features}</ul>
+            );
+        };
+    }
+
     var setTabDetail = function(item){
         if (item.specification){
-                ReactDOM.render(<ItemSpec item={item}/>,
-                        document.querySelector('#spec-detail'));
+            ReactDOM.render(<ItemSpec item={item}/>,
+                document.querySelector('#spec-detail'));
         } else{
-                $('#nav-tab-spec').hide();
+            $('#nav-tab-spec').hide();
+        }
+
+        if (item.feature){
+            if (item.specification == null){
+                $('#nav-tab-feature').addClass('active');
+                $('#tab-feature').addClass('in active');
+            }
+            ReactDOM.render(<ItemFeature feature={item.feature}/>,
+                document.querySelector('#feature-detail'));
+        } else{
+            $('#nav-tab-feature').hide();
         }
 
         if (item.modelImgs){
-                $('#model-img').attr("src", constant.getImgPath(item, 'model') + '.jpg');
+            $('#model-img').attr("src", constant.getImgPath(item, 'model') + '.jpg');
         } else{
-                $('#nav-tab-model').hide();
+            $('#nav-tab-model').hide();
         }
 
         if (item.componentImgs){
-                $('#component-img').attr("src", constant.getImgPath(item, 'component') + '.jpg');
+            $('#component-img').attr("src", constant.getImgPath(item, 'component') + '.jpg');
         } else{
-                $('#nav-tab-component').hide();
+            $('#nav-tab-component').hide();
         }
 
         if (item.sizeImgs){
-                $('#size0-img').attr("src", constant.getImgPath(item, 'size') + '0.jpg');
-                if (item.sizeImgs > 1){
-                        $('#size1-img').attr("src", constant.getImgPath(item, 'size') + '1.jpg');
-                }
+            $('#size0-img').attr("src", constant.getImgPath(item, 'size') + '0.jpg');
+            if (item.sizeImgs > 1){
+                $('#size1-img').attr("src", constant.getImgPath(item, 'size') + '1.jpg');
+            }
         } else{
-                $('#nav-tab-size').hide();
+            $('#nav-tab-size').hide();
         }
     }
 

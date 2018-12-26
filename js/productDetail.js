@@ -74,16 +74,6 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         _createClass(ItemInfo, [{
             key: 'render',
             value: function render() {
-                var features = [];
-                if (this.props.item.feature) {
-                    this.props.item.feature.forEach(function (str) {
-                        features.push(React.createElement(
-                            'li',
-                            null,
-                            str
-                        ));
-                    });
-                }
                 return React.createElement(
                     React.Fragment,
                     null,
@@ -101,32 +91,6 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                         'div',
                         null,
                         this.props.item.subtitle
-                    ),
-                    this.props.item.feature && React.createElement(
-                        React.Fragment,
-                        null,
-                        React.createElement(
-                            'div',
-                            { className: 'row' },
-                            React.createElement(
-                                'div',
-                                { className: 'col-sm-12' },
-                                React.createElement(
-                                    'h5',
-                                    { className: 'section-title range-name' },
-                                    '\u7279\u8272'
-                                )
-                            )
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'item-feature' },
-                            React.createElement(
-                                'ul',
-                                null,
-                                features
-                            )
-                        )
                     ),
                     this.props.item.range && React.createElement(
                         React.Fragment,
@@ -192,11 +156,52 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         return ItemSpec;
     }(React.Component);
 
+    var ItemFeature = function (_React$Component4) {
+        _inherits(ItemFeature, _React$Component4);
+
+        function ItemFeature(props) {
+            _classCallCheck(this, ItemFeature);
+
+            return _possibleConstructorReturn(this, (ItemFeature.__proto__ || Object.getPrototypeOf(ItemFeature)).call(this, props));
+        }
+
+        _createClass(ItemFeature, [{
+            key: 'render',
+            value: function render() {
+                var features = [];
+                this.props.feature.forEach(function (str) {
+                    features.push(React.createElement(
+                        'li',
+                        null,
+                        str
+                    ));
+                });
+                return React.createElement(
+                    'ul',
+                    { className: 'list-featured' },
+                    features
+                );
+            }
+        }]);
+
+        return ItemFeature;
+    }(React.Component);
+
     var setTabDetail = function setTabDetail(item) {
         if (item.specification) {
             ReactDOM.render(React.createElement(ItemSpec, { item: item }), document.querySelector('#spec-detail'));
         } else {
             $('#nav-tab-spec').hide();
+        }
+
+        if (item.feature) {
+            if (item.specification == null) {
+                $('#nav-tab-feature').addClass('active');
+                $('#tab-feature').addClass('in active');
+            }
+            ReactDOM.render(React.createElement(ItemFeature, { feature: item.feature }), document.querySelector('#feature-detail'));
+        } else {
+            $('#nav-tab-feature').hide();
         }
 
         if (item.modelImgs) {
@@ -221,15 +226,15 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         }
     };
 
-    var RelatedProducts = function (_React$Component4) {
-        _inherits(RelatedProducts, _React$Component4);
+    var RelatedProducts = function (_React$Component5) {
+        _inherits(RelatedProducts, _React$Component5);
 
         function RelatedProducts(props) {
             _classCallCheck(this, RelatedProducts);
 
-            var _this4 = _possibleConstructorReturn(this, (RelatedProducts.__proto__ || Object.getPrototypeOf(RelatedProducts)).call(this, props));
+            var _this5 = _possibleConstructorReturn(this, (RelatedProducts.__proto__ || Object.getPrototypeOf(RelatedProducts)).call(this, props));
 
-            _this4.getRelatedProducts = function () {
+            _this5.getRelatedProducts = function () {
                 var products = [],
                     item = this.props.item,
                     num = 0;
@@ -279,7 +284,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                 return products;
             };
 
-            return _this4;
+            return _this5;
         }
 
         _createClass(RelatedProducts, [{
@@ -300,8 +305,8 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         return RelatedProducts;
     }(React.Component);
 
-    var ProductGridItem = function (_React$Component5) {
-        _inherits(ProductGridItem, _React$Component5);
+    var ProductGridItem = function (_React$Component6) {
+        _inherits(ProductGridItem, _React$Component6);
 
         function ProductGridItem(props) {
             _classCallCheck(this, ProductGridItem);
