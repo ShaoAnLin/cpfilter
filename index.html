@@ -42,8 +42,7 @@
   <!-- All Theme Styles -->
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
 
-  <!--Modernizr / Detectizr-->
-  <script data-main="js/main.js" src="js/requirejs.js"></script>
+  <script src="js/jquery.js"></script>
 </head>
 
 <!-- Body -->
@@ -152,6 +151,7 @@
     </div>
   </div><!-- Page Wrapper END -->
 
+  <script data-main="js/main.js" src="js/requirejs.js"></script>
   <script>
     require(['common', 'home'], function(common, home) {
       common.init();
