@@ -29,15 +29,15 @@ $grid-vertical-step:      24px;
 $border-radius-default:   4px;
 $line-height-base:        1.5;
 
-$link-color: 							$gray-darker;
-$link-color-hover: 				$brand-primary;
+$link-color: 			  $gray-darker;
+$link-color-hover: 		  $brand-primary;
 
 
 // Typography
 // ----------
 $font-family-base: 		  'Microsoft JhengHei', sans-serif;
 $font-family-accent: 	  'Microsoft JhengHei', monospace;
-$text-color: 			  $gray;
+$text-color: 			  $gray-darker;
 
 $font-size-base:          20px;
 $font-size-lead:          floor(($font-size-base * 1.77));

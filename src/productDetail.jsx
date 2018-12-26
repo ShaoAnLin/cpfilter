@@ -51,11 +51,25 @@ define('productDetail', [
         }
         
         render() {
+            var features = [];
+            if (this.props.item.feature){
+                this.props.item.feature.forEach(function(str){
+                    features.push(<li>{str}</li>);
+                })
+            }
             return(
                 <React.Fragment>
                     <div className="series-name">{constant.getItemIdStr(this.props.item)}</div>
                     <h4 className="item-title">{this.props.item.title}</h4>
                     <div>{this.props.item.subtitle}</div>
+                    {this.props.item.feature &&
+                        <React.Fragment>
+                        <div className="row">
+                                <div className="col-sm-12"><h5 className="section-title range-name">特色</h5></div>
+                        </div>
+                        <div className="item-feature"><ul>{features}</ul></div>
+                        </React.Fragment>
+                    }
                     {this.props.item.range &&
                         <React.Fragment>
                         <div className="row">

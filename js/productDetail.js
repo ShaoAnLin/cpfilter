@@ -74,6 +74,16 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         _createClass(ItemInfo, [{
             key: 'render',
             value: function render() {
+                var features = [];
+                if (this.props.item.feature) {
+                    this.props.item.feature.forEach(function (str) {
+                        features.push(React.createElement(
+                            'li',
+                            null,
+                            str
+                        ));
+                    });
+                }
                 return React.createElement(
                     React.Fragment,
                     null,
@@ -91,6 +101,32 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                         'div',
                         null,
                         this.props.item.subtitle
+                    ),
+                    this.props.item.feature && React.createElement(
+                        React.Fragment,
+                        null,
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-12' },
+                                React.createElement(
+                                    'h5',
+                                    { className: 'section-title range-name' },
+                                    '\u7279\u8272'
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'item-feature' },
+                            React.createElement(
+                                'ul',
+                                null,
+                                features
+                            )
+                        )
                     ),
                     this.props.item.range && React.createElement(
                         React.Fragment,
