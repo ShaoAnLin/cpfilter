@@ -100,22 +100,25 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
 
                 categoryList.forEach(function (category) {
                     var categoryLink = "?category=" + category,
-                        numOfItems = constant.SERIES[this.props.housing][category].length,
-                        classes = category == this.props.category ? "current submenu" : "submenu";
-                    subMenu.push(React.createElement(
-                        'li',
-                        { className: classes },
-                        React.createElement(
-                            'a',
-                            { href: categoryLink, title: '' },
-                            category
-                        ),
-                        React.createElement(
-                            'span',
-                            null,
-                            numOfItems
-                        )
-                    ));
+                        seriesList = constant.SERIES[this.props.housing][category];
+                    if (seriesList) {
+                        var numOfItems = seriesList.length,
+                            classes = category == this.props.category ? "current submenu" : "submenu";
+                        subMenu.push(React.createElement(
+                            'li',
+                            { className: classes },
+                            React.createElement(
+                                'a',
+                                { href: categoryLink, title: '' },
+                                category
+                            ),
+                            React.createElement(
+                                'span',
+                                null,
+                                numOfItems
+                            )
+                        ));
+                    }
                 }, this);
 
                 return subMenu;

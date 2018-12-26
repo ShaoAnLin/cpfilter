@@ -72,15 +72,18 @@ define('products', [
 
             categoryList.forEach(function(category){
                 var categoryLink = "?category=" + category,
-                    numOfItems = constant.SERIES[this.props.housing][category].length,
-                    classes = category == this.props.category ? "current submenu"
-                        : "submenu";
-                subMenu.push(
-                    <li className={classes}>
-                        <a href={categoryLink} title="">{category}</a>
-                        <span>{numOfItems}</span>
-                    </li>
-                );
+                    seriesList = constant.SERIES[this.props.housing][category];
+                if (seriesList){
+                    var numOfItems = seriesList.length,
+                        classes = category == this.props.category ? "current submenu"
+                            : "submenu";
+                    subMenu.push(
+                        <li className={classes}>
+                            <a href={categoryLink} title="">{category}</a>
+                            <span>{numOfItems}</span>
+                        </li>
+                    );
+                }
             }, this);
 
             return subMenu;
