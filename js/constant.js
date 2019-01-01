@@ -1,12 +1,13 @@
 define('constant', function(){
     var constant = {};
 
-    constant.HOUSING = ["過濾器", "濾材", "機械設備"];
+    constant.HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備"];
 
     constant.CATEGORIES = {
         "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "過濾器配件"],
         "濾材": ["不鏽鋼濾心"],
-        "機械設備": ["自動逆洗設備", "磁選機"]
+        "機械設備": ["自動逆洗設備", "磁選機"],
+        "磁力設備": []
     }
 
     constant.SERIES = {
@@ -22,8 +23,10 @@ define('constant', function(){
             "砂光紙": null
         },
         "機械設備": {
-            "自動逆洗設備": null,
-            "磁選機": null
+            "自動逆洗設備": null
+        },
+        "磁力設備": {
+            "磁選機": null,
         }
     }
 
@@ -403,9 +406,11 @@ define('constant', function(){
                 "無一次性拋棄過濾耗材，節約耗材成本及環保問題。"
             ]
         },
+
+        // 磁力設備
         "磁選機": {
             "series": null,
-            "housing": "機械設備",
+            "housing": "磁力設備",
             "category": "磁選機",
             "images": 2,
             "title": "全自動濕式磁選機",
