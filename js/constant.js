@@ -37,7 +37,7 @@ define('constant', function(){
             "紙框": null,
             "中高效袋式": null,
             "箱型": null,
-            "高效率HEPA": null,
+            "高效率Hepa": null,
             "不織布濾棉": null
         }
     }
@@ -635,10 +635,10 @@ define('constant', function(){
                 "外框": "鍍鋅鐵"
             }
         },
-        "高效率HEPA": {
+        "高效率Hepa": {
             "series": null,
             "housing": "空調濾網",
-            "category": "高效率HEPA",
+            "category": "高效率Hepa",
             "images": 0,
             "title": "高效率HEPA/ULPA",
             "subtitle": "",
