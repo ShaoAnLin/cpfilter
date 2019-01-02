@@ -1,13 +1,14 @@
 define('constant', function(){
     var constant = {};
 
-    constant.HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備"];
+    constant.HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備", "空調濾網"];
 
     constant.CATEGORIES = {
         "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "過濾器配件"],
-        "濾材": ["不鏽鋼濾心"],
-        "機械設備": ["自動逆洗設備", "磁選機"],
-        "磁力設備": []
+        "濾材": ["不鏽鋼濾心", "活性碳濾心"],
+        "機械設備": [],
+        "磁力設備": [],
+        "空調濾網": []
     }
 
     constant.SERIES = {
@@ -18,8 +19,11 @@ define('constant', function(){
             "鈦過濾器": null
         },
         "濾材": {
-            "不鏽鋼濾心": [],
+            "不鏽鋼濾心": ["金屬摺疊", "粉末燒結"],
+            "PP囊式濾心": null,
+            "活性碳濾心": ["碳棒式", "碳布式", "碳纖式"],
             "陽極袋": null,
+            "壓濾機濾布": null,
             "砂光紙": null
         },
         "機械設備": {
@@ -27,6 +31,14 @@ define('constant', function(){
         },
         "磁力設備": {
             "磁選機": null,
+            "磁力棒": null
+        },
+        "空調濾網": {
+            "紙框": null,
+            "中高效袋式": null,
+            "箱型": null,
+            "高效率HEPA": null,
+            "不織布濾棉": null
         }
     }
 
@@ -307,6 +319,7 @@ define('constant', function(){
             "images": 0,
             "title": "沖孔籃",
             "subtitle": "Bag Basket",
+            "hideSeries": true,
             "specification": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø171.5mm*350mmL、B#2-ø171.5mm*730mmL、B#3-ø97.5mm*200mmL、B#4-ø97.5mm*310mmL"
@@ -320,6 +333,7 @@ define('constant', function(){
             "images": 0,
             "title": "壓袋器",
             "subtitle": "Bag Pressing",
+            "hideSeries": true,
             "specification": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1、B#2- ø179mm、B#3、B#4- ø120mm"
@@ -333,6 +347,7 @@ define('constant', function(){
             "images": 0,
             "title": "撐開架",
             "subtitle": "Bag Bracket",
+            "hideSeries": true,
             "specification": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø153mm*ø135mm*340mmL、B#2-ø153mm*ø135mm*720mmL"
@@ -344,7 +359,7 @@ define('constant', function(){
             "series": null,
             "housing": "過濾器",
             "category": "鈦過濾器",
-            "images": 1,
+            "images": 0,
             "title": "鈦過濾桶",
             "subtitle": "標準濾心式",
             "specification": {
@@ -358,13 +373,147 @@ define('constant', function(){
         },
 
         // ========== 濾材 ========== //
+        "金屬摺疊": {
+            "series": "金屬摺疊",
+            "housing": "濾材",
+            "category": "不鏽鋼濾心",
+            "images": 1,
+            "title": "金屬摺疊",
+            "subtitle": "不鏽鋼濾心",
+            "hideSeries": true,
+            "feature": [
+                "採用進口不銹鋼燒結製造，屬於多孔深度型過濾式材料",
+                "孔徑呈梯形，由粗到細，具備絕對過濾和納污量高、開孔率高的特點，軟性雜質攔阻效果佳",
+                "可以摺疊成形，增加過濾面積，增大壽命和流量",
+                "最大耐受壓差：5bar，以上特規製作",
+                "最大操作溫度：480°C"
+            ]
+        },
+        "粉末燒結": {
+            "series": "粉末燒結",
+            "housing": "濾材",
+            "category": "不鏽鋼濾心",
+            "images": 0,
+            "title": "粉末燒結",
+            "subtitle": "不鏽鋼濾心",
+            "hideSeries": true,
+            "feature": [
+                "不銹鋼粉末通過模具壓制後高溫燒結而成，具有機械強度高，耐高溫、耐腐蝕性能好",
+                "孔徑分佈均勻，濾效高",
+                "最大耐受壓差：3bar，以上特規製作",
+                "最大操作溫度：480°C"
+            ]
+        },
+        "PP囊式濾心": {
+            "series": null,
+            "housing": "濾材",
+            "category": "PP囊式濾心",
+            "images": 0,
+            "title": "PP囊式濾心",
+            "subtitle": "不鏽鋼濾心"
+        },
+        "碳棒式": {
+            "series": "碳棒式",
+            "housing": "濾材",
+            "category": "活性碳濾心",
+            "images": 0,
+            "title": "碳棒式",
+            "subtitle": "活性碳濾心",
+            "hideSeries": true,
+            "specification": {
+                "活性碳種類": "椰殼碳棒",
+                "中柱材質": "PP",
+                "濾材公稱精度": "5μm",
+                "最高操作溫度": "52°C (125°F)",
+                "最大工作壓差": "4.5bar at 25°C",
+                "建議更換壓差": "2.1bar (31psi)"
+            },
+            "feature": [
+                "主要用於表面處裡，電鍍製程，PCB藥液過濾",
+                "高品質的碳布增強吸收效率和濾心的去汙能力",
+                "具有濾除渣質以及吸附氯、臭氣、異味異色的雙重效果",
+                "高強度的PP聚丙烯軸增強濾心的結構強度"
+            ]
+        },
+        "碳布式": {
+            "series": "碳布式",
+            "housing": "濾材",
+            "category": "活性碳濾心",
+            "images": 0,
+            "title": "碳布式",
+            "subtitle": "活性碳濾心",
+            "hideSeries": true,
+            "specification": {
+                "活性碳種類": "椰殼碳粉 Polyester 纖維布",
+                "中柱材質": "PP",
+                "濾材公稱精度": "5μm",
+                "最高操作溫度": "52°C (125°F)",
+                "最大工作壓差": "4.5bar at 25°C",
+                "建議更換壓差": "2.1bar (31psi)"
+            },
+            "feature": [
+                "主要用於飲用水，純水設備，和內循環過濾使用",
+                "經濟型活性碳濾心，碳含量高，壽命長",
+                "採用高效活性碳經連續高強度擠壓成型增加濾心耐久性",
+                "高孔隙度設計，防止過早堵塞",
+                "有效去除液體中的餘氯、異味及有機物"
+            ]
+        },
+        "碳纖式": {
+            "series": "碳纖式",
+            "housing": "濾材",
+            "category": "活性碳濾心",
+            "images": 0,
+            "title": "碳纖式",
+            "subtitle": "活性碳濾心",
+            "hideSeries": true,
+            "specification": {
+                "活性碳種類": "椰殼碳粉 Polyester 纖維布",
+                "中柱材質": "PP",
+                "濾材公稱精度": "5μm",
+                "最高操作溫度": "52°C (125°F)",
+                "最大工作壓差": "4.5bar at 25°C",
+                "建議更換壓差": "2.1bar (31psi)"
+            },
+            "feature": [
+                "Made in Japan",
+                "專為電鍍工業和化學品工業設計製造的高濾效及高吸附力的雙效濾心產品",
+                "具高效的活性碳吸附和過濾固態微粒的功能，不論高分子量或低分子量的有機物，其吸附力較一般濾心高5-10倍",
+                "選擇性吸附不純物，保持光澤，加強鍍金，鍍銀質量安定",
+                "具備極高的脫色能力"
+            ]
+        },
         "陽極袋": {
             "series": null,
             "housing": "濾材",
             "category": "陽極袋",
             "images": 0,
             "title": "陽極袋/濾心袋",
-            "subtitle": ""
+            "subtitle": "",
+            "specification": {
+                "材質": "PP, PET 織布",
+                "陽極袋規格": "配合鈦籃尺寸、規格，客製化製作",
+                "濾心袋規格": "10”-40”",
+                "精度": "依電鍍性質選用適合材質之布料"
+            },
+            "range": "電鍍製程(鍍銅, 錫, 鎳, 金, 銀, 鉻)"
+        },
+        "壓濾機濾布": {
+            "series": null,
+            "housing": "濾材",
+            "category": "壓濾機濾布",
+            "images": 0,
+            "title": "壓濾機濾布",
+            "subtitle": "",
+            "feature": [
+                "板框式壓濾機用高壓力使用物料經過濾布進行壓榨，節省乾燥時間和成本。可依照不同需求，提共不同透氣度與不同織法之布款。"
+            ],
+            "specification": {
+                "材質": "PP(Polyproylene)、PE、NYLON、PPS、棉",
+                "纖維": "單絲、複絲、短襪 織法:平織、斜織、緞紋、亂紋織",
+                "尺寸": "皆依客戶需求製作",
+                "表面處裡": "壓光、絲光"
+            }
         },
         "砂光紙": {
             "series": null,
@@ -372,7 +521,14 @@ define('constant', function(){
             "category": "砂光紙",
             "images": 0,
             "title": "砂光紙",
-            "subtitle": ""
+            "subtitle": "",
+            "range": "軟基材型，最適合容易堵塞的塗漆面乾式研磨",
+            "feature": [
+                "底紙以乳膠處理後製成，研磨效果好",
+                "柔軟性佳，手工研磨彎曲面最為合適",
+                "研磨完成面效果較為細緻滑溜",
+                "上砂時嚴選砂粒粒度，研磨時比較一般耐久使用"
+            ]
         },
 
         // ========== 機械設備 ========== //
@@ -412,7 +568,7 @@ define('constant', function(){
             "series": null,
             "housing": "磁力設備",
             "category": "磁選機",
-            "images": 2,
+            "images": 1,
             "title": "全自動濕式磁選機",
             "subtitle": "",
             "range": "濕式磁選機用來處理食品、化工、醫藥、汽車、回收、機械加工及光電產業、半導體產業與廢水汙泥裡含鐵雜質處理。",
@@ -421,6 +577,90 @@ define('constant', function(){
                 "全自動濕式磁選機可以免去耗費人力清除鐵屑，可以自行設定分選出來的鐵屑及物料的排除時間。",
                 "針對光電產業、半導體產業、各類溼式原料含鐵雜質，可擷取至3%以下的含鐵量。"
             ]
+        },
+        "磁力棒": {
+            "series": null,
+            "housing": "磁力設備",
+            "category": "磁力棒",
+            "images": 0,
+            "title": "磁力棒",
+            "subtitle": "",
+            "range": "適用機型：PL/PH/PHT/PM",
+            "specification": {
+                "材質": "SUS304, SUS316, SUS316L",
+                "高斯": "3000-12000"
+            }
+        },
+
+        // 空調濾網
+        "紙框": {
+            "series": null,
+            "housing": "空調濾網",
+            "category": "紙框",
+            "images": 1,
+            "title": "紙框",
+            "subtitle": "",
+            "specification": {
+                "濾材": "人纖(Synthetic Microfiber), 玻纖(Glass Fiber), 活性碳(Carbon Filter)",
+                "濾效": "人纖35%, 65%, 85%, 95% (AFI)",
+                "厚度": "1”, 2”, 4”"
+            }
+        },
+        "中高效袋式": {
+            "series": null,
+            "housing": "空調濾網",
+            "category": "中高效袋式",
+            "images": 0,
+            "title": "中高效袋式",
+            "subtitle": "",
+            "specification": {
+                "濾材": "人纖(Synthetic Microfiber), 玻纖(Glass Fiber)",
+                "濾效": "45%, 65%, 85%, 95% (NBS)",
+                "外框": "鍍鋅鐵, 木框, 鋁框, 不鏽鋼框",
+                "框體": "平面型, 單凸法蘭型"
+            }
+        },
+        "箱型": {
+            "series": null,
+            "housing": "空調濾網",
+            "category": "箱型",
+            "images": 0,
+            "title": "箱型",
+            "subtitle": "",
+            "specification": {
+                "濾材": "人纖(Synthetic Microfiber)",
+                "濾效": "45%, 65%, 85%, 95% (NBS)",
+                "袋數": "3B, 4B, 5B, 6B, 8B, 10B, 12B",
+                "袋深": "12”, 15”, 18”, 22”, 24”, 30”, 36”",
+                "外框": "鍍鋅鐵"
+            }
+        },
+        "高效率HEPA": {
+            "series": null,
+            "housing": "空調濾網",
+            "category": "高效率HEPA",
+            "images": 0,
+            "title": "高效率HEPA/ULPA",
+            "subtitle": "",
+            "specification": {
+                "濾材": "玻纖(Glass Fiber), 特殊玻纖",
+                "濾效": "HEPA(0.3μm時達99.97%), DOP ULPA(0.3μm時達99.99%), DOP",
+                "外框": "鍍鋅鐵, 木框, 鋁框, 不鏽鋼框",
+                "框體": "平面型, 單凸法蘭型",
+                "耐高溫型HEPA": "最高操作溫度250°C"
+            }
+        },
+        "不織布濾棉": {
+            "series": null,
+            "housing": "空調濾網",
+            "category": "不織布濾棉",
+            "images": 0,
+            "title": "不織布濾棉",
+            "subtitle": "",
+            "specification": {
+                "濾材": "PP不織布(Non-Woven), 活性碳不織布",
+                "厚度(mm)": "3, 5, 10, 15, 20, 25, 30"
+            }
         }
     }
 

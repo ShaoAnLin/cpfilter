@@ -191,9 +191,11 @@ define('products', [
                         <div className="meta-top">
                             <span>{this.props.item.subtitle}</span>
                         </div>
-                        <div className="meta-bottom">
-                            <span>{series}</span>
-                        </div>
+                        {!this.props.item.hideSeries &&
+                            <div className="meta-bottom">
+                                <span>{series}</span>
+                            </div>
+                        }
                         </div>
                     </div>
                 </div>

@@ -309,7 +309,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                                     this.props.item.subtitle
                                 )
                             ),
-                            React.createElement(
+                            !this.props.item.hideSeries && React.createElement(
                                 'div',
                                 { className: 'meta-bottom' },
                                 React.createElement(
