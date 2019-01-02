@@ -10,7 +10,6 @@
 	position: relative;
 	background: transparent; 
 	border: 1px solid #e1e1e1;
-	font: 12px/1.2 "Oswald", sans-serif;
 	letter-spacing: 0.4em;
 	text-align: center;
 	text-indent: 2px;
@@ -64,6 +63,7 @@
 	width: 100%;
 	height: calc(100vh - 100px);
 	z-index: 1;
+	font-weight: 600;
 
 	.slideshow-inner { 
 		position: absolute;
@@ -157,7 +157,8 @@
 		.title { 
 			margin: 0 auto 15px;
 			max-width: 1000px;
-			font: 300 42px "Oswald", sans-serif;
+			font-size: 48px;
+			font-weight: bold;
 			letter-spacing: 0.35em;
 			text-transform: uppercase;
 		}
@@ -165,7 +166,7 @@
 		.text {
 			margin: 0 auto;
 			max-width: 1000px;
-			font-size: 18px;
+			font-size: 22px;
 			line-height: 1.4;
 		}
 
