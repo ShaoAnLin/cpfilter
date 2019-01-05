@@ -105,7 +105,7 @@
 		.slide-content {
 			margin-left: 50px;
 			width: 40%;
-			@media #{$mobile-land} {
+			@media #{$tablet-port} {
 				margin-left: 0;
 				width: 100%;
 			}
