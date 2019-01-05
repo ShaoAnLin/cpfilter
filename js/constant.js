@@ -37,7 +37,7 @@ define('constant', function(){
         "空調濾網": {
             "紙框": null,
             "中高效袋式": null,
-            "箱型": null,
+            "中效濾網": null,
             "高效率Hepa": null,
             "不織布濾棉": null
         }
@@ -633,12 +633,12 @@ define('constant', function(){
                 "框體": "平面型, 單凸法蘭型"
             }
         },
-        "箱型": {
+        "中效濾網": {
             "series": null,
             "housing": "空調濾網",
-            "category": "箱型",
+            "category": "中效濾網",
             "images": 0,
-            "title": "箱型",
+            "title": "中效濾網",
             "subtitle": "",
             "specification": {
                 "濾材": "人纖(Synthetic Microfiber)",
