@@ -4,8 +4,8 @@ define('constant', function(){
     constant.HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備", "空調濾網"];
 
     constant.CATEGORIES = {
-        "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "PP過濾器、濾殼", "過濾器配件"],
-        "濾材": ["不鏽鋼濾心", "活性碳濾心"],
+        "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "PP過濾器、濾殼", "過濾器配件", "鈦過濾器"],
+        "濾材": ["不鏽鋼濾心", "PP囊式濾心", "活性碳濾心", "陽極袋", "壓濾機濾布", "砂紙"],
         "機械設備": [],
         "磁力設備": [],
         "空調濾網": []
@@ -15,17 +15,17 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
-            "PP過濾器、濾殼": null,
+            "PP過濾器、濾殼": ["PP過濾器、濾殼"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架"],
-            "鈦過濾器": null
+            "鈦過濾器": ["鈦過濾器"]
         },
         "濾材": {
             "不鏽鋼濾心": ["金屬摺疊", "粉末燒結"],
-            "PP囊式濾心": null,
+            "PP囊式濾心": ["PP囊式濾心"],
             "活性碳濾心": ["碳棒式", "碳布式", "碳纖式"],
-            "陽極袋": null,
-            "壓濾機濾布": null,
-            "砂光紙": null
+            "陽極袋": ["陽極袋"],
+            "壓濾機濾布": ["壓濾機濾布"],
+            "砂紙": ["砂紙"]
         },
         "機械設備": {
             "自動逆洗設備": null
@@ -312,14 +312,13 @@ define('constant', function(){
             "sizeImgs": 2
         },
 
-        // PP過濾器、濾殼
         "PP過濾器、濾殼": {
-            "series": null,
+            "series": "PP過濾器、濾殼",
             "housing": "過濾器",
             "category": "PP過濾器、濾殼",
             "images": 2,
-            "title": "標準型/大流量",
-            "subtitle": "塑膠濾殼",
+            "title": "塑膠濾殼",
+            "subtitle": "標準型/大流量",
             "range": "RO前置過濾、PCW過濾、機台循環過濾",
             "specImg": 1
         },
@@ -369,12 +368,13 @@ define('constant', function(){
         },
 
         "鈦過濾器": {
-            "series": null,
+            "series": "鈦過濾器",
             "housing": "過濾器",
             "category": "鈦過濾器",
             "images": 0,
             "title": "鈦過濾桶",
             "subtitle": "標準濾心式",
+            "hideSeries": true,
             "specification": {
                 "材質": "桶身全部為鈦金屬所製作---為高耐腐蝕過濾器。",
                 "耐壓": "7kg/cm²---適用於各種化學液體過濾。",
@@ -418,12 +418,13 @@ define('constant', function(){
             ]
         },
         "PP囊式濾心": {
-            "series": null,
+            "series": "PP囊式濾心",
             "housing": "濾材",
             "category": "PP囊式濾心",
             "images": 0,
             "title": "PP囊式濾心",
-            "subtitle": "不鏽鋼濾心"
+            "subtitle": "",
+            "hideSeries": true
         },
         "碳棒式": {
             "series": "碳棒式",
@@ -497,12 +498,13 @@ define('constant', function(){
             ]
         },
         "陽極袋": {
-            "series": null,
+            "series": "陽極袋",
             "housing": "濾材",
             "category": "陽極袋",
             "images": 0,
             "title": "陽極袋/濾心袋",
             "subtitle": "",
+            "hideSeries": true,
             "specification": {
                 "材質": "PP, PET 織布",
                 "陽極袋規格": "配合鈦籃尺寸、規格，客製化製作",
@@ -512,12 +514,13 @@ define('constant', function(){
             "range": "電鍍製程(鍍銅, 錫, 鎳, 金, 銀, 鉻)"
         },
         "壓濾機濾布": {
-            "series": null,
+            "series": "壓濾機濾布",
             "housing": "濾材",
             "category": "壓濾機濾布",
             "images": 0,
             "title": "壓濾機濾布",
             "subtitle": "",
+            "hideSeries": true,
             "feature": [
                 "板框式壓濾機用高壓力使用物料經過濾布進行壓榨，節省乾燥時間和成本。可依照不同需求，提共不同透氣度與不同織法之布款。"
             ],
@@ -528,13 +531,14 @@ define('constant', function(){
                 "表面處裡": "壓光、絲光"
             }
         },
-        "砂光紙": {
-            "series": null,
+        "砂紙": {
+            "series": "砂紙",
             "housing": "濾材",
-            "category": "砂光紙",
+            "category": "砂紙",
             "images": 0,
-            "title": "砂光紙",
+            "title": "砂紙",
             "subtitle": "",
+            "hideSeries": true,
             "range": "軟基材型，最適合容易堵塞的塗漆面乾式研磨",
             "feature": [
                 "底紙以乳膠處理後製成，研磨效果好",
