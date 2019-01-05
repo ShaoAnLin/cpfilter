@@ -105,6 +105,10 @@
 		.slide-content {
 			margin-left: 50px;
 			width: 40%;
+			@media #{$mobile-land} {
+				margin-left: 0;
+				width: 100%;
+			}
 		}
 
 		.caption {
@@ -167,6 +171,12 @@
 			font-weight: bold;
 			letter-spacing: 0.35em;
 			text-transform: uppercase;
+			@media #{$tablet-land} {
+				font-size: 32px;
+			}
+			@media #{$mobile-land} {
+				font-size: 24px;
+			}
 		}
 
 		.text {
@@ -175,6 +185,9 @@
 			font-size: 22px;
 			line-height: 1.4;
 			letter-spacing: 0.2em;
+			@media #{$mobile-land} {
+				font-size: 16px;
+			}
 		}
 
 		.btn {
