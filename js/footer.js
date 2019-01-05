@@ -22,7 +22,6 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
     _createClass(Footer, [{
       key: 'render',
       value: function render() {
-        var style = { marginLeft: "20px" };
         return React.createElement(
           React.Fragment,
           null,
@@ -67,8 +66,12 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                           null,
                           '(02)2808-1655'
                         )
-                      ),
-                      React.createElement('i', { className: 'icon material-icons print', style: style }),
+                      )
+                    ),
+                    React.createElement(
+                      'div',
+                      { className: 'widget widget-callback' },
+                      React.createElement('i', { className: 'icon material-icons print' }),
                       React.createElement(
                         'div',
                         { className: 'info-text' },

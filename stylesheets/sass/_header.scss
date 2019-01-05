@@ -13,6 +13,7 @@
 	}
 	.brandname {
 		color: $brand-highlight;
+		margin-left: 20px;
 	}
 	.logo-img {
 		width: 15%;
@@ -145,7 +146,6 @@
 	}
 	.logo {
 		position: absolute;
-		width: 280px;
 		@include center(xy);
 		margin: 0;
 		.brandname {

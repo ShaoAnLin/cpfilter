@@ -192,6 +192,7 @@
 // ---------------
 .widget-callback {
 	margin-top: 10px;
+	font-size: 18px;
 	.icon {
 		font-size: 24px;
 		color: $brand-primary;
@@ -200,10 +201,5 @@
 	> * {
 		display: inline-block;
 		vertical-align: middle;
-	}
-	.info-text {
-		div {
-			font-size: 18px;
-		}
 	}
 }

@@ -11,7 +11,6 @@ define('footer', [
     }
   
     render() {
-    var style = {marginLeft: "20px"};
     return (
       <React.Fragment>
       <div className="container">
@@ -29,7 +28,9 @@ define('footer', [
               <div className="info-text">
                 <div>(02)2808-1655</div>
               </div>
-              <i className="icon material-icons print" style={style}></i>
+            </div>
+            <div className="widget widget-callback">
+              <i className="icon material-icons print"></i>
               <div className="info-text">
                 <div>(02)2808-1557</div>
               </div>
