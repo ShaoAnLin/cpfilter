@@ -317,7 +317,7 @@ define('constant', function(){
             "series": null,
             "housing": "過濾器",
             "category": "PP過濾器、濾殼",
-            "images": 3,
+            "images": 2,
             "title": "標準型/大流量",
             "subtitle": "塑膠濾殼",
             "range": "RO前置過濾、PCW過濾、機台循環過濾",
