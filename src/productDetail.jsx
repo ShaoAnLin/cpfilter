@@ -80,6 +80,9 @@ define('productDetail', [
                 $.each(this.props.item.specification, function(key, value){
                     spec.push(<li>{key}: {value}</li>);
                 });
+            } else if (this.props.item.specImg){
+                var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
+                spec.push(<img src={src}></img>);
             }
             return(
                 <ul className="list-featured item-specification">{spec}</ul>
@@ -104,7 +107,7 @@ define('productDetail', [
     }
 
     var setTabDetail = function(item){
-        if (item.specification){
+        if (item.specification || item.specImg){
             ReactDOM.render(<ItemSpec item={item}/>,
                 document.querySelector('#spec-detail'));
         } else{
@@ -190,7 +193,7 @@ define('productDetail', [
                         for (var i = 0; i < seriesList.length && num < 4; ++i){
                             if (seriesList[i] != item.series){
                                 products.push(<ProductGridItem id={seriesList[i]}
-                                    item={constant.ITEMS[constant.ITEMS[seriesList[i]]]}/>);
+                                    item={constant.ITEMS[seriesList[i]]}/>);
                                 ++num;
                             }
                         }

@@ -4,7 +4,7 @@ define('constant', function(){
     constant.HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備", "空調濾網"];
 
     constant.CATEGORIES = {
-        "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "過濾器配件"],
+        "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "PP過濾器、濾殼", "過濾器配件"],
         "濾材": ["不鏽鋼濾心", "活性碳濾心"],
         "機械設備": [],
         "磁力設備": [],
@@ -15,6 +15,7 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
+            "PP過濾器、濾殼": null,
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架"],
             "鈦過濾器": null
         },
@@ -311,6 +312,18 @@ define('constant', function(){
             "sizeImgs": 2
         },
 
+        // PP過濾器、濾殼
+        "PP過濾器、濾殼": {
+            "series": null,
+            "housing": "過濾器",
+            "category": "PP過濾器、濾殼",
+            "images": 3,
+            "title": "標準型/大流量",
+            "subtitle": "塑膠濾殼",
+            "range": "RO前置過濾、PCW過濾、機台循環過濾",
+            "specImg": 1
+        },
+
         // 過濾器配件
         "沖孔籃": {
             "series": "沖孔籃",
@@ -324,7 +337,7 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø171.5mm*350mmL、B#2-ø171.5mm*730mmL、B#3-ø97.5mm*200mmL、B#4-ø97.5mm*310mmL"
             },
-            "range": "適用機型：PL / PH / PHT / PM",
+            "range": "適用機型：PL / PH / PHT / PM"
         },
         "壓袋器": {
             "series": "壓袋器",
@@ -563,7 +576,7 @@ define('constant', function(){
             ]
         },
 
-        // 磁力設備
+        // ========== 磁力設備 ========== //
         "磁選機": {
             "series": null,
             "housing": "磁力設備",
@@ -592,7 +605,7 @@ define('constant', function(){
             }
         },
 
-        // 空調濾網
+        // ========== 空調濾網 ========== //
         "紙框": {
             "series": null,
             "housing": "空調濾網",

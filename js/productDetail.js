@@ -144,6 +144,9 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                             value
                         ));
                     });
+                } else if (this.props.item.specImg) {
+                    var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
+                    spec.push(React.createElement('img', { src: src }));
                 }
                 return React.createElement(
                     'ul',
@@ -188,7 +191,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     }(React.Component);
 
     var setTabDetail = function setTabDetail(item) {
-        if (item.specification) {
+        if (item.specification || item.specImg) {
             ReactDOM.render(React.createElement(ItemSpec, { item: item }), document.querySelector('#spec-detail'));
         } else {
             $('#nav-tab-spec').hide();
@@ -274,7 +277,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                             for (var i = 0; i < seriesList.length && num < 4; ++i) {
                                 if (seriesList[i] != item.series) {
                                     products.push(React.createElement(ProductGridItem, { id: seriesList[i],
-                                        item: constant.ITEMS[constant.ITEMS[seriesList[i]]] }));
+                                        item: constant.ITEMS[seriesList[i]] }));
                                     ++num;
                                 }
                             }
