@@ -10,15 +10,83 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
 
     'use strict';
 
-    var SideBarList = function (_React$Component) {
-        _inherits(SideBarList, _React$Component);
+    var HousingGrid = function (_React$Component) {
+        _inherits(HousingGrid, _React$Component);
+
+        function HousingGrid(props) {
+            _classCallCheck(this, HousingGrid);
+
+            var _this = _possibleConstructorReturn(this, (HousingGrid.__proto__ || Object.getPrototypeOf(HousingGrid)).call(this, props));
+
+            _this.getHousingGridItem = function () {
+                var housingGrid = [],
+                    rowItems = [],
+                    count = 0;
+                constant.HOUSING.forEach(function (housing) {
+                    count++;
+                    var link = "products.html?housing=" + housing,
+                        imgSrc = "img/products/category/{0}.jpg".format(count);
+                    rowItems.push(React.createElement(
+                        'div',
+                        { className: 'col-md-4' },
+                        React.createElement(
+                            'div',
+                            { className: 'tile tile-category' },
+                            React.createElement(
+                                'a',
+                                { href: link, className: 'preview-box' },
+                                React.createElement('img', { src: imgSrc })
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'tile-title' },
+                                housing
+                            )
+                        )
+                    ));
+                    if (count % 3 == 0) {
+                        housingGrid.push(React.createElement(
+                            'div',
+                            { className: 'row' },
+                            rowItems
+                        ));
+                        rowItems = [];
+                    }
+                });
+                housingGrid.push(React.createElement(
+                    'div',
+                    { className: 'row' },
+                    rowItems
+                ));
+                return housingGrid;
+            };
+
+            return _this;
+        }
+
+        _createClass(HousingGrid, [{
+            key: 'render',
+            value: function render() {
+                return React.createElement(
+                    React.Fragment,
+                    null,
+                    this.getHousingGridItem()
+                );
+            }
+        }]);
+
+        return HousingGrid;
+    }(React.Component);
+
+    var SideBarList = function (_React$Component2) {
+        _inherits(SideBarList, _React$Component2);
 
         function SideBarList(props) {
             _classCallCheck(this, SideBarList);
 
-            var _this = _possibleConstructorReturn(this, (SideBarList.__proto__ || Object.getPrototypeOf(SideBarList)).call(this, props));
+            var _this2 = _possibleConstructorReturn(this, (SideBarList.__proto__ || Object.getPrototypeOf(SideBarList)).call(this, props));
 
-            _this.getSideBarCatList = function () {
+            _this2.getSideBarCatList = function () {
                 var sideBar = [],
                     currentHousing = this.props.housing,
                     currentCategory = this.props.category;
@@ -56,7 +124,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return sideBar;
             };
 
-            _this.getGroupNumOfItems = function (housing) {
+            _this2.getGroupNumOfItems = function (housing) {
                 var num = 0;
                 $.each(constant.SERIES[housing], function (key, seriesList) {
                     if (seriesList != null) {
@@ -69,7 +137,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return num;
             };
 
-            return _this;
+            return _this2;
         }
 
         _createClass(SideBarList, [{
@@ -86,15 +154,15 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return SideBarList;
     }(React.Component);
 
-    var SideBarSubMenu = function (_React$Component2) {
-        _inherits(SideBarSubMenu, _React$Component2);
+    var SideBarSubMenu = function (_React$Component3) {
+        _inherits(SideBarSubMenu, _React$Component3);
 
         function SideBarSubMenu(props) {
             _classCallCheck(this, SideBarSubMenu);
 
-            var _this2 = _possibleConstructorReturn(this, (SideBarSubMenu.__proto__ || Object.getPrototypeOf(SideBarSubMenu)).call(this, props));
+            var _this3 = _possibleConstructorReturn(this, (SideBarSubMenu.__proto__ || Object.getPrototypeOf(SideBarSubMenu)).call(this, props));
 
-            _this2.getSubMenuList = function () {
+            _this3.getSubMenuList = function () {
                 var subMenu = [],
                     categoryList = constant.CATEGORIES[this.props.housing];
 
@@ -124,7 +192,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return subMenu;
             };
 
-            return _this2;
+            return _this3;
         }
 
         _createClass(SideBarSubMenu, [{
@@ -141,15 +209,15 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return SideBarSubMenu;
     }(React.Component);
 
-    var LatestProducts = function (_React$Component3) {
-        _inherits(LatestProducts, _React$Component3);
+    var LatestProducts = function (_React$Component4) {
+        _inherits(LatestProducts, _React$Component4);
 
         function LatestProducts(props) {
             _classCallCheck(this, LatestProducts);
 
-            var _this3 = _possibleConstructorReturn(this, (LatestProducts.__proto__ || Object.getPrototypeOf(LatestProducts)).call(this, props));
+            var _this4 = _possibleConstructorReturn(this, (LatestProducts.__proto__ || Object.getPrototypeOf(LatestProducts)).call(this, props));
 
-            _this3.getLatestProducts = function () {
+            _this4.getLatestProducts = function () {
                 var latestProducts = [];
                 constant.LATEST_PRODUCTS.forEach(function (itemId) {
                     var item = constant.ITEMS[itemId],
@@ -182,7 +250,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return latestProducts;
             };
 
-            return _this3;
+            return _this4;
         }
 
         _createClass(LatestProducts, [{
@@ -199,15 +267,15 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return LatestProducts;
     }(React.Component);
 
-    var ProductItems = function (_React$Component4) {
-        _inherits(ProductItems, _React$Component4);
+    var ProductItems = function (_React$Component5) {
+        _inherits(ProductItems, _React$Component5);
 
         function ProductItems(props) {
             _classCallCheck(this, ProductItems);
 
-            var _this4 = _possibleConstructorReturn(this, (ProductItems.__proto__ || Object.getPrototypeOf(ProductItems)).call(this, props));
+            var _this5 = _possibleConstructorReturn(this, (ProductItems.__proto__ || Object.getPrototypeOf(ProductItems)).call(this, props));
 
-            _this4.getProducts = function () {
+            _this5.getProducts = function () {
                 var self = this,
                     products = [],
                     images = [],
@@ -246,7 +314,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return products;
             };
 
-            return _this4;
+            return _this5;
         }
 
         _createClass(ProductItems, [{
@@ -263,8 +331,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         return ProductItems;
     }(React.Component);
 
-    var ProductGridItem = function (_React$Component5) {
-        _inherits(ProductGridItem, _React$Component5);
+    var ProductGridItem = function (_React$Component6) {
+        _inherits(ProductGridItem, _React$Component6);
 
         function ProductGridItem(props) {
             _classCallCheck(this, ProductGridItem);
@@ -342,11 +410,14 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             category = queryCategory[0].split('=')[1];
         }
 
-        ReactDOM.render(React.createElement(SideBarList, { housing: housing, category: category }), document.querySelector('#sidebar-cat-list'));
-
-        ReactDOM.render(React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
-
-        ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
+        if (housing || category) {
+            ReactDOM.render(React.createElement(SideBarList, { housing: housing, category: category }), document.querySelector('#sidebar-cat-list'));
+            ReactDOM.render(React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
+            ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
+        } else {
+            ReactDOM.render(React.createElement(HousingGrid, null), document.querySelector('#housing-grid'));
+            $('#housing-selected').hide();
+        }
     };
 
     return instance;

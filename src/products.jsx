@@ -6,7 +6,45 @@ define('products', [
     function(React, ReactDOM, constant, productImg){
     
     'use strict';
-    
+
+    class HousingGrid extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        getHousingGridItem = function(){
+            var housingGrid = [],
+                rowItems = [],
+                count = 0;
+            constant.HOUSING.forEach(function(housing){
+                count++;
+                var link = "products.html?housing=" + housing,
+                    imgSrc = "img/products/category/{0}.jpg".format(count);
+                rowItems.push(
+                    <div className="col-md-4">
+                      <div className="tile tile-category">
+                        <a href={link} className="preview-box">
+                          <img src={imgSrc}/>
+                        </a>
+                        <div className="tile-title">{housing}</div>
+                      </div>
+                    </div>);
+                if (count % 3 == 0){
+                    housingGrid.push(<div className="row">{rowItems}</div>);
+                    rowItems = [];
+                }
+            });
+            housingGrid.push(<div className="row">{rowItems}</div>);
+            return housingGrid;
+        }
+        
+        render() {
+            return (
+                <React.Fragment>{this.getHousingGridItem()}</React.Fragment>
+            );
+        };
+    }
+
     class SideBarList extends React.Component {
         constructor(props) {
             super(props);
@@ -218,14 +256,17 @@ define('products', [
             category = queryCategory[0].split('=')[1];
         }
 
-        ReactDOM.render(<SideBarList housing={housing} category={category}/>,
-            document.querySelector('#sidebar-cat-list'));
-
-        ReactDOM.render(<LatestProducts/>,
-            document.querySelector('#latest-products'));
-
-        ReactDOM.render(<ProductItems housing={housing} category={category}/>,
-            document.querySelector('#product-grid-items'));
+        if (housing || category){
+            ReactDOM.render(<SideBarList housing={housing} category={category}/>,
+                document.querySelector('#sidebar-cat-list'));
+            ReactDOM.render(<LatestProducts/>,
+                document.querySelector('#latest-products'));
+            ReactDOM.render(<ProductItems housing={housing} category={category}/>,
+                document.querySelector('#product-grid-items'));
+        } else{
+            ReactDOM.render(<HousingGrid/>, document.querySelector('#housing-grid'));
+            $('#housing-selected').hide();
+        }
     }
 
     return instance;
