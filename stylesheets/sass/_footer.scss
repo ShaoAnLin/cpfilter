@@ -6,12 +6,17 @@
 // Basic Class
 // -----------
 .footer {
-  padding-top: ($grid-vertical-step * 2);
+  padding-top: $grid-vertical-step;
 	border-top: 1px solid $gray-light;
 	background-color: $gray-light;
 	color: $gray-darker;
-	.brandname-en {
-		font-size: 18px;
+	.logo {
+		.brandname {
+			font-size: 24px;
+		}
+		.brandname-en {
+			font-size: 18px;
+		}
 	}
 
 	.widget {
@@ -42,9 +47,5 @@
 				display: none;
 			}
 		}
-	}
-
-	.address {
-		height: 60px;
 	}
 }

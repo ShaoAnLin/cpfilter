@@ -22,6 +22,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
     _createClass(Footer, [{
       key: 'render',
       value: function render() {
+        var style = { marginLeft: "20px" };
         return React.createElement(
           React.Fragment,
           null,
@@ -64,7 +65,17 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                         React.createElement(
                           'div',
                           null,
-                          '(02) 2808-1655'
+                          '(02)2808-1655'
+                        )
+                      ),
+                      React.createElement('i', { className: 'icon material-icons print', style: style }),
+                      React.createElement(
+                        'div',
+                        { className: 'info-text' },
+                        React.createElement(
+                          'div',
+                          null,
+                          '(02)2808-1557'
                         )
                       )
                     )
@@ -79,42 +90,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                   { className: 'row mobile-top-buffer' },
                   React.createElement(
                     'div',
-                    { className: 'col-sm-4' },
-                    React.createElement(
-                      'div',
-                      { className: 'widget categories-widget' },
-                      React.createElement(
-                        'div',
-                        { className: 'widget-title' },
-                        '\u7522\u54C1\u8CC7\u8A0A'
-                      ),
-                      React.createElement(
-                        'ul',
-                        { className: 'cat-list' },
-                        React.createElement(
-                          'li',
-                          null,
-                          React.createElement(
-                            'a',
-                            { href: 'products.html?housing=\u904E\u6FFE\u5668' },
-                            '\u904E\u6FFE\u5668'
-                          )
-                        ),
-                        React.createElement(
-                          'li',
-                          null,
-                          React.createElement(
-                            'a',
-                            { href: 'products.html?housing=\u6FFE\u6750' },
-                            '\u6FFE\u6750'
-                          )
-                        )
-                      )
-                    )
-                  ),
-                  React.createElement(
-                    'div',
-                    { className: 'col-sm-8' },
+                    { className: 'col-sm-12' },
                     React.createElement(
                       'div',
                       { className: 'widget categories-widget' },
@@ -124,27 +100,23 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                         '\u806F\u7D61\u6211\u5011'
                       ),
                       React.createElement(
-                        'ul',
-                        { className: 'cat-list' },
+                        'div',
+                        { className: 'widget widget-callback' },
+                        React.createElement('i', { className: 'icon material-icons email' }),
                         React.createElement(
-                          'li',
+                          'div',
                           null,
-                          React.createElement('i', { className: 'icon material-icons email' }),
-                          React.createElement(
-                            'div',
-                            null,
-                            'peter@cpfilter.com.tw'
-                          )
-                        ),
+                          'peter@cpfilter.com.tw'
+                        )
+                      ),
+                      React.createElement(
+                        'div',
+                        { className: 'widget widget-callback' },
+                        React.createElement('i', { className: 'icon material-icons location_city address' }),
                         React.createElement(
-                          'li',
+                          'div',
                           null,
-                          React.createElement('i', { className: 'icon material-icons location_city address' }),
-                          React.createElement(
-                            'div',
-                            null,
-                            '\u65B0\u5317\u5E02\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3\u6A13\u4E4B\u4E00'
-                          )
+                          '\u65B0\u5317\u5E02\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3\u6A13\u4E4B\u4E00'
                         )
                       )
                     )
@@ -164,7 +136,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
             React.createElement(
               'span',
               { className: 'brandname-en' },
-              'CP Filter Industrial Co.,Ltd.'
+              'CP Filter Industrial Co.,Ltd. '
             ),
             React.createElement(
               'span',
