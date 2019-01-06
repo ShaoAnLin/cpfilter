@@ -11,8 +11,9 @@
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
-	.brandname {
+	.logo {
 		color: $brand-highlight;
+		width: 400px;
 		margin-left: 20px;
 		@media #{$tablet-land} {
 			margin-left: 10px;
@@ -20,6 +21,8 @@
 	}
 	.logo-img {
 		width: 15%;
+		float: left;
+		margin-right: 20px;
 	}
 }
 
@@ -44,14 +47,6 @@
 	@media #{$nav-collapse} {
 		display: none;
 	}
-}
-
-// logo
-// ----
-.logo {
-	display: inline-block;
-	max-width: $main-logo-width;
-	color: $gray-darker;
 }
 
 // brandname
@@ -148,9 +143,8 @@
 		font-size: 24px;
 	}
 	.logo {
-		// position: absolute;
-		//@include center(xy);
-		margin: 0;
+		position: absolute;
+		margin-left: 50px;
 		.brandname {
 			font-size: 20px;
 		}
@@ -194,28 +188,8 @@
 // ----------
 .middle-bar {
 	width: 100%;
-	> * {
-		display: table-cell;
-		&:first-child {
-			margin-left: 0;
-			margin-right: auto;
-		}
-	}
-	.left-side {
-		> * {
-			display: inline-block;
-		}
-		.logo {
-			margin-right: 10px;
-		}
-		input {
-			width: 450px;
-			background-color: $gray-light;
-			@include placeholder {
-		    color: $gray-dark;
-		  }
-		}
-	}
+	display: flex;
+    flex-direction: row;
 	@media #{$nav-collapse} {
 		display: none;
 	}

@@ -55,9 +55,14 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
                   { className: 'logo' },
                   React.createElement('img', { className: 'logo-img', src: 'img/logo.png' }),
                   React.createElement(
-                    'span',
+                    'div',
                     { className: 'brandname' },
                     '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8'
+                  ),
+                  React.createElement(
+                    'div',
+                    { className: 'brandname-en' },
+                    'CP Filter Industrial Co.'
                   )
                 )
               ),

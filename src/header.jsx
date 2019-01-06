@@ -33,7 +33,8 @@ define('header', [
           <div className="column left-side">
             <div className="logo">
               <img className="logo-img" src="img/logo.png"/>
-              <span className="brandname">新凱濾材工業有限公司</span>
+              <div className="brandname">新凱濾材工業有限公司</div>
+              <div className="brandname-en">CP Filter Industrial Co.</div>
             </div>
           </div>
       
