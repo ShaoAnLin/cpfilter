@@ -30,6 +30,10 @@ body {
   }
   line-height: $line-height-base;
   overflow-x: hidden;
+  
+  @media #{$mobile-land} {
+    font-size: 18px;
+  }
 }
 
 [canvas=container] {

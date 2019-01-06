@@ -46,12 +46,12 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                       React.createElement(
                         'div',
                         { className: 'brandname' },
-                        '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u80A1\u4EFD\u6709\u9650\u516C\u53F8'
+                        '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8'
                       ),
                       React.createElement(
                         'div',
                         { className: 'brandname-en' },
-                        'CP Filter Industrial Co.,Ltd.'
+                        'CP Filter Industrial Co.'
                       )
                     ),
                     React.createElement(
@@ -130,21 +130,30 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
           ),
           React.createElement(
             'div',
-            { className: 'copyright' },
+            { className: 'copyright mobile-hide' },
             React.createElement(
               'span',
               null,
-              '\xA9 2018. \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u80A1\u4EFD\u6709\u9650\u516C\u53F8 '
+              '\xA9 2018. \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8 '
             ),
             React.createElement(
               'span',
               { className: 'brandname-en' },
-              'CP Filter Industrial Co.,Ltd. '
+              'CP Filter Industrial Co. '
             ),
             React.createElement(
               'span',
               null,
               'All Rights Reserved.'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'copyright mobile-show' },
+            React.createElement(
+              'span',
+              null,
+              '\xA9 2018. CP Filter Industrial Co. All Rights Reserved.'
             )
           )
         );

@@ -27,7 +27,7 @@
     .padding-top-#{$i}x {
       padding-top: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        padding-top: floor(($grid-vertical-step * $i) / 1.5);
+        padding-top: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -37,7 +37,7 @@
     .padding-bottom-#{$i}x {
       padding-bottom: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        padding-bottom: floor(($grid-vertical-step * $i) / 1.5);
+        padding-bottom: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -47,7 +47,7 @@
     .padding-left-#{$i}x {
       padding-left: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        padding-left: floor(($grid-vertical-step * $i) / 1.5);
+        padding-left: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -57,7 +57,7 @@
     .padding-right-#{$i}x {
       padding-right: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        padding-right: floor(($grid-vertical-step * $i) / 1.5);
+        padding-right: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -70,7 +70,7 @@
     .margin-top-#{$i}x {
       margin-top: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        margin-top: floor(($grid-vertical-step * $i) / 1.5);
+        margin-top: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -80,7 +80,7 @@
     .margin-bottom-#{$i}x {
       margin-bottom: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        margin-bottom: floor(($grid-vertical-step * $i) / 1.5);
+        margin-bottom: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -90,7 +90,7 @@
     .margin-left-#{$i}x {
       margin-left: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        margin-left: floor(($grid-vertical-step * $i) / 1.5);
+        margin-left: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }
@@ -100,7 +100,7 @@
     .margin-right-#{$i}x {
       margin-right: floor($grid-vertical-step * $i);
       @media #{$tablet-port} {
-        margin-right: floor(($grid-vertical-step * $i) / 1.5);
+        margin-right: floor(($grid-vertical-step * $i) / 2);
       }
     }
   }

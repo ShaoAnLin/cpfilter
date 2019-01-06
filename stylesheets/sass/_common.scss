@@ -8,9 +8,22 @@
 	}
 }
 
+.mobile-show {
+	@media screen and (min-width: 992px){
+		display: none;
+	}
+}
+
 .mobile-hide {
 	@media #{$nav-collapse} {
 		display: none;
+	}
+}
+
+.fit-screen-height {
+	height: calc(100vh - 440px);
+	@media #{$nav-collapse} {
+		height: calc(100vh - 320px);
 	}
 }
 
@@ -37,8 +50,14 @@
 .tab-content img {
     height: auto;
 	width: auto;
+	@media #{$mobile-land} {
+		max-width: 100%;
+	}
 }
 
 #tab-size img {
 	max-width: 650px;
+	@media #{$mobile-land} {
+		max-width: 100%;
+	}
 }

@@ -33,7 +33,7 @@ define('header', [
           <div className="column left-side">
             <div className="logo">
               <img className="logo-img" src="img/logo.png"/>
-              <span className="brandname">新凱濾材工業股份有限公司</span>
+              <span className="brandname">新凱濾材工業有限公司</span>
             </div>
           </div>
       
@@ -67,7 +67,7 @@ define('header', [
           </a>
           <div className="logo">
             <img className="logo-img" src="img/logo_pure.png"/>
-            <span className="brandname">新凱濾材工業股份有限公司</span>
+            <span className="brandname">新凱濾材工業有限公司</span>
           </div>
           </div>
         </div>

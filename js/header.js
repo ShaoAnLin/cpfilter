@@ -57,7 +57,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
                   React.createElement(
                     'span',
                     { className: 'brandname' },
-                    '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u80A1\u4EFD\u6709\u9650\u516C\u53F8'
+                    '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8'
                   )
                 )
               ),
@@ -135,7 +135,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
                 React.createElement(
                   'span',
                   { className: 'brandname' },
-                  '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u80A1\u4EFD\u6709\u9650\u516C\u53F8'
+                  '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8'
                 )
               )
             )
