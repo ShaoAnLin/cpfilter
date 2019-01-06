@@ -50,7 +50,7 @@ define('constant', function(){
             "series": "ALS",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 4,
+            "images": 3,
             "title": "單支裝",
             "subtitle": "濾心式過濾器",
             "specification": {

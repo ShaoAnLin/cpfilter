@@ -58,7 +58,7 @@
 .single-slider {
   .image-preview1 {
     max-width: 100%;
-    max-width: 535px;
+    max-width: 450px;
     float: left;
     .slick-dots {
       position: absolute;
@@ -110,7 +110,7 @@
   &.slick-vertical {
     max-width: 100px;
     overflow: hidden;
-    max-height: 675px;
+    max-height: 450px;
     .slick-arrow {
       position: absolute;
       top: 12px;
@@ -152,7 +152,7 @@
   .slick-slide {
     display: block;
     border: none;
-    margin: 0 0 9px 0;
+    margin: 0 0 17px 0;
   }
 }
 .thumbnail-carousel a:focus { outline: none; }
