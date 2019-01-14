@@ -27,6 +27,7 @@ requirejs.config({
 			'sideNav',
 			'javascriptStrings',
 			'jquery',
+			'ga',
 			'vendor/preloader.min',
 			'vendor/bootstrap.min',
 			'vendor/slick.min',
