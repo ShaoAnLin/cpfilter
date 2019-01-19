@@ -76,13 +76,6 @@ define('common', [
   	var common = {};
 
 	common.init = function(){
-		//Disable default link behavior for dummy links that have href='#'
-		// ---------------------------------------------------------------
-		var $emptyLink = $('a[href=#]');
-		$emptyLink.on('click', function(e){
-			e.preventDefault();
-		});
-		
 		bindEventOffCanvas();
 
 		// Range Slider

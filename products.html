@@ -5,64 +5,35 @@
   <meta charset="utf-8">
   <title>產品資訊 - 新凱濾材工業股份有限公司</title>
 
-  <!--SEO Meta Tags-->
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="author" content="Shao" />
-
-  <!--Mobile Specific Meta Tag-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <!--Favicon-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="icon" href="favicon.png" type="image/x-icon">
-
-  <!-- Material & Socicon Icons Fonts -->
   <link rel="stylesheet" href="stylesheets/vendor/socicon.min.css">
   <link rel="stylesheet" href="stylesheets/vendor/material-icons.min.css">
-
-  <!-- Bootstrap Core -->
   <link href="stylesheets/vendor/bootstrap.min.css" rel="stylesheet" media="screen">
-
-  <!-- Slick Carousel Default Styles -->
   <link href="stylesheets/vendor/slick.css" rel="stylesheet" media="screen">
-
-  <!-- Modal Default Styles -->
   <link href="stylesheets/vendor/magnific-popup.css" rel="stylesheet" media="screen">
-
-  <!-- Offcanvas Plugin -->
   <link href="stylesheets/vendor/slidebars.min.css" rel="stylesheet" media="screen">
-
-  <!-- All Theme Styles -->
   <link href="stylesheets/theme.min.css" rel="stylesheet" media="screen">
-
-  <script src="js/jquery.js"></script>
 </head>
 
-<!-- Body -->
-<!-- "is-preloader preloading" is a helper classes if preloader is enabled. -->
 <body class="is-preloader preloading">
-
-  <!-- Preloader -->
-  <!--
-      Data API:
-      data-spinner - Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
-      data-screenbg - Screen background color. Hex, RGB or RGBA colors
-   -->
   <div id="preloader" data-spinner="spinner1" data-screenbg="#fff"></div>
 
-  <!-- Page Wrapper -->
   <div class="page-wrapper">
     <div off-canvas="id-1 left push" class="off-canvas-cont"></div>
 
     <div canvas="container">
-      <!-- Backdrop for Canvas -->
       <div class="backdrop offcanvas-toggle"></div>
-
       <header class="header"></header>
 
       <main>
-        <!-- Page Title -->
         <div class="page-title">
           <div class="container">
             <div class="breadcrumbs">
@@ -71,9 +42,8 @@
               <a href="products.html">產品資訊</a>
             </div>
           </div>
-        </div><!-- Page Title END -->
+        </div>
 
-        <!-- Content -->
         <div class="container">
           <div id="housing-grid"></div>
           <div id="housing-selected" class="row">
@@ -82,28 +52,25 @@
             </div>
 
             <div class="col-md-3 col-md-pull-9">
-              <!-- Sidebar -->
               <aside class="sidebar">
-                <!-- Widget Categories -->
                 <div class="widget categories-widget">
                   <div class="widget-title">商品類別</div>
                   <ul id="sidebar-cat-list" class="cat-list"></ul>
-                </div><!-- Widget Categories END -->
+                </div>
 
-                <!-- Latest Product List -->
                 <div class="widget cart-widget">
                   <div class="widget-title">人氣商品</div>
                   <ul id="latest-products" class="cart-list"></ul>
-                </div><!-- Latest Product List END -->
-              </aside><!-- Sidebar END -->
+                </div>
+              </aside>
             </div>
           </div>
-        </div><!-- Content END -->
+        </div>
       </main>
 
       <footer class="footer"></footer>
     </div>
-  </div><!-- Page Wrapper END -->
+  </div>
 
   <script data-main="js/main.js" src="js/requirejs.js"></script>
   <script>
