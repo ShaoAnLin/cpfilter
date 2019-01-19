@@ -19,7 +19,7 @@ define('products', [
             constant.HOUSING.forEach(function(housing){
                 count++;
                 var link = "products.html?housing=" + housing,
-                    imgSrc = "img/products/category/{0}.jpg".format(count);
+                    imgSrc = "img/products/category/{0}.jpg".format(housing);
                 rowItems.push(
                     <div className="col-md-4">
                       <div className="tile tile-category">

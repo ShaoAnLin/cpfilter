@@ -25,7 +25,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 constant.HOUSING.forEach(function (housing) {
                     count++;
                     var link = "products.html?housing=" + housing,
-                        imgSrc = "img/products/category/{0}.jpg".format(count);
+                        imgSrc = "img/products/category/{0}.jpg".format(housing);
                     rowItems.push(React.createElement(
                         'div',
                         { className: 'col-md-4' },
