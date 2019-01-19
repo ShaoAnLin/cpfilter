@@ -21,9 +21,9 @@
 }
 
 .fit-screen-height {
-	height: calc(100vh - 440px);
+	height: calc(100vh - 614px);
 	@media #{$nav-collapse} {
-		height: calc(100vh - 320px);
+		height: calc(100vh - 494px);
 	}
 }
 
@@ -60,4 +60,9 @@
 	@media #{$mobile-land} {
 		max-width: 100%;
 	}
+}
+
+.tab-img {
+	max-height: 200px;
+	width: auto;
 }

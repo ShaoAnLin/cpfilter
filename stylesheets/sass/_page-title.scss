@@ -6,7 +6,7 @@
 // Base Class
 // ----------------
 .page-title {
-   padding: $grid-vertical-step 0 ($grid-vertical-step * 2);
+   padding: $grid-vertical-step 0 $grid-vertical-step;
    .container > * { display: inline-block; }
    .title {
      color: $gray-darker;
