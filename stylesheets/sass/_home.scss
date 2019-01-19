@@ -111,6 +111,10 @@
 			}
 		}
 
+		.dark-background {
+			background: rgba(0,0,0,0.5);
+		}
+
 		.caption {
 			padding: 0 50px;
 			@media #{$mobile-land} {
