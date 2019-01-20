@@ -246,24 +246,20 @@ define('products', [
             var detailLink = "product-detail.html?item=" + this.props.id,
                 series = this.props.item.series ? this.props.item.series : "";
             return (
-                <div className="col-md-4">
-                    <div className="tile">
-                        <a href={detailLink}><productImg.MainImg item={this.props.item}/></a>
-
-                        <div className="tile-title">
+                <div className="col-md-4 tile">
+                    <a href={detailLink}>
+                        <productImg.MainImg item={this.props.item}/>
+                    </a>
+                    <div className="tile-title">
                         <a href={detailLink}>{this.props.item.title}</a>
-                        </div>
-
-                        <div className="tile-meta">
+                    </div>
+                    <div className="tile-meta">
                         <div className="meta-top">
                             <span>{this.props.item.subtitle}</span>
                         </div>
                         {!this.props.item.hideSeries &&
-                            <div className="meta-bottom">
-                                <span>{series}</span>
-                            </div>
+                            <div className="meta-bottom"><span>{series}</span></div>
                         }
-                        </div>
                     </div>
                 </div>
             );

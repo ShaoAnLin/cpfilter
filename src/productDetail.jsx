@@ -222,7 +222,7 @@ define('productDetail', [
 
         render() {
             var detailLink = "product-detail.html?item=" + this.props.id,
-                series = this.props.item.series ? this.props.item["series"] : "";
+                series = this.props.item.series ? this.props.item.series : "";
             return(
                 <div className="col-md-3 tile">
                     <a href={detailLink}>
@@ -235,7 +235,9 @@ define('productDetail', [
                         <div className="meta-top">
                             <span>{this.props.item.subtitle}</span>
                         </div>
-                        <div className="meta-bottom"><span>{series}</span></div>
+                        {!this.props.item.hideSeries &&
+                            <div className="meta-bottom"><span>{series}</span></div>
+                        }
                     </div>
                 </div>
             );

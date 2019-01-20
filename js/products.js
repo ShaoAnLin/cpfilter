@@ -392,44 +392,40 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                     series = this.props.item.series ? this.props.item.series : "";
                 return React.createElement(
                     'div',
-                    { className: 'col-md-4' },
+                    { className: 'col-md-4 tile' },
+                    React.createElement(
+                        'a',
+                        { href: detailLink },
+                        React.createElement(productImg.MainImg, { item: this.props.item })
+                    ),
                     React.createElement(
                         'div',
-                        { className: 'tile' },
+                        { className: 'tile-title' },
                         React.createElement(
                             'a',
                             { href: detailLink },
-                            React.createElement(productImg.MainImg, { item: this.props.item })
-                        ),
+                            this.props.item.title
+                        )
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'tile-meta' },
                         React.createElement(
                             'div',
-                            { className: 'tile-title' },
+                            { className: 'meta-top' },
                             React.createElement(
-                                'a',
-                                { href: detailLink },
-                                this.props.item.title
+                                'span',
+                                null,
+                                this.props.item.subtitle
                             )
                         ),
-                        React.createElement(
+                        !this.props.item.hideSeries && React.createElement(
                             'div',
-                            { className: 'tile-meta' },
+                            { className: 'meta-bottom' },
                             React.createElement(
-                                'div',
-                                { className: 'meta-top' },
-                                React.createElement(
-                                    'span',
-                                    null,
-                                    this.props.item.subtitle
-                                )
-                            ),
-                            !this.props.item.hideSeries && React.createElement(
-                                'div',
-                                { className: 'meta-bottom' },
-                                React.createElement(
-                                    'span',
-                                    null,
-                                    series
-                                )
+                                'span',
+                                null,
+                                series
                             )
                         )
                     )

@@ -321,7 +321,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
             key: 'render',
             value: function render() {
                 var detailLink = "product-detail.html?item=" + this.props.id,
-                    series = this.props.item.series ? this.props.item["series"] : "";
+                    series = this.props.item.series ? this.props.item.series : "";
                 return React.createElement(
                     'div',
                     { className: 'col-md-3 tile' },
@@ -351,7 +351,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                                 this.props.item.subtitle
                             )
                         ),
-                        React.createElement(
+                        !this.props.item.hideSeries && React.createElement(
                             'div',
                             { className: 'meta-bottom' },
                             React.createElement(

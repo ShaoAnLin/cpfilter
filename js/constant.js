@@ -16,7 +16,7 @@ define('constant', function(){
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
             "PP過濾器、濾殼": ["PP過濾器、濾殼"],
-            "過濾器配件": ["沖孔籃", "壓袋器", "撐開架"],
+            "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "金屬濾籃"],
             "鈦過濾器": ["鈦過濾器"]
         },
         "濾材": {
@@ -32,7 +32,8 @@ define('constant', function(){
         },
         "磁力設備": {
             "磁選機": null,
-            "磁力棒": null
+            "磁力棒": null,
+            "磁力板": null
         },
         "空調濾網": {
             "紙框": null,
@@ -366,6 +367,24 @@ define('constant', function(){
             },
             "range": "適用機型：PL / PH / PHT / PM",
         },
+        "金屬浮球": {
+            "series": "金屬浮球",
+            "housing": "過濾器",
+            "category": "過濾器配件",
+            "images": 0,
+            "title": "金屬浮球",
+            "subtitle": "Float ball",
+            "hideSeries": true
+        },
+        "金屬濾籃": {
+            "series": "金屬濾籃",
+            "housing": "過濾器",
+            "category": "過濾器配件",
+            "images": 0,
+            "title": "金屬濾籃",
+            "subtitle": "",
+            "hideSeries": true
+        },
 
         "鈦過濾器": {
             "series": "鈦過濾器",
@@ -607,6 +626,14 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000-12000"
             }
+        },
+        "磁力板": {
+            "series": null,
+            "housing": "磁力設備",
+            "category": "磁力板",
+            "images": 0,
+            "title": "磁力板",
+            "subtitle": ""
         },
 
         // ========== 空調濾網 ========== //
