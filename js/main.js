@@ -2,8 +2,8 @@ requirejs.config({
     baseUrl: "js",
 	paths: {
 		jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min',
-		react: 'react.min',
-		reactDOM: 'react-dom.min'
+		react: 'https://unpkg.com/react@16/umd/react.production.min',
+		reactDOM: 'https://unpkg.com/react-dom@16/umd/react-dom.production.min'
 	},
 	shim: {
 		// Libraries
