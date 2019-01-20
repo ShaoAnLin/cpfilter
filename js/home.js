@@ -13,7 +13,6 @@ define('home', [
         var activeSlideImage = activeSlide.find('.image-container');
         var newSlide = slides.eq(index);
         var newSlideImage = newSlide.find('.image-container');
-        var newSlideContent = newSlide.find('.slide-content');
         var newSlideElements = newSlide.find('.caption > *');
         if (newSlide.is(activeSlide)) return;
 
