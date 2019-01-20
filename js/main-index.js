@@ -17,15 +17,14 @@ requirejs.config({
 		'header': ['react', 'reactDOM', 'constant'],
 		'footer': ['react', 'reactDOM'],
 		'sideNav': ['react', 'reactDOM', 'constant'],
-		
+
+		'home': ['jquery', 'vendor/TweenMax.min'],
 		'common': [
 			'header',
 			'footer',
 			'sideNav',
 			'javascriptStrings',
 			'jquery',
-			'react',
-			'reactDOM',
 			'ga',
 			'vendor/preloader.min',
 			'vendor/bootstrap.min',
@@ -36,6 +35,7 @@ requirejs.config({
 	}
 });
 
-require(['common'], function(common) {
-	common.init();
+require(['common', 'home'], function(common, home) {
+    common.init();
+    home.init();
 });

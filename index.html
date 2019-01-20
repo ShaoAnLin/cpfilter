@@ -120,16 +120,6 @@
     </div>
   </div>
 
-  <script data-main="js/main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
-  <script>
-    console.log('GO!');
-    requirejs(['app']);
-    
-    console.log('Start loading');
-    require(['common', 'home'], function(common, home) {
-      common.init();
-      home.init();
-    });
-  </script>
+  <script data-main="js/main-index.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
 </body>
 </html>

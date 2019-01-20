@@ -17,7 +17,9 @@ requirejs.config({
 		'header': ['react', 'reactDOM', 'constant'],
 		'footer': ['react', 'reactDOM'],
 		'sideNav': ['react', 'reactDOM', 'constant'],
-		
+		'productImg': ['react', 'reactDOM', 'constant'],
+		'products': ['react', 'reactDOM', 'constant', 'productImg'],
+
 		'common': [
 			'header',
 			'footer',
@@ -36,6 +38,7 @@ requirejs.config({
 	}
 });
 
-require(['common'], function(common) {
-	common.init();
+require(['common', 'products'], function(common, products) {
+    common.init();
+    products.init();
 });
