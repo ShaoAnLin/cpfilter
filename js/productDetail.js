@@ -220,10 +220,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         }
 
         if (item.sizeImgs) {
-            $('#size0-img').attr("src", constant.getImgPath(item, 'size') + '0.jpg');
-            if (item.sizeImgs > 1) {
-                $('#size1-img').attr("src", constant.getImgPath(item, 'size') + '1.jpg');
-            }
+            $('#size-img').attr("src", constant.getImgPath(item, 'size') + '.jpg');
         } else {
             $('#nav-tab-size').hide();
         }

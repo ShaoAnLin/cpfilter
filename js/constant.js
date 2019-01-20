@@ -69,7 +69,7 @@ define('constant', function(){
             "range": "機台循環、PCW過濾、化學品製程",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "ALA": {
             "series": "ALA",
@@ -93,7 +93,7 @@ define('constant', function(){
             "range": "機台循環、PCW過濾、化學品製程",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "AHS": {
             "series": "AHS",
@@ -117,7 +117,7 @@ define('constant', function(){
             "range": "機台循環、PCW過濾、化學品製程",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "AF": {
             "series": "AF",
@@ -141,7 +141,7 @@ define('constant', function(){
             "range": "水塔過濾",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "AL": {
             "series": "AL",
@@ -165,7 +165,7 @@ define('constant', function(){
             "range": "RO前置過濾、化學品製程、PCW過濾、飲料業、循環過濾",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "AH": {
             "series": "AH",
@@ -189,7 +189,7 @@ define('constant', function(){
             "range": "RO前置過濾、PCW過濾、循環過濾、化學品製程、回收水過濾、飲料業",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "AM": {
             "series": "AM",
@@ -213,7 +213,7 @@ define('constant', function(){
             "range": "RO前置過濾、PCW過濾、循環過濾、化學品製程、回收水過濾、飲料業",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
 
         // 不鏽鋼袋濾機
@@ -238,7 +238,7 @@ define('constant', function(){
             "range": "RO前置過濾、PCW過濾、循環過濾、飲料業、化學品製程、回收水過濾、電著塗裝過濾",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "PH": {
             "series": "PH",
@@ -262,7 +262,7 @@ define('constant', function(){
             "range": "RO前置過濾、PCW過濾、循環過濾、化學品製程、回收水過濾、飲料業",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "PHT": {
             "series": "PHT",
@@ -286,7 +286,7 @@ define('constant', function(){
             "range": "石化製程、化學品製程、高溫、高壓、高黏度過濾",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
         "PM": {
             "series": "PM",
@@ -310,7 +310,7 @@ define('constant', function(){
             "range": "RO前置過濾、PCW過濾、循環過濾、飲料業、化學品製程、回收水過濾、電著塗裝過濾",
             "modelImgs": 1,
             'componentImgs': 1,
-            "sizeImgs": 2
+            "sizeImgs": 1
         },
 
         "PP過濾器、濾殼": {
