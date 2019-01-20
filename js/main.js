@@ -37,5 +37,3 @@ requirejs.config({
 			'vendor/jquery.themepunch.revolution.min']
 	}
 });
-
-requirejs(['app']);
