@@ -5,7 +5,7 @@ define('constant', function(){
 
     constant.CATEGORIES = {
         "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "PP過濾器、濾殼", "過濾器配件", "鈦過濾器"],
-        "濾材": ["不鏽鋼濾心", "PP囊式濾心", "活性碳濾心", "陽極袋", "壓濾機濾布", "砂紙"],
+        "濾材": ["不鏽鋼濾心", "PP囊式濾心", "活性碳濾心", "陽極袋", "壓濾機濾布", "砂紙", "空壓機濾心"],
         "機械設備": [],
         "磁力設備": [],
         "空調濾網": []
@@ -13,8 +13,10 @@ define('constant', function(){
 
     constant.SERIES = {
         "過濾器": {
-            "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
-            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
+            "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM",
+                "AGS", "AHP", "ALF", "ALSH", "SCL", "SCS"], // no info
+            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM",
+                "PHP"], // no info
             "PP過濾器、濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球"],
             "鈦過濾器": ["鈦過濾器"]
@@ -25,7 +27,8 @@ define('constant', function(){
             "活性碳濾心": ["碳棒式", "碳布式", "碳纖式"],
             "陽極袋": ["陽極袋"],
             "壓濾機濾布": ["壓濾機濾布"],
-            "砂紙": ["砂紙"]
+            "砂紙": ["砂紙"],
+            "空壓機濾心": ["空壓機濾心"]
         },
         "機械設備": {
             "自動逆洗設備": null
@@ -215,6 +218,54 @@ define('constant', function(){
             'componentImgs': 1,
             "sizeImgs": 1
         },
+        "AGS": {
+            "series": "AGS",
+            "housing": "過濾器",
+            "category": "不鏽鋼濾心機",
+            "images": 2,
+            "title": "濾心式過濾器",
+            "subtitle": ""
+        },
+        "AHP": {
+            "series": "AHP",
+            "housing": "過濾器",
+            "category": "不鏽鋼濾心機",
+            "images": 0,
+            "title": "濾心式過濾器",
+            "subtitle": ""
+        },
+        "ALF": {
+            "series": "ALF",
+            "housing": "過濾器",
+            "category": "不鏽鋼濾心機",
+            "images": 3,
+            "title": "濾心式過濾器",
+            "subtitle": ""
+        },
+        "ALSH": {
+            "series": "ALSH",
+            "housing": "過濾器",
+            "category": "不鏽鋼濾心機",
+            "images": 1,
+            "title": "濾心式過濾器",
+            "subtitle": ""
+        },
+        "SCL": {
+            "series": "SCL",
+            "housing": "過濾器",
+            "category": "不鏽鋼濾心機",
+            "images": 1,
+            "title": "衛生級濾心式過濾器",
+            "subtitle": ""
+        },
+        "SCS": {
+            "series": "SCS",
+            "housing": "過濾器",
+            "category": "不鏽鋼濾心機",
+            "images": 4,
+            "title": "衛生級濾心式過濾器",
+            "subtitle": ""
+        },
 
         // 不鏽鋼袋濾機
         "PL": {
@@ -311,6 +362,14 @@ define('constant', function(){
             "modelImgs": 1,
             'componentImgs': 1,
             "sizeImgs": 1
+        },
+        "PHP": {
+            "series": "PHP",
+            "housing": "過濾器",
+            "category": "不鏽鋼袋濾機",
+            "images": 0,
+            "title": "濾袋式過濾器",
+            "subtitle": ""
         },
 
         "塑膠濾殼": {
@@ -592,6 +651,16 @@ define('constant', function(){
                 "研磨完成面效果較為細緻滑溜",
                 "上砂時嚴選砂粒粒度，研磨時比較一般耐久使用"
             ]
+        },
+        "空壓機濾心": {
+            "series": "空壓機濾心",
+            "housing": "濾材",
+            "category": "空壓機濾心",
+            "images": 0,
+            "title": "空壓機濾心",
+            "subtitle": "",
+            "hideSeries": true,
+            "specImg": 1
         },
 
         // ========== 機械設備 ========== //
