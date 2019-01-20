@@ -15,7 +15,7 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
-            "PP過濾器、濾殼": ["PP過濾器、濾殼"],
+            "PP過濾器、濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球"],
             "鈦過濾器": ["鈦過濾器"]
         },
@@ -54,7 +54,7 @@ define('constant', function(){
             "images": 3,
             "title": "單支裝",
             "subtitle": "濾心式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316",
                 "進出口": "3/4”PT, 1”PT-F/NPT-F",
                 "排放口": "1/4”PT-F",
@@ -78,7 +78,7 @@ define('constant', function(){
             "images": 1,
             "title": "單支裝",
             "subtitle": "濾心式過濾器 - A款",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316",
                 "進出口": "3/4”PT, 1”PT-F/NPT-F",
                 "排放口": "1/4”PT-F",
@@ -102,7 +102,7 @@ define('constant', function(){
             "images": 1,
             "title": "單支裝",
             "subtitle": "濾心式過濾器 - 高壓款",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316",
                 "進出口": "1/2”~1.5”牙口, 法蘭",
                 "排放口": "1/2”PT-M",
@@ -126,7 +126,7 @@ define('constant', function(){
             "images": 1,
             "title": "單支裝",
             "subtitle": "濾心式水塔過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316",
                 "進出口": "3/4”~1”PT-M",
                 "排放口": "3/4”PT-M",
@@ -150,7 +150,7 @@ define('constant', function(){
             "images": 1,
             "title": "3~7支裝",
             "subtitle": "濾心式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "1”~4”牙口, 法蘭, 衛生級接頭",
                 "排放口": "3/4”PT-M",
@@ -174,7 +174,7 @@ define('constant', function(){
             "images": 1,
             "title": "3~7支裝",
             "subtitle": "濾心式過濾器 - 高壓款",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "1”~4”牙口, 法蘭, 衛生級接頭",
                 "排放口": "3/4”PT-M",
@@ -198,7 +198,7 @@ define('constant', function(){
             "images": 3,
             "title": "大流量多支裝",
             "subtitle": "濾心式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "2”~14”法蘭, 衛生級接頭",
                 "排放口": "1”PT-F",
@@ -224,7 +224,7 @@ define('constant', function(){
             "images": 1,
             "title": "單袋式",
             "subtitle": "濾袋式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "1/2”~3”牙口, 法蘭, 衛生級接頭",
                 "排氣口": "1/4”PT-F",
@@ -247,7 +247,7 @@ define('constant', function(){
             "images": 1,
             "title": "單袋式 - 高壓款",
             "subtitle": "濾袋式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "1/2”~3”牙口, 法蘭, 衛生級接頭",
                 "排放口": "3/4”PT-M",
@@ -271,7 +271,7 @@ define('constant', function(){
             "images": 3,
             "title": "上入式",
             "subtitle": "濾袋式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "2”~2.5”牙口, 法蘭, 衛生級接頭",
                 "排放口": "1/4”PT-F",
@@ -295,7 +295,7 @@ define('constant', function(){
             "images": 3,
             "title": "大流量多袋式",
             "subtitle": "濾袋式過濾器",
-            "specification": {
+            "spec": {
                 "本體材質": "SUS304, SUS316, SUS316L",
                 "進出口": "2”~15”法蘭",
                 "排放口": "2”PT-M",
@@ -313,15 +313,51 @@ define('constant', function(){
             "sizeImgs": 1
         },
 
-        "PP過濾器、濾殼": {
-            "series": "PP過濾器、濾殼",
+        "塑膠濾殼": {
+            "series": "塑膠濾殼",
             "housing": "過濾器",
             "category": "PP過濾器、濾殼",
-            "images": 2,
+            "images": 0,
             "title": "塑膠濾殼",
             "subtitle": "標準型/大流量",
+            "hideSeries": true,
             "range": "RO前置過濾、PCW過濾、機台循環過濾",
             "specImg": 1
+        },
+        "純PP濾殼-222型": {
+            "series": "純PP濾殼-222型",
+            "housing": "過濾器",
+            "category": "PP過濾器、濾殼",
+            "images": 0,
+            "title": "純PP濾殼",
+            "subtitle": "222型",
+            "hideSeries": true,
+            "spec": {
+                "規格": "10”、20”",
+                "材質": "底座/桶身-純PP",
+                "固定鋼架": "不鏽鋼",
+                "密封圈": "EPDM",
+                "進出口": "3/4”NPT、1”NPT",
+                "最高工作壓力": "0.6 Mpa at 20°C",
+                "最高操作溫度": "60°C"
+            }
+        },
+        "純PP濾殼-226型": {
+            "series": "純PP濾殼-226型",
+            "housing": "過濾器",
+            "category": "PP過濾器、濾殼",
+            "images": 0,
+            "title": "純PP濾殼",
+            "subtitle": "226型",
+            "hideSeries": true,
+            "spec": {
+                "規格": "10”、20”",
+                "材質": "底座/桶身-純PP",
+                "密封圈": "EPDM、Silicone、Viton",
+                "進出口": "DN40、JIS40A",
+                "最高工作壓力": "0.6 Mpa at 20°C",
+                "最高操作溫度": "60°C"
+            }
         },
 
         // 過濾器配件
@@ -333,7 +369,7 @@ define('constant', function(){
             "title": "沖孔籃",
             "subtitle": "Bag Basket",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø171.5mm*350mmL、B#2-ø171.5mm*730mmL、B#3-ø97.5mm*200mmL、B#4-ø97.5mm*310mmL"
             },
@@ -347,7 +383,7 @@ define('constant', function(){
             "title": "壓袋器",
             "subtitle": "Bag Pressing",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1、B#2- ø179mm、B#3、B#4- ø120mm"
             },
@@ -361,7 +397,7 @@ define('constant', function(){
             "title": "撐開架",
             "subtitle": "Bag Bracket",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø153mm*ø135mm*340mmL、B#2-ø153mm*ø135mm*720mmL"
             },
@@ -385,7 +421,7 @@ define('constant', function(){
             "title": "鈦過濾桶",
             "subtitle": "標準濾心式",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "材質": "桶身全部為鈦金屬所製作---為高耐腐蝕過濾器。",
                 "耐壓": "7kg/cm²---適用於各種化學液體過濾。",
                 "濾心": "採單支固定式濾心桿---無濾心鬆脫問題，確保過濾效果。",
@@ -444,7 +480,7 @@ define('constant', function(){
             "title": "碳棒式",
             "subtitle": "活性碳濾心",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "活性碳種類": "椰殼碳棒",
                 "中柱材質": "PP",
                 "濾材公稱精度": "5μm",
@@ -467,7 +503,7 @@ define('constant', function(){
             "title": "碳布式",
             "subtitle": "活性碳濾心",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "活性碳種類": "椰殼碳粉 Polyester 纖維布",
                 "中柱材質": "PP",
                 "濾材公稱精度": "5μm",
@@ -491,7 +527,7 @@ define('constant', function(){
             "title": "碳纖式",
             "subtitle": "活性碳濾心",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "活性碳種類": "椰殼碳粉 Polyester 纖維布",
                 "中柱材質": "PP",
                 "濾材公稱精度": "5μm",
@@ -515,7 +551,7 @@ define('constant', function(){
             "title": "陽極袋/濾心袋",
             "subtitle": "",
             "hideSeries": true,
-            "specification": {
+            "spec": {
                 "材質": "PP, PET 織布",
                 "陽極袋規格": "配合鈦籃尺寸、規格，客製化製作",
                 "濾心袋規格": "10”-40”",
@@ -534,7 +570,7 @@ define('constant', function(){
             "feature": [
                 "板框式壓濾機用高壓力使用物料經過濾布進行壓榨，節省乾燥時間和成本。可依照不同需求，提共不同透氣度與不同織法之布款。"
             ],
-            "specification": {
+            "spec": {
                 "材質": "PP(Polyproylene)、PE、NYLON、PPS、棉",
                 "纖維": "單絲、複絲、短襪 織法:平織、斜織、緞紋、亂紋織",
                 "尺寸": "皆依客戶需求製作",
@@ -566,7 +602,7 @@ define('constant', function(){
             "images": 0,
             "title": "自動清洗刮刀式過濾器",
             "subtitle": "SCF",
-            "specification": {
+            "spec": {
                 "本體材質": "碳鋼、不鏽鋼304、316L、雙相不鏽鋼",
                 "濾網材質": "AISI 316L, 321, Monel 400",
                 "最大工作壓力": "20 Barg",
@@ -613,7 +649,7 @@ define('constant', function(){
             "title": "磁力棒",
             "subtitle": "",
             "range": "適用機型：PL/PH/PHT/PM",
-            "specification": {
+            "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000-12000"
             }
@@ -635,7 +671,7 @@ define('constant', function(){
             "images": 1,
             "title": "紙框",
             "subtitle": "",
-            "specification": {
+            "spec": {
                 "濾材": "人纖(Synthetic Microfiber), 玻纖(Glass Fiber), 活性碳(Carbon Filter)",
                 "濾效": "人纖35%, 65%, 85%, 95% (AFI)",
                 "厚度": "1”, 2”, 4”"
@@ -648,7 +684,7 @@ define('constant', function(){
             "images": 0,
             "title": "中高效袋式",
             "subtitle": "",
-            "specification": {
+            "spec": {
                 "濾材": "人纖(Synthetic Microfiber), 玻纖(Glass Fiber)",
                 "濾效": "45%, 65%, 85%, 95% (NBS)",
                 "外框": "鍍鋅鐵, 木框, 鋁框, 不鏽鋼框",
@@ -662,7 +698,7 @@ define('constant', function(){
             "images": 0,
             "title": "中效濾網",
             "subtitle": "",
-            "specification": {
+            "spec": {
                 "濾材": "人纖(Synthetic Microfiber)",
                 "濾效": "45%, 65%, 85%, 95% (NBS)",
                 "袋數": "3B, 4B, 5B, 6B, 8B, 10B, 12B",
@@ -677,7 +713,7 @@ define('constant', function(){
             "images": 0,
             "title": "高效率HEPA/ULPA",
             "subtitle": "",
-            "specification": {
+            "spec": {
                 "濾材": "玻纖(Glass Fiber), 特殊玻纖",
                 "濾效": "HEPA(0.3μm時達99.97%), DOP ULPA(0.3μm時達99.99%), DOP",
                 "外框": "鍍鋅鐵, 木框, 鋁框, 不鏽鋼框",
@@ -692,7 +728,7 @@ define('constant', function(){
             "images": 0,
             "title": "不織布濾棉",
             "subtitle": "",
-            "specification": {
+            "spec": {
                 "濾材": "PP不織布(Non-Woven), 活性碳不織布",
                 "厚度(mm)": "3, 5, 10, 15, 20, 25, 30"
             }

@@ -76,8 +76,8 @@ define('productDetail', [
         
         render() {
             var spec = [];
-            if (this.props.item.specification){
-                $.each(this.props.item.specification, function(key, value){
+            if (this.props.item.spec){
+                $.each(this.props.item.spec, function(key, value){
                     spec.push(<li>{key}: {value}</li>);
                 });
             } else if (this.props.item.specImg){
@@ -85,7 +85,7 @@ define('productDetail', [
                 spec.push(<img src={src}></img>);
             }
             return(
-                <ul className="list-featured item-specification">{spec}</ul>
+                <ul className="list-featured item-spec">{spec}</ul>
             );
         };
     }
@@ -107,15 +107,18 @@ define('productDetail', [
     }
 
     var setTabDetail = function(item){
-        if (item.specification || item.specImg){
+        if (item.spec || item.specImg){
             ReactDOM.render(<ItemSpec item={item}/>,
                 document.querySelector('#spec-detail'));
+            if (item.specImg){
+                $('#spec-detail').addClass('text-center');
+            }
         } else{
             $('#nav-tab-spec').hide();
         }
 
         if (item.feature){
-            if (item.specification == null){
+            if (item.spec == null){
                 $('#nav-tab-feature').addClass('active');
                 $('#tab-feature').addClass('in active');
             }

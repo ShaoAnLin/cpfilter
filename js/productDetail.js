@@ -134,8 +134,8 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
             key: 'render',
             value: function render() {
                 var spec = [];
-                if (this.props.item.specification) {
-                    $.each(this.props.item.specification, function (key, value) {
+                if (this.props.item.spec) {
+                    $.each(this.props.item.spec, function (key, value) {
                         spec.push(React.createElement(
                             'li',
                             null,
@@ -150,7 +150,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                 }
                 return React.createElement(
                     'ul',
-                    { className: 'list-featured item-specification' },
+                    { className: 'list-featured item-spec' },
                     spec
                 );
             }
@@ -191,14 +191,17 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     }(React.Component);
 
     var setTabDetail = function setTabDetail(item) {
-        if (item.specification || item.specImg) {
+        if (item.spec || item.specImg) {
             ReactDOM.render(React.createElement(ItemSpec, { item: item }), document.querySelector('#spec-detail'));
+            if (item.specImg) {
+                $('#spec-detail').addClass('text-center');
+            }
         } else {
             $('#nav-tab-spec').hide();
         }
 
         if (item.feature) {
-            if (item.specification == null) {
+            if (item.spec == null) {
                 $('#nav-tab-feature').addClass('active');
                 $('#tab-feature').addClass('in active');
             }
