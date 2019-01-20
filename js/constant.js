@@ -16,7 +16,7 @@ define('constant', function(){
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
             "PP過濾器、濾殼": ["PP過濾器、濾殼"],
-            "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "金屬濾籃"],
+            "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球"],
             "鈦過濾器": ["鈦過濾器"]
         },
         "濾材": {
@@ -329,7 +329,7 @@ define('constant', function(){
             "series": "沖孔籃",
             "housing": "過濾器",
             "category": "過濾器配件",
-            "images": 0,
+            "images":   1,
             "title": "沖孔籃",
             "subtitle": "Bag Basket",
             "hideSeries": true,
@@ -374,15 +374,6 @@ define('constant', function(){
             "images": 0,
             "title": "金屬浮球",
             "subtitle": "Float ball",
-            "hideSeries": true
-        },
-        "金屬濾籃": {
-            "series": "金屬濾籃",
-            "housing": "過濾器",
-            "category": "過濾器配件",
-            "images": 0,
-            "title": "金屬濾籃",
-            "subtitle": "",
             "hideSeries": true
         },
 
