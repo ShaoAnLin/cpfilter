@@ -38,6 +38,4 @@ requirejs.config({
 	}
 });
 
-define(['jquery'], function(){
-
-});
+requirejs(['app']);
