@@ -10,15 +10,15 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
 
     'use strict';
 
-    var HousingGrid = function (_React$Component) {
-        _inherits(HousingGrid, _React$Component);
+    var GridImages = function (_React$Component) {
+        _inherits(GridImages, _React$Component);
 
-        function HousingGrid(props) {
-            _classCallCheck(this, HousingGrid);
+        function GridImages(props) {
+            _classCallCheck(this, GridImages);
 
-            var _this = _possibleConstructorReturn(this, (HousingGrid.__proto__ || Object.getPrototypeOf(HousingGrid)).call(this, props));
+            var _this = _possibleConstructorReturn(this, (GridImages.__proto__ || Object.getPrototypeOf(GridImages)).call(this, props));
 
-            _this.getHousingGridItem = function () {
+            _this.getHousingGrid = function () {
                 var housingGrid = [],
                     rowItems = [],
                     count = 0;
@@ -61,21 +61,66 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 return housingGrid;
             };
 
+            _this.getCategoryGrid = function (housing) {
+                var categoryGrid = [],
+                    rowItems = [],
+                    count = 0,
+                    categoryList = constant.CATEGORIES[housing];
+                categoryList.forEach(function (category) {
+                    count++;
+                    var link = "products.html?category=" + category,
+                        imgSrc = "img/products/category/{0}.jpg".format(category);
+                    rowItems.push(React.createElement(
+                        'div',
+                        { className: 'col-md-4' },
+                        React.createElement(
+                            'div',
+                            { className: 'tile tile-category' },
+                            React.createElement(
+                                'a',
+                                { href: link, className: 'preview-box' },
+                                React.createElement('img', { src: imgSrc })
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'tile-title' },
+                                category
+                            )
+                        )
+                    ));
+                    if (count % 3 == 0) {
+                        categoryGrid.push(React.createElement(
+                            'div',
+                            { className: 'row' },
+                            rowItems
+                        ));
+                        rowItems = [];
+                    }
+                });
+                categoryGrid.push(React.createElement(
+                    'div',
+                    { className: 'row' },
+                    rowItems
+                ));
+                return categoryGrid;
+            };
+
             return _this;
         }
 
-        _createClass(HousingGrid, [{
+        _createClass(GridImages, [{
             key: 'render',
             value: function render() {
+                var gridImages = this.props.housing ? this.getCategoryGrid(this.props.housing) : this.getHousingGrid();
                 return React.createElement(
                     React.Fragment,
                     null,
-                    this.getHousingGridItem()
+                    gridImages
                 );
             }
         }]);
 
-        return HousingGrid;
+        return GridImages;
     }(React.Component);
 
     var SideBarList = function (_React$Component2) {
@@ -410,12 +455,21 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             category = queryCategory[0].split('=')[1];
         }
 
-        if (housing || category) {
+        if (housing == "過濾器") {
+            $('#category-name').html(housing);
+        } else {
+            $('#category-right-icon').hide();
+        }
+
+        if (housing == "過濾器") {
+            ReactDOM.render(React.createElement(GridImages, { housing: housing }), document.querySelector('#grid-images'));
+            $('#housing-selected').hide();
+        } else if (housing || category) {
             ReactDOM.render(React.createElement(SideBarList, { housing: housing, category: category }), document.querySelector('#sidebar-cat-list'));
             ReactDOM.render(React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
             ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
         } else {
-            ReactDOM.render(React.createElement(HousingGrid, null), document.querySelector('#housing-grid'));
+            ReactDOM.render(React.createElement(GridImages, null), document.querySelector('#grid-images'));
             $('#housing-selected').hide();
         }
     };

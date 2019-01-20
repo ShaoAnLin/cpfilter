@@ -7,12 +7,12 @@ define('products', [
     
     'use strict';
 
-    class HousingGrid extends React.Component {
+    class GridImages extends React.Component {
         constructor(props) {
             super(props);
         }
 
-        getHousingGridItem = function(){
+        getHousingGrid = function(){
             var housingGrid = [],
                 rowItems = [],
                 count = 0;
@@ -37,10 +37,39 @@ define('products', [
             housingGrid.push(<div className="row">{rowItems}</div>);
             return housingGrid;
         }
+
+        getCategoryGrid = function(housing){
+            var categoryGrid = [],
+                rowItems = [],
+                count = 0,
+                categoryList = constant.CATEGORIES[housing];
+            categoryList.forEach(function(category){
+                count++;
+                var link = "products.html?category=" + category,
+                    imgSrc = "img/products/category/{0}.jpg".format(category);
+                rowItems.push(
+                    <div className="col-md-4">
+                      <div className="tile tile-category">
+                        <a href={link} className="preview-box">
+                          <img src={imgSrc}/>
+                        </a>
+                        <div className="tile-title">{category}</div>
+                      </div>
+                    </div>);
+                if (count % 3 == 0){
+                    categoryGrid.push(<div className="row">{rowItems}</div>);
+                    rowItems = [];
+                }
+            });
+            categoryGrid.push(<div className="row">{rowItems}</div>);
+            return categoryGrid;
+        }
         
         render() {
+            var gridImages = this.props.housing ? this.getCategoryGrid(this.props.housing)
+                : this.getHousingGrid();
             return (
-                <React.Fragment>{this.getHousingGridItem()}</React.Fragment>
+                <React.Fragment>{gridImages}</React.Fragment>
             );
         };
     }
@@ -256,15 +285,24 @@ define('products', [
             category = queryCategory[0].split('=')[1];
         }
 
-        if (housing || category){
+        if (housing == "過濾器"){
+            $('#category-name').html(housing);
+        } else{
+            $('#category-right-icon').hide();
+        }
+
+        if (housing == "過濾器"){
+            ReactDOM.render(<GridImages housing={housing}/>, document.querySelector('#grid-images'));
+            $('#housing-selected').hide();
+        } else if (housing || category){
             ReactDOM.render(<SideBarList housing={housing} category={category}/>,
                 document.querySelector('#sidebar-cat-list'));
             ReactDOM.render(<LatestProducts/>,
                 document.querySelector('#latest-products'));
             ReactDOM.render(<ProductItems housing={housing} category={category}/>,
                 document.querySelector('#product-grid-items'));
-        } else{
-            ReactDOM.render(<HousingGrid/>, document.querySelector('#housing-grid'));
+        } else {
+            ReactDOM.render(<GridImages/>, document.querySelector('#grid-images'));
             $('#housing-selected').hide();
         }
     }
