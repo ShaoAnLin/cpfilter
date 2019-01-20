@@ -109,7 +109,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                         React.createElement(
                           'div',
                           null,
-                          'peter@cpfilter.com.tw'
+                          'peter@cpfilter.com'
                         )
                       ),
                       React.createElement(

@@ -47,7 +47,7 @@ define('footer', [
 
             <div className="widget widget-callback">
                 <i className="icon material-icons email"></i>
-                <div>peter@cpfilter.com.tw</div>
+                <div>peter@cpfilter.com</div>
             </div>
 
             <div className="widget widget-callback">
