@@ -22,7 +22,8 @@ define('constant', function(){
             "鈦過濾器": ["鈦過濾器"]
         },
         "濾材": {
-            "不鏽鋼濾心": ["金屬摺疊", "粉末燒結"],
+            "不鏽鋼濾心": ["金屬摺疊", "粉末燒結",
+                "平面濾心", "平面濾籃"], // no info
             "PP囊式濾心": ["PP囊式濾心"],
             "活性碳濾心": ["碳棒式", "碳布式", "碳纖式"],
             "陽極袋": ["陽極袋"],
@@ -522,6 +523,25 @@ define('constant', function(){
                 "最大操作溫度：480°C"
             ]
         },
+        "平面濾心": {
+            "series": "平面濾心",
+            "housing": "濾材",
+            "category": "不鏽鋼濾心",
+            "images": 1,
+            "title": "平面濾心",
+            "subtitle": "不鏽鋼濾心",
+            "hideSeries": true
+        },
+        "平面濾籃": {
+            "series": "平面濾籃",
+            "housing": "濾材",
+            "category": "不鏽鋼濾心",
+            "images": 0,
+            "title": "平面濾籃",
+            "subtitle": "不鏽鋼濾心",
+            "hideSeries": true
+        },
+
         "PP囊式濾心": {
             "series": "PP囊式濾心",
             "housing": "濾材",
