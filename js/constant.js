@@ -13,8 +13,8 @@ define('constant', function(){
 
     constant.SERIES = {
         "過濾器": {
-            "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM",
-                "AGS", "AHP", "ALF", "ALSH", "SCL", "SCS"], // no info
+            "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM", "SGS", "ALF",
+                "AHP", "ALSH", "SL", "SLS"],
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM",
                 "PHP"], // no info
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
@@ -64,7 +64,7 @@ define('constant', function(){
                 "排放口": "1/4”PT-F",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部拋光, 內部酸洗",
@@ -88,7 +88,7 @@ define('constant', function(){
                 "排放口": "1/4”PT-F",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -112,7 +112,7 @@ define('constant', function(){
                 "排放口": "1/2”PT-M",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "15kg/cm² (225psi)",
                 "操作壓力": "10kg/cm² (150psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -136,7 +136,7 @@ define('constant', function(){
                 "排放口": "3/4”PT-M",
                 "排氣口": "3/4”~1”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -160,7 +160,7 @@ define('constant', function(){
                 "排放口": "3/4”PT-M",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -184,7 +184,7 @@ define('constant', function(){
                 "排放口": "3/4”PT-M",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "15kg/cm² (225psi)",
                 "操作壓力": "10kg/cm² (150psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -208,7 +208,7 @@ define('constant', function(){
                 "排放口": "1”PT-F",
                 "排氣口": "2”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -219,13 +219,29 @@ define('constant', function(){
             'componentImgs': 1,
             "sizeImgs": 1
         },
-        "AGS": {
-            "series": "AGS",
+        "SGS": {
+            "series": "SGS",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
             "images": 2,
             "title": "濾心式過濾器",
-            "subtitle": ""
+            "subtitle": "",
+            "spec": {
+                "本體材質": "SUS304, SUS316, SUS316L",
+                "進出口": "1”~2”Clamp",
+                "排放口": "1/4”PT-F",
+                "排氣口": "1/4”PT-F",
+                "Oring材質(標準)": "EPDM",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
+                "設計壓力": "10kg/cm² (150psi)",
+                "操作壓力": "7kg/cm² (100psi)",
+                "表面處理(標準)": "拋光研磨",
+                "表面處理(選購)": "X-Ray, EP電解"
+            },
+            "range": "製藥業、飲料業、化學品製程、CDA/N2、空氣過濾",
+            "modelImgs": 1,
+            'componentImgs': 1,
+            "sizeImgs": 1
         },
         "AHP": {
             "series": "AHP",
@@ -241,7 +257,19 @@ define('constant', function(){
             "category": "不鏽鋼濾心機",
             "images": 3,
             "title": "濾心式過濾器",
-            "subtitle": ""
+            "subtitle": "",
+            "spec": {
+                "本體材質": "SUS304, SUS316",
+                "進出口": "1”PTF",
+                "排放口": "1/4”PTF",
+                "排氣口": "1/4”PTF",
+                "Oring材質(標準)": "EPDM",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
+                "設計壓力": "10kg/cm² (150psi)",
+                "操作壓力": "7kg/cm² (100psi)",
+                "表面處理(集水頭)": "外部電解/內部酸洗",
+                "表面處理(桶身)": "外部拋光/內部酸洗"
+            }
         },
         "ALSH": {
             "series": "ALSH",
@@ -251,21 +279,51 @@ define('constant', function(){
             "title": "濾心式過濾器",
             "subtitle": ""
         },
-        "SCL": {
-            "series": "SCL",
+        "SL": {
+            "series": "SL",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
             "images": 1,
             "title": "衛生級濾心式過濾器",
-            "subtitle": ""
+            "subtitle": "",
+            "spec": {
+                "本體材質": "SUS304, SUS316, SUS316L",
+                "進出口": "2”Clamp 衛生級夾接頭",
+                "排氣口": "1/4”PT-F",
+                "Oring材質(標準)": "EPDM",
+                "Oring材質(選購)": "Silicone, Viton, Teflon包Viton",
+                "設計壓力": "10kg/cm² (150psi)",
+                "操作壓力": "7kg/cm² (100psi)",
+                "表面處理(標準)": "內外拋光 400mesh",
+                "表面處理(選購)": "X-Ray, EP電解"
+            },
+            "modelImgs": 1,
+            'componentImgs': 1,
+            "sizeImgs": 1
         },
-        "SCS": {
-            "series": "SCS",
+        "SLS": {
+            "series": "SLS",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
             "images": 4,
-            "title": "衛生級濾心式過濾器",
-            "subtitle": ""
+            "title": "衛生級單支裝",
+            "subtitle": "濾心式過濾器",
+            "spec": {
+                "本體材質": "SUS304, SUS316,SUS316L",
+                "進出口": "1”Clamp衛生級夾接頭",
+                "排放口": "1/4”PT-F",
+                "排氣口": "1/4”PT-F",
+                "Oring材質(標準)": "EPDM",
+                "Oring材質(選購)": "Silicone ,Viton, Teflon包Viton",
+                "設計壓力": "10kg/cm² (150psi)",
+                "操作壓力": "7kg/cm² (100psi)",
+                "表面處理(標準)": "內外拋光 400mesh",
+                "表面處理(選購)": "X-Ray, EP電解"
+            },
+            "range": "製造業、化學品製程、飲料業、超純水過濾",
+            "modelImgs": 1,
+            'componentImgs': 1,
+            "sizeImgs": 1
         },
 
         // 不鏽鋼袋濾機
@@ -281,7 +339,7 @@ define('constant', function(){
                 "進出口": "1/2”~3”牙口, 法蘭, 衛生級接頭",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -305,7 +363,7 @@ define('constant', function(){
                 "排放口": "3/4”PT-M",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "15kg/cm² (225psi)",
                 "操作壓力": "10kg/cm² (150psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -329,7 +387,7 @@ define('constant', function(){
                 "排放口": "1/4”PT-F",
                 "排氣口": "1/4”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "15kg/cm² (225psi)",
                 "操作壓力": "10kg/cm² (150psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
@@ -353,7 +411,7 @@ define('constant', function(){
                 "排放口": "2”PT-M",
                 "排氣口": "1/2”PT-F",
                 "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon 包Viton",
+                "Oring材質(選購)": "Viton, Teflon包Viton",
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部電解, 內部酸洗",
