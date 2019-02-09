@@ -4,7 +4,7 @@ define('constant', function(){
     constant.HOUSING = ["過濾器", "濾材", "機械設備", "磁力設備", "空調濾網"];
 
     constant.CATEGORIES = {
-        "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "PP過濾器、濾殼", "過濾器配件", "鈦過濾器"],
+        "過濾器": ["不鏽鋼濾心機", "不鏽鋼袋濾機", "純PP濾殼、塑膠濾殼", "過濾器配件", "鈦過濾器"],
         "濾材": ["不鏽鋼濾心", "PP囊式濾心", "活性碳濾心", "陽極袋", "壓濾機濾布", "砂紙", "空壓機濾心"],
         "機械設備": [],
         "磁力設備": [],
@@ -17,7 +17,7 @@ define('constant', function(){
                 "AGS", "AHP", "ALF", "ALSH", "SCL", "SCS"], // no info
             "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM",
                 "PHP"], // no info
-            "PP過濾器、濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
+            "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球"],
             "鈦過濾器": ["鈦過濾器"]
         },
@@ -376,7 +376,7 @@ define('constant', function(){
         "塑膠濾殼": {
             "series": "塑膠濾殼",
             "housing": "過濾器",
-            "category": "PP過濾器、濾殼",
+            "category": "純PP濾殼、塑膠濾殼",
             "images": 0,
             "title": "塑膠濾殼",
             "subtitle": "標準型/大流量",
@@ -387,7 +387,7 @@ define('constant', function(){
         "純PP濾殼-222型": {
             "series": "純PP濾殼-222型",
             "housing": "過濾器",
-            "category": "PP過濾器、濾殼",
+            "category": "純PP濾殼、塑膠濾殼",
             "images": 0,
             "title": "純PP濾殼",
             "subtitle": "222型",
@@ -405,7 +405,7 @@ define('constant', function(){
         "純PP濾殼-226型": {
             "series": "純PP濾殼-226型",
             "housing": "過濾器",
-            "category": "PP過濾器、濾殼",
+            "category": "純PP濾殼、塑膠濾殼",
             "images": 0,
             "title": "純PP濾殼",
             "subtitle": "226型",
