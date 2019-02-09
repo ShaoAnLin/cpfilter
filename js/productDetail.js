@@ -103,7 +103,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                                 { className: 'col-sm-12' },
                                 React.createElement(
                                     'h5',
-                                    { className: 'section-title range-name' },
+                                    { className: 'section-title' },
                                     '\u9069\u7528\u7BC4\u570D'
                                 )
                             )
@@ -113,6 +113,24 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                             { className: 'item-range' },
                             this.props.item.range
                         )
+                    ),
+                    this.props.item.spec && this.props.item.specUpper && React.createElement(
+                        React.Fragment,
+                        null,
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-12' },
+                                React.createElement(
+                                    'h5',
+                                    { className: 'section-title' },
+                                    '\u898F\u683C'
+                                )
+                            )
+                        ),
+                        React.createElement(ItemSpec, { item: this.props.item })
                     )
                 );
             }
@@ -191,7 +209,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     }(React.Component);
 
     var setTabDetail = function setTabDetail(item) {
-        if (item.spec || item.specImg) {
+        if (item.spec && item.specUpper != true || item.specImg) {
             ReactDOM.render(React.createElement(ItemSpec, { item: item }), document.querySelector('#spec-detail'));
             if (item.specImg) {
                 $('#spec-detail').addClass('text-center');

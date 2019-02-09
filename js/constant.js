@@ -389,8 +389,8 @@ define('constant', function(){
             "housing": "過濾器",
             "category": "純PP濾殼、塑膠濾殼",
             "images": 0,
-            "title": "純PP濾殼",
-            "subtitle": "222型",
+            "title": "222型",
+            "subtitle": "純PP濾殼",
             "hideSeries": true,
             "spec": {
                 "規格": "10”、20”",
@@ -400,15 +400,16 @@ define('constant', function(){
                 "進出口": "3/4”NPT、1”NPT",
                 "最高工作壓力": "0.6 Mpa at 20°C",
                 "最高操作溫度": "60°C"
-            }
+            },
+            "specUpper": true
         },
         "純PP濾殼-226型": {
             "series": "純PP濾殼-226型",
             "housing": "過濾器",
             "category": "純PP濾殼、塑膠濾殼",
             "images": 0,
-            "title": "純PP濾殼",
-            "subtitle": "226型",
+            "title": "226型",
+            "subtitle": "純PP濾殼",
             "hideSeries": true,
             "spec": {
                 "規格": "10”、20”",
@@ -417,7 +418,8 @@ define('constant', function(){
                 "進出口": "DN40、JIS40A",
                 "最高工作壓力": "0.6 Mpa at 20°C",
                 "最高操作溫度": "60°C"
-            }
+            },
+            "specUpper": true
         },
 
         // 過濾器配件

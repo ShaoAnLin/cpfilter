@@ -59,9 +59,17 @@ define('productDetail', [
                     {this.props.item.range &&
                         <React.Fragment>
                         <div className="row">
-                                <div className="col-sm-12"><h5 className="section-title range-name">適用範圍</h5></div>
+                                <div className="col-sm-12"><h5 className="section-title">適用範圍</h5></div>
                         </div>
                         <div className="item-range">{this.props.item.range}</div>
+                        </React.Fragment>
+                    }
+                    {this.props.item.spec && this.props.item.specUpper &&
+                        <React.Fragment>
+                        <div className="row">
+                            <div className="col-sm-12"><h5 className="section-title">規格</h5></div>
+                        </div>
+                        <ItemSpec item={this.props.item}/>
                         </React.Fragment>
                     }
                 </React.Fragment>
@@ -107,7 +115,7 @@ define('productDetail', [
     }
 
     var setTabDetail = function(item){
-        if (item.spec || item.specImg){
+        if ((item.spec && item.specUpper != true) || item.specImg){
             ReactDOM.render(<ItemSpec item={item}/>,
                 document.querySelector('#spec-detail'));
             if (item.specImg){
