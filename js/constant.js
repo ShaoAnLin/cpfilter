@@ -826,7 +826,7 @@ define('constant', function(){
         }
     }
 
-    constant.LATEST_PRODUCTS = ["AH", "陽極袋"];
+    constant.POPULAR_PRODUCTS = ["AH", "ALS", "AM"];
 
     constant.getItemIdStr = function(item){
         return item.series ? item.series : item.category;

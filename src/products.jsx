@@ -170,7 +170,7 @@ define('products', [
 
         getLatestProducts = function(){
             var latestProducts = [];
-            constant.LATEST_PRODUCTS.forEach(function(itemId){
+            constant.POPULAR_PRODUCTS.forEach(function(itemId){
                 var item = constant.ITEMS[itemId],
                     detailUrl = "product-detail.html?item=" + itemId;
                 latestProducts.push(<li>
@@ -179,7 +179,7 @@ define('products', [
                     </a>
                     <div className="info-cont">
                         <a href={detailUrl} className="item-title">{item.title}</a>
-                        <div className="category">{item.housing}</div>
+                        <div className="category">{item.category}</div>
                     </div>
                 </li>);
                 //'.format(divUtil.getMainImage(item), itemId, item.title, item.housing);

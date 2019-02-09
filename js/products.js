@@ -264,7 +264,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
 
             _this4.getLatestProducts = function () {
                 var latestProducts = [];
-                constant.LATEST_PRODUCTS.forEach(function (itemId) {
+                constant.POPULAR_PRODUCTS.forEach(function (itemId) {
                     var item = constant.ITEMS[itemId],
                         detailUrl = "product-detail.html?item=" + itemId;
                     latestProducts.push(React.createElement(
@@ -286,7 +286,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             React.createElement(
                                 'div',
                                 { className: 'category' },
-                                item.housing
+                                item.category
                             )
                         )
                     ));
