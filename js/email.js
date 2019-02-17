@@ -23,10 +23,25 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
             key: 'render',
             value: function render() {
                 function sendMail() {
-                    var msg = "姓名：" + $('#client-name').val() + "\n公司：" + $('#client-company').val() + "\n職稱：" + $('#client-title').val() + "\n電話：" + $('#client-phone').val() + "\n分機：" + $('#client-ext').val() + "\n信件：" + $('#client-message').val();
-                    $('#fs-email').val($('#client-email').val());
-                    $('#fs-message').val(msg);
-                    $('#fs-button').click();
+                    var allValid = true,
+                        checkIds = ['client-name', 'client-email', 'client-message'];
+                    checkIds.forEach(function (id) {
+                        if ($('#' + id).val() == '') {
+                            $('#' + id).addClass('error');
+                            allValid = false;
+                        } else {
+                            $('#' + id).removeClass('error');
+                        }
+                    });
+
+                    if (!allValid) {
+                        $('#error-msg').text('請填寫必填欄位。');
+                    } else {
+                        var msg = "姓名：" + $('#client-name').val() + "\n公司：" + $('#client-company').val() + "\n職稱：" + $('#client-title').val() + "\n電話：" + $('#client-phone').val() + "\n分機：" + $('#client-ext').val() + "\n信件：" + $('#client-message').val();
+                        $('#fs-email').val($('#client-email').val());
+                        $('#fs-message').val(msg);
+                        $('#fs-button').click();
+                    }
                 }
 
                 return React.createElement(
@@ -34,15 +49,49 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
                     null,
                     React.createElement(
                         'div',
-                        { className: 'row' },
+                        { className: 'row form' },
                         React.createElement(
                             'div',
                             { className: 'col-sm-6' },
                             React.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                React.createElement('input', { id: 'client-name', type: 'text', 'class': 'form-control input-alt', name: 'author', placeholder: '\u59D3\u540D*' }),
-                                React.createElement('input', { id: 'client-company', type: 'text', 'class': 'form-control input-alt', name: 'company', placeholder: '\u516C\u53F8\u540D\u7A31' }),
+                                React.createElement('input', { id: 'client-name', type: 'text', 'class': 'form-control input-alt', name: 'author', placeholder: '\u59D3\u540D*' })
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'col-sm-6' },
+                            React.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                React.createElement('input', { id: 'client-email', type: 'email', 'class': 'form-control input-alt', name: 'email', placeholder: 'Email*' })
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'col-sm-6' },
+                            React.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                React.createElement('input', { id: 'client-company', type: 'text', 'class': 'form-control input-alt', name: 'company', placeholder: '\u516C\u53F8\u540D\u7A31' })
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'col-sm-6' },
+                            React.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                React.createElement('input', { id: 'client-title', type: 'text', 'class': 'form-control input-alt', name: 'title', placeholder: '\u8077\u7A31' })
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'col-sm-6' },
+                            React.createElement(
+                                'div',
+                                { className: 'form-group' },
                                 React.createElement('input', { id: 'client-phone', type: 'tel', 'class': 'form-control input-alt', name: 'phone', placeholder: '\u806F\u7D61\u96FB\u8A71' })
                             )
                         ),
@@ -52,9 +101,7 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
                             React.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                React.createElement('input', { id: 'client-email', type: 'email', 'class': 'form-control input-alt', name: 'email', placeholder: 'Email*' }),
-                                React.createElement('input', { id: 'client-title', type: 'text', 'class': 'form-control input-alt', name: 'title', placeholder: '\u8077\u7A31' }),
-                                React.createElement('input', { id: 'client-ext', type: 'number', 'class': 'form-control input-alt', name: 'phone-ext', placeholder: '\u5206\u6A5F' })
+                                React.createElement('input', { id: 'client-ext', type: 'text', 'class': 'form-control input-alt', name: 'phone-ext', placeholder: '\u5206\u6A5F' })
                             )
                         )
                     ),
@@ -66,14 +113,15 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
                             'div',
                             null,
                             '*\u70BA\u5FC5\u586B\u9805\u76EE'
-                        )
+                        ),
+                        React.createElement('div', { id: 'error-msg', 'class': 'error' })
                     ),
                     React.createElement(
                         'p',
                         { className: 'form-submit text-center' },
                         React.createElement(
                             'button',
-                            { id: 'submit', className: 'btn', onClick: sendMail },
+                            { id: 'submit', className: 'btn', type: 'submit', onClick: sendMail },
                             '\u50B3\u9001'
                         )
                     ),
