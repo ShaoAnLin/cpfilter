@@ -88,7 +88,7 @@ define('productDetail', [
                 $.each(this.props.item.spec, function(key, value){
                     spec.push(<li>{key}: {value}</li>);
                 });
-            } else if (this.props.item.specImg){
+            } else if (this.props.item.specImgs){
                 var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
                 spec.push(<img src={src}></img>);
             }
@@ -115,10 +115,10 @@ define('productDetail', [
     }
 
     var setTabDetail = function(item){
-        if ((item.spec && item.specUpper != true) || item.specImg){
+        if ((item.spec && item.specUpper != true) || item.specImgs){
             ReactDOM.render(<ItemSpec item={item}/>,
                 document.querySelector('#spec-detail'));
-            if (item.specImg){
+            if (item.specImgs){
                 $('#spec-detail').addClass('text-center');
             }
         } else{
@@ -126,7 +126,7 @@ define('productDetail', [
         }
 
         if (item.feature){
-            if (item.spec == null){
+            if (item.spec == null && item.specImgs == null){
                 $('#nav-tab-feature').addClass('active');
                 $('#tab-feature').addClass('in active');
             }
@@ -152,6 +152,12 @@ define('productDetail', [
             $('#size-img').attr("src", constant.getImgPath(item, 'size') + '.jpg');
         } else{
             $('#nav-tab-size').hide();
+        }
+
+        if (item.conditionImgs){
+            $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg');
+        } else{
+            $('#nav-tab-condition').hide();
         }
     }
 
