@@ -61,7 +61,7 @@ define('constant', function(){
             hideSeries: show series name or not
 
         Shown on the right side of product images
-            range: 適用範圍
+            range: 適用範圍 (could be a string or an array of strings)
             specUpper: show spec here or not
 
         Shown under the product images
@@ -72,6 +72,7 @@ define('constant', function(){
             sizeImgs: 尺寸規格(mm)
             specImgs: 規格
             conditionImgs: 操作條件
+            dataImgs: 數據圖表
     */
     constant.ITEMS = {
         // ========== 過濾器 ========== //
@@ -655,10 +656,11 @@ define('constant', function(){
                 "濾心採用摺疊式，膜過濾面積大，容雜量大，壓差低，使用壽命長",
                 "具有廣泛的化學相容性"
             ],
-            // TODO: multiline range
-            "range": "酸鹼液、溶劑等澄清過濾\
-                光刻膠、光阻劑、顯影液等終端過濾\
-                墨水、塗料、油墨、膠黏劑等終端過濾",
+            "range": [
+                "酸鹼液、溶劑等澄清過濾",
+                "光刻膠、光阻劑、顯影液等終端過濾",
+                "墨水、塗料、油墨、膠黏劑等終端過濾"
+            ],
             "specImgs": 1,
             "dataImgs": 1
         },
@@ -724,11 +726,12 @@ define('constant', function(){
                 "流量大、化學相容性好",
                 "深層過濾、無任何黏合劑"
             ],
-            // TODO: multiline range
-            "range": "工業用水、自來水、食品飲料用水等前置過濾\
-                顯影液、蝕刻液、電鍍液、有機溶劑等預處理\
-                冷卻迴圈水、鍋爐供水、超純水過濾\
-                酸鹼液、樹脂、膠黏劑、塗料、石墨、墨水、照相沖洗液等預過濾",
+            "range": [
+                "工業用水、自來水、食品飲料用水等前置過濾",
+                "顯影液、蝕刻液、電鍍液、有機溶劑等預處理",
+                "冷卻迴圈水、鍋爐供水、超純水過濾",
+                "酸鹼液、樹脂、膠黏劑、塗料、石墨、墨水、照相沖洗液等預過濾"
+            ],
             "specImgs": 1
         },
         "PES微孔摺疊濾心": {
@@ -811,12 +814,13 @@ define('constant', function(){
             "title": "PP熔噴濾心",
             "subtitle": "",
             "hideSeries": true,
-            // TODO: multiline range
-            "range": "電子產品的鍍液、蝕刻液、藥液、淨水的過濾\
-                各類精密過濾的預過濾\
-                化學工業領域的藥劑、溶劑的過濾和水處理\
-                釀造業、飲料業製造過程中的過濾\
-                RO、UF前的預先過濾、工業用的各種水處理",
+            "range": [
+                "電子產品的鍍液、蝕刻液、藥液、淨水的過濾",
+                "各類精密過濾的預過濾",
+                "化學工業領域的藥劑、溶劑的過濾和水處理",
+                "釀造業、飲料業製造過程中的過濾",
+                "RO、UF前的預先過濾、工業用的各種水處理"
+            ],
             "feature": [
                 "採用聚丙烯為原料",
                 "經過加熱熔融噴絲牽引形成一定孔徑梯度的深層過濾濾心，整體一次性生產而成",
@@ -1145,7 +1149,7 @@ define('constant', function(){
             "images": 1,
             "title": "全自動濕式磁選機",
             "subtitle": "",
-            "range": "濕式磁選機用來處理食品、化工、醫藥、汽車、回收、機械加工及光電產業、半導體產業與廢水汙泥裡含鐵雜質處理。",
+            "range": "濕式磁選機用來處理食品、化工、醫藥、汽車、回收、機械加工及光電產業、半導體產業與廢水汙泥裡含鐵雜質處理",
             "feature": [
                 "濕式磁選機採永久磁鐵設計，可連續作業，自動分離鐵類與非鐵類。",
                 "全自動濕式磁選機可以免去耗費人力清除鐵屑，可以自行設定分選出來的鐵屑及物料的排除時間。",

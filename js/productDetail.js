@@ -74,6 +74,25 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         _createClass(ItemInfo, [{
             key: 'render',
             value: function render() {
+                var rangeDiv = null;
+                if (Array.isArray(this.props.item.range)) {
+                    var ranges = [];
+                    this.props.item.range.forEach(function (str) {
+                        ranges.push(React.createElement(
+                            'li',
+                            null,
+                            str
+                        ));
+                    });
+                    rangeDiv = React.createElement(
+                        'ul',
+                        { className: 'list-featured' },
+                        ranges
+                    );
+                } else {
+                    rangeDiv = this.props.item.range;
+                }
+
                 return React.createElement(
                     React.Fragment,
                     null,
@@ -111,7 +130,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                         React.createElement(
                             'div',
                             { className: 'item-range' },
-                            this.props.item.range
+                            rangeDiv
                         )
                     ),
                     this.props.item.spec && this.props.item.specUpper && React.createElement(

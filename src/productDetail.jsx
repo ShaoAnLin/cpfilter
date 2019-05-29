@@ -51,6 +51,17 @@ define('productDetail', [
         }
         
         render() {
+            var rangeDiv = null;
+            if (Array.isArray(this.props.item.range)){
+                var ranges = [];
+                this.props.item.range.forEach(function(str){
+                    ranges.push(<li>{str}</li>);
+                })
+                rangeDiv = <ul className="list-featured">{ranges}</ul>;
+            } else{
+                rangeDiv = this.props.item.range;
+            }
+
             return(
                 <React.Fragment>
                     <div className="series-name">{constant.getItemIdStr(this.props.item)}</div>
@@ -59,9 +70,9 @@ define('productDetail', [
                     {this.props.item.range &&
                         <React.Fragment>
                         <div className="row">
-                                <div className="col-sm-12"><h5 className="section-title">適用範圍</h5></div>
+                            <div className="col-sm-12"><h5 className="section-title">適用範圍</h5></div>
                         </div>
-                        <div className="item-range">{this.props.item.range}</div>
+                        <div className="item-range">{rangeDiv}</div>
                         </React.Fragment>
                     }
                     {this.props.item.spec && this.props.item.specUpper &&
