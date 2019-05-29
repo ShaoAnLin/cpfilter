@@ -660,7 +660,6 @@ define('constant', function(){
                 光刻膠、光阻劑、顯影液等終端過濾\
                 墨水、塗料、油墨、膠黏劑等終端過濾",
             "specImgs": 1,
-            // TODO: data image
             "dataImgs": 1
         },
         "特大流量摺疊式濾心": {

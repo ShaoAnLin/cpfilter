@@ -251,6 +251,12 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         } else {
             $('#nav-tab-condition').hide();
         }
+
+        if (item.dataImgs) {
+            $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg');
+        } else {
+            $('#nav-tab-data').hide();
+        }
     };
 
     var RelatedProducts = function (_React$Component5) {

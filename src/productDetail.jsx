@@ -159,6 +159,12 @@ define('productDetail', [
         } else{
             $('#nav-tab-condition').hide();
         }
+
+        if (item.dataImgs){
+            $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg');
+        } else{
+            $('#nav-tab-data').hide();
+        }
     }
 
     class RelatedProducts extends React.Component {
