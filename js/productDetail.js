@@ -184,6 +184,10 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
                 } else if (this.props.item.specImgs) {
                     var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
                     spec.push(React.createElement('img', { src: src }));
+                    for (var i = 1; i < this.props.item.specImgs; ++i) {
+                        var src = constant.getImgPath(this.props.item, 'spec' + i) + '.jpg';
+                        spec.push(React.createElement('img', { src: src }));
+                    }
                 }
                 return React.createElement(
                     'ul',

@@ -801,7 +801,6 @@ define('constant', function(){
                 "不含任何膠合劑，無洩漏，無二次污染",
                 "濾心採用摺疊式，膜過濾面積大，容雜量大，壓差低，使用壽命長，具有廣泛的化學相容性"
             ],
-            // TODO: multiple spec images
             "specImgs": 2,
             "dataImgs": 1,
             "modelImgs": 1

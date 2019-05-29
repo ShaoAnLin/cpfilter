@@ -102,6 +102,10 @@ define('productDetail', [
             } else if (this.props.item.specImgs){
                 var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
                 spec.push(<img src={src}></img>);
+                for (var i = 1; i < this.props.item.specImgs; ++i){
+                    var src = constant.getImgPath(this.props.item, 'spec' + i) + '.jpg';
+                    spec.push(<img src={src}></img>);
+                }
             }
             return(
                 <ul className="list-featured item-spec">{spec}</ul>
