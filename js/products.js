@@ -173,7 +173,13 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 var num = 0;
                 $.each(constant.SERIES[housing], function (key, seriesList) {
                     if (seriesList != null) {
-                        num += seriesList.length;
+                        if (Array.isArray(seriesList)) {
+                            num += seriesList.length;
+                        } else {
+                            $.each(seriesList, function (key, subgroup) {
+                                num += subgroup.length;
+                            });
+                        }
                     } else {
                         // The category does not have any series. Only a single item
                         num += 1;
@@ -213,9 +219,9 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
 
                 categoryList.forEach(function (category) {
                     var categoryLink = "?category=" + category,
-                        seriesList = constant.SERIES[this.props.housing][category];
-                    if (seriesList) {
-                        var numOfItems = seriesList.length,
+                        subgroupList = constant.SUBGROUPS[this.props.housing][category];
+                    if (subgroupList.length == 0) {
+                        var numOfItems = constant.SERIES[this.props.housing][category].length,
                             classes = category == this.props.category ? "current submenu" : "submenu";
                         subMenu.push(React.createElement(
                             'li',
@@ -231,6 +237,48 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                                 numOfItems
                             )
                         ));
+                    } else {
+                        var totalItems = 0,
+                            series = [];
+                        subgroupList.forEach(function (subgroup) {
+                            var subgroupLink = "?subgroup=" + subgroup,
+                                numOfItems = constant.SERIES[this.props.housing][category][subgroup].length,
+                                classes = subgroup == this.props.subgroup ? "current submenu2" : "submenu2";
+                            totalItems += numOfItems;
+                            if (this.props.category == category) {
+                                series.push(React.createElement(
+                                    'li',
+                                    { className: classes },
+                                    React.createElement(
+                                        'a',
+                                        { href: subgroupLink, title: '' },
+                                        subgroup
+                                    ),
+                                    React.createElement(
+                                        'span',
+                                        null,
+                                        numOfItems
+                                    )
+                                ));
+                            }
+                        }, this);
+
+                        var classes = category == this.props.category ? "current submenu" : "submenu";
+                        subMenu.push(React.createElement(
+                            'li',
+                            { className: classes },
+                            React.createElement(
+                                'a',
+                                { href: categoryLink, title: '' },
+                                category
+                            ),
+                            React.createElement(
+                                'span',
+                                null,
+                                totalItems
+                            )
+                        ));
+                        subMenu.push(series);
                     }
                 }, this);
 
@@ -290,7 +338,6 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             )
                         )
                     ));
-                    //'.format(divUtil.getMainImage(item), itemId, item.title, item.housing);
                 });
                 return latestProducts;
             };

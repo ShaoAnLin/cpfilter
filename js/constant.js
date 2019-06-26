@@ -11,26 +11,71 @@ define('constant', function(){
         "空調濾網": []
     }
 
+    constant.SUBGROUPS = {
+        "過濾器": {
+            "不鏽鋼濾心機": [],
+            "不鏽鋼袋濾機": [],
+            "純PP濾殼、塑膠濾殼": [],
+            "過濾器配件": [],
+            "鈦過濾器": []
+        },
+        "濾材": {
+            "各式濾心": ["摺疊式濾心", "活性碳濾心", "熔噴式濾心", "纏繞式濾心", "囊式濾心",
+                "高流速摺疊式濾心"],
+            "濾袋": [],
+            "不鏽鋼濾心": [],
+            "陽極袋": [],
+            "壓濾機濾布": [],
+            "砂紙": [],
+            "空壓機濾心": []
+        },
+        "機械設備": {
+            "自動逆洗設備": []
+        },
+        "磁力設備": {
+            "磁選機": [],
+            "磁力棒": [],
+            "磁力板": []
+        },
+        "空調濾網": {
+            "紙框": [],
+            "中高效袋式": [],
+            "中效濾網": [],
+            "高效率Hepa": [],
+            "不織布濾棉": []
+        }
+    }
+
     constant.SERIES = {
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM", "SGS", "ALF",
                 "AHP", "ALSH", "SL", "SLS"],
-            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM",
-                "PHP"], // no info
+            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM", "PHP"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球"],
             "鈦過濾器": ["鈦過濾器"]
         },
         "濾材": {
-            "各式濾心": ["PP囊式濾心", "活性碳棒濾心", "活性碳布濾心", "活性碳纖維濾心",
-                "尼龍微孔摺疊式濾心", "特大流量摺疊式濾心", "高流速摺疊式濾心", "粗胖型摺疊式濾心",
-                "摺疊式高流量濾袋式濾心", "纏繞式濾心", "PES微孔摺疊濾心", "PP工業型熔噴濾心",
-                "PP絕對型濾心", "PP微孔摺疊濾心", "PP熔噴濾心", "PTFE微孔摺疊濾心",
-                "PTFE親水性摺疊濾心", "PVDF微孔摺疊濾心"],
+            "各式濾心": {
+                "摺疊式濾心": ["尼龍微孔摺疊式濾心",
+                    "特大流量摺疊式濾心",
+                    "粗胖型摺疊式濾心",
+                    "摺疊式高流量濾袋式濾心",
+                    "PES微孔摺疊濾心",
+                    "PP絕對型濾心",
+                    "PP微孔摺疊濾心",
+                    "PTFE微孔摺疊濾心",
+                    "PTFE親水性摺疊濾心",
+                    "PVDF微孔摺疊濾心"],
+                "活性碳濾心": ["活性碳纖維濾心", "活性碳棒濾心", "活性碳布濾心"],
+                "熔噴式濾心": ["PP熔噴濾心", "PP工業型熔噴濾心"],
+                "纏繞式濾心": ["纏繞式濾心"],
+                "囊式濾心": ["囊式濾心"],
+                "高流速摺疊式濾心": ["高流速摺疊式濾心"]
+            },
             "濾袋": ["不織布過濾袋", "不鏽鋼過濾袋", "吸油過濾袋", "除塵過濾袋", "絕對經度過濾袋",
                 "網布過濾袋", "PTFE過濾袋"],
-            "不鏽鋼濾心": ["金屬摺疊", "粉末燒結",
-                "平面濾心", "平面濾籃"], // no info
+            "不鏽鋼濾心": ["金屬摺疊", "粉末燒結", "平面濾心", "平面濾籃"],
             "陽極袋": ["陽極袋"],
             "壓濾機濾布": ["壓濾機濾布"],
             "砂紙": ["砂紙"],
@@ -52,10 +97,9 @@ define('constant', function(){
             "不織布濾棉": null
         }
     }
-
     /*
         Product details:
-            housing, category, series
+            housing, category, subgroup, series
             title, subtitle
             images: # of images in addition to the main images (0 <= x <= 4)
             hideSeries: show series name or not
@@ -579,12 +623,12 @@ define('constant', function(){
 
         // ========== 濾材 ========== //
         // 各式濾心
-        "PP囊式濾心": {
-            "series": "PP囊式濾心",
+        "囊式濾心": {
+            "series": "囊式濾心",
             "housing": "濾材",
             "category": "各式濾心",
             "images": 0,
-            "title": "PP囊式濾心",
+            "title": "囊式濾心",
             "subtitle": "各式濾心",
             "hideSeries": true,
             "specImgs": 1
@@ -593,6 +637,7 @@ define('constant', function(){
             "series": "活性碳棒濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "活性碳濾心",
             "images": 0,
             "title": "碳棒式",
             "subtitle": "活性碳濾心",
@@ -610,6 +655,7 @@ define('constant', function(){
             "series": "活性碳布濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "活性碳濾心",
             "images": 0,
             "title": "碳布式",
             "subtitle": "活性碳濾心",
@@ -628,6 +674,7 @@ define('constant', function(){
             "series": "活性碳纖維濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "活性碳濾心",
             "images": 0,
             "title": "碳纖式",
             "subtitle": "活性碳濾心",
@@ -645,6 +692,7 @@ define('constant', function(){
             "series": "尼龍微孔摺疊式濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "尼龍微孔摺疊式濾心",
             "subtitle": "摺疊式濾心",
@@ -668,6 +716,7 @@ define('constant', function(){
             "series": "特大流量摺疊式濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "特大流量摺疊式濾心",
             "subtitle": "摺疊式濾心",
@@ -695,6 +744,7 @@ define('constant', function(){
             "series": "粗胖型摺疊式濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "粗胖型摺疊式濾心",
             "subtitle": "摺疊式濾心",
@@ -705,6 +755,7 @@ define('constant', function(){
             "series": "摺疊式高流量濾袋式濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "摺疊式高流量濾袋式濾心",
             "subtitle": "濾袋式濾心",
@@ -738,6 +789,7 @@ define('constant', function(){
             "series": "PES微孔摺疊濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "PES微孔摺疊濾心",
             "subtitle": "摺疊式濾心",
@@ -750,6 +802,7 @@ define('constant', function(){
             "series": "PP工業型熔噴濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "熔噴式濾心",
             "images": 0,
             "title": "PP工業型熔噴濾心",
             "subtitle": "摺疊式濾心",
@@ -771,6 +824,7 @@ define('constant', function(){
             "series": "PP絕對型濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "PP絕對型濾心",
             "subtitle": "",
@@ -791,6 +845,7 @@ define('constant', function(){
             "series": "PP微孔摺疊濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "PP微孔摺疊濾心",
             "subtitle": "",
@@ -809,6 +864,7 @@ define('constant', function(){
             "series": "PP熔噴濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "熔噴式濾心",
             "images": 0,
             "title": "PP熔噴濾心",
             "subtitle": "",
@@ -839,6 +895,7 @@ define('constant', function(){
             "series": "PTFE微孔摺疊濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "PTFE微孔摺疊濾心",
             "subtitle": "摺疊式濾心",
@@ -851,6 +908,7 @@ define('constant', function(){
             "series": "PTFE親水性摺疊濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "PTFE親水性摺疊濾心",
             "subtitle": "摺疊式濾心",
@@ -863,6 +921,7 @@ define('constant', function(){
             "series": "PVDF微孔摺疊濾心",
             "housing": "濾材",
             "category": "各式濾心",
+            "subgroup": "摺疊式濾心",
             "images": 0,
             "title": "PVDF微孔摺疊濾心",
             "subtitle": "摺疊式濾心",
@@ -1256,20 +1315,26 @@ define('constant', function(){
     }
 
     constant.getImgPath = function(item, type){
+        var imgPath = 'img/products/{0}/{1}/'.format(item.housing, item.category);
+        if (item.subgroup){
+            imgPath += item.subgroup + "/";
+        }
+
         if (type == 'main'){
-            return 'img/products/{0}/{1}/{2}{3}'
-                .format(item.housing, item.category,
-                    item.series ? item.series + "/" : "",
-                    item.series ? item.series : item.category);
-        } else if (type == 'detail'){
-            return 'img/products/{0}/{1}/{2}'
-                .format(item.housing, item.category,
-                    item.series ? item.series + "/" : "");
+            if (item.series){
+                imgPath += item.series + "/" + item.series;
+            } else {
+                imgPath += item.category;
+            }
+            return imgPath;
         } else {
-            return 'img/products/{0}/{1}/{2}{3}'
-                .format(item.housing, item.category,
-                    item.series ? item.series + "/" : "",
-                    type ? type : '');
+            if (item.series){
+                imgPath += item.series + "/";
+            }
+            if (type){
+                imgPath += type;
+            }
+            return imgPath;
         }
     }
 

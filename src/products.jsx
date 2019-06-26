@@ -112,7 +112,13 @@ define('products', [
             var num = 0;
             $.each(constant.SERIES[housing], function(key, seriesList) {
                 if (seriesList != null){
-                    num += seriesList.length;
+                    if (Array.isArray(seriesList)){
+                        num += seriesList.length;
+                    } else {
+                        $.each(seriesList, function(key, subgroup) {
+                            num += subgroup.length;
+                        });
+                    }
                 } else {
                     // The category does not have any series. Only a single item
                     num += 1;
@@ -139,17 +145,45 @@ define('products', [
 
             categoryList.forEach(function(category){
                 var categoryLink = "?category=" + category,
-                    seriesList = constant.SERIES[this.props.housing][category];
-                if (seriesList){
-                    var numOfItems = seriesList.length,
-                        classes = category == this.props.category ? "current submenu"
-                            : "submenu";
+                    subgroupList = constant.SUBGROUPS[this.props.housing][category];
+                if (subgroupList.length == 0){
+                    var numOfItems = constant.SERIES[this.props.housing][category].length,
+                        classes = category == this.props.category
+                            ? "current submenu" : "submenu";
                     subMenu.push(
                         <li className={classes}>
                             <a href={categoryLink} title="">{category}</a>
                             <span>{numOfItems}</span>
                         </li>
                     );
+                } else{
+                    var totalItems = 0,
+                        series = [];
+                    subgroupList.forEach(function(subgroup){
+                        var subgroupLink = "?subgroup=" + subgroup,
+                            numOfItems = constant.SERIES[this.props.housing][category][subgroup].length,
+                            classes = subgroup == this.props.subgroup
+                                ? "current submenu2" : "submenu2";
+                        totalItems += numOfItems;
+                        if (this.props.category == category){
+                            series.push(
+                                <li className={classes}>
+                                    <a href={subgroupLink} title="">{subgroup}</a>
+                                    <span>{numOfItems}</span>
+                                </li>
+                            );
+                        }
+                    }, this);
+
+                    var classes = category == this.props.category
+                        ? "current submenu" : "submenu";
+                    subMenu.push(
+                        <li className={classes}>
+                            <a href={categoryLink} title="">{category}</a>
+                            <span>{totalItems}</span>
+                        </li>
+                    );
+                    subMenu.push(series);
                 }
             }, this);
 
@@ -182,7 +216,6 @@ define('products', [
                         <div className="category">{item.category}</div>
                     </div>
                 </li>);
-                //'.format(divUtil.getMainImage(item), itemId, item.title, item.housing);
             });
             return latestProducts;
         }
