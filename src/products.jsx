@@ -82,14 +82,35 @@ define('products', [
         getSideBarCatList = function(){
             var sideBar = [],
                 currentHousing = this.props.housing,
-                currentCategory = this.props.category;
+                currentCategory = this.props.category,
+                currentSubgroup = this.props.subgroup;
+
+            if (currentSubgroup){
+                for (var housing in constant.SUBGROUPS){
+                    var found = false;
+                    for (var category in constant.SUBGROUPS[housing]){
+                        if (constant.SUBGROUPS[housing][category].indexOf(currentSubgroup) != -1){
+                            currentCategory = category;
+                            currentHousing = housing;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) break;
+                }
+            }
             if (currentCategory){
                 for (var key in constant.CATEGORIES){
                     if (constant.CATEGORIES[key].indexOf(currentCategory) != -1){
                         currentHousing = key;
+                        break;
                     }
                 }
             }
+
+            console.log(currentHousing);
+            console.log(currentCategory);
+            console.log(currentSubgroup);
 
             constant.HOUSING.forEach(function(housing){
                 var housingLink = "?housing=" + housing,
@@ -102,7 +123,7 @@ define('products', [
                     </li>);
                 if (housing == currentHousing){
                     sideBar.push(<SideBarSubMenu housing={housing}
-                        category={currentCategory}/>);
+                        category={currentCategory} subgroup={currentSubgroup}/>);
                 }
             }, this);
             return sideBar;
@@ -175,7 +196,7 @@ define('products', [
                         }
                     }, this);
 
-                    var classes = category == this.props.category
+                    var classes = (category == this.props.category && !this.props.subgroup)
                         ? "current submenu" : "submenu";
                     subMenu.push(
                         <li className={classes}>
@@ -304,14 +325,19 @@ define('products', [
     instance.init = function(){
         var queryHousing = decodeURI(window.location.search).match('housing=.*'),
             queryCategory = decodeURI(window.location.search).match('category=.*'),
+            querySubgroup = decodeURI(window.location.search).match('subgroup=.*'),
             housing = null,
-            category = null;
+            category = null,
+            subgroup = null;
 
         if (queryHousing){
             housing = queryHousing[0].split('=')[1];
         }
         if (queryCategory){
             category = queryCategory[0].split('=')[1];
+        }
+        if (querySubgroup){
+            subgroup = querySubgroup[0].split('=')[1];
         }
 
         if (housing == "過濾器"){
@@ -323,12 +349,12 @@ define('products', [
         if (housing == "過濾器"){
             ReactDOM.render(<GridImages housing={housing}/>, document.querySelector('#grid-images'));
             $('#housing-selected').hide();
-        } else if (housing || category){
-            ReactDOM.render(<SideBarList housing={housing} category={category}/>,
+        } else if (housing || category || subgroup){
+            ReactDOM.render(<SideBarList housing={housing} category={category} subgroup={subgroup}/>,
                 document.querySelector('#sidebar-cat-list'));
             ReactDOM.render(<LatestProducts/>,
                 document.querySelector('#latest-products'));
-            ReactDOM.render(<ProductItems housing={housing} category={category}/>,
+            ReactDOM.render(<ProductItems housing={housing} category={category} subgroup={subgroup}/>,
                 document.querySelector('#product-grid-items'));
         } else {
             ReactDOM.render(<GridImages/>, document.querySelector('#grid-images'));

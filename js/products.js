@@ -134,14 +134,35 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             _this2.getSideBarCatList = function () {
                 var sideBar = [],
                     currentHousing = this.props.housing,
-                    currentCategory = this.props.category;
+                    currentCategory = this.props.category,
+                    currentSubgroup = this.props.subgroup;
+
+                if (currentSubgroup) {
+                    for (var housing in constant.SUBGROUPS) {
+                        var found = false;
+                        for (var category in constant.SUBGROUPS[housing]) {
+                            if (constant.SUBGROUPS[housing][category].indexOf(currentSubgroup) != -1) {
+                                currentCategory = category;
+                                currentHousing = housing;
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (found) break;
+                    }
+                }
                 if (currentCategory) {
                     for (var key in constant.CATEGORIES) {
                         if (constant.CATEGORIES[key].indexOf(currentCategory) != -1) {
                             currentHousing = key;
+                            break;
                         }
                     }
                 }
+
+                console.log(currentHousing);
+                console.log(currentCategory);
+                console.log(currentSubgroup);
 
                 constant.HOUSING.forEach(function (housing) {
                     var housingLink = "?housing=" + housing,
@@ -163,7 +184,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                     ));
                     if (housing == currentHousing) {
                         sideBar.push(React.createElement(SideBarSubMenu, { housing: housing,
-                            category: currentCategory }));
+                            category: currentCategory, subgroup: currentSubgroup }));
                     }
                 }, this);
                 return sideBar;
@@ -263,7 +284,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             }
                         }, this);
 
-                        var classes = category == this.props.category ? "current submenu" : "submenu";
+                        var classes = category == this.props.category && !this.props.subgroup ? "current submenu" : "submenu";
                         subMenu.push(React.createElement(
                             'li',
                             { className: classes },
@@ -488,14 +509,19 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
     instance.init = function () {
         var queryHousing = decodeURI(window.location.search).match('housing=.*'),
             queryCategory = decodeURI(window.location.search).match('category=.*'),
+            querySubgroup = decodeURI(window.location.search).match('subgroup=.*'),
             housing = null,
-            category = null;
+            category = null,
+            subgroup = null;
 
         if (queryHousing) {
             housing = queryHousing[0].split('=')[1];
         }
         if (queryCategory) {
             category = queryCategory[0].split('=')[1];
+        }
+        if (querySubgroup) {
+            subgroup = querySubgroup[0].split('=')[1];
         }
 
         if (housing == "過濾器") {
@@ -507,10 +533,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         if (housing == "過濾器") {
             ReactDOM.render(React.createElement(GridImages, { housing: housing }), document.querySelector('#grid-images'));
             $('#housing-selected').hide();
-        } else if (housing || category) {
-            ReactDOM.render(React.createElement(SideBarList, { housing: housing, category: category }), document.querySelector('#sidebar-cat-list'));
+        } else if (housing || category || subgroup) {
+            ReactDOM.render(React.createElement(SideBarList, { housing: housing, category: category, subgroup: subgroup }), document.querySelector('#sidebar-cat-list'));
             ReactDOM.render(React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
-            ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category }), document.querySelector('#product-grid-items'));
+            ReactDOM.render(React.createElement(ProductItems, { housing: housing, category: category, subgroup: subgroup }), document.querySelector('#product-grid-items'));
         } else {
             ReactDOM.render(React.createElement(GridImages, null), document.querySelector('#grid-images'));
             $('#housing-selected').hide();
