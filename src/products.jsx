@@ -268,6 +268,9 @@ define('products', [
                 if (self.props.category && item.category != self.props.category){
                     select = false;
                 }
+                if (self.props.subgroup && item.subgroup != self.props.subgroup){
+                    select = false;
+                }
 
                 if (select){
                     ++num;
