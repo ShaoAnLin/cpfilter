@@ -184,8 +184,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             var _this2 = _possibleConstructorReturn(this, (SideBarList.__proto__ || Object.getPrototypeOf(SideBarList)).call(this, props));
 
             _this2.getSideBarCatList = function () {
-                var sideBar = [],
-                    currentHousing = this.props.housing;
+                var sideBar = [];
 
                 var tmp = constant.getHousingAndCategory(this.props.category, this.props.subgroup);
                 var currentHousing = tmp.housing;
@@ -194,7 +193,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                 constant.HOUSING.forEach(function (housing) {
                     var housingLink = "?housing=" + housing,
                         numOfItems = this.getGroupNumOfItems(housing),
-                        isCurrent = housing == currentHousing && currentCategory == null;
+                        isCurrent = housing == this.props.housing && currentCategory == null;
                     sideBar.push(React.createElement(
                         'li',
                         { className: isCurrent && "current" },

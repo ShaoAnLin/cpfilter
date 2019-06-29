@@ -114,8 +114,7 @@ define('products', [
         }
 
         getSideBarCatList = function(){
-            var sideBar = [],
-                currentHousing = this.props.housing;
+            var sideBar = [];
 
             var tmp = constant.getHousingAndCategory(this.props.category, this.props.subgroup);
             var currentHousing = tmp.housing;
@@ -124,7 +123,7 @@ define('products', [
             constant.HOUSING.forEach(function(housing){
                 var housingLink = "?housing=" + housing,
                     numOfItems = this.getGroupNumOfItems(housing),
-                    isCurrent = housing == currentHousing && currentCategory == null;
+                    isCurrent = housing == this.props.housing && currentCategory == null;
                 sideBar.push(
                     <li className={isCurrent && "current"}>
                         <a href={housingLink} title="">{housing}</a>
