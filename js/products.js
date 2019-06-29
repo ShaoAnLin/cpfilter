@@ -160,6 +160,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                     }
                 }
 
+                console.log(currentHousing);
+                console.log(currentCategory);
+                console.log(currentSubgroup);
+
                 constant.HOUSING.forEach(function (housing) {
                     var housingLink = "?housing=" + housing,
                         numOfItems = this.getGroupNumOfItems(housing),
@@ -255,9 +259,11 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             )
                         ));
                     } else {
+                        console.log(subgroupList);
                         var totalItems = 0,
                             series = [];
                         subgroupList.forEach(function (subgroup) {
+                            console.log(subgroup);
                             var subgroupLink = "?subgroup=" + subgroup,
                                 numOfItems = constant.SERIES[this.props.housing][category][subgroup].length,
                                 classes = subgroup == this.props.subgroup ? "current submenu2" : "submenu2";

@@ -178,9 +178,11 @@ define('products', [
                         </li>
                     );
                 } else{
+                    console.log(subgroupList);
                     var totalItems = 0,
                         series = [];
                     subgroupList.forEach(function(subgroup){
+                        console.log(subgroup);
                         var subgroupLink = "?subgroup=" + subgroup,
                             numOfItems = constant.SERIES[this.props.housing][category][subgroup].length,
                             classes = subgroup == this.props.subgroup
