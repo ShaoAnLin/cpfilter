@@ -1323,5 +1323,30 @@ define('constant', function(){
         }
     }
 
+    constant.getHousingAndCategory = function(category, subgroup){
+        var result = {};
+        if (subgroup){
+            for (var housing in this.SUBGROUPS){
+                for (var cat in this.SUBGROUPS[housing]){
+                    if (this.SUBGROUPS[housing][cat].indexOf(subgroup) != -1){
+                        result.category = cat;
+                        result.housing = housing;
+                        return result;
+                    }
+                }
+            }
+        }
+        if (category){
+            for (var key in this.CATEGORIES){
+                if (this.CATEGORIES[key].indexOf(category) != -1){
+                    result.category = category;
+                    result.housing = key;
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
+
     return constant;
 })

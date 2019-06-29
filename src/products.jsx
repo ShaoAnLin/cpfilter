@@ -64,10 +64,44 @@ define('products', [
             categoryGrid.push(<div className="row">{rowItems}</div>);
             return categoryGrid;
         }
+
+        getSubgroupGrid = function(category){
+            var tmp = constant.getHousingAndCategory(category);
+            var subgroupGrid = [],
+                rowItems = [],
+                count = 0,
+                subgroupList = constant.SUBGROUPS[tmp.housing][category];
+            subgroupList.forEach(function(subgroup){
+                count++;
+                var link = "products.html?subgroup=" + subgroup,
+                    imgSrc = "img/products/category/{0}.jpg".format(subgroup);
+                rowItems.push(
+                    <div className="col-md-4">
+                      <div className="tile tile-category">
+                        <a href={link} className="preview-box">
+                          <img src={imgSrc}/>
+                        </a>
+                        <div className="tile-title">{subgroup}</div>
+                      </div>
+                    </div>);
+                if (count % 3 == 0){
+                    subgroupGrid.push(<div className="row">{rowItems}</div>);
+                    rowItems = [];
+                }
+            });
+            subgroupGrid.push(<div className="row">{rowItems}</div>);
+            return subgroupGrid;
+        }
         
         render() {
-            var gridImages = this.props.housing ? this.getCategoryGrid(this.props.housing)
-                : this.getHousingGrid();
+            var gridImages = [];
+            if (this.props.housing){
+                gridImages = this.getCategoryGrid(this.props.housing);
+            } else if (this.props.category){
+                gridImages = this.getSubgroupGrid(this.props.category);
+            } else{
+                gridImages = this.getHousingGrid();
+            }
             return (
                 <React.Fragment>{gridImages}</React.Fragment>
             );
@@ -81,36 +115,11 @@ define('products', [
 
         getSideBarCatList = function(){
             var sideBar = [],
-                currentHousing = this.props.housing,
-                currentCategory = this.props.category,
-                currentSubgroup = this.props.subgroup;
+                currentHousing = this.props.housing;
 
-            if (currentSubgroup){
-                for (var housing in constant.SUBGROUPS){
-                    var found = false;
-                    for (var category in constant.SUBGROUPS[housing]){
-                        if (constant.SUBGROUPS[housing][category].indexOf(currentSubgroup) != -1){
-                            currentCategory = category;
-                            currentHousing = housing;
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (found) break;
-                }
-            }
-            if (currentCategory){
-                for (var key in constant.CATEGORIES){
-                    if (constant.CATEGORIES[key].indexOf(currentCategory) != -1){
-                        currentHousing = key;
-                        break;
-                    }
-                }
-            }
-
-            console.log(currentHousing);
-            console.log(currentCategory);
-            console.log(currentSubgroup);
+            var tmp = constant.getHousingAndCategory(this.props.category, this.props.subgroup);
+            var currentHousing = tmp.housing;
+            var currentCategory = tmp.category;
 
             constant.HOUSING.forEach(function(housing){
                 var housingLink = "?housing=" + housing,
@@ -123,7 +132,7 @@ define('products', [
                     </li>);
                 if (housing == currentHousing){
                     sideBar.push(<SideBarSubMenu housing={housing}
-                        category={currentCategory} subgroup={currentSubgroup}/>);
+                        category={currentCategory} subgroup={this.props.subgroup}/>);
                 }
             }, this);
             return sideBar;
@@ -178,11 +187,9 @@ define('products', [
                         </li>
                     );
                 } else{
-                    console.log(subgroupList);
                     var totalItems = 0,
                         series = [];
                     subgroupList.forEach(function(subgroup){
-                        console.log(subgroup);
                         var subgroupLink = "?subgroup=" + subgroup,
                             numOfItems = constant.SERIES[this.props.housing][category][subgroup].length,
                             classes = subgroup == this.props.subgroup
@@ -345,14 +352,23 @@ define('products', [
             subgroup = querySubgroup[0].split('=')[1];
         }
 
-        if (housing == "過濾器"){
-            $('#category-name').html(housing);
+        if (category == "濾心"){
+            $('#housing-name').html("濾材")
+                .attr("href", "products.html?housing=濾材");
+            $('#category-name').html(category);
+        } else if (housing == "過濾器" || housing == "濾材"){
+            $('#housing-name').html(housing);
+            $('#category-right-icon').hide();
         } else{
+            $('#housing-right-icon').hide();
             $('#category-right-icon').hide();
         }
 
-        if (housing == "過濾器"){
+        if (housing == "過濾器" || housing == "濾材"){
             ReactDOM.render(<GridImages housing={housing}/>, document.querySelector('#grid-images'));
+            $('#housing-selected').hide();
+        } else if (category == "濾心"){
+            ReactDOM.render(<GridImages category={category}/>, document.querySelector('#grid-images'));
             $('#housing-selected').hide();
         } else if (housing || category || subgroup){
             ReactDOM.render(<SideBarList housing={housing} category={category} subgroup={subgroup}/>,
