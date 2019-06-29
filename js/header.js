@@ -62,7 +62,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
                   React.createElement(
                     'div',
                     { className: 'brandname-en' },
-                    'CP Filter Industrial Co.'
+                    'CP FILTER Industrial Co.,Ltd'
                   )
                 )
               ),

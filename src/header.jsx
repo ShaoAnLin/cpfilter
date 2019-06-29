@@ -34,7 +34,7 @@ define('header', [
             <div className="logo">
               <img className="logo-img" src="img/logo.png"/>
               <div className="brandname">新凱濾材工業有限公司</div>
-              <div className="brandname-en">CP Filter Industrial Co.</div>
+              <div className="brandname-en">CP FILTER Industrial Co.,Ltd</div>
             </div>
           </div>
       

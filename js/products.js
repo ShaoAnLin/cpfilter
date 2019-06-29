@@ -205,8 +205,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                         ),
                         React.createElement(
                             'span',
-                            null,
-                            numOfItems
+                            { className: 'count' },
+                            '(',
+                            numOfItems,
+                            ')'
                         )
                     ));
                     if (housing == currentHousing) {
@@ -281,8 +283,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             ),
                             React.createElement(
                                 'span',
-                                null,
-                                numOfItems
+                                { className: 'count' },
+                                '(',
+                                numOfItems,
+                                ')'
                             )
                         ));
                     } else {
@@ -304,8 +308,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                                     ),
                                     React.createElement(
                                         'span',
-                                        null,
-                                        numOfItems
+                                        { className: 'count' },
+                                        '(',
+                                        numOfItems,
+                                        ')'
                                     )
                                 ));
                             }
@@ -322,8 +328,10 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
                             ),
                             React.createElement(
                                 'span',
-                                null,
-                                totalItems
+                                { className: 'count' },
+                                '(',
+                                totalItems,
+                                ')'
                             )
                         ));
                         subMenu.push(series);

@@ -51,7 +51,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                       React.createElement(
                         'div',
                         { className: 'brandname-en' },
-                        'CP Filter Industrial Co.'
+                        'CP FILTER Industrial Co.,Ltd'
                       )
                     ),
                     React.createElement(
@@ -139,7 +139,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
             React.createElement(
               'span',
               { className: 'brandname-en' },
-              'CP Filter Industrial Co. '
+              'CP FILTER Industrial Co.,Ltd '
             ),
             React.createElement(
               'span',
@@ -153,7 +153,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
             React.createElement(
               'span',
               null,
-              '\xA9 2018. CP Filter Industrial Co. All Rights Reserved.'
+              '\xA9 2018. CP FILTER Industrial Co.,Ltd. All Rights Reserved.'
             )
           )
         );

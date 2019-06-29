@@ -20,7 +20,7 @@ define('footer', [
           <div className="col-sm-12">
             <div className="logo">
               <div className="brandname">新凱濾材工業有限公司</div>
-              <div className="brandname-en">CP Filter Industrial Co.</div>
+              <div className="brandname-en">CP FILTER Industrial Co.,Ltd</div>
             </div>
 
             <div className="widget widget-callback">
@@ -63,11 +63,11 @@ define('footer', [
       
       <div className="copyright mobile-hide">
         <span>&copy; 2018. 新凱濾材工業有限公司 </span>
-        <span className="brandname-en">CP Filter Industrial Co. </span>
+        <span className="brandname-en">CP FILTER Industrial Co.,Ltd </span>
         <span>All Rights Reserved.</span>
       </div>
       <div className="copyright mobile-show">
-        <span>&copy; 2018. CP Filter Industrial Co. All Rights Reserved.</span>
+        <span>&copy; 2018. CP FILTER Industrial Co.,Ltd. All Rights Reserved.</span>
       </div>
       </React.Fragment>);
     }

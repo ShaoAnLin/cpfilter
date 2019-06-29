@@ -128,7 +128,7 @@ define('products', [
                 sideBar.push(
                     <li className={isCurrent && "current"}>
                         <a href={housingLink} title="">{housing}</a>
-                        <span>{numOfItems}</span>
+                        <span className="count">({numOfItems})</span>
                     </li>);
                 if (housing == currentHousing){
                     sideBar.push(<SideBarSubMenu housing={housing}
@@ -183,7 +183,7 @@ define('products', [
                     subMenu.push(
                         <li className={classes}>
                             <a href={categoryLink} title="">{category}</a>
-                            <span>{numOfItems}</span>
+                            <span className="count">({numOfItems})</span>
                         </li>
                     );
                 } else{
@@ -199,7 +199,7 @@ define('products', [
                             series.push(
                                 <li className={classes}>
                                     <a href={subgroupLink} title="">{subgroup}</a>
-                                    <span>{numOfItems}</span>
+                                    <span className="count">({numOfItems})</span>
                                 </li>
                             );
                         }
@@ -210,7 +210,7 @@ define('products', [
                     subMenu.push(
                         <li className={classes}>
                             <a href={categoryLink} title="">{category}</a>
-                            <span>{totalItems}</span>
+                            <span className="count">({totalItems})</span>
                         </li>
                     );
                     subMenu.push(series);
