@@ -631,6 +631,77 @@ define('constant', function(){
             "specImgs": 1
         },
         // 濾心 - 摺疊式
+        "PP微孔摺疊式濾心": {
+            "series": "PP微孔摺疊式濾心",
+            "housing": "濾材",
+            "category": "濾心",
+            "subgroup": "摺疊式濾心",
+            "images": 0,
+            "title": "PP微孔摺疊式濾心",
+            "subtitle": "摺疊式濾心",
+            "hideSeries": true,
+            "range": "酸鹼液、溶劑等澄清過濾、光刻膠、光阻劑、顯影液等終端過濾、墨水、塗料、油墨、膠黏劑等終端過濾",
+            "feature": [
+                "超細纖維膜及內外支撐層摺疊而成，外殼中心桿及端蓋採用熱熔焊接技術加工成型",
+                "不含任何膠合劑，無洩漏，無二次污染",
+                "濾心採用摺疊式，膜過濾面積大，容雜量大，壓差低，使用壽命長，具有廣泛的化學相容性"
+            ],
+            "specImgs": 2,
+            "dataImgs": 1,
+            "modelImgs": 1
+        },
+        "PES微孔摺疊式濾心": {
+            "series": "PES微孔摺疊式濾心",
+            "housing": "濾材",
+            "category": "濾心",
+            "subgroup": "摺疊式濾心",
+            "images": 0,
+            "title": "PES微孔摺疊式濾心",
+            "subtitle": "摺疊式濾心",
+            "hideSeries": true,
+            "range": "超純水製備終端過濾、高純化學品如酮、脂、醇等終端過濾",
+            "specImgs": 1,
+            "dataImgs": 1
+        },
+        "PTFE疏水性摺疊式濾心": {
+            "series": "PTFE疏水性摺疊式濾心",
+            "housing": "濾材",
+            "category": "濾心",
+            "subgroup": "摺疊式濾心",
+            "images": 0,
+            "title": "PTFE疏水性摺疊式濾心",
+            "subtitle": "摺疊式濾心",
+            "hideSeries": true,
+            "range": "極性溶劑過濾、高純氣體過濾、腐蝕性液體、強氧化性液體過濾",
+            "specImgs": 1,
+            "dataTmgs": 1
+        },
+        "PTFE親水性摺疊式濾心": {
+            "series": "PTFE親水性摺疊式濾心",
+            "housing": "濾材",
+            "category": "濾心",
+            "subgroup": "摺疊式濾心",
+            "images": 0,
+            "title": "PTFE親水性摺疊式濾心",
+            "subtitle": "摺疊式濾心",
+            "hideSeries": true,
+            "range": "高溫液體過濾、強腐蝕性液體過濾、無菌原料藥等除菌過濾",
+            "specImgs": 1,
+            "dataTmgs": 1
+        },
+        "PVDF微孔摺疊式濾心": {
+            "series": "PVDF微孔摺疊式濾心",
+            "housing": "濾材",
+            "category": "濾心",
+            "subgroup": "摺疊式濾心",
+            "images": 0,
+            "title": "PVDF微孔摺疊式濾心",
+            "subtitle": "摺疊式濾心",
+            "hideSeries": true,
+            "range": "強溶劑過濾、高粘度液體過濾、強氧化性液體過濾、溫度較高液體過濾",
+            "specImgs": 1,
+            "dataTmgs": 1
+        },
         "尼龍微孔摺疊式濾心": {
             "series": "尼龍微孔摺疊式濾心",
             "housing": "濾材",
@@ -695,77 +766,6 @@ define('constant', function(){
             "hideSeries": true,
             "specImgs": 1
         },
-        "PES微孔摺疊式濾心": {
-            "series": "PES微孔摺疊式濾心",
-            "housing": "濾材",
-            "category": "濾心",
-            "subgroup": "摺疊式濾心",
-            "images": 0,
-            "title": "PES微孔摺疊式濾心",
-            "subtitle": "摺疊式濾心",
-            "hideSeries": true,
-            "range": "超純水製備終端過濾、高純化學品如酮、脂、醇等終端過濾",
-            "specImgs": 1,
-            "dataImgs": 1
-        },
-        "PP微孔摺疊式濾心": {
-            "series": "PP微孔摺疊式濾心",
-            "housing": "濾材",
-            "category": "濾心",
-            "subgroup": "摺疊式濾心",
-            "images": 0,
-            "title": "PP微孔摺疊式濾心",
-            "subtitle": "",
-            "hideSeries": true,
-            "range": "酸鹼液、溶劑等澄清過濾、光刻膠、光阻劑、顯影液等終端過濾、墨水、塗料、油墨、膠黏劑等終端過濾",
-            "feature": [
-                "超細纖維膜及內外支撐層摺疊而成，外殼中心桿及端蓋採用熱熔焊接技術加工成型",
-                "不含任何膠合劑，無洩漏，無二次污染",
-                "濾心採用摺疊式，膜過濾面積大，容雜量大，壓差低，使用壽命長，具有廣泛的化學相容性"
-            ],
-            "specImgs": 2,
-            "dataImgs": 1,
-            "modelImgs": 1
-        },
-        "PTFE疏水性摺疊式濾心": {
-            "series": "PTFE疏水性摺疊式濾心",
-            "housing": "濾材",
-            "category": "濾心",
-            "subgroup": "摺疊式濾心",
-            "images": 0,
-            "title": "PTFE疏水性摺疊式濾心",
-            "subtitle": "摺疊式濾心",
-            "hideSeries": true,
-            "range": "極性溶劑過濾、高純氣體過濾、腐蝕性液體、強氧化性液體過濾",
-            "specImgs": 1,
-            "dataTmgs": 1
-        },
-        "PTFE親水性摺疊式濾心": {
-            "series": "PTFE親水性摺疊式濾心",
-            "housing": "濾材",
-            "category": "濾心",
-            "subgroup": "摺疊式濾心",
-            "images": 0,
-            "title": "PTFE親水性摺疊式濾心",
-            "subtitle": "摺疊式濾心",
-            "hideSeries": true,
-            "range": "高溫液體過濾、強腐蝕性液體過濾、無菌原料藥等除菌過濾",
-            "specImgs": 1,
-            "dataTmgs": 1
-        },
-        "PVDF微孔摺疊式濾心": {
-            "series": "PVDF微孔摺疊式濾心",
-            "housing": "濾材",
-            "category": "濾心",
-            "subgroup": "摺疊式濾心",
-            "images": 0,
-            "title": "PVDF微孔摺疊式濾心",
-            "subtitle": "摺疊式濾心",
-            "hideSeries": true,
-            "range": "強溶劑過濾、高粘度液體過濾、強氧化性液體過濾、溫度較高液體過濾",
-            "specImgs": 1,
-            "dataTmgs": 1
-        },
         // 濾心 - 熔噴式
         "PP熔噴式濾心": {
             "series": "PP熔噴式濾心",
@@ -774,7 +774,7 @@ define('constant', function(){
             "subgroup": "熔噴式濾心",
             "images": 0,
             "title": "PP熔噴式濾心",
-            "subtitle": "",
+            "subtitle": "熔噴式濾心",
             "hideSeries": true,
             "range": [
                 "電子產品的鍍液、蝕刻液、藥液、淨水的過濾",
@@ -805,7 +805,7 @@ define('constant', function(){
             "subgroup": "熔噴式濾心",
             "images": 0,
             "title": "PP工業型熔噴式濾心",
-            "subtitle": "摺疊式濾心",
+            "subtitle": "熔噴式濾心",
             "hideSeries": true,
             "range": "PCB、電鍍業、RO前置過濾、回收水過濾、化學品製程、石化製程、飲料業",
             "feature": [
@@ -827,7 +827,7 @@ define('constant', function(){
             "subgroup": "熔噴式濾心",
             "images": 0,
             "title": "PP絕對型熔噴式濾心",
-            "subtitle": "",
+            "subtitle": "熔噴式濾心",
             "hideSeries": true,
             "range": "塗料油漆行業、陶瓷電容行業、光學薄膜行業、壓克力行業、紡織行業、線路板覆銅板行業、化學藥劑與膠水過濾",
             "feature": [
@@ -848,6 +848,7 @@ define('constant', function(){
             "subgroup": "纏繞式濾心",
             "images": 0,
             "title": "纏繞式濾心",
+            "subtitle": "濾心",
             "hideSeries": true,
             "feature": [
                 "採用紡織纖維紗按特定工藝緊密纏繞在多孔骨架上，控制濾層纏繞密度及濾孔形狀而製成不同過濾精度的濾心",
@@ -922,6 +923,16 @@ define('constant', function(){
             "specImgs": 1
         },
         // 濾心 - 不鏽鋼
+        "平面燒結濾心": {
+            "series": "平面燒結濾心",
+            "housing": "濾材",
+            "category": "濾心",
+            "subgroup": "不鏽鋼濾心",
+            "images": 2,
+            "title": "平面燒結濾心",
+            "subtitle": "不鏽鋼濾心",
+            "hideSeries": true
+        },
         "金屬摺疊濾心": {
             "series": "金屬摺疊濾心",
             "housing": "濾材",
@@ -956,16 +967,6 @@ define('constant', function(){
             ],
             "specImgs": 1
         },
-        "平面燒結濾心": {
-            "series": "平面燒結濾心",
-            "housing": "濾材",
-            "category": "濾心",
-            "subgroup": "不鏽鋼濾心",
-            "images": 2,
-            "title": "平面燒結濾心",
-            "subtitle": "不鏽鋼濾心",
-            "hideSeries": true
-        },
         "空壓機濾心": {
             "series": "空壓機濾心",
             "housing": "濾材",
@@ -973,7 +974,7 @@ define('constant', function(){
             "subgroup": "空壓機濾心",
             "images": 0,
             "title": "空壓機濾心",
-            "subtitle": "",
+            "subtitle": "濾心",
             "hideSeries": true,
             "specImgs": 1
         },
