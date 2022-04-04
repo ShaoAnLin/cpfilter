@@ -11,6 +11,11 @@ Push to the web hosting server:
 
 ```git-ftp push```
 
+## Local Development
+Use Browser Sync to visualize website locally.
+
+```browser-sync start --server --directory --files "**/*"```
+
 ## Tools and Dependencies
 ### ReactJS
 Reuse component with ReactJS. The JS file *~/js/header.js* is generated from *~/src/header.jsx*. The JS scripts could be comiled by the Babel shell command.
