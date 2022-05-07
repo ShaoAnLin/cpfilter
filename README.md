@@ -1,6 +1,8 @@
 # Overview
 This is the source resource of official website [CPFilter.com](https://cpfilter.com).
 
+GitHub page: https://shaoanlin.github.io/cpfilter/
+
 # Development
 ## Publish
 Push to the github repository:
