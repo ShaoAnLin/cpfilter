@@ -51,7 +51,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                       React.createElement(
                         'div',
                         { className: 'brandname-en' },
-                        'CP FILTER Industrial Co.,Ltd'
+                        'CP FILTER Industrial Co.,Ltd.'
                       )
                     ),
                     React.createElement(
@@ -109,7 +109,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
                         React.createElement(
                           'div',
                           null,
-                          'peter@cpfilter.com'
+                          'service@cpfilter.com'
                         )
                       ),
                       React.createElement(
@@ -134,12 +134,12 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
             React.createElement(
               'span',
               null,
-              '\xA9 2018. \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8 '
+              '\xA9 2022. \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8 '
             ),
             React.createElement(
               'span',
               { className: 'brandname-en' },
-              'CP FILTER Industrial Co.,Ltd '
+              'CP FILTER Industrial Co.,Ltd.'
             ),
             React.createElement(
               'span',
@@ -153,7 +153,7 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
             React.createElement(
               'span',
               null,
-              '\xA9 2018. CP FILTER Industrial Co.,Ltd. All Rights Reserved.'
+              '\xA9 2022. CP FILTER Industrial Co.,Ltd. All Rights Reserved.'
             )
           )
         );
