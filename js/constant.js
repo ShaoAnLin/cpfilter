@@ -604,9 +604,10 @@ define('constant', function(){
             "housing": "過濾器",
             "category": "鈦過濾器",
             "images": 0,
-            "title": "鈦過濾桶",
-            "subtitle": "標準濾心式",
+            "title": "標準濾心型",
+            "subtitle": "鈦過濾器",
             "hideSeries": true,
+            "range": "化學品製程、高抗腐蝕性製程、電鍍製程",
             "spec": {
                 "材質": "桶身全部為鈦金屬所製作---為高耐腐蝕過濾器。",
                 "耐壓": "7kg/cm²---適用於各種化學液體過濾。",
