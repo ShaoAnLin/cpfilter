@@ -53,7 +53,7 @@ define('constant', function(){
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
             "鈦過濾器": ["鈦過濾器"],
-            "不銹鋼磁力設備與台車": ["圓盤式磁力棒架", "圓盤式七支裝磁力棒架", "並排式三支裝磁力棒架" ,"APD", "AD"],
+            "不銹鋼磁力設備與台車": ["圓盤式磁力棒架", "並排式三支裝磁力棒架" ,"APD", "AD"],
         },
         "濾材": {
             "濾心": {
@@ -639,22 +639,8 @@ define('constant', function(){
             "series": "圓盤式磁力棒架",
             "housing": "過濾器",
             "category": "不銹鋼磁力設備與台車",
-            "images": 1,
+            "images": 2,
             "title": "圓盤式磁力棒架",
-            "subtitle": "",
-            "hideSeries": true,
-            "range": "適用機型：PL/PH/PHT/PM",
-            "spec": {
-                "材質": "SUS304, SUS316, SUS316L",
-                "高斯": "3000GS~12000",
-            }
-        },
-        "圓盤式七支裝磁力棒架": {
-            "series": "圓盤式七支裝磁力棒架",
-            "housing": "過濾器",
-            "category": "不銹鋼磁力設備與台車",
-            "images": 0,
-            "title": "圓盤式七支裝磁力棒架",
             "subtitle": "",
             "hideSeries": true,
             "range": "適用機型：PL/PH/PHT/PM",
