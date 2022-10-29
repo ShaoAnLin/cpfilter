@@ -55,6 +55,7 @@
 .tab-content img {
     height: auto;
 	width: auto;
+	max-width: 100%;
 	@media #{$mobile-land} {
 		max-width: 100%;
 	}
