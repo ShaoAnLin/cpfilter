@@ -113,9 +113,9 @@
     max-height: 450px;
     .slick-arrow {
       position: absolute;
-      top: 12px;
-      width: 48px;
-      height: 48px;
+      top: 0px;
+      width: 100%;
+      height: 25px;
       display: block;
       z-index: 1;
       border: none;
@@ -136,7 +136,7 @@
     }
     .slick-next {
       top: auto;
-      bottom: 12px;
+      bottom: 0px;
       &:before {
         padding-right: 0;
         content: "\e313";
