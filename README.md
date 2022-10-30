@@ -24,8 +24,6 @@ Reuse component with ReactJS. The JS file *~/js/header.js* is generated from *~/
 
 ```./node_modules/.bin/babel src --out-dir js```
 
-* Update 2022.05.08.: File transfer with Babel does not work now.
-
 ### RequireJS
 Used to manage the JavaScript third party libraries. See *~/js/main.js* and *~/js/main-&lt;page&gt;.js*
 

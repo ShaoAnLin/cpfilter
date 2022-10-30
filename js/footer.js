@@ -1,167 +1,65 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
-
   'use strict';
 
-  var Footer = function (_React$Component) {
-    _inherits(Footer, _React$Component);
-
-    function Footer(props) {
-      _classCallCheck(this, Footer);
-
-      return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).call(this, props));
+  class Footer extends React.Component {
+    constructor(props) {
+      super(props);
     }
-
-    _createClass(Footer, [{
-      key: 'render',
-      value: function render() {
-        return React.createElement(
-          React.Fragment,
-          null,
-          React.createElement(
-            'div',
-            { className: 'container' },
-            React.createElement(
-              'div',
-              { className: 'row' },
-              React.createElement(
-                'div',
-                { className: 'col-md-6' },
-                React.createElement(
-                  'div',
-                  { className: 'row' },
-                  React.createElement(
-                    'div',
-                    { className: 'col-sm-12' },
-                    React.createElement(
-                      'div',
-                      { className: 'logo' },
-                      React.createElement(
-                        'div',
-                        { className: 'brandname' },
-                        '\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8'
-                      ),
-                      React.createElement(
-                        'div',
-                        { className: 'brandname-en' },
-                        'CP FILTER Industrial Co.,Ltd.'
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      { className: 'widget widget-callback' },
-                      React.createElement('i', { className: 'icon material-icons headset_mic' }),
-                      React.createElement(
-                        'div',
-                        { className: 'info-text' },
-                        React.createElement(
-                          'div',
-                          null,
-                          '(02)2808-1655'
-                        )
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      { className: 'widget widget-callback' },
-                      React.createElement('i', { className: 'icon material-icons print' }),
-                      React.createElement(
-                        'div',
-                        { className: 'info-text' },
-                        React.createElement(
-                          'div',
-                          null,
-                          '(02)2808-1557'
-                        )
-                      )
-                    )
-                  )
-                )
-              ),
-              React.createElement(
-                'div',
-                { className: 'mobile-hide col-md-6' },
-                React.createElement(
-                  'div',
-                  { className: 'row mobile-top-buffer' },
-                  React.createElement(
-                    'div',
-                    { className: 'col-sm-12' },
-                    React.createElement(
-                      'div',
-                      { className: 'widget categories-widget' },
-                      React.createElement(
-                        'div',
-                        { className: 'widget-title' },
-                        '\u806F\u7D61\u6211\u5011'
-                      ),
-                      React.createElement(
-                        'div',
-                        { className: 'widget widget-callback' },
-                        React.createElement('i', { className: 'icon material-icons email' }),
-                        React.createElement(
-                          'div',
-                          null,
-                          'service@cpfilter.com'
-                        )
-                      ),
-                      React.createElement(
-                        'div',
-                        { className: 'widget widget-callback' },
-                        React.createElement('i', { className: 'icon material-icons location_city address' }),
-                        React.createElement(
-                          'div',
-                          null,
-                          '\u65B0\u5317\u5E02\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3\u6A13\u4E4B\u4E00'
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'copyright mobile-hide' },
-            React.createElement(
-              'span',
-              null,
-              '\xA9 2022. \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8 '
-            ),
-            React.createElement(
-              'span',
-              { className: 'brandname-en' },
-              'CP FILTER Industrial Co.,Ltd.'
-            ),
-            React.createElement(
-              'span',
-              null,
-              'All Rights Reserved.'
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'copyright mobile-show' },
-            React.createElement(
-              'span',
-              null,
-              '\xA9 2022. CP FILTER Industrial Co.,Ltd. All Rights Reserved.'
-            )
-          )
-        );
-      }
-    }]);
-
-    return Footer;
-  }(React.Component);
-
-  ReactDOM.render(React.createElement(Footer, null), document.querySelector('.footer'));
+    render() {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "col-md-6"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "col-sm-12"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "logo"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "brandname"
+      }, "\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8"), /*#__PURE__*/React.createElement("div", {
+        className: "brandname-en"
+      }, "CP FILTER Industrial Co.,Ltd.")), /*#__PURE__*/React.createElement("div", {
+        className: "widget widget-callback"
+      }, /*#__PURE__*/React.createElement("i", {
+        className: "icon material-icons headset_mic"
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "info-text"
+      }, /*#__PURE__*/React.createElement("div", null, "(02)2808-1655"))), /*#__PURE__*/React.createElement("div", {
+        className: "widget widget-callback"
+      }, /*#__PURE__*/React.createElement("i", {
+        className: "icon material-icons print"
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "info-text"
+      }, /*#__PURE__*/React.createElement("div", null, "(02)2808-1557")))))), /*#__PURE__*/React.createElement("div", {
+        className: "mobile-hide col-md-6"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "row mobile-top-buffer"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "col-sm-12"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "widget categories-widget"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "widget-title"
+      }, "\u806F\u7D61\u6211\u5011"), /*#__PURE__*/React.createElement("div", {
+        className: "widget widget-callback"
+      }, /*#__PURE__*/React.createElement("i", {
+        className: "icon material-icons email"
+      }), /*#__PURE__*/React.createElement("div", null, "service@cpfilter.com")), /*#__PURE__*/React.createElement("div", {
+        className: "widget widget-callback"
+      }, /*#__PURE__*/React.createElement("i", {
+        className: "icon material-icons location_city address"
+      }), /*#__PURE__*/React.createElement("div", null, "\u65B0\u5317\u5E02\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3\u6A13\u4E4B\u4E00")))))))), /*#__PURE__*/React.createElement("div", {
+        className: "copyright mobile-hide"
+      }, /*#__PURE__*/React.createElement("span", null, "\xA9 2022. \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8 "), /*#__PURE__*/React.createElement("span", {
+        className: "brandname-en"
+      }, "CP FILTER Industrial Co.,Ltd."), /*#__PURE__*/React.createElement("span", null, "All Rights Reserved.")), /*#__PURE__*/React.createElement("div", {
+        className: "copyright mobile-show"
+      }, /*#__PURE__*/React.createElement("span", null, "\xA9 2022. CP FILTER Industrial Co.,Ltd. All Rights Reserved.")));
+    }
+  }
+  ReactDOM.render( /*#__PURE__*/React.createElement(Footer, null), document.querySelector('.footer'));
 });
