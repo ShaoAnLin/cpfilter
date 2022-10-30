@@ -99,7 +99,7 @@ define('constant', function(){
         Product details:
             housing, category, subgroup, series
             title, subtitle
-            images: # of images in addition to the main images (0 <= x <= 4)
+            images: # of images in addition to the main images
             hideSeries: show series name or not
 
         Shown on the right side of product images

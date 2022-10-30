@@ -288,7 +288,7 @@ define('common', [
 		var $thumbnailCarousel = $('.thumbnail-carousel');
 		if($thumbnailCarousel && $thumbnailCarousel.length > 0) {
 			$thumbnailCarousel.slick({
-				slidesToShow: 5,
+				slidesToShow: 4,
 				centerMode: true,
 				centerPadding: '0',
 				asNavFor: '.image-preview1',
