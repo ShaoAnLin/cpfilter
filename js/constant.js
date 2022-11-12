@@ -123,7 +123,7 @@ define('constant', function(){
             "series": "ALS",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 3,
+            "images": 4,
             "title": "單支裝",
             "subtitle": "濾心式過濾器",
             "spec": {
@@ -147,7 +147,7 @@ define('constant', function(){
             "series": "AHS",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 1,
+            "images": 4,
             "title": "單支裝",
             "subtitle": "濾心式過濾器 - 高壓款",
             "spec": {
@@ -171,7 +171,7 @@ define('constant', function(){
             "series": "AF",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 1,
+            "images": 4,
             "title": "單支裝",
             "subtitle": "濾心式水塔過濾器",
             "spec": {
@@ -195,7 +195,7 @@ define('constant', function(){
             "series": "AL",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 1,
+            "images": 4,
             "title": "3~7支裝",
             "subtitle": "濾心式過濾器",
             "spec": {
@@ -261,7 +261,7 @@ define('constant', function(){
             "range": "RO前置過濾、PCW過濾、循環過濾、化學品製程、回收水過濾、飲料業",
             "modelImgs": 1,
             "componentImgs": 1,
-            "sizeImgs": 1
+            "sizeImgs": 2
         },
         "SGS": {
             "series": "SGS",
