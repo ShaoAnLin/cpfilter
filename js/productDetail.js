@@ -120,6 +120,29 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       }, features);
     }
   }
+  class ItemImages extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      var images = [];
+      if (this.props.imagesCount) {
+        var src = constant.getImgPath(this.props.item, this.props.tabName) + '.jpg';
+        images.push( /*#__PURE__*/React.createElement("img", {
+          src: src
+        }));
+        for (var i = 1; i < this.props.imagesCount; ++i) {
+          var src = constant.getImgPath(this.props.item, this.props.tabName + i) + '.jpg';
+          images.push( /*#__PURE__*/React.createElement("img", {
+            src: src
+          }));
+        }
+      }
+      return /*#__PURE__*/React.createElement("ul", {
+        className: "list-featured item-image"
+      }, images);
+    }
+  }
   var setTabDetail = function (item) {
     if (item.spec && item.specUpper != true || item.specImgs) {
       ReactDOM.render( /*#__PURE__*/React.createElement(ItemSpec, {
@@ -143,17 +166,29 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       $('#nav-tab-feature').hide();
     }
     if (item.modelImgs) {
-      $('#model-img').attr("src", constant.getImgPath(item, 'model') + '.jpg');
+      ReactDOM.render( /*#__PURE__*/React.createElement(ItemImages, {
+        item: item,
+        tabName: "model",
+        imagesCount: item.modelImgs
+      }), document.querySelector('#model-detail'));
     } else {
       $('#nav-tab-model').hide();
     }
     if (item.componentImgs) {
-      $('#component-img').attr("src", constant.getImgPath(item, 'component') + '.jpg');
+      ReactDOM.render( /*#__PURE__*/React.createElement(ItemImages, {
+        item: item,
+        tabName: "component",
+        imagesCount: item.componentImgs
+      }), document.querySelector('#component-detail'));
     } else {
       $('#nav-tab-component').hide();
     }
     if (item.sizeImgs) {
-      $('#size-img').attr("src", constant.getImgPath(item, 'size') + '.jpg');
+      ReactDOM.render( /*#__PURE__*/React.createElement(ItemImages, {
+        item: item,
+        tabName: "size",
+        imagesCount: item.sizeImgs
+      }), document.querySelector('#size-detail'));
     } else {
       $('#nav-tab-size').hide();
     }

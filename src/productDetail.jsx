@@ -129,6 +129,27 @@ define('productDetail', [
         };
     }
 
+    class ItemImages extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+        
+        render() {
+            var images = [];
+            if (this.props.imagesCount){
+                var src = constant.getImgPath(this.props.item, this.props.tabName) + '.jpg';
+                images.push(<img src={src}></img>);
+                for (var i = 1; i < this.props.imagesCount; ++i){
+                    var src = constant.getImgPath(this.props.item, this.props.tabName + i) + '.jpg';
+                    images.push(<img src={src}></img>);
+                }
+            }
+            return(
+                <ul className="list-featured item-image">{images}</ul>
+            );
+        };
+    }
+
     var setTabDetail = function(item){
         if ((item.spec && item.specUpper != true) || item.specImgs){
             ReactDOM.render(<ItemSpec item={item}/>,
@@ -152,19 +173,22 @@ define('productDetail', [
         }
 
         if (item.modelImgs){
-            $('#model-img').attr("src", constant.getImgPath(item, 'model') + '.jpg');
+            ReactDOM.render(<ItemImages item={item} tabName="model" imagesCount={item.modelImgs}/>,
+                document.querySelector('#model-detail'));
         } else{
             $('#nav-tab-model').hide();
         }
 
         if (item.componentImgs){
-            $('#component-img').attr("src", constant.getImgPath(item, 'component') + '.jpg');
+            ReactDOM.render(<ItemImages item={item} tabName="component" imagesCount={item.componentImgs}/>,
+                document.querySelector('#component-detail'));
         } else{
             $('#nav-tab-component').hide();
         }
 
         if (item.sizeImgs){
-            $('#size-img').attr("src", constant.getImgPath(item, 'size') + '.jpg');
+            ReactDOM.render(<ItemImages item={item} tabName="size" imagesCount={item.sizeImgs}/>,
+                document.querySelector('#size-detail'));
         } else{
             $('#nav-tab-size').hide();
         }

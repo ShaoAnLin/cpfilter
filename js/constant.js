@@ -470,7 +470,7 @@ define('constant', function(){
             "series": "PM",
             "housing": "過濾器",
             "category": "不鏽鋼袋濾機",
-            "images": 3,
+            "images": 9,
             "title": "大流量多袋式",
             "subtitle": "濾袋式過濾器",
             "spec": {
@@ -486,9 +486,9 @@ define('constant', function(){
                 "表面處理(選購)": "X-Ray, EP電解"
             },
             "range": "RO前置過濾、PCW過濾、循環過濾、飲料業、化學品製程、回收水過濾、電著塗裝過濾",
-            "modelImgs": 1,
-            "componentImgs": 1,
-            "sizeImgs": 1
+            "modelImgs": 2,
+            "componentImgs": 2,
+            "sizeImgs": 4
         },
 
         "塑膠濾殼": {
