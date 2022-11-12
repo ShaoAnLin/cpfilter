@@ -307,8 +307,13 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
       super(props);
     }
     render() {
-      var detailLink = "product-detail.html?item=" + this.props.id,
-        series = this.props.item.series ? this.props.item.series : "";
+      var detailLink = "product-detail.html?item=" + this.props.id;
+      var series = "";
+      if (this.props.item.seriesName) {
+        series = this.props.item.seriesName;
+      } else if (this.props.item.series) {
+        series = this.props.item.series;
+      }
       return /*#__PURE__*/React.createElement("div", {
         className: "col-md-4 tile"
       }, /*#__PURE__*/React.createElement("a", {

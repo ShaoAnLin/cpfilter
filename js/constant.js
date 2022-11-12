@@ -49,7 +49,7 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM", "SGS", "ALF",
                 "AHP", "ALSH", "SL", "SLS"],
-            "不鏽鋼袋濾機": ["PL", "PH", "PT", "PM"],
+            "不鏽鋼袋濾機": ["PL", "PV_PH", "PT", "PM"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
             "鈦過濾器": ["鈦過濾器"],
@@ -98,6 +98,7 @@ define('constant', function(){
     /*
         Product details:
             housing, category, subgroup, series
+            seriesName: show this value instead of 'series', to avoid forbidden chars
             title, subtitle
             images: # of images in addition to the main images
             hideSeries: show series name or not
@@ -109,10 +110,10 @@ define('constant', function(){
         Shown under the product images
             spec: 規格, key-value pair
             feature: 特色, string array
-            modelImgs: 型號選購
-            componentImgs: 各部零件
-            sizeImgs: 尺寸規格(mm)
-            specImgs: 規格
+            modelImgs (>=1): 型號選購
+            componentImgs (>=1): 各部零件
+            sizeImgs (>=1): 尺寸規格(mm)
+            specImgs (>=1): 規格
             conditionImgs: 操作條件
             dataImgs: 數據圖表
     */
@@ -418,11 +419,12 @@ define('constant', function(){
             "componentImgs": 1,
             "sizeImgs": 1
         },
-        "PH": {
-            "series": "PH",
+        "PV_PH": {
+            "series": "PV_PH",
+            "seriesName": "PV/PH",
             "housing": "過濾器",
             "category": "不鏽鋼袋濾機",
-            "images": 1,
+            "images": 8,
             "title": "單袋式 - 高壓款",
             "subtitle": "濾袋式過濾器",
             "spec": {
@@ -438,9 +440,9 @@ define('constant', function(){
                 "表面處理(選購)": "X-Ray, EP電解"
             },
             "range": "RO前置過濾、PCW過濾、循環過濾、化學品製程、回收水過濾、飲料業",
-            "modelImgs": 1,
-            "componentImgs": 1,
-            "sizeImgs": 1
+            "modelImgs": 2,
+            "componentImgs": 2,
+            "sizeImgs": 2
         },
         "PT": {
             "series": "PT",
@@ -553,7 +555,7 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø171.5mm*350mmL、B#2-ø171.5mm*730mmL、B#3-ø97.5mm*200mmL、B#4-ø97.5mm*310mmL"
             },
-            "range": "適用機型：PL / PH / PT / PM"
+            "range": "適用機型：PL / PV / PH / PT / PM"
         },
         "壓袋器": {
             "series": "壓袋器",
@@ -567,7 +569,7 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1、B#2- ø179mm、B#3、B#4- ø120mm"
             },
-            "range": "適用機型：PL / PH",
+            "range": "適用機型：PL / PV / PH",
         },
         "撐開架": {
             "series": "撐開架",
@@ -581,7 +583,7 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø153mm*ø135mm*340mmL、B#2-ø153mm*ø135mm*720mmL"
             },
-            "range": "適用機型：PL / PH / PT / PM",
+            "range": "適用機型：PL / PV / PH / PT / PM",
         },
         "金屬浮球": {
             "series": "金屬浮球",
@@ -635,7 +637,7 @@ define('constant', function(){
             "title": "圓盤式磁力棒架",
             "subtitle": "",
             "hideSeries": true,
-            "range": "適用機型：PL / PH / PT / PM",
+            "range": "適用機型：PL / PV / PH / PT / PM",
             "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000GS~12000",
@@ -649,7 +651,7 @@ define('constant', function(){
             "title": "並排式三支裝磁力棒架",
             "subtitle": "",
             "hideSeries": true,
-            "range": "適用機型：PL / PH / PT / PM",
+            "range": "適用機型：PL / PV / PH / PT / PM",
             "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000GS~12000",
@@ -1292,7 +1294,7 @@ define('constant', function(){
             "images": 0,
             "title": "磁力棒",
             "subtitle": "",
-            "range": "適用機型：PL / PH / PT / PM",
+            "range": "適用機型：PL / PV / PH / PT / PM",
             "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000-12000"
@@ -1382,6 +1384,9 @@ define('constant', function(){
     constant.POPULAR_PRODUCTS = ["AH", "ALS", "AM"];
 
     constant.getItemIdStr = function(item){
+        if (item.seriesName){
+            return item.seriesName;
+        }
         return item.series ? item.series : item.category;
     }
 
