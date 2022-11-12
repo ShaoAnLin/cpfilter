@@ -47,7 +47,7 @@ define('constant', function(){
 
     constant.SERIES = {
         "過濾器": {
-            "不鏽鋼濾心機": ["ALS", "AHS", "AF", "AL", "AH", "AM", "SGS", "SL", "SLS"],
+            "不鏽鋼濾心機": ["ALS", "AHS", "AF", "AL", "AH_AV", "AM", "SGS", "SL", "SLS"],
             "不鏽鋼袋濾機": ["PL", "PV_PH", "PT", "PM"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
@@ -215,11 +215,12 @@ define('constant', function(){
             "componentImgs": 1,
             "sizeImgs": 1
         },
-        "AH": {
-            "series": "AH",
+        "AH_AV": {
+            "series": "AH_AV",
+            "seriesName": "AH/AV",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 1,
+            "images": 9,
             "title": "3~7支裝",
             "subtitle": "濾心式過濾器 - 高壓款",
             "spec": {
@@ -235,9 +236,9 @@ define('constant', function(){
                 "表面處理(選購)": "X-Ray, EP電解"
             },
             "range": "RO前置過濾、PCW過濾、循環過濾、化學品製程、回收水過濾、飲料業",
-            "modelImgs": 1,
-            "componentImgs": 1,
-            "sizeImgs": 1
+            "modelImgs": 2,
+            "componentImgs": 2,
+            "sizeImgs": 2
         },
         "AM": {
             "series": "AM",
@@ -1320,7 +1321,7 @@ define('constant', function(){
         }
     }
 
-    constant.POPULAR_PRODUCTS = ["AH", "ALS", "AM"];
+    constant.POPULAR_PRODUCTS = ["ALS", "AM", "SL"];
 
     constant.getItemIdStr = function(item){
         if (item.seriesName){
