@@ -47,7 +47,7 @@ define('constant', function(){
 
     constant.SERIES = {
         "過濾器": {
-            "不鏽鋼濾心機": ["ALS", "AHS", "AF", "AL", "AH_AV", "AM", "SG", "SM", "SLS"],
+            "不鏽鋼濾心機": ["ALS", "AHS", "AF", "AL", "AH_AV", "AM", "SG", "SM", "SL"],
             "不鏽鋼袋濾機": ["PL", "PV_PH", "PT", "PM"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
@@ -310,11 +310,11 @@ define('constant', function(){
             "componentImgs": 1,
             "sizeImgs": 1
         },
-        "SLS": {
-            "series": "SLS",
+        "SL": {
+            "series": "SL",
             "housing": "過濾器",
             "category": "不鏽鋼濾心機",
-            "images": 4,
+            "images": 3,
             "title": "衛生級單支裝",
             "subtitle": "濾心式過濾器",
             "spec": {
