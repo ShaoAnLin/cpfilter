@@ -47,8 +47,7 @@ define('constant', function(){
 
     constant.SERIES = {
         "過濾器": {
-            "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM", "SGS", "ALF",
-                "AHP", "ALSH", "SL", "SLS"],
+            "不鏽鋼濾心機": ["ALS", "AHS", "AF", "AL", "AH", "AM", "SGS", "SL", "SLS"],
             "不鏽鋼袋濾機": ["PL", "PV_PH", "PT", "PM"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
@@ -137,30 +136,6 @@ define('constant', function(){
                 "設計壓力": "10kg/cm² (150psi)",
                 "操作壓力": "7kg/cm² (100psi)",
                 "表面處理(標準)": "外部拋光, 內部酸洗",
-                "表面處理(選購)": "X-Ray, EP電解"
-            },
-            "range": "機台循環、PCW過濾、化學品製程",
-            "modelImgs": 1,
-            "componentImgs": 1,
-            "sizeImgs": 1
-        },
-        "ALA": {
-            "series": "ALA",
-            "housing": "過濾器",
-            "category": "不鏽鋼濾心機",
-            "images": 1,
-            "title": "單支裝",
-            "subtitle": "濾心式過濾器 - A款",
-            "spec": {
-                "本體材質": "SUS304, SUS316",
-                "進出口": "3/4”PT, 1”PT-F/NPT-F",
-                "排放口": "1/4”PT-F",
-                "排氣口": "1/4”PT-F",
-                "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon包Viton",
-                "設計壓力": "10kg/cm² (150psi)",
-                "操作壓力": "7kg/cm² (100psi)",
-                "表面處理(標準)": "外部電解, 內部酸洗",
                 "表面處理(選購)": "X-Ray, EP電解"
             },
             "range": "機台循環、PCW過濾、化學品製程",
@@ -311,42 +286,6 @@ define('constant', function(){
             "modelImgs": 1,
             "componentImgs": 1,
             "sizeImgs": 1
-        },
-        "AHP": {
-            "series": "AHP",
-            "housing": "過濾器",
-            "category": "不鏽鋼濾心機",
-            "images": 0,
-            "title": "濾心式過濾器",
-            "subtitle": ""
-        },
-        "ALF": {
-            "series": "ALF",
-            "housing": "過濾器",
-            "category": "不鏽鋼濾心機",
-            "images": 3,
-            "title": "濾心式過濾器",
-            "subtitle": "",
-            "spec": {
-                "本體材質": "SUS304, SUS316",
-                "進出口": "1”PTF",
-                "排放口": "1/4”PTF",
-                "排氣口": "1/4”PTF",
-                "Oring材質(標準)": "EPDM",
-                "Oring材質(選購)": "Viton, Teflon包Viton",
-                "設計壓力": "10kg/cm² (150psi)",
-                "操作壓力": "7kg/cm² (100psi)",
-                "表面處理(集水頭)": "外部電解/內部酸洗",
-                "表面處理(桶身)": "外部拋光/內部酸洗"
-            }
-        },
-        "ALSH": {
-            "series": "ALSH",
-            "housing": "過濾器",
-            "category": "不鏽鋼濾心機",
-            "images": 1,
-            "title": "濾心式過濾器",
-            "subtitle": ""
         },
         "SL": {
             "series": "SL",
