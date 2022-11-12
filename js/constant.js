@@ -49,7 +49,7 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM", "SGS", "ALF",
                 "AHP", "ALSH", "SL", "SLS"],
-            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM", "PHP"],
+            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
             "鈦過濾器": ["鈦過濾器"],
@@ -489,14 +489,6 @@ define('constant', function(){
             "modelImgs": 1,
             "componentImgs": 1,
             "sizeImgs": 1
-        },
-        "PHP": {
-            "series": "PHP",
-            "housing": "過濾器",
-            "category": "不鏽鋼袋濾機",
-            "images": 0,
-            "title": "濾袋式過濾器",
-            "subtitle": ""
         },
 
         "塑膠濾殼": {
