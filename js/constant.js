@@ -49,7 +49,7 @@ define('constant', function(){
         "過濾器": {
             "不鏽鋼濾心機": ["ALS", "ALA", "AHS", "AF", "AL", "AH", "AM", "SGS", "ALF",
                 "AHP", "ALSH", "SL", "SLS"],
-            "不鏽鋼袋濾機": ["PL", "PH", "PHT", "PM"],
+            "不鏽鋼袋濾機": ["PL", "PH", "PT", "PM"],
             "純PP濾殼、塑膠濾殼": ["塑膠濾殼", "純PP濾殼-222型", "純PP濾殼-226型"],
             "過濾器配件": ["沖孔籃", "壓袋器", "撐開架", "金屬浮球", "O型環"],
             "鈦過濾器": ["鈦過濾器"],
@@ -442,8 +442,8 @@ define('constant', function(){
             "componentImgs": 1,
             "sizeImgs": 1
         },
-        "PHT": {
-            "series": "PHT",
+        "PT": {
+            "series": "PT",
             "housing": "過濾器",
             "category": "不鏽鋼袋濾機",
             "images": 3,
@@ -553,7 +553,7 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø171.5mm*350mmL、B#2-ø171.5mm*730mmL、B#3-ø97.5mm*200mmL、B#4-ø97.5mm*310mmL"
             },
-            "range": "適用機型：PL / PH / PHT / PM"
+            "range": "適用機型：PL / PH / PT / PM"
         },
         "壓袋器": {
             "series": "壓袋器",
@@ -581,7 +581,7 @@ define('constant', function(){
                 "材質": "SUS304, SUS316, SUS316L",
                 "尺寸": "B#1-ø153mm*ø135mm*340mmL、B#2-ø153mm*ø135mm*720mmL"
             },
-            "range": "適用機型：PL / PH / PHT / PM",
+            "range": "適用機型：PL / PH / PT / PM",
         },
         "金屬浮球": {
             "series": "金屬浮球",
@@ -635,7 +635,7 @@ define('constant', function(){
             "title": "圓盤式磁力棒架",
             "subtitle": "",
             "hideSeries": true,
-            "range": "適用機型：PL/PH/PHT/PM",
+            "range": "適用機型：PL / PH / PT / PM",
             "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000GS~12000",
@@ -649,7 +649,7 @@ define('constant', function(){
             "title": "並排式三支裝磁力棒架",
             "subtitle": "",
             "hideSeries": true,
-            "range": "適用機型：PL/PH/PHT/PM",
+            "range": "適用機型：PL / PH / PT / PM",
             "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000GS~12000",
@@ -1292,7 +1292,7 @@ define('constant', function(){
             "images": 0,
             "title": "磁力棒",
             "subtitle": "",
-            "range": "適用機型：PL/PH/PHT/PM",
+            "range": "適用機型：PL / PH / PT / PM",
             "spec": {
                 "材質": "SUS304, SUS316, SUS316L",
                 "高斯": "3000-12000"
