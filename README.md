@@ -1,42 +1,116 @@
 # Overview
-This is the source resource of official website [CPFilter.com](https://cpfilter.com).
+This repository contains the source files for the official [CPFilter.com](https://cpfilter.com) website.
 
-GitHub page: https://shaoanlin.github.io/cpfilter/
+GitHub Pages preview: https://shaoanlin.github.io/cpfilter/
 
 # Development
 ## Publish
-Push to the github repository:
+The site consists of static files and uses relative asset paths, so the repository root can be published directly with GitHub Pages.
 
-```git push origin master```
+There are currently two publishing targets:
 
-Push to the web hosting server:
+1. **GitHub Pages preview** — publish the `master` branch from the repository root.
+2. **Production website** — upload the repository with `git-ftp`. The hosting provider and FTP connection details are configured outside this repository.
 
-```git-ftp push```
+After merging a change into `master`, verify the preview before publishing production:
+
+1. Open https://shaoanlin.github.io/cpfilter/.
+2. Confirm that the home, about, products, product detail, news, and contact pages load.
+3. Confirm that navigation, product images, mobile layout, and the contact form behave correctly.
+4. Publish the verified files to the production web host:
+
+   ```sh
+   git-ftp push
+   ```
 
 ## Local Development
 Use Browser Sync to visualize website locally.
 
-```browser-sync start --server --directory --files "**/*"```
+```sh
+browser-sync start --server --directory --files "**/*"
+```
 
 ## Tools and Dependencies
 ### ReactJS
-Reuse component with ReactJS. The JS file *~/js/header.js* is generated from *~/src/header.jsx*. The JS scripts could be comiled by the Babel shell command.
+Reuse components with ReactJS. Files in `js/` are generated from the matching JSX files in `src/`.
 
-```./node_modules/.bin/babel src --out-dir js```
+```sh
+./node_modules/.bin/babel src --out-dir js
+```
 
 ### RequireJS
-Used to manage the JavaScript third party libraries. See *~/js/main.js* and *~/js/main-&lt;page&gt;.js*
+RequireJS manages third-party JavaScript libraries. See `js/main.js` and `js/main-<page>.js`.
 
 ### CSS
-Use SASS/SCSS to organize CSS files. Convert *~/stylesheets/sass/styles.scss* to *~/stylesheets/theme.min.css*.
+Sass/SCSS source files are under `stylesheets/sass/`. Compile `stylesheets/sass/styles.scss` to `stylesheets/theme.min.css`.
 
-You could use Tools like Prepros to do the preprocessing.
+Prepros can perform this preprocessing.
 
 ### Package
-Use npm to manage the installed packages.
+Use npm to manage development packages.
 
-```npm ls package-name```
+```sh
+npm ls package-name
+```
 
-Fix vulnerable npm packages.
+Review vulnerable npm packages before applying updates:
 
-```npm audit fix```
+```sh
+npm audit
+```
+
+# Improvement TODO
+
+Each section should be handled in a separate, focused pull request. Verify every pull request locally and on the GitHub Pages preview before publishing it to production.
+
+## PR 1 — Product navigation stability
+
+- [ ] Parse query parameters with `URLSearchParams`.
+- [ ] Validate product, category, subgroup, and housing parameters.
+- [ ] Show a useful not-found state instead of throwing an error for invalid product links.
+- [ ] Remove development-only console output.
+
+## PR 2 — Build and dependency maintenance
+
+- [ ] Add documented npm scripts for compiling JSX and checking generated files.
+- [ ] Upgrade supported development dependencies after reviewing breaking changes.
+- [ ] Audit the runtime CDN dependencies, starting with jQuery 2.
+- [ ] Add integrity and cross-origin attributes where external CDN assets remain necessary.
+
+## PR 3 — Contact form reliability
+
+- [ ] Confirm the current Formspree endpoint is active.
+- [ ] Use semantic form markup and browser validation.
+- [ ] Display clear submitting, success, and failure states.
+- [ ] Make the phone number, email address, and map accessible links.
+
+## PR 4 — Analytics and privacy
+
+- [ ] Decide whether analytics and advertising are still required.
+- [ ] Replace Universal Analytics with GA4, or remove analytics.
+- [ ] Remove unused AdSense scripts.
+- [ ] Document any required consent and privacy behavior.
+
+## PR 5 — SEO and content
+
+- [ ] Add unique page descriptions and dynamic product titles.
+- [ ] Add `lang="zh-Hant"`, canonical URLs, and social sharing metadata.
+- [ ] Add `robots.txt` and `sitemap.xml`.
+- [ ] Confirm and consistently use the company's official legal name.
+- [ ] Update or remove the empty news page.
+- [ ] Generate the footer year dynamically.
+
+## PR 6 — Accessibility
+
+- [ ] Allow browser zoom by removing the restrictive viewport settings.
+- [ ] Add meaningful alternative text to content images.
+- [ ] Add labels and accessible validation messages to form controls.
+- [ ] Make sliders, navigation controls, and menus keyboard accessible.
+- [ ] Add an accessible title to the embedded map.
+
+## PR 7 — Performance
+
+- [ ] Load only the scripts and styles required by each page.
+- [ ] Lazy-load below-the-fold images.
+- [ ] Optimize large images and evaluate WebP or AVIF variants.
+- [ ] Measure the GitHub Pages preview with Lighthouse and address major regressions.
