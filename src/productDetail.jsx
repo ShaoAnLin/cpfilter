@@ -9,12 +9,12 @@ define('productDetail', [
     'use strict';
 
     var getItem = function(){
-        var queryItem = decodeURI(window.location.search).match('item=.*'),
-            targetItem = null;
-        if (queryItem){
-            targetItem = queryItem[0].split('=')[1];
+        var params = new URLSearchParams(window.location.search),
+            targetItem = params.get('item');
+        if (targetItem && Object.prototype.hasOwnProperty.call(constant.ITEMS, targetItem)){
+            return constant.ITEMS[targetItem];
         }
-        return constant.ITEMS[targetItem];
+        return null;
     }
 
     var onLoad = function(){
@@ -24,6 +24,18 @@ define('productDetail', [
     class DetailImages extends React.Component {
         constructor(props) {
             super(props);
+        }
+
+        class ProductNotFound extends React.Component {
+            render() {
+                return (
+                    <div className="text-center">
+                        <h2>找不到產品</h2>
+                        <p>您尋找的產品不存在或連結已失效。</p>
+                        <a className="btn btn-primary" href="products.html">返回產品資訊</a>
+                    </div>
+                );
+            };
         }
 
         componentDidMount = function(){
@@ -307,7 +319,15 @@ define('productDetail', [
 
     instance.init = function(){
         var item = getItem();
-        console.log(item);
+        if (!item){
+            $('#housing-name, #category-name, #category-right-icon').hide();
+            $('.single-slider').hide();
+            $('#item-tab-container').closest('section').hide();
+            $('#section-related').hide();
+            ReactDOM.render(<ProductNotFound/>,
+                document.querySelector('#single-item-info'));
+            return;
+        }
 
         // Housing & Category
         $('#housing-name').html(item.housing)

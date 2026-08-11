@@ -339,25 +339,56 @@ define('products', [
         };
     }
 
+    class ProductNotFound extends React.Component {
+        render() {
+            return (
+                <div className="text-center">
+                    <h2>找不到產品分類</h2>
+                    <p>您尋找的產品分類不存在或連結已失效。</p>
+                    <a className="btn btn-primary" href="products.html">返回產品資訊</a>
+                </div>
+            );
+        };
+    }
+
+    var getQueryParams = function(){
+        var params = new URLSearchParams(window.location.search),
+            housing = params.get('housing'),
+            category = params.get('category'),
+            subgroup = params.get('subgroup'),
+            categoryLocation = category && constant.getHousingAndCategory(category),
+            subgroupLocation = subgroup && constant.getHousingAndCategory(null, subgroup);
+
+        if ((params.has('housing') && (!housing || constant.HOUSING.indexOf(housing) == -1)) ||
+            (params.has('category') && (!category || !categoryLocation.housing)) ||
+            (params.has('subgroup') && (!subgroup || !subgroupLocation.housing)) ||
+            (housing && categoryLocation && housing != categoryLocation.housing) ||
+            (housing && subgroupLocation && housing != subgroupLocation.housing) ||
+            (category && subgroupLocation && category != subgroupLocation.category)){
+            return null;
+        }
+
+        return {
+            housing: housing,
+            category: category,
+            subgroup: subgroup
+        };
+    };
+
     var instance = {};
 
     instance.init = function(){
-        var queryHousing = decodeURI(window.location.search).match('housing=.*'),
-            queryCategory = decodeURI(window.location.search).match('category=.*'),
-            querySubgroup = decodeURI(window.location.search).match('subgroup=.*'),
-            housing = null,
-            category = null,
-            subgroup = null;
+        var query = getQueryParams();
+        if (!query){
+            $('#housing-right-icon, #category-right-icon').hide();
+            ReactDOM.render(<ProductNotFound/>, document.querySelector('#grid-images'));
+            $('#housing-selected').hide();
+            return;
+        }
 
-        if (queryHousing){
-            housing = queryHousing[0].split('=')[1];
-        }
-        if (queryCategory){
-            category = queryCategory[0].split('=')[1];
-        }
-        if (querySubgroup){
-            subgroup = querySubgroup[0].split('=')[1];
-        }
+        var housing = query.housing,
+            category = query.category,
+            subgroup = query.subgroup;
 
         if (category == "濾心"){
             $('#housing-name').html("濾材")
