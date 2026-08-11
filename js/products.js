@@ -350,7 +350,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
       subgroup = params.get('subgroup'),
       categoryLocation = category && constant.getHousingAndCategory(category),
       subgroupLocation = subgroup && constant.getHousingAndCategory(null, subgroup);
-    if (params.has('housing') && (!housing || constant.HOUSING.indexOf(housing) == -1) || params.has('category') && (!category || !categoryLocation || !categoryLocation.housing) || params.has('subgroup') && (!subgroup || !subgroupLocation || !subgroupLocation.housing) || housing && categoryLocation && housing != categoryLocation.housing || housing && subgroupLocation && housing != subgroupLocation.housing || category && subgroupLocation && category != subgroupLocation.category) {
+    if (params.has('housing') && (!housing || constant.HOUSING.indexOf(housing) === -1) || params.has('category') && (!category || !categoryLocation || !categoryLocation.housing) || params.has('subgroup') && (!subgroup || !subgroupLocation || !subgroupLocation.housing) || housing && categoryLocation && housing !== categoryLocation.housing || housing && subgroupLocation && housing !== subgroupLocation.housing || category && subgroupLocation && category !== subgroupLocation.category) {
       return null;
     }
     return {
