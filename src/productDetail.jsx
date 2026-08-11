@@ -26,18 +26,6 @@ define('productDetail', [
             super(props);
         }
 
-        class ProductNotFound extends React.Component {
-            render() {
-                return (
-                    <div className="text-center">
-                        <h2>找不到產品</h2>
-                        <p>您尋找的產品不存在或連結已失效。</p>
-                        <a className="btn btn-primary" href="products.html">返回產品資訊</a>
-                    </div>
-                );
-            };
-        }
-
         componentDidMount = function(){
             onLoad();
         }
@@ -53,6 +41,18 @@ define('productDetail', [
             }
             return (
                 <React.Fragment>{images}</React.Fragment>
+            );
+        };
+    }
+
+    class ProductNotFound extends React.Component {
+        render() {
+            return (
+                <div className="text-center">
+                    <h2>找不到產品</h2>
+                    <p>您尋找的產品不存在或連結已失效。</p>
+                    <a className="btn btn-primary" href="products.html">返回產品資訊</a>
+                </div>
             );
         };
     }

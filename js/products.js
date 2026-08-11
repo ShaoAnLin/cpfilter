@@ -333,23 +333,44 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
       }, /*#__PURE__*/React.createElement("span", null, series))));
     }
   }
+  class ProductNotFound extends React.Component {
+    render() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "text-center"
+      }, /*#__PURE__*/React.createElement("h2", null, "\u627E\u4E0D\u5230\u7522\u54C1\u5206\u985E"), /*#__PURE__*/React.createElement("p", null, "\u60A8\u5C0B\u627E\u7684\u7522\u54C1\u5206\u985E\u4E0D\u5B58\u5728\u6216\u9023\u7D50\u5DF2\u5931\u6548\u3002"), /*#__PURE__*/React.createElement("a", {
+        className: "btn btn-primary",
+        href: "products.html"
+      }, "\u8FD4\u56DE\u7522\u54C1\u8CC7\u8A0A"));
+    }
+  }
+  var getQueryParams = function () {
+    var params = new URLSearchParams(window.location.search),
+      housing = params.get('housing'),
+      category = params.get('category'),
+      subgroup = params.get('subgroup'),
+      categoryLocation = category && constant.getHousingAndCategory(category),
+      subgroupLocation = subgroup && constant.getHousingAndCategory(null, subgroup);
+    if (params.has('housing') && (!housing || constant.HOUSING.indexOf(housing) == -1) || params.has('category') && (!category || !categoryLocation.housing) || params.has('subgroup') && (!subgroup || !subgroupLocation.housing) || housing && categoryLocation && housing != categoryLocation.housing || housing && subgroupLocation && housing != subgroupLocation.housing || category && subgroupLocation && category != subgroupLocation.category) {
+      return null;
+    }
+    return {
+      housing: housing,
+      category: category,
+      subgroup: subgroup
+    };
+  };
   var instance = {};
   instance.init = function () {
-    var queryHousing = decodeURI(window.location.search).match('housing=.*'),
-      queryCategory = decodeURI(window.location.search).match('category=.*'),
-      querySubgroup = decodeURI(window.location.search).match('subgroup=.*'),
-      housing = null,
-      category = null,
-      subgroup = null;
-    if (queryHousing) {
-      housing = queryHousing[0].split('=')[1];
+    var query = getQueryParams();
+    if (!query) {
+      $('#housing-right-icon, #category-right-icon').hide();
+      ReactDOM.render( /*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#grid-images'));
+      $('#housing-selected').hide();
+      return;
     }
-    if (queryCategory) {
-      category = queryCategory[0].split('=')[1];
-    }
-    if (querySubgroup) {
-      subgroup = querySubgroup[0].split('=')[1];
-    }
+    var housing = query.housing,
+      category = query.category,
+      subgroup = query.subgroup;
     if (category == "濾心") {
       $('#housing-name').html("濾材").attr("href", "products.html?housing=濾材");
       $('#category-name').html(category);
