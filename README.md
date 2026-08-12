@@ -122,3 +122,38 @@ mechanism at that time.
 - [ ] Lazy-load below-the-fold images.
 - [ ] Optimize large images and evaluate WebP or AVIF variants.
 - [ ] Measure the GitHub Pages preview with Lighthouse and address major regressions.
+
+## PR 8 — Follow-up usability, accessibility, and cross-platform review
+
+Address these items in focused pull requests, in priority order:
+
+### High priority
+
+- [ ] Correct the mobile-menu expanded state when opening and closing it, and move
+  keyboard focus into the menu on open and back to its trigger on close.
+- [ ] Restore visible keyboard focus indicators for links, buttons, form controls,
+  carousel controls, and product thumbnails.
+- [ ] Use one jQuery version consistently; the pages currently load jQuery 3.7.1
+  directly and jQuery 2.2.4 through RequireJS.
+
+### Usability and mobile experience
+
+- [ ] Add `autocomplete` and appropriate input modes to the contact form so mobile
+  visitors can use browser autofill and a telephone keypad.
+- [ ] Make the telephone number, email address, and address in the footer actionable
+  links, matching the contact page.
+- [ ] Test and confirm that the Formspree endpoint accepts submissions.
+- [ ] Update the home slideshow for dynamic mobile viewport heights and narrow or
+  landscape screens, avoiding content clipping when browser chrome expands or
+  collapses.
+- [ ] Decide whether the empty news page should remain a primary navigation item; if
+  not, replace it with maintained content such as technical support or FAQs, or
+  remove it from the menu.
+
+### Product discovery and performance
+
+- [ ] Add product search by name, model, and application, plus clear active-filter
+  and reset controls for the product catalogue.
+- [ ] Add lazy loading, asynchronous image decoding, and image dimensions where
+  appropriate to product-list and detail-page images to reduce initial transfer and
+  layout shift.
