@@ -106,6 +106,7 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         className: "form-control input-alt",
         name: "author",
         required: true,
+        autoComplete: "name",
         onChange: this.handleChange,
         "aria-required": "true",
         "aria-invalid": invalidFields.author ? "true" : null,
@@ -122,6 +123,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         className: "form-control input-alt",
         name: "email",
         required: true,
+        autoComplete: "email",
+        inputMode: "email",
         onChange: this.handleChange,
         "aria-required": "true",
         "aria-invalid": invalidFields.email ? "true" : null,
@@ -137,6 +140,7 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         type: "text",
         className: "form-control input-alt",
         name: "company",
+        autoComplete: "organization",
         onChange: this.handleChange
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
@@ -149,6 +153,7 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         type: "text",
         className: "form-control input-alt",
         name: "title",
+        autoComplete: "organization-title",
         onChange: this.handleChange
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
@@ -161,6 +166,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         type: "tel",
         className: "form-control input-alt",
         name: "phone",
+        autoComplete: "tel-national",
+        inputMode: "tel",
         onChange: this.handleChange
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
@@ -173,6 +180,9 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         type: "text",
         className: "form-control input-alt",
         name: "phone-ext",
+        autoComplete: "tel-extension",
+        inputMode: "numeric",
+        pattern: "[0-9]*",
         onChange: this.handleChange
       })))), /*#__PURE__*/React.createElement("div", {
         className: "form-group"

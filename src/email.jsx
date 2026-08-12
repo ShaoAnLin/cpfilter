@@ -111,37 +111,37 @@ define('email', [
                     <div className="col-sm-6">
                         <div className="form-group">
                             <label htmlFor="client-name">姓名 *</label>
-                            <input id="client-name" type="text" className="form-control input-alt" name="author" required onChange={this.handleChange} aria-required="true" aria-invalid={invalidFields.author ? "true" : null} aria-describedby="required-note form-status" />
+                            <input id="client-name" type="text" className="form-control input-alt" name="author" required autoComplete="name" onChange={this.handleChange} aria-required="true" aria-invalid={invalidFields.author ? "true" : null} aria-describedby="required-note form-status" />
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className="form-group">
                             <label htmlFor="client-email">Email *</label>
-                            <input id="client-email" type="email" className="form-control input-alt" name="email" required onChange={this.handleChange} aria-required="true" aria-invalid={invalidFields.email ? "true" : null} aria-describedby="required-note form-status" />
+                            <input id="client-email" type="email" className="form-control input-alt" name="email" required autoComplete="email" inputMode="email" onChange={this.handleChange} aria-required="true" aria-invalid={invalidFields.email ? "true" : null} aria-describedby="required-note form-status" />
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className="form-group">
                             <label htmlFor="client-company">公司名稱</label>
-                            <input id="client-company" type="text" className="form-control input-alt" name="company" onChange={this.handleChange} />
+                            <input id="client-company" type="text" className="form-control input-alt" name="company" autoComplete="organization" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className="form-group">
                             <label htmlFor="client-title">職稱</label>
-                            <input id="client-title" type="text" className="form-control input-alt" name="title" onChange={this.handleChange} />
+                            <input id="client-title" type="text" className="form-control input-alt" name="title" autoComplete="organization-title" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className="form-group">
                             <label htmlFor="client-phone">聯絡電話</label>
-                            <input id="client-phone" type="tel" className="form-control input-alt" name="phone" onChange={this.handleChange} />
+                            <input id="client-phone" type="tel" className="form-control input-alt" name="phone" autoComplete="tel-national" inputMode="tel" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className="form-group">
                             <label htmlFor="client-ext">分機</label>
-                            <input id="client-ext" type="text" className="form-control input-alt" name="phone-ext" onChange={this.handleChange} />
+                            <input id="client-ext" type="text" className="form-control input-alt" name="phone-ext" autoComplete="tel-extension" inputMode="numeric" pattern="[0-9]*" onChange={this.handleChange} />
                         </div>
                     </div>
                 </div>

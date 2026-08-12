@@ -65,15 +65,6 @@ body {
   }
 }
 
-// Forms
-// -----
-input, textarea, select, button, a {
-  outline: none;
-  &:focus, &:hover, &:active {
-    outline: none;
-  }
-}
-
 input[type]:not([type='submit']):not([type='hidden']):not([type='checkbox']):not([type='radio']):not([type='file']), textarea {
   @include appearance(none);
 }
@@ -101,6 +92,22 @@ a {
   &.underline-link {
     text-decoration: underline;
   }
+}
+
+// Focus visibility
+// ----------------
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.slick-prev:focus-visible,
+.slick-next:focus-visible,
+.thumbnail-carousel a:focus-visible,
+.offcanvas-toggle:focus-visible {
+  outline: 2px solid #1f4f9a !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #1f4f9a !important;
 }
 // Display & Positioning
 // ---------------------

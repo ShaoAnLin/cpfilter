@@ -12,6 +12,18 @@ define('common', [
 
 	var controller = new slidebars();
 	controller.init();
+	// Wait for the slidebar transition to finish before moving focus.
+	var OFFCANVAS_FOCUS_DELAY_MS = 120;
+	var isOffcanvasOpen = false;
+	var menuFocusReturnTarget = null;
+
+	var getOffCanvasFocusTarget = function() {
+		return $('.off-canvas-cont .inner-toggle, .offcanvas-navigation a, .offcanvas-navigation button').filter(':visible').first();
+	};
+
+	var getMenuTrigger = function() {
+		return $('.mobile-view .offcanvas-toggle[aria-controls="mobile-navigation"]').first();
+	};
 
 	var bindEventOffCanvas = function(){
 		$( '.offcanvas-toggle' ).on( 'click', function ( event ) {
@@ -21,10 +33,30 @@ define('common', [
 			event.stopPropagation();
 			event.preventDefault();
 
+			var menuWasExpanded = isOffcanvasOpen;
+			if (!menuWasExpanded) {
+				menuFocusReturnTarget = $(this);
+			}
+
 			// Toggle the Slidebar with id 'id-2'
 			controller.toggle( 'id-1' );
-			var isExpanded = $(this).attr('aria-expanded') !== 'true';
+			var isExpanded = !menuWasExpanded;
+			isOffcanvasOpen = isExpanded;
 			$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', isExpanded ? 'true' : 'false');
+			if (isExpanded) {
+				setTimeout(function() {
+					var focusTarget = getOffCanvasFocusTarget();
+					if (focusTarget.length) {
+						focusTarget.focus();
+					}
+				}, OFFCANVAS_FOCUS_DELAY_MS);
+			} else {
+				var returnTarget = menuFocusReturnTarget && menuFocusReturnTarget.length ? menuFocusReturnTarget : getMenuTrigger();
+				if (returnTarget && returnTarget.length) {
+					returnTarget.focus();
+				}
+				menuFocusReturnTarget = null;
+			}
 		});
 
 		// Back Button
@@ -84,13 +116,19 @@ define('common', [
 		});
 
 		$(document).on('keydown', function(e) {
-			if (e.key === 'Escape' && $('.offcanvas-toggle[aria-expanded="true"]').length) {
+			if (e.key === 'Escape' && isOffcanvasOpen) {
 				if (typeof controller.close === 'function') {
 					controller.close('id-1');
 				} else {
 					controller.toggle('id-1');
 				}
+				isOffcanvasOpen = false;
 				$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', 'false');
+				var returnTarget = menuFocusReturnTarget && menuFocusReturnTarget.length ? menuFocusReturnTarget : getMenuTrigger();
+				if (returnTarget && returnTarget.length) {
+					returnTarget.focus();
+				}
+				menuFocusReturnTarget = null;
 			}
 		});
   	}
