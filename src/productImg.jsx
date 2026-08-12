@@ -16,7 +16,9 @@ define('productImg', [
         render() {
             var imgSrc = constant.getImgPath(this.props.item, 'main') + ".jpg";
             return (
-                <img className="preview-img" src={imgSrc} alt={this.props.item.title}/>
+                <img className="preview-img" src={imgSrc} alt={this.props.item.title}
+                    loading={this.props.loading || "lazy"} decoding="async"
+                    width="1658" height="1658"/>
             );
         };
     }

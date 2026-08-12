@@ -50,10 +50,13 @@ define('productDetail', [
             var imgUrl = constant.getImgPath(this.props.item, 'main') + ".jpg",
                 imgBaseUrl = constant.getImgPath(this.props.item),
                 images = [];
-            images.push(<img src={imgUrl} alt={this.props.item.title + "主圖"}/>);
+            images.push(<img src={imgUrl} alt={this.props.item.title + "主圖"}
+                loading={this.props.isPrimary ? "eager" : "lazy"} decoding="async"
+                width="1658" height="1658"/>);
             for (var i = 0; i < this.props.item.images; ++i){
                 imgUrl = "{0}{1}.jpg".format(imgBaseUrl, i);
-                images.push(<img src={imgUrl} alt={this.props.item.title + "產品圖片 " + (i + 1)}/>);
+                images.push(<img src={imgUrl} alt={this.props.item.title + "產品圖片 " + (i + 1)}
+                    loading="lazy" decoding="async"/>);
             }
             return (
                 <React.Fragment>{images}</React.Fragment>
@@ -129,10 +132,12 @@ define('productDetail', [
                 });
             } else if (this.props.item.specImgs){
                 var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
-                spec.push(<img src={src} alt={this.props.item.title + "規格圖"}></img>);
+                spec.push(<img src={src} alt={this.props.item.title + "規格圖"}
+                    loading="lazy" decoding="async"></img>);
                 for (var i = 1; i < this.props.item.specImgs; ++i){
                     var src = constant.getImgPath(this.props.item, 'spec' + i) + '.jpg';
-                    spec.push(<img src={src} alt={this.props.item.title + "規格圖 " + (i + 1)}></img>);
+                    spec.push(<img src={src} alt={this.props.item.title + "規格圖 " + (i + 1)}
+                        loading="lazy" decoding="async"></img>);
                 }
             }
             return(
@@ -166,10 +171,12 @@ define('productDetail', [
             var images = [];
             if (this.props.imagesCount){
                 var src = constant.getImgPath(this.props.item, this.props.tabName) + '.jpg';
-                images.push(<img src={src} alt={this.props.item.title + this.props.tabLabel + "圖"}></img>);
+                images.push(<img src={src} alt={this.props.item.title + this.props.tabLabel + "圖"}
+                    loading="lazy" decoding="async"></img>);
                 for (var i = 1; i < this.props.imagesCount; ++i){
                     var src = constant.getImgPath(this.props.item, this.props.tabName + i) + '.jpg';
-                    images.push(<img src={src} alt={this.props.item.title + this.props.tabLabel + "圖 " + (i + 1)}></img>);
+                    images.push(<img src={src} alt={this.props.item.title + this.props.tabLabel + "圖 " + (i + 1)}
+                        loading="lazy" decoding="async"></img>);
                 }
             }
             return(
@@ -228,6 +235,8 @@ define('productDetail', [
         if (item.conditionImgs){
             $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg')
                 .attr("alt", item.title + "操作條件圖")
+                .attr("loading", "lazy")
+                .attr("decoding", "async")
                 .removeAttr("aria-hidden");
         } else{
             $('#nav-tab-condition').hide();
@@ -236,6 +245,8 @@ define('productDetail', [
         if (item.dataImgs){
             $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg')
                 .attr("alt", item.title + "數據圖表")
+                .attr("loading", "lazy")
+                .attr("decoding", "async")
                 .removeAttr("aria-hidden");
         } else{
             $('#nav-tab-data').hide();
@@ -366,10 +377,9 @@ define('productDetail', [
         }
 
         // Images
-        var detailImages = <DetailImages item={item}/>;
-        ReactDOM.render(detailImages,
+        ReactDOM.render(<DetailImages item={item} isPrimary={true}/>,
             document.querySelector('#product-img-thumbnail'));
-        ReactDOM.render(detailImages,
+        ReactDOM.render(<DetailImages item={item} isPrimary={true}/>,
             document.querySelector('#product-img-preview'));
 
         // Details

@@ -11,7 +11,11 @@ define('productImg', ['react', 'reactDOM', 'constant'], function (React, ReactDO
       return /*#__PURE__*/React.createElement("img", {
         className: "preview-img",
         src: imgSrc,
-        alt: this.props.item.title
+        alt: this.props.item.title,
+        loading: this.props.loading || "lazy",
+        decoding: "async",
+        width: "1658",
+        height: "1658"
       });
     }
   };

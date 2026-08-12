@@ -18,8 +18,6 @@ define('header', [
           $('#nav-aboutus').addClass('current');
       } else if (this.props.pathname.indexOf('product') >= 0){
           $('#nav-products').addClass('current');
-      } else if (this.props.pathname.indexOf('news') >= 0){
-          $('#nav-news').addClass('current');
       } else if (this.props.pathname.indexOf('contact') >= 0){
           $('#nav-contact').addClass('current');
       }
@@ -49,9 +47,6 @@ define('header', [
               <li id="nav-products" className="nav-item dropdown lvl-1">
                 <a href="products.html" aria-haspopup="true" aria-expanded="false">產品資訊</a>
                 <SubNav/>
-              </li>
-              <li id="nav-news" className="nav-item lvl-1">
-                <a href="news.html">最新消息</a>
               </li>
               <li id="nav-contact" className="nav-item lvl-1">
                 <a href="contact.html">聯絡我們</a>

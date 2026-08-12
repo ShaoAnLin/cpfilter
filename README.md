@@ -119,7 +119,7 @@ mechanism at that time.
 ## PR 7 — Performance
 
 - [ ] Load only the scripts and styles required by each page.
-- [ ] Lazy-load below-the-fold images.
+- [x] Lazy-load below-the-fold images.
 - [ ] Optimize large images and evaluate WebP or AVIF variants.
 - [ ] Measure the GitHub Pages preview with Lighthouse and address major regressions.
 
@@ -146,14 +146,17 @@ Address these items in focused pull requests, in priority order:
 - [ ] Update the home slideshow for dynamic mobile viewport heights and narrow or
   landscape screens, avoiding content clipping when browser chrome expands or
   collapses.
-- [ ] Decide whether the empty news page should remain a primary navigation item; if
+- [x] Decide whether the empty news page should remain a primary navigation item; if
   not, replace it with maintained content such as technical support or FAQs, or
   remove it from the menu.
+
+The news page remains available for direct links but is no longer shown in the
+primary navigation while there are no maintained announcements.
 
 ### Product discovery and performance
 
 - [ ] Add product search by name, model, and application, plus clear active-filter
   and reset controls for the product catalogue.
-- [ ] Add lazy loading, asynchronous image decoding, and image dimensions where
+- [x] Add lazy loading, asynchronous image decoding, and image dimensions where
   appropriate to product-list and detail-page images to reduce initial transfer and
   layout shift.

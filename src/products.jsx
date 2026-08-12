@@ -24,7 +24,9 @@ define('products', [
                     <div className="col-md-4">
                       <div className="tile tile-category">
                         <a href={link} className="preview-box">
-                          <img src={imgSrc} alt={housing + "分類"}/>
+                          <img src={imgSrc} alt={housing + "分類"}
+                            loading={count <= 3 ? "eager" : "lazy"} decoding="async"
+                            width="1658" height="1658"/>
                         </a>
                         <div className="tile-title">{housing}</div>
                       </div>
@@ -51,7 +53,9 @@ define('products', [
                     <div className="col-md-4">
                       <div className="tile tile-category">
                         <a href={link} className="preview-box">
-                          <img src={imgSrc} alt={category + "分類"}/>
+                          <img src={imgSrc} alt={category + "分類"}
+                            loading={count <= 3 ? "eager" : "lazy"} decoding="async"
+                            width="1658" height="1658"/>
                         </a>
                         <div className="tile-title">{category}</div>
                       </div>
@@ -79,7 +83,9 @@ define('products', [
                     <div className="col-md-4">
                       <div className="tile tile-category">
                         <a href={link} className="preview-box">
-                          <img src={imgSrc} alt={subgroup + "分類"}/>
+                          <img src={imgSrc} alt={subgroup + "分類"}
+                            loading={count <= 3 ? "eager" : "lazy"} decoding="async"
+                            width="1658" height="1658"/>
                         </a>
                         <div className="tile-title">{subgroup}</div>
                       </div>
@@ -282,7 +288,8 @@ define('products', [
 
                 if (select){
                     ++num;
-                    images.push(<ProductGridItem id={key} item={item}/>);
+                    images.push(<ProductGridItem id={key} item={item}
+                        loading={num <= cols ? "eager" : "lazy"}/>);
                     if (num % cols == 0){
                         products.push(<div className="row">{images}</div>);
                         images = [];
@@ -321,7 +328,7 @@ define('products', [
             return (
                 <div className="col-md-4 tile">
                     <a href={detailLink}>
-                        <productImg.MainImg item={this.props.item}/>
+                        <productImg.MainImg item={this.props.item} loading={this.props.loading}/>
                     </a>
                     <div className="tile-title">
                         <a href={detailLink}>{this.props.item.title}</a>

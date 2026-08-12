@@ -12,8 +12,6 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         $('#nav-aboutus').addClass('current');
       } else if (this.props.pathname.indexOf('product') >= 0) {
         $('#nav-products').addClass('current');
-      } else if (this.props.pathname.indexOf('news') >= 0) {
-        $('#nav-news').addClass('current');
       } else if (this.props.pathname.indexOf('contact') >= 0) {
         $('#nav-contact').addClass('current');
       }
@@ -59,11 +57,6 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         "aria-haspopup": "true",
         "aria-expanded": "false"
       }, "\u7522\u54C1\u8CC7\u8A0A"), /*#__PURE__*/React.createElement(SubNav, null)), /*#__PURE__*/React.createElement("li", {
-        id: "nav-news",
-        className: "nav-item lvl-1"
-      }, /*#__PURE__*/React.createElement("a", {
-        href: "news.html"
-      }, "\u6700\u65B0\u6D88\u606F")), /*#__PURE__*/React.createElement("li", {
         id: "nav-contact",
         className: "nav-item lvl-1"
       }, /*#__PURE__*/React.createElement("a", {
