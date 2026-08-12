@@ -43,8 +43,14 @@ body {
   }
 }
 
+// Slidebars canvas is the actual scrolling container, so the horizontal
+// overflow has to be clamped here as well as on html/body.
 [canvas=container] {
   background-color: $body-bg;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 // Forms
