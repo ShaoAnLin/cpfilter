@@ -19,7 +19,7 @@ define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, 
         type: "button",
         className: "offcanvas-toggle inner-toggle",
         "aria-controls": "mobile-navigation",
-        "aria-expanded": "true",
+        "aria-expanded": "false",
         "aria-label": "\u95DC\u9589\u9078\u55AE"
       }, /*#__PURE__*/React.createElement("i", {
         className: "material-icons close",
