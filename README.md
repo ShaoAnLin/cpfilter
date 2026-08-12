@@ -81,9 +81,9 @@ Each section should be handled in a separate, focused pull request. Verify every
 ## PR 3 — Contact form reliability
 
 - [ ] Confirm the current Formspree endpoint is active.
-- [ ] Use semantic form markup and browser validation.
-- [ ] Display clear submitting, success, and failure states.
-- [ ] Make the phone number, email address, and map accessible links.
+- [x] Use semantic form markup and browser validation.
+- [x] Display clear submitting, success, and failure states.
+- [x] Make the phone number, email address, and map accessible links.
 
 ## PR 4 — Analytics and privacy
 
