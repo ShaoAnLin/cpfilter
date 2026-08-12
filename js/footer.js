@@ -61,5 +61,5 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
       }, /*#__PURE__*/React.createElement("span", null, "\xA9 2022. CP FILTER Industrial Co.,Ltd. All Rights Reserved.")));
     }
   }
-  ReactDOM.render( /*#__PURE__*/React.createElement(Footer, null), document.querySelector('.footer'));
+  ReactDOM.render(/*#__PURE__*/React.createElement(Footer, null), document.querySelector('.footer'));
 });

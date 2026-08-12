@@ -9,7 +9,7 @@ define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, 
       var sideMenu = [];
       constant.HOUSING.forEach(function (housing) {
         var housingLink = "products.html?housing=" + housing;
-        sideMenu.push( /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+        sideMenu.push(/*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
           href: housingLink
         }, housing)));
       });
@@ -45,5 +45,5 @@ define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, 
       }, "\u806F\u7D61\u6211\u5011"))))));
     }
   }
-  ReactDOM.render( /*#__PURE__*/React.createElement(SideNav, null), document.querySelector('.off-canvas-cont'));
+  ReactDOM.render(/*#__PURE__*/React.createElement(SideNav, null), document.querySelector('.off-canvas-cont'));
 });

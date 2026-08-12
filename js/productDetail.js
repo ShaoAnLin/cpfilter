@@ -25,13 +25,13 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       var imgUrl = constant.getImgPath(this.props.item, 'main') + ".jpg",
         imgBaseUrl = constant.getImgPath(this.props.item),
         images = [];
-      images.push( /*#__PURE__*/React.createElement("img", {
+      images.push(/*#__PURE__*/React.createElement("img", {
         src: imgUrl,
         alt: "Thumb"
       }));
       for (var i = 0; i < this.props.item.images; ++i) {
         imgUrl = "{0}{1}.jpg".format(imgBaseUrl, i);
-        images.push( /*#__PURE__*/React.createElement("img", {
+        images.push(/*#__PURE__*/React.createElement("img", {
           src: imgUrl,
           alt: "Thumb"
         }));
@@ -58,7 +58,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       if (Array.isArray(this.props.item.range)) {
         var ranges = [];
         this.props.item.range.forEach(function (str) {
-          ranges.push( /*#__PURE__*/React.createElement("li", null, str));
+          ranges.push(/*#__PURE__*/React.createElement("li", null, str));
         });
         rangeDiv = /*#__PURE__*/React.createElement("ul", {
           className: "list-featured"
@@ -97,16 +97,16 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       var spec = [];
       if (this.props.item.spec) {
         $.each(this.props.item.spec, function (key, value) {
-          spec.push( /*#__PURE__*/React.createElement("li", null, key, ": ", value));
+          spec.push(/*#__PURE__*/React.createElement("li", null, key, ": ", value));
         });
       } else if (this.props.item.specImgs) {
         var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
-        spec.push( /*#__PURE__*/React.createElement("img", {
+        spec.push(/*#__PURE__*/React.createElement("img", {
           src: src
         }));
         for (var i = 1; i < this.props.item.specImgs; ++i) {
           var src = constant.getImgPath(this.props.item, 'spec' + i) + '.jpg';
-          spec.push( /*#__PURE__*/React.createElement("img", {
+          spec.push(/*#__PURE__*/React.createElement("img", {
             src: src
           }));
         }
@@ -123,7 +123,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     render() {
       var features = [];
       this.props.feature.forEach(function (str) {
-        features.push( /*#__PURE__*/React.createElement("li", null, str));
+        features.push(/*#__PURE__*/React.createElement("li", null, str));
       });
       return /*#__PURE__*/React.createElement("ul", {
         className: "list-featured"
@@ -138,12 +138,12 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       var images = [];
       if (this.props.imagesCount) {
         var src = constant.getImgPath(this.props.item, this.props.tabName) + '.jpg';
-        images.push( /*#__PURE__*/React.createElement("img", {
+        images.push(/*#__PURE__*/React.createElement("img", {
           src: src
         }));
         for (var i = 1; i < this.props.imagesCount; ++i) {
           var src = constant.getImgPath(this.props.item, this.props.tabName + i) + '.jpg';
-          images.push( /*#__PURE__*/React.createElement("img", {
+          images.push(/*#__PURE__*/React.createElement("img", {
             src: src
           }));
         }
@@ -155,7 +155,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
   }
   var setTabDetail = function (item) {
     if (item.spec && item.specUpper != true || item.specImgs) {
-      ReactDOM.render( /*#__PURE__*/React.createElement(ItemSpec, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(ItemSpec, {
         item: item
       }), document.querySelector('#spec-detail'));
       if (item.specImgs) {
@@ -169,14 +169,14 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         $('#nav-tab-feature').addClass('active');
         $('#tab-feature').addClass('in active');
       }
-      ReactDOM.render( /*#__PURE__*/React.createElement(ItemFeature, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(ItemFeature, {
         feature: item.feature
       }), document.querySelector('#feature-detail'));
     } else {
       $('#nav-tab-feature').hide();
     }
     if (item.modelImgs) {
-      ReactDOM.render( /*#__PURE__*/React.createElement(ItemImages, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(ItemImages, {
         item: item,
         tabName: "model",
         imagesCount: item.modelImgs
@@ -185,7 +185,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       $('#nav-tab-model').hide();
     }
     if (item.componentImgs) {
-      ReactDOM.render( /*#__PURE__*/React.createElement(ItemImages, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(ItemImages, {
         item: item,
         tabName: "component",
         imagesCount: item.componentImgs
@@ -194,7 +194,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       $('#nav-tab-component').hide();
     }
     if (item.sizeImgs) {
-      ReactDOM.render( /*#__PURE__*/React.createElement(ItemImages, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(ItemImages, {
         item: item,
         tabName: "size",
         imagesCount: item.sizeImgs
@@ -225,7 +225,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         var seriesList = constant.SERIES[item.housing][item.category];
         for (var i = 0; i < seriesList.length && num < 4; ++i) {
           if (seriesList[i] != item.series) {
-            products.push( /*#__PURE__*/React.createElement(ProductGridItem, {
+            products.push(/*#__PURE__*/React.createElement(ProductGridItem, {
               id: seriesList[i],
               item: constant.ITEMS[seriesList[i]]
             }));
@@ -238,7 +238,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
               var seriesList = constant.SERIES[item.housing][category];
               for (var i = 0; i < seriesList.length && num < 4; ++i) {
                 if (seriesList[i] != item.series) {
-                  products.push( /*#__PURE__*/React.createElement(ProductGridItem, {
+                  products.push(/*#__PURE__*/React.createElement(ProductGridItem, {
                     id: seriesList[i],
                     item: constant.ITEMS[seriesList[i]]
                   }));
@@ -253,7 +253,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         $.each(categoryList, function (cat, seriesList) {
           if (num < 4 && seriesList == null) {
             if (cat != item.category) {
-              products.push( /*#__PURE__*/React.createElement(ProductGridItem, {
+              products.push(/*#__PURE__*/React.createElement(ProductGridItem, {
                 id: cat,
                 item: constant.ITEMS[cat]
               }));
@@ -262,7 +262,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
           } else if (num < 4 && seriesList.length > 0) {
             for (var i = 0; i < seriesList.length && num < 4; ++i) {
               if (seriesList[i] != item.series) {
-                products.push( /*#__PURE__*/React.createElement(ProductGridItem, {
+                products.push(/*#__PURE__*/React.createElement(ProductGridItem, {
                   id: seriesList[i],
                   item: constant.ITEMS[seriesList[i]]
                 }));
@@ -316,7 +316,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       $('.single-slider').hide();
       $('#item-tab-container').closest('section').hide();
       $('#section-related').hide();
-      ReactDOM.render( /*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#single-item-info'));
+      ReactDOM.render(/*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#single-item-info'));
       return;
     }
 
@@ -337,13 +337,13 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     ReactDOM.render(detailImages, document.querySelector('#product-img-preview'));
 
     // Details
-    ReactDOM.render( /*#__PURE__*/React.createElement(ItemInfo, {
+    ReactDOM.render(/*#__PURE__*/React.createElement(ItemInfo, {
       item: item
     }), document.querySelector('#single-item-info'));
     setTabDetail(item);
 
     // Related Products
-    ReactDOM.render( /*#__PURE__*/React.createElement(RelatedProducts, {
+    ReactDOM.render(/*#__PURE__*/React.createElement(RelatedProducts, {
       item: item
     }), document.querySelector('#related-products'));
   };

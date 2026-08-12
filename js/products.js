@@ -13,7 +13,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         count++;
         var link = "products.html?housing=" + housing,
           imgSrc = "img/products/category/{0}.jpg".format(housing);
-        rowItems.push( /*#__PURE__*/React.createElement("div", {
+        rowItems.push(/*#__PURE__*/React.createElement("div", {
           className: "col-md-4"
         }, /*#__PURE__*/React.createElement("div", {
           className: "tile tile-category"
@@ -26,13 +26,13 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "tile-title"
         }, housing))));
         if (count % 3 == 0) {
-          housingGrid.push( /*#__PURE__*/React.createElement("div", {
+          housingGrid.push(/*#__PURE__*/React.createElement("div", {
             className: "row"
           }, rowItems));
           rowItems = [];
         }
       });
-      housingGrid.push( /*#__PURE__*/React.createElement("div", {
+      housingGrid.push(/*#__PURE__*/React.createElement("div", {
         className: "row"
       }, rowItems));
       return housingGrid;
@@ -46,7 +46,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         count++;
         var link = "products.html?category=" + category,
           imgSrc = "img/products/category/{0}.jpg".format(category);
-        rowItems.push( /*#__PURE__*/React.createElement("div", {
+        rowItems.push(/*#__PURE__*/React.createElement("div", {
           className: "col-md-4"
         }, /*#__PURE__*/React.createElement("div", {
           className: "tile tile-category"
@@ -59,13 +59,13 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "tile-title"
         }, category))));
         if (count % 3 == 0) {
-          categoryGrid.push( /*#__PURE__*/React.createElement("div", {
+          categoryGrid.push(/*#__PURE__*/React.createElement("div", {
             className: "row"
           }, rowItems));
           rowItems = [];
         }
       });
-      categoryGrid.push( /*#__PURE__*/React.createElement("div", {
+      categoryGrid.push(/*#__PURE__*/React.createElement("div", {
         className: "row"
       }, rowItems));
       return categoryGrid;
@@ -80,7 +80,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         count++;
         var link = "products.html?subgroup=" + subgroup,
           imgSrc = "img/products/category/{0}.jpg".format(subgroup);
-        rowItems.push( /*#__PURE__*/React.createElement("div", {
+        rowItems.push(/*#__PURE__*/React.createElement("div", {
           className: "col-md-4"
         }, /*#__PURE__*/React.createElement("div", {
           className: "tile tile-category"
@@ -93,13 +93,13 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "tile-title"
         }, subgroup))));
         if (count % 3 == 0) {
-          subgroupGrid.push( /*#__PURE__*/React.createElement("div", {
+          subgroupGrid.push(/*#__PURE__*/React.createElement("div", {
             className: "row"
           }, rowItems));
           rowItems = [];
         }
       });
-      subgroupGrid.push( /*#__PURE__*/React.createElement("div", {
+      subgroupGrid.push(/*#__PURE__*/React.createElement("div", {
         className: "row"
       }, rowItems));
       return subgroupGrid;
@@ -129,7 +129,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         var housingLink = "?housing=" + housing,
           numOfItems = this.getGroupNumOfItems(housing),
           isCurrent = housing == this.props.housing && currentCategory == null;
-        sideBar.push( /*#__PURE__*/React.createElement("li", {
+        sideBar.push(/*#__PURE__*/React.createElement("li", {
           className: isCurrent && "current"
         }, /*#__PURE__*/React.createElement("a", {
           href: housingLink,
@@ -138,7 +138,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "count"
         }, "(", numOfItems, ")")));
         if (housing == currentHousing) {
-          sideBar.push( /*#__PURE__*/React.createElement(SideBarSubMenu, {
+          sideBar.push(/*#__PURE__*/React.createElement(SideBarSubMenu, {
             housing: housing,
             category: currentCategory,
             subgroup: this.props.subgroup
@@ -182,7 +182,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         if (subgroupList.length == 0) {
           var numOfItems = constant.SERIES[this.props.housing][category].length,
             classes = category == this.props.category ? "current submenu" : "submenu";
-          subMenu.push( /*#__PURE__*/React.createElement("li", {
+          subMenu.push(/*#__PURE__*/React.createElement("li", {
             className: classes
           }, /*#__PURE__*/React.createElement("a", {
             href: categoryLink,
@@ -199,7 +199,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
               classes = subgroup == this.props.subgroup ? "current submenu2" : "submenu2";
             totalItems += numOfItems;
             if (this.props.category == category) {
-              series.push( /*#__PURE__*/React.createElement("li", {
+              series.push(/*#__PURE__*/React.createElement("li", {
                 className: classes
               }, /*#__PURE__*/React.createElement("a", {
                 href: subgroupLink,
@@ -210,7 +210,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
             }
           }, this);
           var classes = category == this.props.category && !this.props.subgroup ? "current submenu" : "submenu";
-          subMenu.push( /*#__PURE__*/React.createElement("li", {
+          subMenu.push(/*#__PURE__*/React.createElement("li", {
             className: classes
           }, /*#__PURE__*/React.createElement("a", {
             href: categoryLink,
@@ -236,7 +236,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
       constant.POPULAR_PRODUCTS.forEach(function (itemId) {
         var item = constant.ITEMS[itemId],
           detailUrl = "product-detail.html?item=" + itemId;
-        latestProducts.push( /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+        latestProducts.push(/*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
           href: detailUrl,
           className: "cart-thumb"
         }, /*#__PURE__*/React.createElement(productImg.MainImg, {
@@ -279,12 +279,12 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         }
         if (select) {
           ++num;
-          images.push( /*#__PURE__*/React.createElement(ProductGridItem, {
+          images.push(/*#__PURE__*/React.createElement(ProductGridItem, {
             id: key,
             item: item
           }));
           if (num % cols == 0) {
-            products.push( /*#__PURE__*/React.createElement("div", {
+            products.push(/*#__PURE__*/React.createElement("div", {
               className: "row"
             }, images));
             images = [];
@@ -292,7 +292,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
         }
       });
       if (images.length > 0) {
-        products.push( /*#__PURE__*/React.createElement("div", {
+        products.push(/*#__PURE__*/React.createElement("div", {
           className: "row"
         }, images));
       }
@@ -364,7 +364,7 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
     var query = getQueryParams();
     if (!query) {
       $('#housing-right-icon, #category-right-icon').hide();
-      ReactDOM.render( /*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#grid-images'));
+      ReactDOM.render(/*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#grid-images'));
       $('#housing-selected').hide();
       return;
     }
@@ -382,29 +382,29 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
       $('#category-right-icon').hide();
     }
     if (housing == "過濾器" || housing == "濾材") {
-      ReactDOM.render( /*#__PURE__*/React.createElement(GridImages, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(GridImages, {
         housing: housing
       }), document.querySelector('#grid-images'));
       $('#housing-selected').hide();
     } else if (category == "濾心") {
-      ReactDOM.render( /*#__PURE__*/React.createElement(GridImages, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(GridImages, {
         category: category
       }), document.querySelector('#grid-images'));
       $('#housing-selected').hide();
     } else if (housing || category || subgroup) {
-      ReactDOM.render( /*#__PURE__*/React.createElement(SideBarList, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(SideBarList, {
         housing: housing,
         category: category,
         subgroup: subgroup
       }), document.querySelector('#sidebar-cat-list'));
-      ReactDOM.render( /*#__PURE__*/React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
-      ReactDOM.render( /*#__PURE__*/React.createElement(ProductItems, {
+      ReactDOM.render(/*#__PURE__*/React.createElement(LatestProducts, null), document.querySelector('#latest-products'));
+      ReactDOM.render(/*#__PURE__*/React.createElement(ProductItems, {
         housing: housing,
         category: category,
         subgroup: subgroup
       }), document.querySelector('#product-grid-items'));
     } else {
-      ReactDOM.render( /*#__PURE__*/React.createElement(GridImages, null), document.querySelector('#grid-images'));
+      ReactDOM.render(/*#__PURE__*/React.createElement(GridImages, null), document.querySelector('#grid-images'));
       $('#housing-selected').hide();
     }
   };
