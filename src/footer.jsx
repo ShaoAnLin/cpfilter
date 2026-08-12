@@ -62,12 +62,12 @@ define('footer', [
       </div>
       
       <div className="copyright mobile-hide">
-        <span>&copy; 2022. 新凱濾材工業有限公司 </span>
+        <span>&copy; {new Date().getFullYear()}. 新凱濾材工業有限公司 </span>
         <span className="brandname-en">CP FILTER Industrial Co.,Ltd.</span>
         <span>All Rights Reserved.</span>
       </div>
       <div className="copyright mobile-show">
-        <span>&copy; 2022. CP FILTER Industrial Co.,Ltd. All Rights Reserved.</span>
+        <span>&copy; {new Date().getFullYear()}. CP FILTER Industrial Co.,Ltd. All Rights Reserved.</span>
       </div>
       </React.Fragment>);
     }
