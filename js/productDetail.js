@@ -90,21 +90,13 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         className: "series-name"
       }, constant.getItemIdStr(this.props.item)), /*#__PURE__*/React.createElement("h4", {
         className: "item-title"
-      }, this.props.item.title), /*#__PURE__*/React.createElement("div", null, this.props.item.subtitle), this.props.item.range && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "col-sm-12"
-      }, /*#__PURE__*/React.createElement("h5", {
+      }, this.props.item.title), /*#__PURE__*/React.createElement("div", null, this.props.item.subtitle), this.props.item.range && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h5", {
         className: "section-title"
-      }, "\u9069\u7528\u7BC4\u570D"))), /*#__PURE__*/React.createElement("div", {
+      }, "\u9069\u7528\u7BC4\u570D"), /*#__PURE__*/React.createElement("div", {
         className: "item-range"
-      }, rangeDiv)), this.props.item.spec && this.props.item.specUpper && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "col-sm-12"
-      }, /*#__PURE__*/React.createElement("h5", {
+      }, rangeDiv)), this.props.item.spec && this.props.item.specUpper && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h5", {
         className: "section-title"
-      }, "\u898F\u683C"))), /*#__PURE__*/React.createElement(ItemSpec, {
+      }, "\u898F\u683C"), /*#__PURE__*/React.createElement(ItemSpec, {
         item: this.props.item
       })));
     }

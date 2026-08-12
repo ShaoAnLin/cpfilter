@@ -14,14 +14,39 @@ There are currently two publishing targets:
 
 After merging a change into `master`, verify the preview before publishing production:
 
-1. Open https://shaoanlin.github.io/cpfilter/.
-2. Confirm that the home, about, products, product detail, news, and contact pages load.
-3. Confirm that navigation, product images, mobile layout, and the contact form behave correctly.
-4. Publish the verified files to the production web host:
+1. Run `npm test` (see [Automated Checks](#automated-checks)) and confirm it passes.
+2. Open https://shaoanlin.github.io/cpfilter/.
+3. Confirm that the home, about, products, product detail, news, and contact pages load.
+4. Confirm that navigation, product images, mobile layout, and the contact form behave correctly.
+5. Publish the verified files to the production web host:
 
    ```sh
    git-ftp push
    ```
+
+## Automated Checks
+End-to-end smoke tests render every page in headless Chromium and fail when the
+site enters an odd state. They serve the repository root over HTTP and replace the
+CDN scripts (jQuery, RequireJS, React) with the matching packages from
+`node_modules`, so they run without internet access.
+
+```sh
+npm install
+npm run test:setup   # one-off: download the headless Chromium build
+npm test
+```
+
+Each page (home, about us, products, product detail, unknown product, news and
+contact) is checked for:
+
+- JavaScript errors, console errors, and failed or missing requests (404s).
+- The preloader finishing, so the page becomes visible, and the React header,
+  footer (with the current year) and main content rendering.
+- Non-empty `<title>`, meta description and an absolute canonical URL.
+- Images loading and rendering at their natural aspect ratio, catching stretched
+  or squashed pictures.
+- Section headings (`.block-title`) sharing one consistent, reasonable size.
+- No content overflowing the viewport at a 375px mobile width.
 
 ## Local Development
 Use Browser Sync to visualize website locally.

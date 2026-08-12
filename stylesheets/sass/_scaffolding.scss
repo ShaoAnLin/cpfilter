@@ -74,6 +74,7 @@ input[type]:not([type='submit']):not([type='hidden']):not([type='checkbox']):not
 // ------
 img {
   width: 100%;
+  height: auto;
   &.auto-width {
     width: auto;
   }

@@ -100,17 +100,13 @@ define('productDetail', [
                     <div>{this.props.item.subtitle}</div>
                     {this.props.item.range &&
                         <React.Fragment>
-                        <div className="row">
-                            <div className="col-sm-12"><h5 className="section-title">適用範圍</h5></div>
-                        </div>
+                        <h5 className="section-title">適用範圍</h5>
                         <div className="item-range">{rangeDiv}</div>
                         </React.Fragment>
                     }
                     {this.props.item.spec && this.props.item.specUpper &&
                         <React.Fragment>
-                        <div className="row">
-                            <div className="col-sm-12"><h5 className="section-title">規格</h5></div>
-                        </div>
+                        <h5 className="section-title">規格</h5>
                         <ItemSpec item={this.props.item}/>
                         </React.Fragment>
                     }

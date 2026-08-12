@@ -374,7 +374,7 @@ define('common', [
 
 		// Single Item Page Carousel
 		// -------------------------
-		var $thumbnailCarousel = $('.thumbnail-carousel');
+		var $thumbnailCarousel = $('.thumbnail-carousel').not('.slick-initialized');
 		if($thumbnailCarousel && $thumbnailCarousel.length > 0) {
 			$thumbnailCarousel.slick({
 				slidesToShow: 4,
@@ -386,7 +386,7 @@ define('common', [
 			});
 		}
 
-		var $imagePreview1 = $('.image-preview1');
+		var $imagePreview1 = $('.image-preview1').not('.slick-initialized');
 		if($imagePreview1 && $imagePreview1.length > 0) {
 			$imagePreview1.slick({
 				slidesToShow: 1,

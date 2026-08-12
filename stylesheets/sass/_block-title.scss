@@ -9,6 +9,11 @@
   display: block;
   text-align: left;
   position: relative;
+  font-size: $font-size-h4;
+  line-height: 1.5;
+  @media #{$mobile-land} {
+    font-size: $font-size-h5;
+  }
   small {
     display: block;
     position: absolute;
