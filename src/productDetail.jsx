@@ -225,14 +225,16 @@ define('productDetail', [
 
         if (item.conditionImgs){
             $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg')
-                .attr("alt", item.title + "操作條件圖");
+                .attr("alt", item.title + "操作條件圖")
+                .removeAttr("aria-hidden");
         } else{
             $('#nav-tab-condition').hide();
         }
 
         if (item.dataImgs){
             $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg')
-                .attr("alt", item.title + "數據圖表");
+                .attr("alt", item.title + "數據圖表")
+                .removeAttr("aria-hidden");
         } else{
             $('#nav-tab-data').hide();
         }
