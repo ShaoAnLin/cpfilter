@@ -40,7 +40,11 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         body: JSON.stringify(payload)
       }).then(function (response) {
         if (!response.ok) {
-          throw new Error('submit_failed');
+          return response.json().then(function (result) {
+            throw new Error(result && result.error ? result.error : 'submit_failed');
+          }, function () {
+            throw new Error('submit_failed');
+          });
         }
         return response;
       }).then(function () {
@@ -49,10 +53,14 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
           submitState: 'success',
           message: '已成功送出，我們會盡快與您聯繫。'
         });
-      }.bind(this)).catch(function () {
+      }.bind(this)).catch(function (error) {
+        var failureMessage = '送出失敗，請稍後再試，或直接來電與我們聯繫。';
+        if (error && error.message && error.message !== 'submit_failed') {
+          failureMessage = '送出失敗：' + error.message;
+        }
         this.setState({
           submitState: 'error',
-          message: '送出失敗，請稍後再試，或直接來電與我們聯繫。'
+          message: failureMessage
         });
       }.bind(this));
     }
@@ -61,7 +69,7 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         messageClass = submitState === 'error' ? 'error' : '';
       return /*#__PURE__*/React.createElement("form", {
         onSubmit: this.handleSubmit,
-        noValidate: false
+        noValidate: true
       }, /*#__PURE__*/React.createElement("div", {
         className: "row form"
       }, /*#__PURE__*/React.createElement("div", {
