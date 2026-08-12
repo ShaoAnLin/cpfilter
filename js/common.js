@@ -96,10 +96,6 @@ define('common', [
   	}
 
 	var bindAccessibleTabs = function(){
-		$(document).on('click', '[role="tab"]', function (event) {
-			event.preventDefault();
-		});
-
 		$(document).on('shown.bs.tab', '[role="tab"]', function (event) {
 			var target = $(event.target).closest('[role="tab"]'),
 				tablist = target.closest('[role="tablist"]');
