@@ -32,7 +32,7 @@ define('header', [
           <div className="middle-bar">
           <div className="column left-side">
             <div className="logo">
-              <img className="logo-img" src="img/logo.png"/>
+              <img className="logo-img" src="img/logo.png" alt="新凱濾材工業有限公司"/>
               <div className="brandname">新凱濾材工業有限公司</div>
               <div className="brandname-en">CP FILTER Industrial Co.,Ltd.</div>
             </div>
@@ -47,7 +47,7 @@ define('header', [
                 <a href="aboutus.html">關於新凱</a>
               </li>
               <li id="nav-products" className="nav-item dropdown lvl-1">
-                <a href="products.html">產品資訊</a>
+                <a href="products.html" aria-haspopup="true" aria-expanded="false">產品資訊</a>
                 <SubNav/>
               </li>
               <li id="nav-news" className="nav-item lvl-1">
@@ -63,11 +63,11 @@ define('header', [
         
         <div className="mobile-view">
           <div className="container">
-          <a href="#" className="offcanvas-toggle">
-            <i className="material-icons menu"></i>
-          </a>
+          <button type="button" className="offcanvas-toggle" aria-controls="mobile-navigation" aria-expanded="false" aria-label="開啟選單">
+            <i className="material-icons menu" aria-hidden="true"></i>
+          </button>
           <div className="logo">
-            <img className="logo-img" src="img/logo_pure.png"/>
+            <img className="logo-img" src="img/logo_pure.png" alt="新凱濾材工業有限公司"/>
             <span className="brandname">新凱濾材工業有限公司</span>
           </div>
           </div>
@@ -90,7 +90,7 @@ define('header', [
     }
     render (){
       return (
-        <ul className="sub-menu">
+        <ul className="sub-menu" aria-label="產品分類">
           {this.getMenu()}
         </ul>
       );
@@ -111,7 +111,7 @@ define('header', [
       }
       return (
         <li className={menuClass.join(' ')}>
-          <a href={housingHref}>{housing}</a>
+          <a href={housingHref} aria-haspopup={hasSubMenu ? "true" : null} aria-expanded={hasSubMenu ? "false" : null}>{housing}</a>
           {hasSubMenu && <SubMenuItem housing={housing}></SubMenuItem>}
         </li>);
     }
@@ -131,7 +131,7 @@ define('header', [
     }
     render (){
       return (
-        <ul class="sub-menu">
+        <ul className="sub-menu" aria-label={this.props.housing + "分類"}>
           {this.getSubMenu()}
         </ul>);
     }

@@ -76,7 +76,8 @@
 			}
 		}
 	}
-	&:hover {
+	&:hover,
+	&:focus-within {
 		color: $dropdown-hover-color;
 		&::after { color: $dropdown-hover-color; }
 		>a { color: $dropdown-hover-color; }

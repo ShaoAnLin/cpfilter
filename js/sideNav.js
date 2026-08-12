@@ -15,15 +15,19 @@ define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, 
       });
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "side-nav-tools"
-      }, /*#__PURE__*/React.createElement("a", {
-        href: "#",
-        className: "offcanvas-toggle inner-toggle"
+      }, /*#__PURE__*/React.createElement("button", {
+        type: "button",
+        className: "offcanvas-toggle inner-toggle",
+        "aria-controls": "mobile-navigation",
+        "aria-label": "\u95DC\u9589\u9078\u55AE"
       }, /*#__PURE__*/React.createElement("i", {
-        className: "material-icons close"
+        className: "material-icons close",
+        "aria-hidden": "true"
       }))), /*#__PURE__*/React.createElement("nav", {
+        id: "mobile-navigation",
         className: "offcanvas-navigation",
         role: "navigation",
-        "data-back-btn-text": "Back"
+        "data-back-btn-text": "\u8FD4\u56DE"
       }, /*#__PURE__*/React.createElement("div", {
         className: "menu-site-menu-container"
       }, /*#__PURE__*/React.createElement("ul", {
@@ -35,7 +39,9 @@ define('sideNav', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, 
       }, "\u95DC\u65BC\u65B0\u51F1")), /*#__PURE__*/React.createElement("li", {
         className: "menu-item-has-children"
       }, /*#__PURE__*/React.createElement("a", {
-        href: "products.html"
+        href: "products.html",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
       }, "\u7522\u54C1\u8CC7\u8A0A"), /*#__PURE__*/React.createElement("ul", {
         className: "sub-menu"
       }, sideMenu)), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {

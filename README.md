@@ -110,11 +110,11 @@ mechanism at that time.
 
 ## PR 6 — Accessibility
 
-- [ ] Allow browser zoom by removing the restrictive viewport settings.
-- [ ] Add meaningful alternative text to content images.
-- [ ] Add labels and accessible validation messages to form controls.
-- [ ] Make sliders, navigation controls, and menus keyboard accessible.
-- [ ] Add an accessible title to the embedded map.
+- [x] Allow browser zoom by removing the restrictive viewport settings.
+- [x] Add meaningful alternative text to content images.
+- [x] Add labels and accessible validation messages to form controls.
+- [x] Make sliders, navigation controls, and menus keyboard accessible.
+- [x] Add an accessible title to the embedded map.
 
 ## PR 7 — Performance
 

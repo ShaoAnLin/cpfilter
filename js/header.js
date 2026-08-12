@@ -31,7 +31,8 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         className: "logo"
       }, /*#__PURE__*/React.createElement("img", {
         className: "logo-img",
-        src: "img/logo.png"
+        src: "img/logo.png",
+        alt: "\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8"
       }), /*#__PURE__*/React.createElement("div", {
         className: "brandname"
       }, "\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8"), /*#__PURE__*/React.createElement("div", {
@@ -54,7 +55,9 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         id: "nav-products",
         className: "nav-item dropdown lvl-1"
       }, /*#__PURE__*/React.createElement("a", {
-        href: "products.html"
+        href: "products.html",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
       }, "\u7522\u54C1\u8CC7\u8A0A"), /*#__PURE__*/React.createElement(SubNav, null)), /*#__PURE__*/React.createElement("li", {
         id: "nav-news",
         className: "nav-item lvl-1"
@@ -69,16 +72,21 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         className: "mobile-view"
       }, /*#__PURE__*/React.createElement("div", {
         className: "container"
-      }, /*#__PURE__*/React.createElement("a", {
-        href: "#",
-        className: "offcanvas-toggle"
+      }, /*#__PURE__*/React.createElement("button", {
+        type: "button",
+        className: "offcanvas-toggle",
+        "aria-controls": "mobile-navigation",
+        "aria-expanded": "false",
+        "aria-label": "\u958B\u555F\u9078\u55AE"
       }, /*#__PURE__*/React.createElement("i", {
-        className: "material-icons menu"
+        className: "material-icons menu",
+        "aria-hidden": "true"
       })), /*#__PURE__*/React.createElement("div", {
         className: "logo"
       }, /*#__PURE__*/React.createElement("img", {
         className: "logo-img",
-        src: "img/logo_pure.png"
+        src: "img/logo_pure.png",
+        alt: "\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8"
       }), /*#__PURE__*/React.createElement("span", {
         className: "brandname"
       }, "\u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8")))));
@@ -99,7 +107,8 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
     };
     render() {
       return /*#__PURE__*/React.createElement("ul", {
-        className: "sub-menu"
+        className: "sub-menu",
+        "aria-label": "\u7522\u54C1\u5206\u985E"
       }, this.getMenu());
     }
   }
@@ -118,7 +127,9 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
       return /*#__PURE__*/React.createElement("li", {
         className: menuClass.join(' ')
       }, /*#__PURE__*/React.createElement("a", {
-        href: housingHref
+        href: housingHref,
+        "aria-haspopup": hasSubMenu ? "true" : null,
+        "aria-expanded": hasSubMenu ? "false" : null
       }, housing), hasSubMenu && /*#__PURE__*/React.createElement(SubMenuItem, {
         housing: housing
       }));
@@ -140,7 +151,8 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
     };
     render() {
       return /*#__PURE__*/React.createElement("ul", {
-        class: "sub-menu"
+        className: "sub-menu",
+        "aria-label": this.props.housing + "分類"
       }, this.getSubMenu());
     }
   }

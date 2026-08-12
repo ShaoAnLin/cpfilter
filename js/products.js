@@ -21,7 +21,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           href: link,
           className: "preview-box"
         }, /*#__PURE__*/React.createElement("img", {
-          src: imgSrc
+          src: imgSrc,
+          alt: housing + "分類"
         })), /*#__PURE__*/React.createElement("div", {
           className: "tile-title"
         }, housing))));
@@ -54,7 +55,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           href: link,
           className: "preview-box"
         }, /*#__PURE__*/React.createElement("img", {
-          src: imgSrc
+          src: imgSrc,
+          alt: category + "分類"
         })), /*#__PURE__*/React.createElement("div", {
           className: "tile-title"
         }, category))));
@@ -88,7 +90,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           href: link,
           className: "preview-box"
         }, /*#__PURE__*/React.createElement("img", {
-          src: imgSrc
+          src: imgSrc,
+          alt: subgroup + "分類"
         })), /*#__PURE__*/React.createElement("div", {
           className: "tile-title"
         }, subgroup))));

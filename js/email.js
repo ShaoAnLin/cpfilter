@@ -7,24 +7,44 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
       super(props);
       this.state = {
         submitState: 'idle',
-        message: ''
+        message: '',
+        invalidFields: {}
       };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event) {
+      var name = event.target.name;
+      if (this.state.invalidFields[name]) {
+        var invalidFields = Object.assign({}, this.state.invalidFields);
+        delete invalidFields[name];
+        this.setState({
+          invalidFields: invalidFields
+        });
+      }
     }
     handleSubmit(event) {
       event.preventDefault();
       var form = event.target;
       if (!form.checkValidity()) {
+        var invalidFields = {};
+        Array.prototype.forEach.call(form.elements, function (field) {
+          if (field.name && !field.validity.valid) {
+            invalidFields[field.name] = true;
+          }
+        });
         form.reportValidity();
         this.setState({
           submitState: 'error',
-          message: '請填寫必填欄位。'
+          message: '請填寫必填欄位。',
+          invalidFields: invalidFields
         });
         return;
       }
       this.setState({
         submitState: 'submitting',
-        message: '資料送出中，請稍候...'
+        message: '資料送出中，請稍候...',
+        invalidFields: {}
       });
       var formData = new FormData(form),
         payload = {
@@ -51,7 +71,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         form.reset();
         this.setState({
           submitState: 'success',
-          message: '已成功送出，我們會盡快與您聯繫。'
+          message: '已成功送出，我們會盡快與您聯繫。',
+          invalidFields: {}
         });
       }.bind(this)).catch(function (error) {
         var failureMessage = '送出失敗，請稍後再試，或直接來電與我們聯繫。';
@@ -66,7 +87,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
     }
     render() {
       var submitState = this.state.submitState,
-        messageClass = submitState === 'error' ? 'error' : '';
+        messageClass = submitState === 'error' ? 'error' : '',
+        invalidFields = this.state.invalidFields;
       return /*#__PURE__*/React.createElement("form", {
         onSubmit: this.handleSubmit,
         noValidate: true
@@ -83,7 +105,11 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         type: "text",
         className: "form-control input-alt",
         name: "author",
-        required: true
+        required: true,
+        onChange: this.handleChange,
+        "aria-required": "true",
+        "aria-invalid": invalidFields.author ? "true" : null,
+        "aria-describedby": "required-note form-status"
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
       }, /*#__PURE__*/React.createElement("div", {
@@ -95,7 +121,11 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         type: "email",
         className: "form-control input-alt",
         name: "email",
-        required: true
+        required: true,
+        onChange: this.handleChange,
+        "aria-required": "true",
+        "aria-invalid": invalidFields.email ? "true" : null,
+        "aria-describedby": "required-note form-status"
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
       }, /*#__PURE__*/React.createElement("div", {
@@ -106,7 +136,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         id: "client-company",
         type: "text",
         className: "form-control input-alt",
-        name: "company"
+        name: "company",
+        onChange: this.handleChange
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
       }, /*#__PURE__*/React.createElement("div", {
@@ -117,7 +148,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         id: "client-title",
         type: "text",
         className: "form-control input-alt",
-        name: "title"
+        name: "title",
+        onChange: this.handleChange
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
       }, /*#__PURE__*/React.createElement("div", {
@@ -128,7 +160,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         id: "client-phone",
         type: "tel",
         className: "form-control input-alt",
-        name: "phone"
+        name: "phone",
+        onChange: this.handleChange
       }))), /*#__PURE__*/React.createElement("div", {
         className: "col-sm-6"
       }, /*#__PURE__*/React.createElement("div", {
@@ -139,7 +172,8 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         id: "client-ext",
         type: "text",
         className: "form-control input-alt",
-        name: "phone-ext"
+        name: "phone-ext",
+        onChange: this.handleChange
       })))), /*#__PURE__*/React.createElement("div", {
         className: "form-group"
       }, /*#__PURE__*/React.createElement("label", {
@@ -149,8 +183,16 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
         id: "client-message",
         className: "form-control input-alt",
         rows: "7",
-        required: true
-      }), /*#__PURE__*/React.createElement("div", null, "*\u70BA\u5FC5\u586B\u9805\u76EE"), /*#__PURE__*/React.createElement("div", {
+        required: true,
+        onChange: this.handleChange,
+        "aria-required": "true",
+        "aria-invalid": invalidFields.message ? "true" : null,
+        "aria-describedby": "required-note form-status"
+      }), /*#__PURE__*/React.createElement("div", {
+        id: "required-note"
+      }, "*\u70BA\u5FC5\u586B\u9805\u76EE"), /*#__PURE__*/React.createElement("div", {
+        id: "form-status",
+        role: submitState === 'error' ? 'alert' : 'status',
         "aria-live": "polite",
         className: messageClass
       }, this.state.message)), /*#__PURE__*/React.createElement("p", {

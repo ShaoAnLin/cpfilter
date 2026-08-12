@@ -142,6 +142,11 @@
 	i {
 		font-size: 24px;
 	}
+	.offcanvas-toggle {
+		background: transparent;
+		border: 0;
+		padding: 0;
+	}
 	.logo {
 		position: absolute;
 		margin-left: 50px;
@@ -166,6 +171,8 @@
 
 .off-canvas-cont {
 	.inner-toggle {
+		background: transparent;
+		border: 0;
 		font-size: 24px !important;
 		float: right;
 		margin-top: -3px;

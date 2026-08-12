@@ -23,6 +23,8 @@ define('common', [
 
 			// Toggle the Slidebar with id 'id-2'
 			controller.toggle( 'id-1' );
+			var isExpanded = $(this).attr('aria-expanded') !== 'true';
+			$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', isExpanded ? 'true' : 'false');
 		});
 
 		// Back Button
@@ -48,6 +50,7 @@ define('common', [
 				menu = $( self ).parents( '.menu' );
 
 			parent.removeClass( 'in-view' );
+			parent.parent().children('a').attr('aria-expanded', 'false');
 			siblingParent.removeClass( 'off-view' );
 			if ( siblingParent.attr( "class" ) === "menu" ) {
 				menu.velocity( { height: menuInitHeight }, 100 );
@@ -64,17 +67,66 @@ define('common', [
 
 			parent.addClass( 'off-view' );
 			$( self ).parent().find( '> .sub-menu' ).addClass( 'in-view' );
+			$( self ).attr('aria-expanded', 'true');
 			menu.velocity( { height: $( self ).parent().find( '> .sub-menu' ).height() }, 100 );
 
 			e.preventDefault();
 			return false;
 		} );
+
+		$('.main-nav .dropdown').on('mouseenter focusin', function() {
+			$(this).children('a[aria-haspopup="true"]').attr('aria-expanded', 'true');
+		}).on('mouseleave focusout', function(event) {
+			if (event.type === 'focusout' && $.contains(this, event.relatedTarget)) {
+				return;
+			}
+			$(this).children('a[aria-haspopup="true"]').attr('aria-expanded', 'false');
+		});
+
+		$(document).on('keydown', function(e) {
+			if (e.key === 'Escape' && $('.offcanvas-toggle[aria-expanded="true"]').length) {
+				if (typeof controller.close === 'function') {
+					controller.close('id-1');
+				} else {
+					controller.toggle('id-1');
+				}
+				$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', 'false');
+			}
+		});
   	}
+
+	var bindAccessibleTabs = function(){
+		$(document).on('shown.bs.tab', '[role="tab"]', function (event) {
+			var target = $(event.target).closest('[role="tab"]'),
+				tablist = target.closest('[role="tablist"]');
+			if (!target.length || !tablist.length) {
+				return;
+			}
+			tablist.find('[role="tab"]').attr('aria-selected', 'false');
+			target.attr('aria-selected', 'true');
+		});
+
+		$(document).on('keydown', '[role="tab"]', function (event) {
+			if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
+				return;
+			}
+			var tabs = $(this).closest('[role="tablist"]').find('[role="tab"]').filter(function(){
+					return $(this).closest('li').is(':visible');
+				}),
+				index = tabs.index(this),
+				nextIndex = event.key === 'ArrowRight'
+					? (index + 1) % tabs.length
+					: (index - 1 + tabs.length) % tabs.length;
+			event.preventDefault();
+			tabs.eq(nextIndex).trigger('click').focus();
+		});
+	}
   
   	var common = {};
 
 	common.init = function(){
 		bindEventOffCanvas();
+		bindAccessibleTabs();
 
 		// Range Slider
 		// ------------
