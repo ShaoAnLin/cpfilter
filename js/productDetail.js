@@ -2,12 +2,12 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
   'use strict';
 
   var getItem = function () {
-    var queryItem = decodeURI(window.location.search).match('item=.*'),
-      targetItem = null;
-    if (queryItem) {
-      targetItem = queryItem[0].split('=')[1];
+    var params = new URLSearchParams(window.location.search),
+      targetItem = params.get('item');
+    if (targetItem && Object.prototype.hasOwnProperty.call(constant.ITEMS, targetItem)) {
+      return constant.ITEMS[targetItem];
     }
-    return constant.ITEMS[targetItem];
+    return null;
   };
   var onLoad = function () {
     setTimeout(function () {
@@ -37,6 +37,16 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         }));
       }
       return /*#__PURE__*/React.createElement(React.Fragment, null, images);
+    }
+  }
+  class ProductNotFound extends React.Component {
+    render() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "text-center"
+      }, /*#__PURE__*/React.createElement("h2", null, "\u627E\u4E0D\u5230\u7522\u54C1"), /*#__PURE__*/React.createElement("p", null, "\u60A8\u5C0B\u627E\u7684\u7522\u54C1\u4E0D\u5B58\u5728\u6216\u9023\u7D50\u5DF2\u5931\u6548\u3002"), /*#__PURE__*/React.createElement("a", {
+        className: "btn btn-primary",
+        href: "products.html"
+      }, "\u8FD4\u56DE\u7522\u54C1\u8CC7\u8A0A"));
     }
   }
   class ItemInfo extends React.Component {
@@ -301,7 +311,14 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
   var instance = {};
   instance.init = function () {
     var item = getItem();
-    console.log(item);
+    if (!item) {
+      $('#housing-name, #category-name, #category-right-icon').hide();
+      $('.single-slider').hide();
+      $('#item-tab-container').closest('section').hide();
+      $('#section-related').hide();
+      ReactDOM.render( /*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#single-item-info'));
+      return;
+    }
 
     // Housing & Category
     $('#housing-name').html(item.housing).attr("href", "products.html?housing=" + item.housing);
