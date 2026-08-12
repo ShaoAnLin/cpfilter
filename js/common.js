@@ -74,6 +74,15 @@ define('common', [
 			return false;
 		} );
 
+		$('.main-nav .dropdown').on('mouseenter focusin', function() {
+			$(this).children('a[aria-haspopup="true"]').attr('aria-expanded', 'true');
+		}).on('mouseleave focusout', function(event) {
+			if (event.type === 'focusout' && $.contains(this, event.relatedTarget)) {
+				return;
+			}
+			$(this).children('a[aria-haspopup="true"]').attr('aria-expanded', 'false');
+		});
+
 		$(document).on('keydown', function(e) {
 			if (e.key === 'Escape' && $('.offcanvas-toggle[aria-expanded="true"]').length) {
 				if (typeof controller.close === 'function') {
@@ -98,13 +107,15 @@ define('common', [
 			if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
 				return;
 			}
-			var tabs = $(this).closest('[role="tablist"]').find('[role="tab"]:visible'),
+			var tabs = $(this).closest('[role="tablist"]').find('[role="tab"]').filter(function(){
+					return $(this).closest('li').is(':visible');
+				}),
 				index = tabs.index(this),
 				nextIndex = event.key === 'ArrowRight'
 					? (index + 1) % tabs.length
 					: (index - 1 + tabs.length) % tabs.length;
 			event.preventDefault();
-			tabs.eq(nextIndex).trigger('click').focus();
+			tabs.eq(nextIndex).focus();
 		});
 	}
   

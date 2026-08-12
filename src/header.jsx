@@ -47,7 +47,7 @@ define('header', [
                 <a href="aboutus.html">關於新凱</a>
               </li>
               <li id="nav-products" className="nav-item dropdown lvl-1">
-                <a href="products.html" aria-haspopup="true">產品資訊</a>
+                <a href="products.html" aria-haspopup="true" aria-expanded="false">產品資訊</a>
                 <SubNav/>
               </li>
               <li id="nav-news" className="nav-item lvl-1">
@@ -111,7 +111,7 @@ define('header', [
       }
       return (
         <li className={menuClass.join(' ')}>
-          <a href={housingHref} aria-haspopup={hasSubMenu ? "true" : null}>{housing}</a>
+          <a href={housingHref} aria-haspopup={hasSubMenu ? "true" : null} aria-expanded={hasSubMenu ? "false" : null}>{housing}</a>
           {hasSubMenu && <SubMenuItem housing={housing}></SubMenuItem>}
         </li>);
     }

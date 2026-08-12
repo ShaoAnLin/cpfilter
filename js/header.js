@@ -56,7 +56,8 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         className: "nav-item dropdown lvl-1"
       }, /*#__PURE__*/React.createElement("a", {
         href: "products.html",
-        "aria-haspopup": "true"
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
       }, "\u7522\u54C1\u8CC7\u8A0A"), /*#__PURE__*/React.createElement(SubNav, null)), /*#__PURE__*/React.createElement("li", {
         id: "nav-news",
         className: "nav-item lvl-1"
@@ -127,7 +128,8 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
         className: menuClass.join(' ')
       }, /*#__PURE__*/React.createElement("a", {
         href: housingHref,
-        "aria-haspopup": hasSubMenu ? "true" : null
+        "aria-haspopup": hasSubMenu ? "true" : null,
+        "aria-expanded": hasSubMenu ? "false" : null
       }, housing), hasSubMenu && /*#__PURE__*/React.createElement(SubMenuItem, {
         housing: housing
       }));
