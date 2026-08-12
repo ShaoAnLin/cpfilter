@@ -13,6 +13,7 @@ define('common', [
 	var controller = new slidebars();
 	controller.init();
 	var OFFCANVAS_FOCUS_DELAY_MS = 120;
+	var isOffcanvasOpen = false;
 	var menuFocusReturnTarget = null;
 
 	var getOffCanvasFocusTarget = function() {
@@ -31,7 +32,7 @@ define('common', [
 			event.stopPropagation();
 			event.preventDefault();
 
-			var menuWasExpanded = $('.offcanvas-toggle[aria-expanded="true"]').length > 0;
+			var menuWasExpanded = isOffcanvasOpen;
 			if (!menuWasExpanded) {
 				menuFocusReturnTarget = $(this);
 			}
@@ -39,6 +40,7 @@ define('common', [
 			// Toggle the Slidebar with id 'id-2'
 			controller.toggle( 'id-1' );
 			var isExpanded = !menuWasExpanded;
+			isOffcanvasOpen = isExpanded;
 			$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', isExpanded ? 'true' : 'false');
 			if (isExpanded) {
 				setTimeout(function() {
@@ -113,12 +115,13 @@ define('common', [
 		});
 
 		$(document).on('keydown', function(e) {
-			if (e.key === 'Escape' && $('.offcanvas-toggle[aria-expanded="true"]').length) {
+			if (e.key === 'Escape' && isOffcanvasOpen) {
 				if (typeof controller.close === 'function') {
 					controller.close('id-1');
 				} else {
 					controller.toggle('id-1');
 				}
+				isOffcanvasOpen = false;
 				$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', 'false');
 				var returnTarget = menuFocusReturnTarget && menuFocusReturnTarget.length ? menuFocusReturnTarget : getMenuTrigger();
 				if (returnTarget && returnTarget.length) {
