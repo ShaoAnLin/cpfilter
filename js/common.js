@@ -96,9 +96,16 @@ define('common', [
   	}
 
 	var bindAccessibleTabs = function(){
+		$(document).on('click', '[role="tab"]', function (event) {
+			event.preventDefault();
+		});
+
 		$(document).on('shown.bs.tab', '[role="tab"]', function (event) {
-			var target = $(event.target),
+			var target = $(event.target).closest('[role="tab"]'),
 				tablist = target.closest('[role="tablist"]');
+			if (!target.length || !tablist.length) {
+				return;
+			}
 			tablist.find('[role="tab"]').attr('aria-selected', 'false');
 			target.attr('aria-selected', 'true');
 		});
