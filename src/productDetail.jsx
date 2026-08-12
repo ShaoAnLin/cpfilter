@@ -191,6 +191,8 @@ define('productDetail', [
 
         if (item.feature){
             if (item.spec == null && item.specImgs == null){
+                $('#nav-tab-spec').removeClass('active');
+                $('#tab-spec').removeClass('in active');
                 $('#nav-tab-feature').addClass('active');
                 $('#tab-feature').addClass('in active');
                 $('#tab-link-spec').attr('aria-selected', 'false');

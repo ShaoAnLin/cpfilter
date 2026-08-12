@@ -115,7 +115,7 @@ define('common', [
 					? (index + 1) % tabs.length
 					: (index - 1 + tabs.length) % tabs.length;
 			event.preventDefault();
-			tabs.eq(nextIndex).focus();
+			tabs.eq(nextIndex).trigger('click').focus();
 		});
 	}
   
