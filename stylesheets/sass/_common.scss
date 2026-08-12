@@ -20,13 +20,6 @@
 	}
 }
 
-.fit-screen-height {
-	height: calc(100vh - 614px);
-	@media #{$nav-collapse} {
-		height: calc(100vh - 494px);
-	}
-}
-
 /* Google Map */
 .gmap_canvas {
 	background: none !important;
