@@ -129,18 +129,18 @@ Address these items in focused pull requests, in priority order:
 
 ### High priority
 
-- [ ] Correct the mobile-menu expanded state when opening and closing it, and move
+- [x] Correct the mobile-menu expanded state when opening and closing it, and move
   keyboard focus into the menu on open and back to its trigger on close.
-- [ ] Restore visible keyboard focus indicators for links, buttons, form controls,
+- [x] Restore visible keyboard focus indicators for links, buttons, form controls,
   carousel controls, and product thumbnails.
-- [ ] Use one jQuery version consistently; the pages currently load jQuery 3.7.1
+- [x] Use one jQuery version consistently; the pages currently load jQuery 3.7.1
   directly and jQuery 2.2.4 through RequireJS.
 
 ### Usability and mobile experience
 
-- [ ] Add `autocomplete` and appropriate input modes to the contact form so mobile
+- [x] Add `autocomplete` and appropriate input modes to the contact form so mobile
   visitors can use browser autofill and a telephone keypad.
-- [ ] Make the telephone number, email address, and address in the footer actionable
+- [x] Make the telephone number, email address, and address in the footer actionable
   links, matching the contact page.
 - [ ] Test and confirm that the Formspree endpoint accepts submissions.
 - [ ] Update the home slideshow for dynamic mobile viewport heights and narrow or

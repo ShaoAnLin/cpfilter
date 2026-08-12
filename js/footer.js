@@ -28,7 +28,9 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
         className: "icon material-icons headset_mic"
       }), /*#__PURE__*/React.createElement("div", {
         className: "info-text"
-      }, /*#__PURE__*/React.createElement("div", null, "(02)2808-1655"))), /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+        href: "tel:+886228081655"
+      }, "(02)2808-1655")))), /*#__PURE__*/React.createElement("div", {
         className: "widget widget-callback"
       }, /*#__PURE__*/React.createElement("i", {
         className: "icon material-icons print"
@@ -48,11 +50,17 @@ define('footer', ['react', 'reactDOM'], function (React, ReactDOM) {
         className: "widget widget-callback"
       }, /*#__PURE__*/React.createElement("i", {
         className: "icon material-icons email"
-      }), /*#__PURE__*/React.createElement("div", null, "service@cpfilter.com")), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+        href: "mailto:service@cpfilter.com"
+      }, "service@cpfilter.com"))), /*#__PURE__*/React.createElement("div", {
         className: "widget widget-callback"
       }, /*#__PURE__*/React.createElement("i", {
         className: "icon material-icons location_city address"
-      }), /*#__PURE__*/React.createElement("div", null, "\u65B0\u5317\u5E02\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3\u6A13\u4E4B\u4E00")))))))), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+        href: "https://maps.google.com/?q=\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3F-1",
+        target: "_blank",
+        rel: "noopener noreferrer"
+      }, "\u65B0\u5317\u5E02\u6DE1\u6C34\u5340\u4E2D\u6B63\u6771\u8DEF\u4E8C\u6BB569-4\u865F3\u6A13\u4E4B\u4E00"))))))))), /*#__PURE__*/React.createElement("div", {
         className: "copyright mobile-hide"
       }, /*#__PURE__*/React.createElement("span", null, "\xA9 ", new Date().getFullYear(), ". \u65B0\u51F1\u6FFE\u6750\u5DE5\u696D\u6709\u9650\u516C\u53F8 "), /*#__PURE__*/React.createElement("span", {
         className: "brandname-en"

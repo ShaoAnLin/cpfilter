@@ -12,6 +12,15 @@ define('common', [
 
 	var controller = new slidebars();
 	controller.init();
+	var menuFocusReturnTarget = null;
+
+	var getOffCanvasFocusTarget = function() {
+		return $('.off-canvas-cont .inner-toggle, .offcanvas-navigation a, .offcanvas-navigation button').filter(':visible').first();
+	};
+
+	var getMenuTrigger = function() {
+		return $('.mobile-view .offcanvas-toggle[aria-controls="mobile-navigation"]').first();
+	};
 
 	var bindEventOffCanvas = function(){
 		$( '.offcanvas-toggle' ).on( 'click', function ( event ) {
@@ -21,10 +30,28 @@ define('common', [
 			event.stopPropagation();
 			event.preventDefault();
 
+			var menuWasExpanded = $('.offcanvas-toggle[aria-expanded="true"]').length > 0;
+			if (!menuWasExpanded && $(this).is('button')) {
+				menuFocusReturnTarget = $(this);
+			}
+
 			// Toggle the Slidebar with id 'id-2'
 			controller.toggle( 'id-1' );
-			var isExpanded = $(this).attr('aria-expanded') !== 'true';
+			var isExpanded = !menuWasExpanded;
 			$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', isExpanded ? 'true' : 'false');
+			if (isExpanded) {
+				setTimeout(function() {
+					var focusTarget = getOffCanvasFocusTarget();
+					if (focusTarget.length) {
+						focusTarget.focus();
+					}
+				}, 120);
+			} else {
+				var returnTarget = menuFocusReturnTarget && menuFocusReturnTarget.length ? menuFocusReturnTarget : getMenuTrigger();
+				if (returnTarget && returnTarget.length) {
+					returnTarget.focus();
+				}
+			}
 		});
 
 		// Back Button
@@ -91,6 +118,10 @@ define('common', [
 					controller.toggle('id-1');
 				}
 				$('.offcanvas-toggle[aria-expanded]').attr('aria-expanded', 'false');
+				var returnTarget = menuFocusReturnTarget && menuFocusReturnTarget.length ? menuFocusReturnTarget : getMenuTrigger();
+				if (returnTarget && returnTarget.length) {
+					returnTarget.focus();
+				}
 			}
 		});
   	}

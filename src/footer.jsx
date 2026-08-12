@@ -26,7 +26,7 @@ define('footer', [
             <div className="widget widget-callback">
               <i className="icon material-icons headset_mic"></i>
               <div className="info-text">
-                <div>(02)2808-1655</div>
+                <div><a href="tel:+886228081655">(02)2808-1655</a></div>
               </div>
             </div>
             <div className="widget widget-callback">
@@ -47,12 +47,12 @@ define('footer', [
 
             <div className="widget widget-callback">
                 <i className="icon material-icons email"></i>
-                <div>service@cpfilter.com</div>
+                <div><a href="mailto:service@cpfilter.com">service@cpfilter.com</a></div>
             </div>
 
             <div className="widget widget-callback">
                 <i className="icon material-icons location_city address"></i>
-                <div>新北市淡水區中正東路二段69-4號3樓之一</div>
+                <div><a href="https://maps.google.com/?q=淡水區中正東路二段69-4號3F-1" target="_blank" rel="noopener noreferrer">新北市淡水區中正東路二段69-4號3樓之一</a></div>
             </div>
             </div>
           </div>
