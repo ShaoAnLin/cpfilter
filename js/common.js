@@ -12,6 +12,7 @@ define('common', [
 
 	var controller = new slidebars();
 	controller.init();
+	var OFFCANVAS_FOCUS_DELAY_MS = 120;
 	var menuFocusReturnTarget = null;
 
 	var getOffCanvasFocusTarget = function() {
@@ -45,7 +46,7 @@ define('common', [
 					if (focusTarget.length) {
 						focusTarget.focus();
 					}
-				}, 120);
+				}, OFFCANVAS_FOCUS_DELAY_MS);
 			} else {
 				var returnTarget = menuFocusReturnTarget && menuFocusReturnTarget.length ? menuFocusReturnTarget : getMenuTrigger();
 				if (returnTarget && returnTarget.length) {

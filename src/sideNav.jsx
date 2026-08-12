@@ -20,7 +20,7 @@ define('sideNav', [
       return (
         <React.Fragment>
         <div className="side-nav-tools">
-          <button type="button" className="offcanvas-toggle inner-toggle" aria-controls="mobile-navigation" aria-expanded="false" aria-label="關閉選單">
+          <button type="button" className="offcanvas-toggle inner-toggle" aria-controls="mobile-navigation" aria-label="關閉選單">
             <i className="material-icons close" aria-hidden="true"></i>
           </button>
         </div>
