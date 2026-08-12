@@ -101,12 +101,12 @@ mechanism at that time.
 
 ## PR 5 — SEO and content
 
-- [ ] Add unique page descriptions and dynamic product titles.
-- [ ] Add `lang="zh-Hant"`, canonical URLs, and social sharing metadata.
-- [ ] Add `robots.txt` and `sitemap.xml`.
-- [ ] Confirm and consistently use the company's official legal name.
-- [ ] Update or remove the empty news page.
-- [ ] Generate the footer year dynamically.
+- [x] Add unique page descriptions and dynamic product titles.
+- [x] Add `lang="zh-Hant"`, canonical URLs, and social sharing metadata.
+- [x] Add `robots.txt` and `sitemap.xml`.
+- [x] Confirm and consistently use the company's official legal name.
+- [x] Update or remove the empty news page.
+- [x] Generate the footer year dynamically.
 
 ## PR 6 — Accessibility
 
