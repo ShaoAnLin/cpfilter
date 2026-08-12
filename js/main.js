@@ -26,7 +26,6 @@ requirejs.config({
 			'jquery',
 			'react',
 			'reactDOM',
-			'ga',
 			'vendor/preloader.min',
 			'vendor/bootstrap.min',
 			'vendor/slick.min',

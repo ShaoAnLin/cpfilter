@@ -87,10 +87,17 @@ Each section should be handled in a separate, focused pull request. Verify every
 
 ## PR 4 — Analytics and privacy
 
-- [ ] Decide whether analytics and advertising are still required.
-- [ ] Replace Universal Analytics with GA4, or remove analytics.
-- [ ] Remove unused AdSense scripts.
-- [ ] Document any required consent and privacy behavior.
+- [x] Decide whether analytics and advertising are still required.
+- [x] Replace Universal Analytics with GA4, or remove analytics.
+- [x] Remove unused AdSense scripts.
+- [x] Document any required consent and privacy behavior.
+
+Universal Analytics (`UA-132312070-1`) stopped processing data in July 2023, and no
+AdSense ad units were ever rendered on the site despite the loader script being present.
+Both were removed rather than replaced, since the site no longer loads any third-party
+analytics or advertising scripts. No cookie/consent banner is required as a result; if
+analytics or advertising are reintroduced in the future, add the appropriate consent
+mechanism at that time.
 
 ## PR 5 — SEO and content
 
