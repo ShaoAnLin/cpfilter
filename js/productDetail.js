@@ -41,13 +41,19 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         images = [];
       images.push(/*#__PURE__*/React.createElement("img", {
         src: imgUrl,
-        alt: this.props.item.title + "主圖"
+        alt: this.props.item.title + "主圖",
+        loading: this.props.isPreview ? "eager" : "lazy",
+        decoding: "async",
+        width: "1658",
+        height: "1658"
       }));
       for (var i = 0; i < this.props.item.images; ++i) {
         imgUrl = "{0}{1}.jpg".format(imgBaseUrl, i);
         images.push(/*#__PURE__*/React.createElement("img", {
           src: imgUrl,
-          alt: this.props.item.title + "產品圖片 " + (i + 1)
+          alt: this.props.item.title + "產品圖片 " + (i + 1),
+          loading: "lazy",
+          decoding: "async"
         }));
       }
       return /*#__PURE__*/React.createElement(React.Fragment, null, images);
@@ -117,13 +123,17 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
         spec.push(/*#__PURE__*/React.createElement("img", {
           src: src,
-          alt: this.props.item.title + "規格圖"
+          alt: this.props.item.title + "規格圖",
+          loading: "lazy",
+          decoding: "async"
         }));
         for (var i = 1; i < this.props.item.specImgs; ++i) {
           var src = constant.getImgPath(this.props.item, 'spec' + i) + '.jpg';
           spec.push(/*#__PURE__*/React.createElement("img", {
             src: src,
-            alt: this.props.item.title + "規格圖 " + (i + 1)
+            alt: this.props.item.title + "規格圖 " + (i + 1),
+            loading: "lazy",
+            decoding: "async"
           }));
         }
       }
@@ -156,13 +166,17 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         var src = constant.getImgPath(this.props.item, this.props.tabName) + '.jpg';
         images.push(/*#__PURE__*/React.createElement("img", {
           src: src,
-          alt: this.props.item.title + this.props.tabLabel + "圖"
+          alt: this.props.item.title + this.props.tabLabel + "圖",
+          loading: "lazy",
+          decoding: "async"
         }));
         for (var i = 1; i < this.props.imagesCount; ++i) {
           var src = constant.getImgPath(this.props.item, this.props.tabName + i) + '.jpg';
           images.push(/*#__PURE__*/React.createElement("img", {
             src: src,
-            alt: this.props.item.title + this.props.tabLabel + "圖 " + (i + 1)
+            alt: this.props.item.title + this.props.tabLabel + "圖 " + (i + 1),
+            loading: "lazy",
+            decoding: "async"
           }));
         }
       }
@@ -228,12 +242,12 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       $('#nav-tab-size').hide();
     }
     if (item.conditionImgs) {
-      $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg').attr("alt", item.title + "操作條件圖").removeAttr("aria-hidden");
+      $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg').attr("alt", item.title + "操作條件圖").attr("loading", "lazy").attr("decoding", "async").removeAttr("aria-hidden");
     } else {
       $('#nav-tab-condition').hide();
     }
     if (item.dataImgs) {
-      $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg').attr("alt", item.title + "數據圖表").removeAttr("aria-hidden");
+      $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg').attr("alt", item.title + "數據圖表").attr("loading", "lazy").attr("decoding", "async").removeAttr("aria-hidden");
     } else {
       $('#nav-tab-data').hide();
     }
@@ -356,11 +370,13 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     }
 
     // Images
-    var detailImages = /*#__PURE__*/React.createElement(DetailImages, {
+    ReactDOM.render(/*#__PURE__*/React.createElement(DetailImages, {
       item: item
-    });
-    ReactDOM.render(detailImages, document.querySelector('#product-img-thumbnail'));
-    ReactDOM.render(detailImages, document.querySelector('#product-img-preview'));
+    }), document.querySelector('#product-img-thumbnail'));
+    ReactDOM.render(/*#__PURE__*/React.createElement(DetailImages, {
+      item: item,
+      isPreview: true
+    }), document.querySelector('#product-img-preview'));
 
     // Details
     ReactDOM.render(/*#__PURE__*/React.createElement(ItemInfo, {

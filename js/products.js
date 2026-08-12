@@ -22,7 +22,11 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "preview-box"
         }, /*#__PURE__*/React.createElement("img", {
           src: imgSrc,
-          alt: housing + "分類"
+          alt: housing + "分類",
+          loading: count <= 3 ? "eager" : "lazy",
+          decoding: "async",
+          width: "1658",
+          height: "1658"
         })), /*#__PURE__*/React.createElement("div", {
           className: "tile-title"
         }, housing))));
@@ -56,7 +60,11 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "preview-box"
         }, /*#__PURE__*/React.createElement("img", {
           src: imgSrc,
-          alt: category + "分類"
+          alt: category + "分類",
+          loading: count <= 3 ? "eager" : "lazy",
+          decoding: "async",
+          width: "1658",
+          height: "1658"
         })), /*#__PURE__*/React.createElement("div", {
           className: "tile-title"
         }, category))));
@@ -91,7 +99,11 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           className: "preview-box"
         }, /*#__PURE__*/React.createElement("img", {
           src: imgSrc,
-          alt: subgroup + "分類"
+          alt: subgroup + "分類",
+          loading: count <= 3 ? "eager" : "lazy",
+          decoding: "async",
+          width: "1658",
+          height: "1658"
         })), /*#__PURE__*/React.createElement("div", {
           className: "tile-title"
         }, subgroup))));
@@ -284,7 +296,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
           ++num;
           images.push(/*#__PURE__*/React.createElement(ProductGridItem, {
             id: key,
-            item: item
+            item: item,
+            loading: num <= cols ? "eager" : "lazy"
           }));
           if (num % cols == 0) {
             products.push(/*#__PURE__*/React.createElement("div", {
@@ -322,7 +335,8 @@ define('products', ['react', 'reactDOM', 'constant', 'productImg'], function (Re
       }, /*#__PURE__*/React.createElement("a", {
         href: detailLink
       }, /*#__PURE__*/React.createElement(productImg.MainImg, {
-        item: this.props.item
+        item: this.props.item,
+        loading: this.props.loading
       })), /*#__PURE__*/React.createElement("div", {
         className: "tile-title"
       }, /*#__PURE__*/React.createElement("a", {
