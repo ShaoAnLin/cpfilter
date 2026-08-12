@@ -66,10 +66,10 @@ Each section should be handled in a separate, focused pull request. Verify every
 
 ## PR 1 — Product navigation stability
 
-- [ ] Parse query parameters with `URLSearchParams`.
-- [ ] Validate product, category, subgroup, and housing parameters.
-- [ ] Show a useful not-found state instead of throwing an error for invalid product links.
-- [ ] Remove development-only console output.
+- [x] Parse query parameters with `URLSearchParams`.
+- [x] Validate product, category, subgroup, and housing parameters.
+- [x] Show a useful not-found state instead of throwing an error for invalid product links.
+- [x] Remove development-only console output.
 
 ## PR 2 — Build and dependency maintenance
 
