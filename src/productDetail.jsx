@@ -51,7 +51,7 @@ define('productDetail', [
                 imgBaseUrl = constant.getImgPath(this.props.item),
                 images = [];
             images.push(<img src={imgUrl} alt={this.props.item.title + "主圖"}
-                loading={this.props.isPreview ? "eager" : "lazy"} decoding="async"
+                loading={this.props.isPrimary ? "eager" : "lazy"} decoding="async"
                 width="1658" height="1658"/>);
             for (var i = 0; i < this.props.item.images; ++i){
                 imgUrl = "{0}{1}.jpg".format(imgBaseUrl, i);
@@ -379,7 +379,7 @@ define('productDetail', [
         // Images
         ReactDOM.render(<DetailImages item={item}/>,
             document.querySelector('#product-img-thumbnail'));
-        ReactDOM.render(<DetailImages item={item} isPreview={true}/>,
+        ReactDOM.render(<DetailImages item={item} isPrimary={true}/>,
             document.querySelector('#product-img-preview'));
 
         // Details

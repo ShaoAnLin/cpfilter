@@ -42,7 +42,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       images.push(/*#__PURE__*/React.createElement("img", {
         src: imgUrl,
         alt: this.props.item.title + "主圖",
-        loading: this.props.isPreview ? "eager" : "lazy",
+        loading: this.props.isPrimary ? "eager" : "lazy",
         decoding: "async",
         width: "1658",
         height: "1658"
@@ -375,7 +375,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     }), document.querySelector('#product-img-thumbnail'));
     ReactDOM.render(/*#__PURE__*/React.createElement(DetailImages, {
       item: item,
-      isPreview: true
+      isPrimary: true
     }), document.querySelector('#product-img-preview'));
 
     // Details
