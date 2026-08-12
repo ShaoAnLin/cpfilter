@@ -32,7 +32,7 @@ define('common', [
 			event.preventDefault();
 
 			var menuWasExpanded = $('.offcanvas-toggle[aria-expanded="true"]').length > 0;
-			if (!menuWasExpanded && $(this).is('button')) {
+			if (!menuWasExpanded) {
 				menuFocusReturnTarget = $(this);
 			}
 
