@@ -52,6 +52,7 @@ define('common', [
 				if (returnTarget && returnTarget.length) {
 					returnTarget.focus();
 				}
+				menuFocusReturnTarget = null;
 			}
 		});
 
@@ -123,6 +124,7 @@ define('common', [
 				if (returnTarget && returnTarget.length) {
 					returnTarget.focus();
 				}
+				menuFocusReturnTarget = null;
 			}
 		});
   	}

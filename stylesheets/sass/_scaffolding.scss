@@ -105,8 +105,9 @@ textarea:focus-visible,
 .slick-next:focus-visible,
 .thumbnail-carousel a:focus-visible,
 .offcanvas-toggle:focus-visible {
-  outline: 3px solid $brand-primary !important;
+  outline: 2px solid transparent !important;
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #1f4f9a !important;
 }
 // Display & Positioning
 // ---------------------
