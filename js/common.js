@@ -12,6 +12,7 @@ define('common', [
 
 	var controller = new slidebars();
 	controller.init();
+	// Wait for the slidebar transition to finish before moving focus.
 	var OFFCANVAS_FOCUS_DELAY_MS = 120;
 	var isOffcanvasOpen = false;
 	var menuFocusReturnTarget = null;
