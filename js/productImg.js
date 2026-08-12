@@ -10,7 +10,8 @@ define('productImg', ['react', 'reactDOM', 'constant'], function (React, ReactDO
       var imgSrc = constant.getImgPath(this.props.item, 'main') + ".jpg";
       return /*#__PURE__*/React.createElement("img", {
         className: "preview-img",
-        src: imgSrc
+        src: imgSrc,
+        alt: this.props.item.title
       });
     }
   };

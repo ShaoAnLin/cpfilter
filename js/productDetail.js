@@ -41,13 +41,13 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
         images = [];
       images.push(/*#__PURE__*/React.createElement("img", {
         src: imgUrl,
-        alt: "Thumb"
+        alt: this.props.item.title + "主圖"
       }));
       for (var i = 0; i < this.props.item.images; ++i) {
         imgUrl = "{0}{1}.jpg".format(imgBaseUrl, i);
         images.push(/*#__PURE__*/React.createElement("img", {
           src: imgUrl,
-          alt: "Thumb"
+          alt: this.props.item.title + "產品圖片 " + (i + 1)
         }));
       }
       return /*#__PURE__*/React.createElement(React.Fragment, null, images);
@@ -116,12 +116,14 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       } else if (this.props.item.specImgs) {
         var src = constant.getImgPath(this.props.item, 'spec') + '.jpg';
         spec.push(/*#__PURE__*/React.createElement("img", {
-          src: src
+          src: src,
+          alt: this.props.item.title + "規格圖"
         }));
         for (var i = 1; i < this.props.item.specImgs; ++i) {
           var src = constant.getImgPath(this.props.item, 'spec' + i) + '.jpg';
           spec.push(/*#__PURE__*/React.createElement("img", {
-            src: src
+            src: src,
+            alt: this.props.item.title + "規格圖 " + (i + 1)
           }));
         }
       }
@@ -153,12 +155,14 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       if (this.props.imagesCount) {
         var src = constant.getImgPath(this.props.item, this.props.tabName) + '.jpg';
         images.push(/*#__PURE__*/React.createElement("img", {
-          src: src
+          src: src,
+          alt: this.props.item.title + this.props.tabLabel + "圖"
         }));
         for (var i = 1; i < this.props.imagesCount; ++i) {
           var src = constant.getImgPath(this.props.item, this.props.tabName + i) + '.jpg';
           images.push(/*#__PURE__*/React.createElement("img", {
-            src: src
+            src: src,
+            alt: this.props.item.title + this.props.tabLabel + "圖 " + (i + 1)
           }));
         }
       }
@@ -182,6 +186,8 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       if (item.spec == null && item.specImgs == null) {
         $('#nav-tab-feature').addClass('active');
         $('#tab-feature').addClass('in active');
+        $('#tab-link-spec').attr('aria-selected', 'false');
+        $('#tab-link-feature').attr('aria-selected', 'true');
       }
       ReactDOM.render(/*#__PURE__*/React.createElement(ItemFeature, {
         feature: item.feature
@@ -193,6 +199,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       ReactDOM.render(/*#__PURE__*/React.createElement(ItemImages, {
         item: item,
         tabName: "model",
+        tabLabel: "\u578B\u865F\u9078\u8CFC",
         imagesCount: item.modelImgs
       }), document.querySelector('#model-detail'));
     } else {
@@ -202,6 +209,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       ReactDOM.render(/*#__PURE__*/React.createElement(ItemImages, {
         item: item,
         tabName: "component",
+        tabLabel: "\u5404\u90E8\u96F6\u4EF6",
         imagesCount: item.componentImgs
       }), document.querySelector('#component-detail'));
     } else {
@@ -211,18 +219,19 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       ReactDOM.render(/*#__PURE__*/React.createElement(ItemImages, {
         item: item,
         tabName: "size",
+        tabLabel: "\u5C3A\u5BF8\u898F\u683C",
         imagesCount: item.sizeImgs
       }), document.querySelector('#size-detail'));
     } else {
       $('#nav-tab-size').hide();
     }
     if (item.conditionImgs) {
-      $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg');
+      $('#condition-img').attr("src", constant.getImgPath(item, 'condition') + '.jpg').attr("alt", item.title + "操作條件圖");
     } else {
       $('#nav-tab-condition').hide();
     }
     if (item.dataImgs) {
-      $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg');
+      $('#data-img').attr("src", constant.getImgPath(item, 'data') + '.jpg').attr("alt", item.title + "數據圖表");
     } else {
       $('#nav-tab-data').hide();
     }

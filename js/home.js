@@ -185,8 +185,8 @@ define('home', [
             var slideshow=$(this).closest('.slideshow');
             var pages=$(this).find('.item');
             var index=slideshow.find('.slides .is-active').index();
-            pages.removeClass('is-active');
-            pages.eq(index).addClass('is-active');
+            pages.removeClass('is-active').removeAttr('aria-current');
+            pages.eq(index).addClass('is-active').attr('aria-current', 'true');
         });
 
         // Lazyloading

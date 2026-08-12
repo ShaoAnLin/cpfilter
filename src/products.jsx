@@ -24,7 +24,7 @@ define('products', [
                     <div className="col-md-4">
                       <div className="tile tile-category">
                         <a href={link} className="preview-box">
-                          <img src={imgSrc}/>
+                          <img src={imgSrc} alt={housing + "分類"}/>
                         </a>
                         <div className="tile-title">{housing}</div>
                       </div>
@@ -51,7 +51,7 @@ define('products', [
                     <div className="col-md-4">
                       <div className="tile tile-category">
                         <a href={link} className="preview-box">
-                          <img src={imgSrc}/>
+                          <img src={imgSrc} alt={category + "分類"}/>
                         </a>
                         <div className="tile-title">{category}</div>
                       </div>
@@ -79,7 +79,7 @@ define('products', [
                     <div className="col-md-4">
                       <div className="tile tile-category">
                         <a href={link} className="preview-box">
-                          <img src={imgSrc}/>
+                          <img src={imgSrc} alt={subgroup + "分類"}/>
                         </a>
                         <div className="tile-title">{subgroup}</div>
                       </div>
