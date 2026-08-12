@@ -9,6 +9,20 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
     }
     return null;
   };
+  var setProductMetadata = function (item) {
+    var title = item.title + "｜新凱濾材工業有限公司",
+      description = item.subtitle || "新凱濾材工業有限公司的" + item.title + "產品資訊。",
+      itemId = new URLSearchParams(window.location.search).get('item'),
+      url = "https://cpfilter.com/product-detail.html" + (itemId ? "?item=" + encodeURIComponent(itemId) : "");
+    document.title = title;
+    document.querySelector('meta[name="description"]').setAttribute('content', description);
+    document.querySelector('link[rel="canonical"]').setAttribute('href', url);
+    document.querySelector('meta[property="og:title"]').setAttribute('content', title);
+    document.querySelector('meta[property="og:description"]').setAttribute('content', description);
+    document.querySelector('meta[property="og:url"]').setAttribute('content', url);
+    document.querySelector('meta[name="twitter:title"]').setAttribute('content', title);
+    document.querySelector('meta[name="twitter:description"]').setAttribute('content', description);
+  };
   var onLoad = function () {
     setTimeout(function () {
       common.onLoadEvents();
@@ -319,6 +333,7 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
       ReactDOM.render(/*#__PURE__*/React.createElement(ProductNotFound, null), document.querySelector('#single-item-info'));
       return;
     }
+    setProductMetadata(item);
 
     // Housing & Category
     $('#housing-name').html(item.housing).attr("href", "products.html?housing=" + item.housing);

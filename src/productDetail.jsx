@@ -21,7 +21,7 @@ define('productDetail', [
         var title = item.title + "｜新凱濾材工業有限公司",
             description = item.subtitle || ("新凱濾材工業有限公司的" + item.title + "產品資訊。"),
             itemId = new URLSearchParams(window.location.search).get('item'),
-            url = "https://cpfilter.com/product-detail.html?item=" + encodeURIComponent(itemId);
+            url = "https://cpfilter.com/product-detail.html" + (itemId ? "?item=" + encodeURIComponent(itemId) : "");
 
         document.title = title;
         document.querySelector('meta[name="description"]').setAttribute('content', description);
