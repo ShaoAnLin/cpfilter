@@ -371,7 +371,8 @@ define('productDetail', ['react', 'reactDOM', 'constant', 'productImg', 'common'
 
     // Images
     ReactDOM.render(/*#__PURE__*/React.createElement(DetailImages, {
-      item: item
+      item: item,
+      isPrimary: true
     }), document.querySelector('#product-img-thumbnail'));
     ReactDOM.render(/*#__PURE__*/React.createElement(DetailImages, {
       item: item,

@@ -377,7 +377,7 @@ define('productDetail', [
         }
 
         // Images
-        ReactDOM.render(<DetailImages item={item}/>,
+        ReactDOM.render(<DetailImages item={item} isPrimary={true}/>,
             document.querySelector('#product-img-thumbnail'));
         ReactDOM.render(<DetailImages item={item} isPrimary={true}/>,
             document.querySelector('#product-img-preview'));
