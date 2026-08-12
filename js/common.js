@@ -3,7 +3,6 @@ define('common', [
   'footer',
   'sideNav',
   'javascriptStrings',
-  'ga',
   'vendor/preloader.min',
   'vendor/bootstrap.min',
   'vendor/slick.min',
