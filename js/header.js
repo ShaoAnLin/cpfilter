@@ -91,7 +91,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
     getMenu = function () {
       var menu = [];
       constant.HOUSING.forEach(function (housing) {
-        menu.push( /*#__PURE__*/React.createElement(DropDownItem, {
+        menu.push(/*#__PURE__*/React.createElement(DropDownItem, {
           housing: housing
         }));
       });
@@ -132,7 +132,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
       var subMenu = [];
       constant.CATEGORIES[this.props.housing].forEach(function (category) {
         var categoryLink = "products.html?category=" + category;
-        subMenu.push( /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+        subMenu.push(/*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
           href: categoryLink
         }, category)));
       });
@@ -144,7 +144,7 @@ define('header', ['react', 'reactDOM', 'constant'], function (React, ReactDOM, c
       }, this.getSubMenu());
     }
   }
-  ReactDOM.render( /*#__PURE__*/React.createElement(Header, {
+  ReactDOM.render(/*#__PURE__*/React.createElement(Header, {
     pathname: window.location.pathname
   }), document.querySelector('.header'));
 });

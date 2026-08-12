@@ -35,7 +35,8 @@ browser-sync start --server --directory --files "**/*"
 Reuse components with ReactJS. Files in `js/` are generated from the matching JSX files in `src/`.
 
 ```sh
-./node_modules/.bin/babel src --out-dir js
+npm run build
+npm run check:generated
 ```
 
 ### RequireJS
@@ -72,10 +73,10 @@ Each section should be handled in a separate, focused pull request. Verify every
 
 ## PR 2 — Build and dependency maintenance
 
-- [ ] Add documented npm scripts for compiling JSX and checking generated files.
-- [ ] Upgrade supported development dependencies after reviewing breaking changes.
-- [ ] Audit the runtime CDN dependencies, starting with jQuery 2.
-- [ ] Add integrity and cross-origin attributes where external CDN assets remain necessary.
+- [x] Add documented npm scripts for compiling JSX and checking generated files.
+- [x] Upgrade supported development dependencies after reviewing breaking changes.
+- [x] Audit the runtime CDN dependencies, starting with jQuery 2.
+- [x] Add integrity and cross-origin attributes where external CDN assets remain necessary.
 
 ## PR 3 — Contact form reliability
 

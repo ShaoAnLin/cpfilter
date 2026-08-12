@@ -123,5 +123,5 @@ define('email', ['react', 'reactDOM'], function (React, ReactDOM) {
       })));
     }
   }
-  ReactDOM.render( /*#__PURE__*/React.createElement(EmailForm, null), document.querySelector('#email-form'));
+  ReactDOM.render(/*#__PURE__*/React.createElement(EmailForm, null), document.querySelector('#email-form'));
 });
