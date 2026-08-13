@@ -1,0 +1,25 @@
+name: Deploy via git-ftp
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install git-ftp
+        run: sudo apt-get update && sudo apt-get install -y git-ftp
+
+      - name: Configure git-ftp
+        run: |
+          git config git-ftp.url "ftp://ftp.cpfilter.com/"
+          git config git-ftp.user "cpfilter@cpfilter.com"
+          git config git-ftp.password "${{ secrets.FTP_PASSWORD }}"
+
+      - name: Deploy (push)
+        run: git ftp push --verbose
