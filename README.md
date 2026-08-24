@@ -24,6 +24,37 @@ After merging a change into `master`, verify the preview before publishing produ
    git-ftp push
    ```
 
+## Deploy workflow access control
+`.github/workflows/deploy.yml` performs the production `git-ftp push`. It is
+manually triggered (`workflow_dispatch`) and restricted so that only the
+repository owner can complete a deployment:
+
+- The workflow requests only `contents: read` permissions.
+- The `deploy` job runs in the `production` environment and is skipped unless
+  `github.actor` is `ShaoAnLin`; a guard step fails the run otherwise.
+
+The following must be configured in the GitHub web UI, because they cannot live
+in the repository:
+
+1. **Settings → Environments → `production`**
+   - Add **Required reviewers** and list only `ShaoAnLin`.
+   - Set **Deployment branches** to *Selected branches* and allow only `master`.
+   - Store `FTP_PASSWORD` as an **environment** secret here, and delete the
+     repository-level `FTP_PASSWORD` secret. Rotate the FTP password when moving
+     it.
+2. **Settings → Collaborators** — remove anyone who does not need write access.
+3. **Settings → GitHub Apps** — remove integrations that hold `actions: write`.
+4. **Settings → Actions → General** — set *Workflow permissions* to
+   "Read repository contents and packages permissions", and restrict the allowed
+   actions sources. Confirm no Copilot coding agent environment exposes
+   `FTP_PASSWORD`.
+5. **Settings → Rules / Branches** — protect `master` so changes to
+   `.github/workflows/deploy.yml` require a reviewed pull request.
+
+With required reviewers in place, any run triggered by another collaborator or by
+an automation waits for your approval and cannot read `FTP_PASSWORD` until you
+approve it.
+
 ## Automated Checks
 End-to-end smoke tests render every page in headless Chromium and fail when the
 site enters an odd state. They serve the repository root over HTTP and replace the
