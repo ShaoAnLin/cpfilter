@@ -3,23 +3,46 @@ name: Deploy via git-ftp
 on:
   workflow_dispatch:
 
+# Least privilege: the deploy only needs to read the repository.
+permissions:
+  contents: read
+
 jobs:
   deploy:
+    # Second line of defence: only the repository owner may run this job.
+    # The primary protection is the `production` environment below, which
+    # requires a manual approval and holds the FTP_PASSWORD secret.
+    if: github.actor == 'ShaoAnLin'
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://www.cpfilter.com/
     steps:
+      - name: Verify deploy actor
+        env:
+          ACTOR: ${{ github.actor }}
+        run: |
+          if [ "$ACTOR" != "ShaoAnLin" ]; then
+            echo "::error::Deploy is restricted to ShaoAnLin (actor was $ACTOR)."
+            exit 1
+          fi
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Install git-ftp
         run: sudo apt-get update && sudo apt-get install -y git-ftp
 
       - name: Configure git-ftp
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           git config git-ftp.url "ftp://ftp.cpfilter.com/"
           git config git-ftp.user "cpfilter@cpfilter.com"
-          git config git-ftp.password "${{ secrets.FTP_PASSWORD }}"
+          git config git-ftp.password "$FTP_PASSWORD"
 
       - name: Deploy (push)
         run: git ftp push --verbose
